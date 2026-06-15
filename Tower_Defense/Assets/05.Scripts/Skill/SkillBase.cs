@@ -1,0 +1,68 @@
+using System.Collections.Generic;
+using UnityEngine;
+
+public abstract class SkillBase : MonoBehaviour
+{
+    protected class ActiveSkill
+    {
+        public SkillData data;
+        public int level;
+        public float fireTimer;
+
+        public SkillLevelStat CurrentStat => data.GetStat(level);
+    }
+
+    // 스킬 데이터 원본 리스트
+    protected List<SkillData> skillDataList = new List<SkillData>();
+
+    // 현재 플레이어가 습득한 스킬 상태 리스트
+    protected List<ActiveSkill> activeSkills = new List<ActiveSkill>();
+
+    protected virtual void Update()
+    {
+        foreach (var skill in activeSkills)
+        {
+            skill.fireTimer += Time.deltaTime;
+            float interval = 1f / skill.CurrentStat.fireRate;
+
+            if (skill.fireTimer >= interval)
+            {
+                skill.fireTimer -= interval;
+                Execute(skill);
+            }
+        }
+    }
+
+    public int LevelUp(string skillName)
+    {
+        // 인스펙터에서 꽂아준 skillDataList 검색 로직
+        SkillData targetData = skillDataList.Find(x => x != null && x.skillName == skillName);
+        if (targetData == null) return -1;
+
+        ActiveSkill existingSkill = activeSkills.Find(x => x.data == targetData);
+
+        if (existingSkill != null)
+        {
+            if (existingSkill.level >= targetData.maxLevel) return -1;
+            existingSkill.level++;
+            OnLevelUp(existingSkill);
+            return existingSkill.level;
+        }
+        else
+        {
+            ActiveSkill newSkill = new ActiveSkill { data = targetData, level = 1, fireTimer = 0f };
+            activeSkills.Add(newSkill);
+            OnLevelUp(newSkill);
+            return 1;
+        }
+    }
+
+    protected virtual void OnLevelUp(ActiveSkill skill)
+    {
+        Debug.Log($"[{GetType().Name}] {skill.data.skillName} Lv.{skill.level} 달성!");
+    }
+
+    protected abstract void Execute(ActiveSkill skill);
+
+    public List<SkillData> GetSkillDataList() => skillDataList;
+}
