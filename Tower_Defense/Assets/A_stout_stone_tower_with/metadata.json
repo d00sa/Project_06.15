@@ -1,0 +1,36 @@
+{
+  "group_id": null,
+  "states": [
+    {
+      "character": {
+        "id": "d918575b-c1a3-463b-bf11-beeb0a2c8df8",
+        "name": "A stout stone tower with",
+        "prompt": "A stout stone tower with a crenellated battlement top, featuring visible masonry joints, a central arched wooden door at the base, and a narrow arrow slit window, rendered with crisp black outlines and a monochromatic gray color palette.",
+        "size": {
+          "width": 120,
+          "height": 120
+        },
+        "template_id": "mannequin",
+        "directions": 8,
+        "view": "low top-down",
+        "created_at": "2026-06-15T06:41:59.22708+00:00"
+      },
+      "folder": "A_stout_stone_tower_with",
+      "frames": {
+        "rotations": {
+          "south": "A_stout_stone_tower_with/rotations/south.png",
+          "south-east": "A_stout_stone_tower_with/rotations/south-east.png",
+          "east": "A_stout_stone_tower_with/rotations/east.png",
+          "north-east": "A_stout_stone_tower_with/rotations/north-east.png",
+          "north": "A_stout_stone_tower_with/rotations/north.png",
+          "north-west": "A_stout_stone_tower_with/rotations/north-west.png",
+          "west": "A_stout_stone_tower_with/rotations/west.png",
+          "south-west": "A_stout_stone_tower_with/rotations/south-west.png"
+        },
+        "animations": {}
+      }
+    }
+  ],
+  "export_version": "3.0",
+  "export_date": "2026-06-15T09:22:35.993651"
+}
