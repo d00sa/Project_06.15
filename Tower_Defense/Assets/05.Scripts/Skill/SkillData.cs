@@ -31,6 +31,5 @@ public class SkillLevelStat
     [Header("공통 스탯")]
     public float damage = 10f;
     public float fireRate = 1f;
-    public float range = 5f;
-    public float projectileSpeed = 8f;
+    public float speed = 5f;
 }

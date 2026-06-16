@@ -20,6 +20,7 @@ public abstract class SkillBase : MonoBehaviour
 
     protected virtual void Update()
     {
+        // 각 활성 스킬의 발사 타이머 업데이트 및 발사 실행
         foreach (var skill in activeSkills)
         {
             skill.fireTimer += Time.deltaTime;
@@ -57,12 +58,13 @@ public abstract class SkillBase : MonoBehaviour
         }
     }
 
-    protected virtual void OnLevelUp(ActiveSkill skill)
-    {
-        Debug.Log($"[{GetType().Name}] {skill.data.skillName} Lv.{skill.level} 달성!");
-    }
+    /// <summary>
+    /// 레벨업 시 추가 효과 구현(아마 사운드나 아마 이펙트나 그런거?)
+    /// </summary>
+    protected virtual void OnLevelUp(ActiveSkill skill) { }
 
     protected abstract void Execute(ActiveSkill skill);
 
+    // ui 용
     public List<SkillData> GetSkillDataList() => skillDataList;
 }
