@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -7,7 +8,7 @@ public class PoolObjectData
     public GameObject prefab;
 
     [Tooltip("poolCount는 1개 이상 설정")]
-    public int poolCount = 10;
+    public int poolCount = 1;
 
     [Header("해당 오브젝트 설명")]
     public string explan;
@@ -15,7 +16,7 @@ public class PoolObjectData
 
 public class ObjectPool : MonoBehaviour
 {
-    public static ObjectPool instance;
+    public static ObjectPool Instance;
 
     [SerializeField] private bool dontDestroy = true;
     [SerializeField] private List<PoolObjectData> poolList = new List<PoolObjectData>();
@@ -27,9 +28,9 @@ public class ObjectPool : MonoBehaviour
 
     private void Awake()
     {
-        if (instance == null) {
+        if (Instance == null) {
 
-            instance = this;
+            Instance = this;
 
             if (dontDestroy) 
                 DontDestroyOnLoad(this.gameObject);
@@ -42,6 +43,7 @@ public class ObjectPool : MonoBehaviour
     }
 
     #region Instantiate
+    /// <summary> 처음부터 등록해둘 옵젝들 등록 </summary>
     public void Pool(List<PoolObjectData> poolObjList)
     {
         GameObject prefab;
@@ -73,7 +75,7 @@ public class ObjectPool : MonoBehaviour
         }
     }
 
-    /// <summary> 옵젝 반환 or 생성할, 부모를 생성 </summary>
+    /// <summary> 생성할 옵젝의 부모를 생성 </summary>
     GameObject MakeDir(string name)
     {
         GameObject newDir = new GameObject(name);
@@ -99,6 +101,22 @@ public class ObjectPool : MonoBehaviour
 
         return instance;
     }
+
+    public void RegisterPoolElement (GameObject prefab, int count)
+    {
+        //이전에 생성한 적이 있다면
+        if (poolParentDic.ContainsKey(prefab.name)) {
+            int childCount = poolParentDic[prefab.name].childCount;
+
+            if (childCount - count < 0)
+                InstantiatePool(prefab, poolParentDic[prefab.name], count - childCount);
+        }
+        else {
+            MakeDir(prefab.name);
+            InstantiatePool(prefab, poolParentDic[prefab.name], count);
+        }
+
+    }
     #endregion
 
     #region Get
@@ -121,6 +139,7 @@ public class ObjectPool : MonoBehaviour
                 pool.SetParent(parent);
 
             pool.gameObject.SetActive(enable);
+            pool.gameObject.GetComponent<IPoolable>().OnSpawn();
 
             return pool.gameObject;
         }
@@ -149,6 +168,7 @@ public class ObjectPool : MonoBehaviour
 
             pool.gameObject.SetActive(enable);
             pool.transform.localPosition = spawn;
+            pool.gameObject.GetComponent<IPoolable>().OnSpawn();
             return pool.gameObject;
         }
 
@@ -191,6 +211,17 @@ public class ObjectPool : MonoBehaviour
         _object.transform.SetParent(poolParentDic[_id]);
         _object.transform.localPosition = Vector3.zero;
         _object.SetActive(false);
+    }
+
+    public void ReturnObj(GameObject _object, float delay)
+    {
+        StartCoroutine(E_ReturnObj(_object,delay));
+    }
+
+    private IEnumerator E_ReturnObj(GameObject _object, float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        ReturnObj(_object);    
     }
     #endregion
 }

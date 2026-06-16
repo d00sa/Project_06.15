@@ -6,6 +6,7 @@ public class Projectile : MonoBehaviour
     private SkillLevelStat myStat;
     private Vector2 startPos;
     private Vector2 currentDir;
+    private float damage = 5f;
 
     [Header("이미지 회전 보정값")]
     [SerializeField] private float rotationOffset = -45f; // 보통 45나 -45?
@@ -56,6 +57,7 @@ public class Projectile : MonoBehaviour
     {
         if (collision.CompareTag("Enemy"))
         {
+            collision.GetComponent<Enemy>().HP -= damage; //임시값
             Destroy(gameObject);
         }
     }

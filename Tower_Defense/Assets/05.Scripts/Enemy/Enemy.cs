@@ -1,32 +1,39 @@
+using Mono.Cecil.Cil;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Enemy : MonoBehaviour, IPoolable
 {
-    private float _hp;
+    [SerializeField] private float hpMax;
+    [SerializeField] private float _hp;
+    private bool _isDead;
     public float HP
     {
         get => _hp;
         set
         {
-            if (_hp - value <= 0) {
+            _hp = value;
+
+            if (_hp <= 0) {
                 _hp = 0;
-                //todo : die
+                OnDespawn();
             }
-            _hp -= value;
-            //todo : 피통 조절
+
+            _slider.value = Mathf.Clamp01(_hp / hpMax);
         }
     }
-
     public float speed = 3f;
 
+
     [SerializeField] private List<Transform> _wayPoints;
+    [SerializeField] private Slider _slider;
     private int _currentIdx = 0;
 
 
     private void Awake()
     {
-        _hp = 100f;
+        OnSpawn();
     }
 
     private void Start()
@@ -36,7 +43,10 @@ public class Enemy : MonoBehaviour, IPoolable
 
     private void FixedUpdate()
     {
-        Move();        
+        if (_isDead) 
+            return;
+
+        Move();
     }
 
     private void Move()
@@ -55,12 +65,16 @@ public class Enemy : MonoBehaviour, IPoolable
 
     public void OnDespawn()
     {
-
+        //todo : dead Animations      
+        this.gameObject.tag = "Untagged";
+        _isDead = true;
+        ObjectPool.Instance.ReturnObj(this.gameObject, 2f);
     }
 
     public void OnSpawn()
     {
+        _hp = hpMax;
+        _isDead = false;
         _currentIdx = 0;
-        _hp = 100f;
     }
 }
