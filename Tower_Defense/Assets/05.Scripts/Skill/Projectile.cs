@@ -1,15 +1,14 @@
 using UnityEngine;
 
-public class Projectile : MonoBehaviour
+public class Projectile : MonoBehaviour, IPoolable
 {
     private Transform target;
     private SkillLevelStat myStat;
     private Vector2 startPos;
     private Vector2 currentDir;
-    private float damage = 5f;
 
     [Header("이미지 회전 보정값")]
-    [SerializeField] private float rotationOffset = -45f; // 보통 45나 -45?
+    [SerializeField] private float rotationOffset = -45f; // 보통 45나 -45? 이미지 따라 알잘딱
 
     public void Initialize(Transform targetTransform, SkillLevelStat stat)
     {
@@ -22,25 +21,32 @@ public class Projectile : MonoBehaviour
             currentDir = ((Vector2)target.position - (Vector2)transform.position).normalized;
             UpdateRotation();
         }
-
     }
 
-    // Update is called once per frame
+    public void OnSpawn()
+    {
+        gameObject.transform.position = startPos;
+    }
+
+    public void OnDespawn()
+    {
+        currentDir = Vector2.zero;
+    }
+
     void Update()
     {
         if (myStat == null) return;
 
-        if (target != null)
+        if (target != null && target.gameObject.activeInHierarchy && target.CompareTag("Enemy"))
         {
             currentDir = ((Vector2)target.position - (Vector2)transform.position).normalized;
             UpdateRotation();
-
         }
         else
         {
             // 타겟 재설정
             target = FindClosestEnemy();
-            if (target == null ) Destroy(gameObject);
+            if (target == null ) ObjectPool.Instance.ReturnObj(gameObject);
         }
 
         transform.Translate(currentDir * myStat.speed * Time.deltaTime, Space.World);
@@ -57,8 +63,8 @@ public class Projectile : MonoBehaviour
     {
         if (collision.CompareTag("Enemy"))
         {
-            collision.GetComponent<Enemy>().HP -= damage; //임시값
-            Destroy(gameObject);
+            collision.GetComponent<Enemy>().HP -= myStat.damage;
+            ObjectPool.Instance.ReturnObj(gameObject);
         }
     }
 

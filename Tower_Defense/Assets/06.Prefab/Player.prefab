@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 1562288928915791753}
   - component: {fileID: 5723180952184992513}
   - component: {fileID: 4603162418315302646}
+  - component: {fileID: 5738497994093055526}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -106,6 +107,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Player
   skillShooter: {fileID: 4603162418315302646}
+  skillAOE: {fileID: 5738497994093055526}
+  startingSkills:
+  - {fileID: 11400000, guid: c77baab45161b5a4b8982ae884497394, type: 2}
+  debugSkillName: Arrow
 --- !u!114 &4603162418315302646
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -120,3 +125,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SkillShooter
   shooterSkills:
   - {fileID: 11400000, guid: c77baab45161b5a4b8982ae884497394, type: 2}
+--- !u!114 &5738497994093055526
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4714271137520415422}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 49fdf9bcaea1259468fce273939ea31b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SkillAOE
+  aoeSkills:
+  - {fileID: 11400000, guid: d8e8bd751325cc749a25ff37913f114f, type: 2}

@@ -7,7 +7,8 @@ public class Player : MonoBehaviour
 
     [Header("스킬 매니저 컴포넌트 연결")] //  매니저 ----------------------------------------------
     [SerializeField] private SkillShooter skillShooter;
-    // 추후 AOE 계열 등등의 스킬 매니저 추가 예정 (ノ・∀・)ノ
+    [SerializeField] private SkillAOE skillAOE;
+    // 추후 다른 계열 등등의 스킬 매니저 추가 예정 (ノ・∀・)ノ
 
     [Header("시작 스킬 설정")] // 시작 스킬 ----------------------------------------------
     [Tooltip("기본 시작 스킬 넣어주세요 （〜^∇^)〜 ")]
@@ -45,7 +46,8 @@ public class Player : MonoBehaviour
 
         if (skillShooter != null)
             newLevel = skillShooter.LevelUp(skillName);
-        // else if (otherSkillManager != null) 
+        if (newLevel == -1 && skillAOE != null)
+            newLevel = skillAOE.LevelUp(skillName);
 
         // 레벨업 성공 처리
         if (newLevel != -1)

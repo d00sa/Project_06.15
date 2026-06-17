@@ -1,0 +1,46 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b086d55aac52e7240be871bc15296cf3, type: 3}
+  m_Name: Barricade
+  m_EditorClassIdentifier: Assembly-CSharp::SkillData
+  skillName: Barricade
+  description: "\uBC14\uB9AC\uCF00\uC774\uD2B8 \uD2F1\uB380, \uC801 \uC774\uB3D9
+    \uC9C0\uC5F0 SkillAOE\uC5D0 \uC801\uC6A9"
+  icon: {fileID: 0}
+  skillPrefab: {fileID: 6454398476573839199, guid: 415071bcaab8acb499374ab53bbb30d5, type: 3}
+  maxLevel: 5
+  levelStats:
+  - damage: 5
+    fireRate: 0.2
+    speed: 3
+    range: 10
+    knockback: 5
+  - damage: 5
+    fireRate: 0.1
+    speed: 10
+    range: 10
+    knockback: 3
+  - damage: 5
+    fireRate: 0.1
+    speed: 10
+    range: 10
+    knockback: 3
+  - damage: 5
+    fireRate: 0.1
+    speed: 10
+    range: 10
+    knockback: 3
+  - damage: 5
+    fireRate: 0.1
+    speed: 10
+    range: 10
+    knockback: 3
