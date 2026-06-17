@@ -1,10 +1,13 @@
+using ConstantSpace;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 public class Spawner : MonoBehaviour
 {
     public static Spawner Instance;
     public bool IsSummonOk; //소환해도 되는가?
+    //현재는 그냥 넣어줬지만 나중에는 난이도 선택 시 넣어줄거임
     public DifficultyData CurDifficulty; //현재 난이도(Easy,Medium,Hard) 데이터
     public int CurrentStage => _currentStage;
 
@@ -15,6 +18,7 @@ public class Spawner : MonoBehaviour
     private List<int> _counterList = new List<int>();      //각 스테이지마다 소환해야할 몬스터의 수 저장소
     private List<float> _delayTimersList = new List<float>();  //몬스터 소환 타이머 리스트
     private List<float> _termTimersList = new List<float>();    //몬스터 소환 주기 타이머 리스트   
+    public bool IsFinished => (CurrentStage >= CurDifficulty.StageDataList.Count);
 
     private void Awake()
     {
@@ -27,7 +31,6 @@ public class Spawner : MonoBehaviour
     private void Start()
     {
         RegisterPoolElements();
-        SpawnNext();
     }
 
     private void Update()
@@ -48,7 +51,10 @@ public class Spawner : MonoBehaviour
                         GameObject enemy = ObjectPool.Instance.GetObj(
                             id: curStageData.SpawnDataList[i].Prefab.name,
                             spawn: _spawnPoint.position
-                            );
+                        );
+                        
+
+                        GameManager.Instance.EnemyCount++;
 
                         _termTimersList[i] = curStageData.SpawnDataList[i].Term;
                         _counterList[i]--;
@@ -111,5 +117,17 @@ public class Spawner : MonoBehaviour
                 );
             }
         }
+    }
+
+    /// <summary> 만약 플레이어가 죽었다면 모든 몬스터들은 되돌아가야함 </summary>
+    public IEnumerator IsAllMonsterReturn()
+    {
+        //1초 기다림. ( 몬스터가 소환되기를 기다리는 것)
+        yield return new WaitForSeconds(1.0f);
+
+        //모든 몬스터들이 다 돌아갔는지 확인
+        ObjectPool.Instance.AllObjectReturn();
+
+        IsSummonOk = false;
     }
 }

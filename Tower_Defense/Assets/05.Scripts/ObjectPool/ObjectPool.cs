@@ -11,7 +11,14 @@ public class PoolObjectData
     public int poolCount = 1;
 
     [Header("해당 오브젝트 설명")]
-    public string explan;
+    public string explain;
+
+    public PoolObjectData(GameObject prefab, int count, string explain = "")
+    {
+        this.prefab = prefab;
+        poolCount = count;
+        this.explain = explain;
+    }
 }
 
 public class ObjectPool : MonoBehaviour
@@ -25,6 +32,8 @@ public class ObjectPool : MonoBehaviour
     private Dictionary<string, Transform> poolParentDic = new Dictionary<string, Transform>();
     //풀링 생성 오브젝트
     private Dictionary<string, PoolObjectData> instantiateObject = new Dictionary<string, PoolObjectData>();
+    //소환된 몬스터들을 관리하는 딕셔너리
+    private Dictionary<string, Queue<IPoolable>> _spawnQueueDictionary = new Dictionary<string, Queue<IPoolable>>();
 
     private void Awake()
     {
@@ -114,8 +123,8 @@ public class ObjectPool : MonoBehaviour
         else {
             MakeDir(prefab.name);
             InstantiatePool(prefab, poolParentDic[prefab.name], count);
+            instantiateObject[prefab.name] = new PoolObjectData(prefab,count);
         }
-
     }
     #endregion
 
@@ -139,7 +148,15 @@ public class ObjectPool : MonoBehaviour
                 pool.SetParent(parent);
 
             pool.gameObject.SetActive(enable);
-            pool.gameObject.GetComponent<IPoolable>().OnSpawn();
+
+            if (pool.gameObject.TryGetComponent<IPoolable>(out IPoolable component)) {
+                component.OnSpawn();
+
+                if (!_spawnQueueDictionary.ContainsKey(pool.gameObject.name))
+                    _spawnQueueDictionary.Add(pool.gameObject.name, new Queue<IPoolable>());
+
+                _spawnQueueDictionary[pool.gameObject.name].Enqueue(component);
+            }
 
             return pool.gameObject;
         }
@@ -168,7 +185,15 @@ public class ObjectPool : MonoBehaviour
 
             pool.gameObject.SetActive(enable);
             pool.transform.localPosition = spawn;
-            pool.gameObject.GetComponent<IPoolable>().OnSpawn();
+
+            if (pool.gameObject.TryGetComponent<IPoolable>(out IPoolable component)) {
+                component.OnSpawn();
+
+                if (!_spawnQueueDictionary.ContainsKey(pool.gameObject.name))
+                    _spawnQueueDictionary.Add(pool.gameObject.name, new Queue<IPoolable>());
+
+                _spawnQueueDictionary[pool.gameObject.name].Enqueue(component);
+            }
             return pool.gameObject;
         }
 
@@ -211,6 +236,15 @@ public class ObjectPool : MonoBehaviour
         _object.transform.SetParent(poolParentDic[_id]);
         _object.transform.localPosition = Vector3.zero;
         _object.SetActive(false);
+    }
+
+    public void AllObjectReturn()
+    {
+        foreach (Queue<IPoolable> queue in _spawnQueueDictionary.Values) {
+            while (queue.Count > 0) {
+                queue.Dequeue().OnDespawn();
+            }
+        }
     }
 
     public void ReturnObj(GameObject _object, float delay)

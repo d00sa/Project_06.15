@@ -10,28 +10,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 375b6fb27d21c354995f6c93ee0a9120, type: 3}
-  m_Name: Easy
+  m_Name: Normal
   m_EditorClassIdentifier: Assembly-CSharp::DifficultyData
-  Difficulty: 100
-  UnitCount: 14
+  Difficulty: 200
+  UnitCount: 40
   StageDataList:
   - Stage: 1
     SpawnDataList:
     - Prefab: {fileID: 5722822434754417202, guid: c9dda5e1012cd6549926f2f89d16247e, type: 3}
-      Num: 5
-      SpawnDelay: 0
-      Term: 0.5
-    - Prefab: {fileID: 5722822434754417202, guid: 1c7840dc01f8ba64181f974b9969c519, type: 3}
-      Num: 5
-      SpawnDelay: 5
-      Term: 0.5
-  - Stage: 2
-    SpawnDataList:
-    - Prefab: {fileID: 5722822434754417202, guid: c9dda5e1012cd6549926f2f89d16247e, type: 3}
       Num: 10
       SpawnDelay: 0
-      Term: 0.5
+      Term: 1
     - Prefab: {fileID: 5722822434754417202, guid: 1c7840dc01f8ba64181f974b9969c519, type: 3}
-      Num: 5
-      SpawnDelay: 0
-      Term: 0.5
+      Num: 10
+      SpawnDelay: 5
+      Term: 1

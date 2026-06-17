@@ -31,7 +31,7 @@ public class Enemy : MonoBehaviour, IPoolable
     private int _currentIdx = 0;
 
 
-    private void Awake()
+    private void OnEnable()
     {
         OnSpawn();
     }
@@ -66,9 +66,10 @@ public class Enemy : MonoBehaviour, IPoolable
     public void OnDespawn()
     {
         //todo : dead Animations      
+        GameManager.Instance.EnemyCount--;
         this.gameObject.tag = "Untagged";
         _isDead = true;
-        ObjectPool.Instance.ReturnObj(this.gameObject, 2f);
+        ObjectPool.Instance.ReturnObj(this.gameObject, 1f);
     }
 
     public void OnSpawn()
