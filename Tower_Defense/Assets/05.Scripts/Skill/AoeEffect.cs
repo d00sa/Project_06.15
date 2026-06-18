@@ -10,6 +10,7 @@ public class AoeEffect : MonoBehaviour, IPoolable
 
     // 범위 안에 들어와 있는 적들
     private List<Enemy> enemiesInside = new List<Enemy>();
+    [SerializeField] private Animator animator;
 
     public void Initialize(SkillLevelStat stat)
     {
@@ -24,7 +25,7 @@ public class AoeEffect : MonoBehaviour, IPoolable
     }
     public void OnDespawn()
     {
-        // 구현은 해야되는데 아직은 딱히 넣을 코드가 없네 ◝(⁰▿<)
+        
     }
 
     private void Update()
@@ -37,7 +38,8 @@ public class AoeEffect : MonoBehaviour, IPoolable
         if (currentDuration >= myStat.speed) // AOE는 speed를 지속시간으로 사용
         {
             enemiesInside.Clear();
-            ObjectPool.Instance.ReturnObj(gameObject);
+            animator.SetBool("isDead", true);
+            ObjectPool.Instance.ReturnObj(gameObject, 0.8f);
             return;
         }
 
