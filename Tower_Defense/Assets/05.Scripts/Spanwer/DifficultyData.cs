@@ -1,5 +1,5 @@
 using System;
-using ConstantSpace;
+using Space;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -25,4 +25,5 @@ public class SpawnData
     public int Num; //소환할 몬스터 수
     public float SpawnDelay;    //소환 시작 딜레이
     public float Term;  //소환 주기
+    public int Exp; //적이 죽으면 주는 경험치
 }

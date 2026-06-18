@@ -1,4 +1,4 @@
-﻿namespace ConstantSpace
+﻿namespace Space
 {
     public enum Degree
     {
@@ -21,7 +21,18 @@
         GameLose, //게임패배
         WaitForUser
     }
-    
+
+    public enum Commands
+    {
+        Idle,Prepare,Casting,OnAction,Finish
+    }
+
+    //동작 종류들
+    public enum StateType
+    {
+        Idle, Move, Hit, EOF
+    }
+
     public class Constant
     {
         public const int REMAIN_SKIP_TIME = 5;

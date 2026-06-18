@@ -13,23 +13,26 @@ public class Enemy : MonoBehaviour, IPoolable
         get => _hp;
         set
         {
+            if (value < 0)
+                value = 0;
+
             _hp = value;
-
-            if (_hp <= 0) {
-                _hp = 0;
-                OnDespawn();
-            }
-
             _slider.value = Mathf.Clamp01(_hp / hpMax);
+
+            if (_hp > 0) {
+                //히트 애니메이션을 여기에 하면 좋을 듯?
+            }
+            else
+                OnDespawn();
         }
     }
     public float speed = 3f;
-
+    public bool IsMovable;
 
     [SerializeField] private List<Transform> _wayPoints;
     [SerializeField] private Slider _slider;
     private int _currentIdx = 0;
-
+    private int _giveExp;
 
     private void OnEnable()
     {
@@ -46,7 +49,8 @@ public class Enemy : MonoBehaviour, IPoolable
         if (_isDead) 
             return;
 
-        Move();
+        if (IsMovable)
+            Move();
     }
 
     private void Move()
@@ -69,6 +73,7 @@ public class Enemy : MonoBehaviour, IPoolable
         GameManager.Instance.EnemyCount--;
         this.gameObject.tag = "Untagged";
         _isDead = true;
+        IsMovable = false;
         ObjectPool.Instance.ReturnObj(this.gameObject, 1f);
     }
 
@@ -76,7 +81,13 @@ public class Enemy : MonoBehaviour, IPoolable
     {
         _hp = hpMax;
         _isDead = false;
+        IsMovable = true;
         _currentIdx = 0;
+    }
+
+    public void Setting(int exp)
+    {
+        _giveExp = exp;
     }
 
     /// <summary>

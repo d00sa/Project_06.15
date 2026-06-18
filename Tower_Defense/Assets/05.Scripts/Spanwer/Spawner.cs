@@ -1,4 +1,4 @@
-using ConstantSpace;
+using Space;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -48,12 +48,12 @@ public class Spawner : MonoBehaviour
                     //소환 주기 타이머가 종료 되었으면
                     if (_termTimersList[i] <= 0) {
                         //소환
-                        GameObject enemy = ObjectPool.Instance.GetObj(
+                        GameObject obj = ObjectPool.Instance.GetObj(
                             id: curStageData.SpawnDataList[i].Prefab.name,
                             spawn: _spawnPoint.position
                         );
-                        
 
+                        obj.GetComponent<Enemy>().Setting(curStageData.SpawnDataList[i].Exp);
                         GameManager.Instance.EnemyCount++;
 
                         _termTimersList[i] = curStageData.SpawnDataList[i].Term;

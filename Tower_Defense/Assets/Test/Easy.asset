@@ -21,17 +21,21 @@ MonoBehaviour:
       Num: 5
       SpawnDelay: 0
       Term: 0.5
+      Exp: 5
     - Prefab: {fileID: 5722822434754417202, guid: 1c7840dc01f8ba64181f974b9969c519, type: 3}
       Num: 5
       SpawnDelay: 5
       Term: 0.5
+      Exp: 5
   - Stage: 2
     SpawnDataList:
     - Prefab: {fileID: 5722822434754417202, guid: c9dda5e1012cd6549926f2f89d16247e, type: 3}
       Num: 10
       SpawnDelay: 0
       Term: 0.5
+      Exp: 5
     - Prefab: {fileID: 5722822434754417202, guid: 1c7840dc01f8ba64181f974b9969c519, type: 3}
       Num: 5
       SpawnDelay: 0
       Term: 0.5
+      Exp: 5

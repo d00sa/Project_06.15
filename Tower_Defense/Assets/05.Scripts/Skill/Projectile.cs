@@ -49,7 +49,7 @@ public class Projectile : MonoBehaviour, IPoolable
             if (target == null ) ObjectPool.Instance.ReturnObj(gameObject);
         }
 
-        transform.Translate(currentDir * myStat.speed * Time.deltaTime, Space.World);
+        transform.Translate(currentDir * myStat.speed * Time.deltaTime, UnityEngine.Space.World);
 
     }
 
