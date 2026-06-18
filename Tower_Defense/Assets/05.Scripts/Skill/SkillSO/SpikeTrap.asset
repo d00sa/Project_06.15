@@ -10,37 +10,36 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b086d55aac52e7240be871bc15296cf3, type: 3}
-  m_Name: Barricade
+  m_Name: SpikeTrap
   m_EditorClassIdentifier: Assembly-CSharp::SkillData
-  skillName: Barricade
-  description: "\uBC14\uB9AC\uCF00\uC774\uD2B8 \uD2F1\uB380, \uC801 \uC774\uB3D9
-    \uC9C0\uC5F0 SkillAOE\uC5D0 \uC801\uC6A9"
-  icon: {fileID: 0}
-  skillPrefab: {fileID: 6454398476573839199, guid: 415071bcaab8acb499374ab53bbb30d5, type: 3}
+  skillName: SpikeTrap
+  description: "SpikeTrap AOE\uC5D0 \uC801\uC6A9"
+  icon: {fileID: 7945056504642708236, guid: 246b8068ebdf7fb449790e17e323a580, type: 3}
+  skillPrefab: {fileID: 2240467497310843589, guid: 010c88e9d65f86a409c13d82da7a549e, type: 3}
   maxLevel: 5
   levelStats:
   - damage: 5
-    fireRate: 0.2
-    speed: 3
-    range: 10
-    knockback: 5
+    fireRate: 10
+    speed: 7
+    coolTime: 3
+    range: 0
   - damage: 5
-    fireRate: 0.1
+    fireRate: 10
     speed: 10
-    range: 10
-    knockback: 3
+    coolTime: 1
+    range: 0
   - damage: 5
-    fireRate: 0.1
+    fireRate: 5
     speed: 10
-    range: 10
-    knockback: 3
+    coolTime: 5
+    range: 0
   - damage: 5
-    fireRate: 0.1
+    fireRate: 5
     speed: 10
-    range: 10
-    knockback: 3
+    coolTime: 5
+    range: 0
   - damage: 5
-    fireRate: 0.1
+    fireRate: 5
     speed: 10
-    range: 10
-    knockback: 3
+    coolTime: 5
+    range: 0

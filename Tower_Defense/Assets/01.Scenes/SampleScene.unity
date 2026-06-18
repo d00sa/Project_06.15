@@ -306,6 +306,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::GameManager
   _maxReadyTime: 3
   _maxStageTime: 10
+  Win: 0
+  Lose: 0
 --- !u!4 &270040854
 Transform:
   m_ObjectHideFlags: 0
@@ -726,17 +728,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &667750556 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5738497994093055526, guid: 24ddef4e6ae733648be7a3e464718ccc, type: 3}
-  m_PrefabInstance: {fileID: 6224667976590113139}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 49fdf9bcaea1259468fce273939ea31b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::SkillAOE
 --- !u!1 &749376471
 GameObject:
   m_ObjectHideFlags: 0
@@ -8265,21 +8256,21 @@ PrefabInstance:
       value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 5723180952184992513, guid: 24ddef4e6ae733648be7a3e464718ccc, type: 3}
-      propertyPath: skillAOE
-      value: 
-      objectReference: {fileID: 667750556}
-    - target: {fileID: 5723180952184992513, guid: 24ddef4e6ae733648be7a3e464718ccc, type: 3}
       propertyPath: debugSkillName
-      value: Arrow
+      value: SpikeTrap
       objectReference: {fileID: 0}
     - target: {fileID: 5723180952184992513, guid: 24ddef4e6ae733648be7a3e464718ccc, type: 3}
       propertyPath: startingSkills.Array.size
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5723180952184992513, guid: 24ddef4e6ae733648be7a3e464718ccc, type: 3}
-      propertyPath: 'startingSkills.Array.data[0]'
+      propertyPath: 'startingSkills.Array.data[1]'
       value: 
-      objectReference: {fileID: 11400000, guid: c77baab45161b5a4b8982ae884497394, type: 2}
+      objectReference: {fileID: 11400000, guid: 3a9e292ec83326d459a7cd89d1b1ae95, type: 2}
+    - target: {fileID: 5738497994093055526, guid: 24ddef4e6ae733648be7a3e464718ccc, type: 3}
+      propertyPath: 'aoeSkills.Array.data[0]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 3a9e292ec83326d459a7cd89d1b1ae95, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

@@ -32,9 +32,9 @@ public class SkillLevelStat
     public float damage = 10f;
     [Tooltip("초당 공격 횟수")]
     public float fireRate = 1f;
-    [Tooltip("Projectile는 투사체 이동 속도/ AOE 지속시간")]
+    [Tooltip("Projectile는 투사체 이동 속도/ AOE는 지속시간")]
     public float speed = 5f;
+    [Tooltip("")]
+    public float coolTime = 1f;
     public float range = 5f;
-    [Tooltip("AOE의 적을 끌어당기는, 밀어내는 힘 (양수면 밀어내고, 음수면 당김)")]
-    public float knockback = 1f;
 }

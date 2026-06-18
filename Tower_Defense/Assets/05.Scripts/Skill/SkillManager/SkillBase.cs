@@ -54,6 +54,9 @@ public abstract class SkillBase : MonoBehaviour
             ActiveSkill newSkill = new ActiveSkill { data = targetData, level = 1, fireTimer = 0f };
             activeSkills.Add(newSkill);
             OnLevelUp(newSkill);
+
+            Execute(newSkill);
+
             return 1;
         }
     }

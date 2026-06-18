@@ -78,4 +78,22 @@ public class Enemy : MonoBehaviour, IPoolable
         _isDead = false;
         _currentIdx = 0;
     }
+
+    /// <summary>
+    /// 데미지 주고 피격 방향 반대로 살짝 밈
+    /// </summary>
+    /// <param name="damage">받을 데미지량</param>
+    /// <param name="attackPos">공격의 중심점 (투사체 위치 or area 중심 위치)</param>
+    /// <param name="knockbackPower">밀려날 거리</param>
+    public void TakeDamage(float damage, Vector3 attackPos, float knockbackPower)
+    {
+        HP -= damage;
+
+        Transform targetWaypoint = _wayPoints[_currentIdx];
+
+        Vector3 pushDir = (transform.position - targetWaypoint.position).normalized;
+
+        //밀기
+        transform.position += pushDir * knockbackPower;
+    }
 }

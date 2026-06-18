@@ -63,7 +63,7 @@ public class Projectile : MonoBehaviour, IPoolable
     {
         if (collision.CompareTag("Enemy"))
         {
-            collision.GetComponent<Enemy>().HP -= myStat.damage;
+            collision.GetComponent<Enemy>().TakeDamage(myStat.damage, transform.position, 0.1f);
             ObjectPool.Instance.ReturnObj(gameObject);
         }
     }

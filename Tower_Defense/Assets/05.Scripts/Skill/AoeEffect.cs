@@ -63,13 +63,9 @@ public class AoeEffect : MonoBehaviour, IPoolable
                 continue;
             }
 
-            // myStat.konockback가 양수면 적을 밀어내고, 음수면 끌어당기는 효과
-            Vector3 pullDir = (transform.position - enemy.transform.position).normalized;
-            enemy.transform.position -= pullDir * myStat.knockback * Time.deltaTime;
-
             if (isTickTime)
             {
-                enemy.HP -= myStat.damage;
+                enemy.TakeDamage(myStat.damage, transform.position, 0.2f);
             }
         }
     }
