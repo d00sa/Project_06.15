@@ -5,6 +5,7 @@ public class SkillAOE : SkillBase
 {
     [Header("장판 계열 스킬 SO 목록")]
     [SerializeField] private List<SkillData> aoeSkills = new List<SkillData>();
+    
     private void Awake()
     {
         base.skillDataList = aoeSkills;
@@ -77,4 +78,6 @@ public class SkillAOE : SkillBase
 
         return closestEnemy;
     }
+
+
 }

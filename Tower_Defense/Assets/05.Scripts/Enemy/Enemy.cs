@@ -69,7 +69,7 @@ public class Enemy : MonoBehaviour, IPoolable
 
     public void OnDespawn()
     {
-        //todo : dead Animations      
+        //todo : dead Animations 
         GameManager.Instance.EnemyCount--;
         this.gameObject.tag = "Untagged";
         _isDead = true;
