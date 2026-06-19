@@ -18,7 +18,7 @@ public class StateMove : StateBase
     public override void Execute()
     {
         Current = Commands.Prepare;
-        _machine.IsMoveable = true;
+        _machine.EnemyObj.IsMovable = true;
     }
 
     public override void FixedUpdate()
@@ -28,21 +28,22 @@ public class StateMove : StateBase
     public override void ForceStop()
     {
         Current = Commands.Idle;
+        _animator.SetBool("Move", false);
     }
     public override StateType Update()
     {
+        Debug.Log(Current);
         StateType next = _machineType;
         switch (Current) {
             case Commands.Idle:
                 break;
             case Commands.Prepare: {
-                    //여기서 실행할 듯
+                    _animator.SetBool("Move", true);
                     MoveNext();
                 }
                 break;
-            case Commands.Casting: {
+            case Commands.Casting:
                     MoveNext();
-                }
                 break;
             case Commands.OnAction:                
                 break;

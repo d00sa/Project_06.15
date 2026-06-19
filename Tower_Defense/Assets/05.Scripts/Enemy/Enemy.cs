@@ -1,8 +1,10 @@
 using Mono.Cecil.Cil;
+using Space;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+[RequireComponent(typeof(StateMachine))]
 public class Enemy : MonoBehaviour, IPoolable
 {
     [SerializeField] private float hpMax;
@@ -17,22 +19,21 @@ public class Enemy : MonoBehaviour, IPoolable
                 value = 0;
 
             _hp = value;
-            _slider.value = Mathf.Clamp01(_hp / hpMax);
+            _hpBar.value = Mathf.Clamp01(_hp / hpMax);
 
-            if (_hp > 0) {
-                //히트 애니메이션을 여기에 하면 좋을 듯?
-            }
-            else
+            if (_hp <= 0)
                 OnDespawn();
         }
     }
-    public float speed = 3f;
-    public bool IsMovable;
 
     [SerializeField] private List<Transform> _wayPoints;
-    [SerializeField] private Slider _slider;
+    [SerializeField] private Slider _hpBar;
+    private StateMachine _machine;
     private int _currentIdx = 0;
     private int _giveExp;
+
+    public float speed = 3f;
+    public bool IsMovable { get; set; } = true;
 
     private void OnEnable()
     {
@@ -42,6 +43,7 @@ public class Enemy : MonoBehaviour, IPoolable
     private void Start()
     {
         _wayPoints = WayPointManager.Instance.wayPoints;
+        _machine = GetComponent<StateMachine>();
     }
 
     private void FixedUpdate()
@@ -49,8 +51,12 @@ public class Enemy : MonoBehaviour, IPoolable
         if (_isDead) 
             return;
 
-        if (IsMovable)
+        if (IsMovable) {
+            _machine.ChangeState(StateType.Move);
             Move();
+        }
+        else
+            _machine.ChangeState(StateType.Idle);
     }
 
     private void Move()
@@ -69,17 +75,17 @@ public class Enemy : MonoBehaviour, IPoolable
 
     public void OnDespawn()
     {
-        //todo : dead Animations 
-        GameManager.Instance.EnemyCount--;
+        _machine.ChangeState(StateType.Dead);
         this.gameObject.tag = "Untagged";
         _isDead = true;
         IsMovable = false;
-        ObjectPool.Instance.ReturnObj(this.gameObject, 1f);
+        GameManager.Instance.EnemyCount--;
+        ObjectPool.Instance.ReturnObj(this.gameObject, 2f);
     }
 
     public void OnSpawn()
     {
-        _hp = hpMax;
+        HP = hpMax;
         _isDead = false;
         IsMovable = true;
         _currentIdx = 0;

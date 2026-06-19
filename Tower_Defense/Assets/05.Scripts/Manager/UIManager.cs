@@ -36,6 +36,9 @@ public class UIManager : MonoBehaviour
 
     private void ChangeEnemyCount(int count)
     {
+        if (count < 0)
+            count = 0;
+
         _enemyCountText.text = $"Enemy : {count}";
     }
 

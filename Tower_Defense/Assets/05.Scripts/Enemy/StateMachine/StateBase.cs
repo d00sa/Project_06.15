@@ -14,7 +14,7 @@ public abstract class StateBase : IState
     {
         _machine = machine;
         _machineType = machinetype;
-        _animator = machine.GetComponent<Animator>();
+        _animator = _machine.GetComponent<Animator>();
     }
 
     public abstract bool IsExecuteOK { get; }

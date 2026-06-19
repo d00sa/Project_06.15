@@ -8,36 +8,28 @@ using UnityEngine;
 public class StateMachine : MonoBehaviour
 {
     #region public
-    public StateType Current;
-    public bool IsMoveable { get; set; }
+    public StateType CurrentType;
+    [NonSerialized] public Enemy EnemyObj;
     #endregion
 
     #region private
     Dictionary<StateType, StateBase> _states = new Dictionary<StateType, StateBase>();
     StateBase _curStates;
-    Enemy enemy;
     #endregion
 
     private void Awake()
     {
         Init();
-        IsMoveable = true;
     }
 
     private void Update()
     {
-        if (IsMoveable) 
-        {
-            if (enemy.IsMovable)
-                ChangeState(StateType.Move);
-            else
-                ChangeState(StateType.Idle);
-        }
+        ChangeState(_curStates.Update());
     }
 
-    bool ChangeState(StateType newStatetype)
+    public bool ChangeState(StateType newStatetype)
     {
-        if (Current == newStatetype) 
+        if (CurrentType == newStatetype) 
             return false;
 
         if (!_states[newStatetype].IsExecuteOK) 
@@ -46,7 +38,7 @@ public class StateMachine : MonoBehaviour
         _curStates.ForceStop();
         _curStates = _states[newStatetype];
         _curStates.Execute();
-        Current = newStatetype;
+        CurrentType = newStatetype;
         return true;
     }
 
@@ -55,9 +47,9 @@ public class StateMachine : MonoBehaviour
         for (StateType state = StateType.Idle; state < StateType.EOF; state++)
             AddState(state);
 
-        enemy = gameObject.GetComponent<Enemy>();
+        EnemyObj = gameObject.GetComponent<Enemy>();
         _curStates = _states[StateType.Idle];
-        Current = StateType.Idle;
+        CurrentType = StateType.Idle;
     }
 
     void AddState(StateType stateType)

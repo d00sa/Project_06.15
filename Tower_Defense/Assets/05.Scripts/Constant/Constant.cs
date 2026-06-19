@@ -30,7 +30,7 @@
     //동작 종류들
     public enum StateType
     {
-        Idle, Move, Hit, EOF
+        Idle, Move, Dead, EOF
     }
 
     public class Constant

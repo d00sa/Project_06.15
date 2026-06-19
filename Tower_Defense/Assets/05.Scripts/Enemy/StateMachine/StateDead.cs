@@ -1,16 +1,15 @@
-﻿using UnityEngine;
-using Space;
-using System.Diagnostics;
-
-public class StateIdle : StateBase
+﻿using Space;
+using System;
+using Unity;
+public class StateDead : StateBase
 {
-    public StateIdle(StateType machinetype, StateMachine machine) : base(machinetype, machine)
+    public StateDead(StateType machinetype, StateMachine machine) : base(machinetype, machine)
     {
-    }   
-
-    public override bool IsExecuteOK => !_machine.EnemyObj.IsMovable;
+    }
 
     public override Commands Current { get; protected set; }
+
+    public override bool IsExecuteOK => true;
 
     public override void Execute()
     {
@@ -20,13 +19,12 @@ public class StateIdle : StateBase
 
     public override void FixedUpdate()
     {
-
     }
 
     public override void ForceStop()
     {
         Current = Commands.Idle;
-        _animator.SetBool("Idle", false);
+        _animator.SetBool("Dead", false);
     }
 
     public override StateType Update()
@@ -35,18 +33,19 @@ public class StateIdle : StateBase
         switch (Current) {
             case Commands.Idle:
                 break;
-            case Commands.Prepare: 
-                {
-                    _animator.SetBool("Idle", true);
+            case Commands.Prepare: {
+                    _animator.SetBool("Dead", true);
                     MoveNext();
                 }
                 break;
             case Commands.Casting:
-                MoveNext();
+                    MoveNext();
                 break;
             case Commands.OnAction:
                 break;
             case Commands.Finish:
+                break;
+            default:
                 break;
         }
         return next;
