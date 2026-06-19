@@ -59,12 +59,33 @@ public class Player : MonoBehaviour
         return false;
     }
 
-    /// <summary>레벨업 가능한 전체 스킬 SO 목록 반환 (UI용)</summary>
+    /// <summary>
+    /// 스킬 현재 레벨 반환  (UI용)
+    /// </summary>
+    public int GetSkillLevel(string skillName)
+    {
+        int level = 0;
+
+        // 투사체 매니저에서 먼저 찾아봅니다.
+        if (skillShooter != null)
+            level = skillShooter.GetSkillLevel(skillName);
+
+        // 투사체에 없었다면(0이라면) 장판 매니저를 뒤져봅니다.
+        if (level == 0 && skillAOE != null)
+            level = skillAOE.GetSkillLevel(skillName);
+
+        return level;
+    }
+
+    /// <summary>
+    /// 레벨업 가능한 전체 스킬 SO 목록 반환 (UI용)
+    /// </summary>
     public List<SkillData> GetAllSkillData()
     {
         var list = new List<SkillData>();
 
         if (skillShooter != null) list.AddRange(skillShooter.GetSkillDataList());
+        if (skillAOE != null) list.AddRange(skillAOE.GetSkillDataList());
 
         // null 제거
         list.RemoveAll(item => item == null);

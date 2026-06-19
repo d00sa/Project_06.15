@@ -62,6 +62,19 @@ public abstract class SkillBase : MonoBehaviour
     }
 
     /// <summary>
+    /// 특정 스킬의 현재 레벨을 반환합니다. 안 배운 스킬이면 0을 반환합니다.
+    /// </summary>
+    public int GetSkillLevel(string skillName)
+    {
+        ActiveSkill existingSkill = activeSkills.Find(x => x.data != null && x.data.skillName == skillName);
+
+        if (existingSkill != null)
+            return existingSkill.level; // 배운 스킬이면 현재 레벨 반환
+
+        return 0; // 아직 한 번도 안 배운 스킬
+    }
+
+    /// <summary>
     /// 레벨업 시 추가 효과 구현(아마 사운드나 아마 이펙트나 그런거?)
     /// </summary>
     protected virtual void OnLevelUp(ActiveSkill skill) { }
