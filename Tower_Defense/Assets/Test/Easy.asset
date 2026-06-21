@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 375b6fb27d21c354995f6c93ee0a9120, type: 3}
   m_Name: Easy
   m_EditorClassIdentifier: Assembly-CSharp::DifficultyData
-  Difficulty: 100
+  Difficulty: 0
   UnitCount: 14
   StageDataList:
   - Stage: 1

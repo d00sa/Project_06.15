@@ -11,15 +11,15 @@
     {
         Idle,
         LoadDifficultData,
-        WaitUntilDifficultDataLoaded,
         StartGame,
+        WaitUntilStartGame,
         LoadData,
-        GameSetting,
+        GameJudge,
         WaitStage, //스테이지 대기
         StartStage, //스테이지 진행
         GameClear, //게임 클리어
         GameLose, //게임패배
-        WaitForUser
+        WaitForUser //유저 대기
     }
 
     public enum Commands

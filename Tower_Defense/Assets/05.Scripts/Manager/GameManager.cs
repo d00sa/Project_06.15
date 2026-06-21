@@ -2,6 +2,8 @@ using Space;
 using System;
 using System.Collections;
 using UnityEngine;
+using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -21,14 +23,14 @@ public class GameManager : MonoBehaviour
                 //die
                 if (_enemyCount >= Spawner.Instance.CurDifficulty.UnitCount) {
                     Lose = true;
-                    ChangeState(GameState.GameSetting);
+                    ChangeState(GameState.GameJudge);
                 }
             }
         }
     }
 
     public event Action<int> OnTimeChanged;
-    [Header("시간 설정 (초 단위)")]
+    [Header("[시간 설정 (초 단위)]")]
     [SerializeField] private int _maxReadyTime = 5;
     [SerializeField] private int _maxStageTime = 60;
 
@@ -44,9 +46,12 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    private GameState _current;
+    [Header("[게임 설정]")]
+    [SerializeField] private GameState _current;
+    public DifficultyData Data;
     public bool Win = false;
     public bool Lose = false;
+
 
     void Awake()
     {
@@ -56,11 +61,8 @@ public class GameManager : MonoBehaviour
         }
         else
             Destroy(this.gameObject);
-    }
 
-    private void Start()
-    {
-        ChangeState(GameState.GameSetting);
+        ChangeState(GameState.Idle);
     }
 
     private void Update()
@@ -72,16 +74,36 @@ public class GameManager : MonoBehaviour
     {
         switch (_current) {
             case GameState.Idle:
+                {
+                    if (Keyboard.current.anyKey.wasPressedThisFrame|| Mouse.current.leftButton.wasPressedThisFrame) {
+                        TitleManager.Instance.EnterToGame();
+                        ChangeState(GameState.LoadDifficultData);
+                    }
+                }
                 break;
-            case GameState.LoadDifficultData:
+            case GameState.LoadDifficultData: {
+                    if (Data != null)
+                        ChangeState(GameState.StartGame);
+                }
                 break;
-            case GameState.WaitUntilDifficultDataLoaded:
+            case GameState.StartGame: {
+                    LoadSceneManager.Instance.LoadScene("GameStart");
+                    ChangeState(GameState.WaitUntilStartGame);
+                }
                 break;
-            case GameState.StartGame:
+            case GameState.WaitUntilStartGame: {
+                    if (SceneManager.GetActiveScene().name == "GameStart")
+                        ChangeState(GameState.LoadData);
+                }
                 break;
-            case GameState.LoadData:
+            case GameState.LoadData: {
+                    if (Spawner.Instance != null) {
+                        Spawner.Instance.SetDifficulty(Data);
+                        ChangeState(GameState.GameJudge);
+                    }
+                }
                 break;
-            case GameState.GameSetting: {
+            case GameState.GameJudge: {
                     if (Win)
                         ChangeState(GameState.GameClear);
                     else if (Lose)
@@ -91,34 +113,30 @@ public class GameManager : MonoBehaviour
                 }
                 break;
             case GameState.WaitStage:
-            case GameState.StartStage:
-                RunTimer();
+            case GameState.StartStage: {
+                    _timeTimer += Time.deltaTime;
+
+                    if (_timeTimer >= 1f) {
+                        CurTime--;
+                        _timeTimer -= 1f;
+
+                        if (CurTime <= 0) {
+                            // 시간이 다 되면 다음 상태로 전환
+                            if (_current == GameState.WaitStage)
+                                ChangeState(GameState.StartStage);
+
+                            else if (_current == GameState.StartStage)
+                                ChangeState(GameState.GameJudge);
+                        }
+                    }
+                }
                 break;
             case GameState.GameClear:
                 break;
-            case GameState.GameLose:
+            case GameState.GameLose: 
                 break;
             case GameState.WaitForUser:
                 break;
-        }
-    }
-
-    private void RunTimer()
-    {
-        _timeTimer += Time.deltaTime;
-
-        if (_timeTimer >= 1f) {
-            CurTime--;
-            _timeTimer -= 1f;
-
-            if (CurTime <= 0) {
-                // 시간이 다 되면 다음 상태로 전환
-                if (_current == GameState.WaitStage) 
-                    ChangeState(GameState.StartStage);
-
-                else if (_current == GameState.StartStage) 
-                    ChangeState(GameState.GameSetting);
-            }
         }
     }
 
@@ -128,7 +146,10 @@ public class GameManager : MonoBehaviour
         _timeTimer = 0f; //타이머 초기화
 
         switch (newState) {
-            case GameState.GameSetting:
+            case GameState.GameJudge:
+            {
+                    //여기서 승리인지 아니면 패배인지 확인
+            }
                 break;
             case GameState.WaitStage:
                 CurTime = _maxReadyTime;
@@ -137,8 +158,15 @@ public class GameManager : MonoBehaviour
                 Spawner.Instance.SpawnNext();
                 CurTime = _maxStageTime;
                 break;
-            case GameState.GameLose:
-                StartCoroutine(Spawner.Instance.IsAllMonsterReturn());
+            case GameState.GameClear: {
+                    Time.timeScale = 0f;                    
+                }
+                break;
+            case GameState.GameLose: {
+                    Time.timeScale = 0f;
+                }
+                break;
+            case GameState.WaitForUser:
                 break;
             default:
                 break;

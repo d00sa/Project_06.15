@@ -7,8 +7,7 @@ public class Spawner : MonoBehaviour
 {
     public static Spawner Instance;
     public bool IsSummonOk; //소환해도 되는가?
-    //현재는 그냥 넣어줬지만 나중에는 난이도 선택 시 넣어줄거임
-    public DifficultyData CurDifficulty; //현재 난이도(Easy,Medium,Hard) 데이터
+    public DifficultyData CurDifficulty;
     public int CurrentStage => _currentStage;
 
     [SerializeField] private Transform _spawnPoint;
@@ -31,6 +30,7 @@ public class Spawner : MonoBehaviour
     private void Start()
     {
         RegisterPoolElements();
+        IsSummonOk = false;
     }
 
     private void Update()
@@ -104,6 +104,24 @@ public class Spawner : MonoBehaviour
         StartSpawn(_currentStage);
     }
 
+    /// <summary> 만약 플레이어가 죽었다면 모든 몬스터들은 되돌아가야함 </summary>
+    public IEnumerator IsAllMonsterReturn()
+    {
+        //1초 기다림. ( 몬스터가 소환되기를 기다리는 것)
+        yield return new WaitForSeconds(1.0f);
+
+        //모든 몬스터들이 다 돌아갔는지 확인
+        ObjectPool.Instance.AllObjectReturn();
+
+        IsSummonOk = false;
+    }
+
+    /// <summary> 난이도 설정 </summary>
+    public void SetDifficulty(DifficultyData data)
+    {
+        CurDifficulty = data;
+    }
+
     /// <summary> 스테이지에 있는 몬스터들 풀 등록 </summary>
     private void RegisterPoolElements()
     {
@@ -117,17 +135,5 @@ public class Spawner : MonoBehaviour
                 );
             }
         }
-    }
-
-    /// <summary> 만약 플레이어가 죽었다면 모든 몬스터들은 되돌아가야함 </summary>
-    public IEnumerator IsAllMonsterReturn()
-    {
-        //1초 기다림. ( 몬스터가 소환되기를 기다리는 것)
-        yield return new WaitForSeconds(1.0f);
-
-        //모든 몬스터들이 다 돌아갔는지 확인
-        ObjectPool.Instance.AllObjectReturn();
-
-        IsSummonOk = false;
     }
 }

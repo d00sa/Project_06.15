@@ -26,7 +26,7 @@ public class UIManager : MonoBehaviour
         GameManager.Instance.OnTimeChanged += ChangeStageTime;
     }
     
-    //안해도 되는 데 혹시 모르니
+    //안해도 되는 데 혹시 모르니   
     private void OnDisable()
     {
         GameManager.Instance.OnEnemyCountChanged -= ChangeEnemyCount;
