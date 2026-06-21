@@ -89,6 +89,8 @@ public class Enemy : MonoBehaviour, IPoolable
         _isDead = false;
         IsMovable = true;
         _currentIdx = 0;
+
+        this.gameObject.tag = "Enemy";
     }
 
     public void Setting(int exp)

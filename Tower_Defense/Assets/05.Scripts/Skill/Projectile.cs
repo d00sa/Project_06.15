@@ -9,7 +9,9 @@ public class Projectile : MonoBehaviour, IPoolable
 
     [Header("이미지 회전 보정값")]
     [SerializeField] private float rotationOffset = -45f; // 보통 45나 -45? 이미지 따라 알잘딱
-
+    [Header("타겟 재탐색 설정")]
+    [SerializeField] private float searchRadius = 3f; // 탐색 반경
+    [SerializeField] private LayerMask enemyLayer; // 인스펙터에서 Enemy 레이어 선택
     public void Initialize(Transform targetTransform, SkillLevelStat stat)
     {
         target = targetTransform;
@@ -46,7 +48,7 @@ public class Projectile : MonoBehaviour, IPoolable
         {
             // 타겟 재설정
             target = FindClosestEnemy();
-            if (target == null ) ObjectPool.Instance.ReturnObj(gameObject);
+            if (target == null) ObjectPool.Instance.ReturnObj(gameObject);
         }
 
         transform.Translate(currentDir * myStat.speed * Time.deltaTime, UnityEngine.Space.World);
@@ -68,27 +70,55 @@ public class Projectile : MonoBehaviour, IPoolable
         }
     }
 
-    // 기존 타겟인 적이 사라졌을 때 가장 가까운 적을 찾는 로직, 너무 무거우면 그냥 사라지게 할까 고민 중
+    // 최적화된 근거리 탐색 로직
     private Transform FindClosestEnemy()
     {
-        GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
-        Transform closestEnemy = null;
 
+        Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position, searchRadius, enemyLayer);
+
+        Transform closestEnemy = null;
         float minSqrDist = Mathf.Infinity;
         Vector2 myPos = transform.position;
 
-        foreach (GameObject enemy in enemies)
+        
+        foreach (Collider2D col in colliders)
         {
-            Vector2 dirToEnemy = (Vector2)enemy.transform.position - myPos;
-            float sqrDist = dirToEnemy.sqrMagnitude;
+            if (!col.CompareTag("Enemy")) continue;
+
+            float sqrDist = ((Vector2)col.transform.position - myPos).sqrMagnitude;
 
             if (sqrDist < minSqrDist)
             {
                 minSqrDist = sqrDist;
-                closestEnemy = enemy.transform;
+                closestEnemy = col.transform;
             }
         }
 
         return closestEnemy;
     }
+
+
+    // 이전 태그 전체 탐색 로직
+    //private Transform FindClosestEnemy()
+    //{
+    //    GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
+    //    Transform closestEnemy = null;
+
+    //    float minSqrDist = Mathf.Infinity;
+    //    Vector2 myPos = transform.position;
+
+    //    foreach (GameObject enemy in enemies)
+    //    {
+    //        Vector2 dirToEnemy = (Vector2)enemy.transform.position - myPos;
+    //        float sqrDist = dirToEnemy.sqrMagnitude;
+
+    //        if (sqrDist < minSqrDist)
+    //        {
+    //            minSqrDist = sqrDist;
+    //            closestEnemy = enemy.transform;
+    //        }
+    //    }
+
+    //    return closestEnemy;
+    //}
 }

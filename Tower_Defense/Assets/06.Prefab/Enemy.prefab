@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 5108039116339438770}
   - component: {fileID: 8474745059444408437}
   - component: {fileID: 2532419704631334255}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -112,7 +112,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3493881645141506356}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Fill Area
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -149,7 +149,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5423870038354061946}
   - component: {fileID: 7580869575054913285}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Slider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -242,7 +242,7 @@ GameObject:
   - component: {fileID: 8826004180032480047}
   - component: {fileID: -8222634222657749162}
   - component: {fileID: -5395861223104540064}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Enemy
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -354,7 +354,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::StateMachine
   CurrentType: 0
-  EnemyObj: {fileID: 0}
 --- !u!95 &-8222634222657749162
 Animator:
   serializedVersion: 7
@@ -434,7 +433,7 @@ GameObject:
   - component: {fileID: 679929096097017065}
   - component: {fileID: 7597618472381971828}
   - component: {fileID: 6692621084338368507}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Fill
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -509,7 +508,7 @@ GameObject:
   - component: {fileID: 9071243285225771466}
   - component: {fileID: 8447704139515144030}
   - component: {fileID: 5934152908487002849}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}

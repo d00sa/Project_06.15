@@ -106,6 +106,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b0fac91fb5cad74b8eca0ef5f14b274, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Projectile
+  rotationOffset: -45
+  searchRadius: 7
+  enemyLayer:
+    serializedVersion: 2
+    m_Bits: 64
 --- !u!58 &1848273788116173983
 CircleCollider2D:
   m_ObjectHideFlags: 0
