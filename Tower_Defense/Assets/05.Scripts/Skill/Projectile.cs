@@ -16,7 +16,7 @@ public class Projectile : MonoBehaviour, IPoolable
     {
         target = targetTransform;
         myStat = stat;
-        startPos = transform.position;
+        //startPos = transform.position;
 
         if (target != null)
         {
@@ -27,7 +27,7 @@ public class Projectile : MonoBehaviour, IPoolable
 
     public void OnSpawn()
     {
-        gameObject.transform.position = startPos;
+        //gameObject.transform.position = startPos;
     }
 
     public void OnDespawn()

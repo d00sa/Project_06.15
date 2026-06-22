@@ -22,7 +22,10 @@ public class Enemy : MonoBehaviour, IPoolable
             _hpBar.value = Mathf.Clamp01(_hp / hpMax);
 
             if (_hp <= 0)
+            {
+                Player.Instance.AddExp(_giveExp); // 플레이어에게 경험치 넘겨줌
                 OnDespawn();
+            }
         }
     }
 

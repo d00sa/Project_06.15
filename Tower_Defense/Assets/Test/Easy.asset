@@ -21,7 +21,7 @@ MonoBehaviour:
       Num: 5
       SpawnDelay: 0
       Term: 0.5
-      Exp: 5
+      Exp: 50
   - Stage: 2
     SpawnDataList:
     - Prefab: {fileID: 5722822434754417202, guid: c9dda5e1012cd6549926f2f89d16247e, type: 3}

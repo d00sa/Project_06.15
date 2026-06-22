@@ -3,10 +3,20 @@ using UnityEngine;
 
 public class LevelUpUIManager : MonoBehaviour
 {
+    public static LevelUpUIManager Instance { get; private set; }
+
     [Header("UI 연결")]
     [SerializeField] private GameObject levelUpPanel;
     [SerializeField] private SkillCardUI[] skillCards = new SkillCardUI[3];
 
+    private void Awake()
+    {
+        // 싱글톤 세팅
+        if (Instance == null)
+            Instance = this;
+        else
+            Destroy(gameObject);
+    }
 
     private void Start()
     {

@@ -8,6 +8,7 @@ public class Player : MonoBehaviour
     [Header("스킬 매니저 컴포넌트 연결")] //  매니저 ----------------------------------------------
     [SerializeField] private SkillShooter skillShooter;
     [SerializeField] private SkillAOE skillAOE;
+    [SerializeField] private SkillPet skillPet;
     // 추후 다른 계열 등등의 스킬 매니저 추가 예정 (ノ・∀・)ノ
 
     [Header("시작 스킬 설정")] // 시작 스킬 ----------------------------------------------
@@ -17,6 +18,11 @@ public class Player : MonoBehaviour
     [Header("에디터 테스트 ")]
     [Tooltip("테스트하고 싶은 스킬 이름을 적고 ⋮ 아이콘 클릭 -> 테스트: 이 스킬 레벨업 시키기")]
     [SerializeField] private string debugSkillName = "Fireball";
+
+    [Header("경험치 및 레벨")]
+    [SerializeField] private int currentExp = 0;
+    [SerializeField] private int maxExp = 100; // 레벨업에 필요한 경험치 (임시값) 1.25 배씩 증가 예정
+    [SerializeField] private int playerLevel = 1;
 
     public event System.Action<string, int> OnSkillLevelChanged;
 
@@ -38,16 +44,31 @@ public class Player : MonoBehaviour
     }
 
     /// <summary>
+    /// 적이 죽을 때 호출하여 경험치를 획득
+    /// </summary>
+    public void AddExp(int amount)
+    {
+        currentExp += amount;
+
+        if (currentExp >= maxExp)
+        {
+            currentExp -= maxExp;
+            playerLevel++;
+
+            LevelUpUIManager.Instance.ShowLevelUpUI();
+        }
+    }
+
+    /// <summary>
     /// 스킬 이름으로 레벨업
     /// </summary>
     public bool LevelUpSkill(string skillName)
     {
         int newLevel = -1;
 
-        if (skillShooter != null)
-            newLevel = skillShooter.LevelUp(skillName);
-        if (newLevel == -1 && skillAOE != null)
-            newLevel = skillAOE.LevelUp(skillName);
+        if (skillShooter != null) newLevel = skillShooter.LevelUp(skillName);
+        if (newLevel == -1 && skillAOE != null) newLevel = skillAOE.LevelUp(skillName);
+        if (newLevel == -1 && skillPet != null) newLevel = skillPet.LevelUp(skillName);
 
         // 레벨업 성공 처리
         if (newLevel != -1)
@@ -66,14 +87,9 @@ public class Player : MonoBehaviour
     {
         int level = 0;
 
-        // 투사체 매니저에서 먼저 찾아봅니다.
-        if (skillShooter != null)
-            level = skillShooter.GetSkillLevel(skillName);
-
-        // 투사체에 없었다면(0이라면) 장판 매니저를 뒤져봅니다.
-        if (level == 0 && skillAOE != null)
-            level = skillAOE.GetSkillLevel(skillName);
-
+        if (skillShooter != null) level = skillShooter.GetSkillLevel(skillName);
+        if (level == 0 && skillAOE != null) level = skillAOE.GetSkillLevel(skillName);
+        if (level == 0 && skillPet != null) level = skillPet.GetSkillLevel(skillName);
         return level;
     }
 
@@ -83,9 +99,9 @@ public class Player : MonoBehaviour
     public List<SkillData> GetAllSkillData()
     {
         var list = new List<SkillData>();
-
         if (skillShooter != null) list.AddRange(skillShooter.GetSkillDataList());
         if (skillAOE != null) list.AddRange(skillAOE.GetSkillDataList());
+        if (skillPet != null) list.AddRange(skillPet.GetSkillDataList());
 
         // null 제거
         list.RemoveAll(item => item == null);
