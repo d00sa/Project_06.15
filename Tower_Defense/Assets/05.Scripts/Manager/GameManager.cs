@@ -1,3 +1,4 @@
+using NaughtyAttributes;
 using Space;
 using System;
 using System.Collections;
@@ -47,7 +48,7 @@ public class GameManager : MonoBehaviour
     }
 
     [Header("[게임 설정]")]
-    [SerializeField] private GameState _current;
+    public GameState Current;
     public DifficultyData Data;
     public bool Win = false;
     public bool Lose = false;
@@ -72,10 +73,16 @@ public class GameManager : MonoBehaviour
 
     private void WorkFlow()
     {
-        switch (_current) {
+        if (Keyboard.current.escapeKey.wasPressedThisFrame) {
+            Time.timeScale = 0f;
+            SetupManager.Instance.gameObject.SetActive(!SetupManager.Instance.gameObject.activeSelf);
+        }
+
+        switch (Current) {
             case GameState.Idle:
                 {
-                    if (Keyboard.current.anyKey.wasPressedThisFrame|| Mouse.current.leftButton.wasPressedThisFrame) {
+                    //게임시작 창
+                    if ((Keyboard.current.anyKey.wasPressedThisFrame && !Keyboard.current.escapeKey.wasPressedThisFrame) || Mouse.current.leftButton.wasPressedThisFrame) {
                         TitleManager.Instance.EnterToGame();
                         ChangeState(GameState.LoadDifficultData);
                     }
@@ -122,10 +129,10 @@ public class GameManager : MonoBehaviour
 
                         if (CurTime <= 0) {
                             // 시간이 다 되면 다음 상태로 전환
-                            if (_current == GameState.WaitStage)
+                            if (Current == GameState.WaitStage)
                                 ChangeState(GameState.StartStage);
 
-                            else if (_current == GameState.StartStage)
+                            else if (Current == GameState.StartStage)
                                 ChangeState(GameState.GameJudge);
                         }
                     }
@@ -142,10 +149,13 @@ public class GameManager : MonoBehaviour
 
     public void ChangeState(GameState newState)
     {
-        _current = newState; // 상태 변경
+        Current = newState; // 상태 변경
         _timeTimer = 0f; //타이머 초기화
 
         switch (newState) {
+            case GameState.LoadDifficultData:
+                    Data = null;
+                break;
             case GameState.GameJudge:
             {
                     //여기서 승리인지 아니면 패배인지 확인
@@ -171,5 +181,30 @@ public class GameManager : MonoBehaviour
             default:
                 break;
         }
+    }
+
+    public void GameQuit()
+    {
+        PlayerPrefs.Save();
+
+        #if UNITY_EDITOR
+            UnityEditor.EditorApplication.isPlaying = false;
+        #else
+            Application.Quit();
+        #endif
+    }
+
+    public void GoToDifficultySelect()
+    {
+        ChangeState(GameState.LoadDifficultData);
+
+        if (SceneManager.GetActiveScene().name == "GameStart")
+            LoadSceneManager.Instance.LoadScene("Enter");
+    }
+
+    [Button("Sample Scene Game Start")]
+    private void Testing()
+    {
+        ChangeState(GameState.GameJudge);
     }
 }

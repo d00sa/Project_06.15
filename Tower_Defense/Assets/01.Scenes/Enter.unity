@@ -694,7 +694,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::GameManager
   _maxReadyTime: 5
   _maxStageTime: 20
-  _current: 0
+  Current: 0
   Data: {fileID: 0}
   Win: 0
   Lose: 0

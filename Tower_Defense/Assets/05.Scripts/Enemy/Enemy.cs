@@ -1,4 +1,5 @@
 using Mono.Cecil.Cil;
+using NaughtyAttributes;
 using Space;
 using System.Collections.Generic;
 using UnityEngine;
@@ -31,6 +32,7 @@ public class Enemy : MonoBehaviour, IPoolable
 
     [SerializeField] private List<Transform> _wayPoints;
     [SerializeField] private Slider _hpBar;
+    private SpriteRenderer _sprite;
     private StateMachine _machine;
     private int _currentIdx = 0;
     private int _giveExp;
@@ -47,6 +49,7 @@ public class Enemy : MonoBehaviour, IPoolable
     {
         _wayPoints = WayPointManager.Instance.wayPoints;
         _machine = GetComponent<StateMachine>();
+        _sprite = GetComponent<SpriteRenderer>();
     }
 
     private void FixedUpdate()
@@ -65,6 +68,11 @@ public class Enemy : MonoBehaviour, IPoolable
     private void Move()
     {
         Transform target = _wayPoints[_currentIdx];
+
+        if (_currentIdx == 0 && !_sprite.flipX)
+            _sprite.flipX = true;
+        else if (_currentIdx == 4 && _sprite.flipX)
+            _sprite.flipX = false;
 
         transform.position = Vector3.MoveTowards(
             transform.position,

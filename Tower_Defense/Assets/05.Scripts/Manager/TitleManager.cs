@@ -1,3 +1,4 @@
+using Space;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -16,7 +17,10 @@ public class TitleManager : MonoBehaviour
 
     private void Start()
     {
-        FirstEnterToGame();
+        if (GameManager.Instance != null && GameManager.Instance.Current != GameState.Idle)
+            EnterToGame();
+        else
+            FirstEnterToGame();
     }
 
     public void FirstEnterToGame()
@@ -36,6 +40,13 @@ public class TitleManager : MonoBehaviour
     {
         _title.SetActive(false);
         _difficulty.SetActive(true);
+
+        for (int i = 0; i < _buttonList.Count; i++) {
+            int idx = i;
+
+            _buttonList[i].onClick.RemoveAllListeners();
+            _buttonList[i].onClick.AddListener(() => SelectDifficulty(idx));
+        }
     }
 
     private void SelectDifficulty(int idx)
