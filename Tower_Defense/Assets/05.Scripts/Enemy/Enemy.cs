@@ -118,9 +118,10 @@ public class Enemy : MonoBehaviour, IPoolable
     public void TakeDamage(float damage, Vector3 attackPos, float knockbackPower)
     {
         HP -= damage;
+        // 데미지 텍스트 플로팅
+        DamageTextManager.Instance.ShowDamage(damage, transform.position);
 
         Transform targetWaypoint = _wayPoints[_currentIdx];
-
         Vector3 pushDir = (transform.position - targetWaypoint.position).normalized;
 
         //밀기

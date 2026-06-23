@@ -113,6 +113,9 @@ MonoBehaviour:
   startingSkills:
   - {fileID: 11400000, guid: c77baab45161b5a4b8982ae884497394, type: 2}
   debugSkillName: tmpPet
+  currentExp: 0
+  maxExp: 100
+  playerLevel: 1
 --- !u!114 &4603162418315302646
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -127,6 +130,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SkillShooter
   shooterSkills:
   - {fileID: 11400000, guid: c77baab45161b5a4b8982ae884497394, type: 2}
+  - {fileID: 11400000, guid: 1cf00e682b420ee45b364ffcfbceab1a, type: 2}
+  - {fileID: 11400000, guid: bf2f713ff809d4e4582283c6c424289e, type: 2}
 --- !u!114 &5738497994093055526
 MonoBehaviour:
   m_ObjectHideFlags: 0

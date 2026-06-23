@@ -508,7 +508,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::GameManager
   _maxReadyTime: 3
   _maxStageTime: 13
-  _current: 4
+  Current: 0
   Data: {fileID: 11400000, guid: 0f89bafcd33a2bd4dbaf209e87c0bbd0, type: 2}
   Win: 0
   Lose: 0
@@ -7180,17 +7180,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 752096951}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1058763236 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7259789966402149794, guid: 24ddef4e6ae733648be7a3e464718ccc, type: 3}
-  m_PrefabInstance: {fileID: 6224667976590113139}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 638e3ddcf2fc510428c4ea9cb7ecb61b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::SkillPet
 --- !u!1 &1062115824
 GameObject:
   m_ObjectHideFlags: 0
@@ -9991,21 +9980,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4603162418315302646, guid: 24ddef4e6ae733648be7a3e464718ccc, type: 3}
+      propertyPath: shooterSkills.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4603162418315302646, guid: 24ddef4e6ae733648be7a3e464718ccc, type: 3}
+      propertyPath: 'shooterSkills.Array.data[2]'
+      value: 
+      objectReference: {fileID: 11400000, guid: bf2f713ff809d4e4582283c6c424289e, type: 2}
     - target: {fileID: 4714271137520415422, guid: 24ddef4e6ae733648be7a3e464718ccc, type: 3}
       propertyPath: m_Name
       value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 5723180952184992513, guid: 24ddef4e6ae733648be7a3e464718ccc, type: 3}
-      propertyPath: skillPet
-      value: 
-      objectReference: {fileID: 1058763236}
-    - target: {fileID: 5723180952184992513, guid: 24ddef4e6ae733648be7a3e464718ccc, type: 3}
-      propertyPath: debugSkillName
-      value: tmpPet
-      objectReference: {fileID: 0}
-    - target: {fileID: 5723180952184992513, guid: 24ddef4e6ae733648be7a3e464718ccc, type: 3}
-      propertyPath: startingSkills.Array.size
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

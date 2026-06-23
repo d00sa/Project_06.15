@@ -1,0 +1,46 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b086d55aac52e7240be871bc15296cf3, type: 3}
+  m_Name: Minigun
+  m_EditorClassIdentifier: Assembly-CSharp::SkillData
+  skillName: Mini Gun
+  description: "\uBBF8\uB2C8\uAC74 \uCEE8\uC149\uC758 \uACF5\uACA9 shooter\uC5D0
+    \uC5F0\uACB0"
+  icon: {fileID: 3313287463617687195, guid: 5130b87561ca0034abd52b4a8abadd29, type: 3}
+  skillPrefab: {fileID: 7894290291646296383, guid: 4f853902d297cfe49acec1b882a75e51, type: 3}
+  maxLevel: 5
+  levelStats:
+  - damage: 3
+    fireRate: 10
+    speed: 30
+    coolTime: 0
+    range: 0
+  - damage: 3
+    fireRate: 20
+    speed: 30
+    coolTime: 0
+    range: 0
+  - damage: 3
+    fireRate: 30
+    speed: 30
+    coolTime: 0
+    range: 0
+  - damage: 3
+    fireRate: 40
+    speed: 30
+    coolTime: 0
+    range: 0
+  - damage: 3
+    fireRate: 50
+    speed: 30
+    coolTime: 0
+    range: 0

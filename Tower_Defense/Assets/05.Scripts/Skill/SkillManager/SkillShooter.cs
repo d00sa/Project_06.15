@@ -24,7 +24,7 @@ public class SkillShooter : SkillBase
         foreach (var data in skillDataList)
         {
             if (data != null && data.skillPrefab != null)
-                ObjectPool.Instance.RegisterPoolElement(data.skillPrefab, 30);
+                ObjectPool.Instance.RegisterPoolElement(data.skillPrefab, 50);
         }
     }
 
@@ -38,9 +38,14 @@ public class SkillShooter : SkillBase
         if (target == null) return;
 
         GameObject pjt = ObjectPool.Instance.GetObj(skill.data.skillPrefab.name, transform.position, null, true);
+        
         if (pjt.TryGetComponent<Projectile>(out var projectile))
         {
             projectile.Initialize(target, skill.CurrentStat);
+        }
+        else if (pjt.TryGetComponent<BoomerangProjectile>(out var boomerang))
+        {
+            boomerang.Initialize(target, skill.CurrentStat, this.transform);
         }
     }
 
