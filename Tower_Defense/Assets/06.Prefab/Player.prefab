@@ -112,10 +112,43 @@ MonoBehaviour:
   skillPet: {fileID: 7259789966402149794}
   startingSkills:
   - {fileID: 11400000, guid: c77baab45161b5a4b8982ae884497394, type: 2}
-  debugSkillName: tmpPet
+  debugSkillName: SpikeTrap
   currentExp: 0
   maxExp: 100
   playerLevel: 1
+  expCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 100
+      inSlope: 15
+      outSlope: Infinity
+      tangentMode: 97
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 20
+      value: 400
+      inSlope: 22.5
+      outSlope: Infinity
+      tangentMode: 97
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 40
+      value: 1000
+      inSlope: 30
+      outSlope: Infinity
+      tangentMode: 97
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!114 &4603162418315302646
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -146,6 +179,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SkillAOE
   aoeSkills:
   - {fileID: 11400000, guid: 3a9e292ec83326d459a7cd89d1b1ae95, type: 2}
+  - {fileID: 11400000, guid: b90d896d1628fe044b9140de0c472b29, type: 2}
 --- !u!114 &7259789966402149794
 MonoBehaviour:
   m_ObjectHideFlags: 0

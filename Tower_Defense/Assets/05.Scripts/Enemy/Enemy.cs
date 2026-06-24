@@ -16,6 +16,8 @@ public class Enemy : MonoBehaviour, IPoolable
         get => _hp;
         set
         {
+            if (_isDead) return;
+
             if (value < 0)
                 value = 0;
 
@@ -39,6 +41,8 @@ public class Enemy : MonoBehaviour, IPoolable
 
     public float speed = 3f;
     public bool IsMovable { get; set; } = true;
+
+    private Coroutine dotCoroutine;
 
     private void OnEnable()
     {
@@ -90,6 +94,14 @@ public class Enemy : MonoBehaviour, IPoolable
         this.gameObject.tag = "Untagged";
         _isDead = true;
         IsMovable = false;
+
+        // 죽으면 지속 데미지 끄기
+        if (dotCoroutine != null)
+        {
+            StopCoroutine(dotCoroutine);
+            dotCoroutine = null;
+        }
+
         GameManager.Instance.EnemyCount--;
         ObjectPool.Instance.ReturnObj(this.gameObject, 2f);
     }
@@ -117,6 +129,8 @@ public class Enemy : MonoBehaviour, IPoolable
     /// <param name="knockbackPower">밀려날 거리</param>
     public void TakeDamage(float damage, Vector3 attackPos, float knockbackPower)
     {
+        if (_isDead) return;
+
         HP -= damage;
         // 데미지 텍스트 플로팅
         DamageTextManager.Instance.ShowDamage(damage, transform.position);
@@ -126,5 +140,37 @@ public class Enemy : MonoBehaviour, IPoolable
 
         //밀기
         transform.position += pushDir * knockbackPower;
+    }
+
+    /// <summary>
+    /// 지속 데미지(화상, 독)를 부여
+    /// </summary>
+    public void ApplyDotDamage(float damage, float duration, float tickRate, float knockbackPower)
+    {
+        if (_isDead) return;
+
+        // 이미 지속데미지에 걸려있다면 기존 데미지를 멈추고 시간을 초기화
+        if (dotCoroutine != null)
+        {
+            StopCoroutine(dotCoroutine);
+        }
+        
+        // 새로운 데미지 코루틴 시작
+        dotCoroutine = StartCoroutine(DotRoutine(damage, duration, tickRate, knockbackPower));
+    }
+
+    private System.Collections.IEnumerator DotRoutine(float damage, float duration, float tickRate, float knockbackPower)
+    {
+
+        float elapsed = 0f;
+
+        while (elapsed < duration)
+        {
+            yield return new WaitForSeconds(tickRate);
+            
+            TakeDamage(damage, transform.position, knockbackPower);
+            
+            elapsed += tickRate;
+        }
     }
 }

@@ -5,13 +5,12 @@ public class Player : MonoBehaviour
 {
     public static Player Instance { get; private set; }
 
-    [Header("스킬 매니저 컴포넌트 연결")] //  매니저 ----------------------------------------------
+    [Header("스킬 매니저 컴포넌트 연결")]
     [SerializeField] private SkillShooter skillShooter;
     [SerializeField] private SkillAOE skillAOE;
     [SerializeField] private SkillPet skillPet;
-    // 추후 다른 계열 등등의 스킬 매니저 추가 예정 (ノ・∀・)ノ
 
-    [Header("시작 스킬 설정")] // 시작 스킬 ----------------------------------------------
+    [Header("시작 스킬 설정")]
     [Tooltip("기본 시작 스킬 넣어주세요 （〜^∇^)〜 ")]
     [SerializeField] private List<SkillData> startingSkills = new List<SkillData>();
 
@@ -21,8 +20,12 @@ public class Player : MonoBehaviour
 
     [Header("경험치 및 레벨")]
     [SerializeField] private int currentExp = 0;
-    [SerializeField] private int maxExp = 100; // 레벨업에 필요한 경험치 (임시값) 1.25 배씩 증가 예정
+    [SerializeField] private int maxExp = 100;
     [SerializeField] private int playerLevel = 1;
+
+    [Header("경험치 요구량 커브 (계단식)")]
+    [Tooltip("X축: 플레이어 레벨, Y축: 해당 레벨업에 필요한 경험치 총량")]
+    [SerializeField] private AnimationCurve expCurve;
 
     public event System.Action<string, int> OnSkillLevelChanged;
 
@@ -34,6 +37,8 @@ public class Player : MonoBehaviour
 
     private void Start()
     {
+        UpdateMaxExp();
+
         foreach (var skill in startingSkills)
         {
             if (skill != null)
@@ -50,12 +55,27 @@ public class Player : MonoBehaviour
     {
         currentExp += amount;
 
-        if (currentExp >= maxExp)
+        while (currentExp >= maxExp)
         {
-            currentExp -= maxExp;
+            currentExp -= maxExp; // 남은 경험치 이월
             playerLevel++;
 
+            // 렙업 후 다음 레벨의 경험치 최대치 갱신
+            UpdateMaxExp();
+
+            // 레벨업 창 띄우기
             LevelUpUIManager.Instance.ShowLevelUpUI();
+        }
+    }
+
+    /// <summary>
+    /// AnimationCurve를 바탕으로 현재 레벨에 맞는 최대 경험치를 계산
+    /// </summary>
+    private void UpdateMaxExp()
+    {
+        if (expCurve != null && expCurve.keys.Length > 0)
+        {
+            maxExp = Mathf.Max(1, Mathf.RoundToInt(expCurve.Evaluate(playerLevel)));
         }
     }
 
