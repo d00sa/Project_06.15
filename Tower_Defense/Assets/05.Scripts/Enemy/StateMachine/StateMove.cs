@@ -32,7 +32,6 @@ public class StateMove : StateBase
     }
     public override StateType Update()
     {
-        Debug.Log(Current);
         StateType next = _machineType;
         switch (Current) {
             case Commands.Idle:

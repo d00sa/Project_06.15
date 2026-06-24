@@ -33,6 +33,11 @@
         Idle, Move, Dead, EOF
     }
 
+    public enum Sounds
+    {
+        Master, BGM, SFX
+    }
+
     public class Constant
     {
         public const int REMAIN_SKIP_TIME = 5;

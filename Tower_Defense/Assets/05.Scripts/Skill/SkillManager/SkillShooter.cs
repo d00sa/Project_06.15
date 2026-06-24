@@ -42,10 +42,13 @@ public class SkillShooter : SkillBase
         if (pjt.TryGetComponent<Projectile>(out var projectile))
         {
             projectile.Initialize(target, skill.CurrentStat);
+            SoundManager.Instance.PlaySFX("Arrow");
         }
         else if (pjt.TryGetComponent<BoomerangProjectile>(out var boomerang))
         {
             boomerang.Initialize(target, skill.CurrentStat, this.transform);
+            //SoundManager.Instance.PlaySFX("Boomerang");
+            SoundManager.Instance.PlaySFX("Gun");
         }
     }
 

@@ -52,6 +52,7 @@ public class SkillAOE : SkillBase
         if (aoe.TryGetComponent<AoeEffect>(out var effect))
         {
             effect.Initialize(skill.CurrentStat);
+            SoundManager.Instance.PlaySFX("Trap");
         }
 
     }

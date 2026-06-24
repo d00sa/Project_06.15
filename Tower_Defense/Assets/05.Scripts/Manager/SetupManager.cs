@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.Audio;
 using UnityEngine.UI;
 using static UnityEngine.InputSystem.Controls.AxisControl;
@@ -45,13 +42,13 @@ public class SetupManager : MonoBehaviour
 
         //나중에는 싹 다 PlayerPref으로 바꿀거임
         if (_mixer.GetFloat("Master", out float masterValue)) 
-            _masterVolumeSetup.value = Mathf.Pow(10, masterValue / 20f);
+            _masterVolumeSetup.value = Mathf.Pow(10, masterValue / 40f);
 
         if (_mixer.GetFloat("BGM", out float bgmValue)) 
-            _bgmVolumeSetup.value = Mathf.Pow(10, bgmValue / 20f);
+            _bgmVolumeSetup.value = Mathf.Pow(10, bgmValue / 40f);
 
-        if (_mixer.GetFloat("SFX", out float sfxValue)) 
-            _sfxVolumeSetup.value = Mathf.Pow(10, sfxValue / 20f);
+        if (_mixer.GetFloat("SFX", out float sfxValue))
+            _sfxVolumeSetup.value = Mathf.Pow(10, sfxValue / 40f);
 
         _masterVolumeSetup.onValueChanged.AddListener(SetMasterVolume);
         _bgmVolumeSetup.onValueChanged.AddListener(SetBGMVolume);
@@ -59,24 +56,39 @@ public class SetupManager : MonoBehaviour
     }
 
     public void SetMasterVolume(float value)
-    {           
-        float clampedValue = Mathf.Clamp(value, 0.0001f, 1f);
-        float decibel = Mathf.Log10(clampedValue) * 20f;
-        _mixer.SetFloat("Master", decibel);
+    {
+        if (value <= 0f) {
+            _mixer.SetFloat("Master", -80f);
+        }
+        else {
+            float decibel = Mathf.Log10(value) * 40f;
+            decibel = Mathf.Clamp(decibel, -80f, 0f);
+            _mixer.SetFloat("Master", decibel);
+        }
     }
 
     public void SetBGMVolume(float value)
     {
-        float clampedValue = Mathf.Clamp(value, 0.0001f, 1f);
-        float decibel = Mathf.Log10(clampedValue) * 20f;
-        _mixer.SetFloat("BGM", decibel);
+        if (value <= 0f) {
+            _mixer.SetFloat("BGM", -80f);
+        }
+        else {
+            float decibel = Mathf.Log10(value) * 40f;
+            decibel = Mathf.Clamp(decibel, -80f, 0f);
+            _mixer.SetFloat("BGM", decibel);
+        }
     }
 
     public void SetSFXVolume(float value)
     {
-        float clampedValue = Mathf.Clamp(value, 0.0001f, 1f);
-        float decibel = Mathf.Log10(clampedValue) * 20f;
-        _mixer.SetFloat("SFX", decibel);
+        if (value <= 0f) {
+            _mixer.SetFloat("SFX", -80f);
+        }
+        else {
+            float decibel = Mathf.Log10(value) * 40f;
+            decibel = Mathf.Clamp(decibel, -80f, 0f);
+            _mixer.SetFloat("SFX", decibel);
+        }
     }
 
     public void GameQuit()
@@ -89,6 +101,12 @@ public class SetupManager : MonoBehaviour
         if (GameManager.Instance != null)
             GameManager.Instance.GoToDifficultySelect();
 
+        gameObject.SetActive(false);
+    }
+
+    public void Closed()
+    {
+        Time.timeScale = 1f;
         gameObject.SetActive(false);
     }
 }

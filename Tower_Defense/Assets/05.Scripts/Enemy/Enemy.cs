@@ -1,5 +1,4 @@
-using Mono.Cecil.Cil;
-using NaughtyAttributes;
+using System.Collections;
 using Space;
 using System.Collections.Generic;
 using UnityEngine;
@@ -25,10 +24,7 @@ public class Enemy : MonoBehaviour, IPoolable
             _hpBar.value = Mathf.Clamp01(_hp / hpMax);
 
             if (_hp <= 0)
-            {
-                Player.Instance.AddExp(_giveExp); // 플레이어에게 경험치 넘겨줌
                 OnDespawn();
-            }
         }
     }
 
@@ -94,6 +90,8 @@ public class Enemy : MonoBehaviour, IPoolable
         this.gameObject.tag = "Untagged";
         _isDead = true;
         IsMovable = false;
+        Player.Instance.AddExp(_giveExp); // 플레이어에게 경험치 넘겨줌
+        SoundManager.Instance.PlaySFX("Death_Zombie");
 
         // 죽으면 지속 데미지 끄기
         if (dotCoroutine != null)
@@ -159,7 +157,7 @@ public class Enemy : MonoBehaviour, IPoolable
         dotCoroutine = StartCoroutine(DotRoutine(damage, duration, tickRate, knockbackPower));
     }
 
-    private System.Collections.IEnumerator DotRoutine(float damage, float duration, float tickRate, float knockbackPower)
+    private IEnumerator DotRoutine(float damage, float duration, float tickRate, float knockbackPower)
     {
 
         float elapsed = 0f;

@@ -63,6 +63,10 @@ public class GameManager : MonoBehaviour
         else
             Destroy(this.gameObject);
 
+    }
+
+    private void Start()
+    {
         ChangeState(GameState.Idle);
     }
 
@@ -74,7 +78,7 @@ public class GameManager : MonoBehaviour
     private void WorkFlow()
     {
         if (Keyboard.current.escapeKey.wasPressedThisFrame) {
-            Time.timeScale = 0f;
+            Time.timeScale = Time.timeScale < 0.1f ? 1f : 0f;
             SetupManager.Instance.gameObject.SetActive(!SetupManager.Instance.gameObject.activeSelf);
         }
 
@@ -153,6 +157,9 @@ public class GameManager : MonoBehaviour
         _timeTimer = 0f; //타이머 초기화
 
         switch (newState) {
+            case GameState.Idle:
+                SoundManager.Instance.PlayBGM("BGM");
+                break;
             case GameState.LoadDifficultData:
                     Data = null;
                 break;
