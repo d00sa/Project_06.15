@@ -39,6 +39,7 @@ public class Enemy : MonoBehaviour, IPoolable
     public bool IsMovable { get; set; } = true;
 
     private Coroutine dotCoroutine;
+    private Coroutine stunCoroutine;
 
     private void OnEnable()
     {
@@ -98,6 +99,12 @@ public class Enemy : MonoBehaviour, IPoolable
         {
             StopCoroutine(dotCoroutine);
             dotCoroutine = null;
+        }
+        // 죽으면 스턴 끄기
+        if (stunCoroutine != null)
+        {
+            StopCoroutine(stunCoroutine);
+            stunCoroutine = null;
         }
 
         GameManager.Instance.EnemyCount--;
@@ -169,6 +176,33 @@ public class Enemy : MonoBehaviour, IPoolable
             TakeDamage(damage, transform.position, knockbackPower);
             
             elapsed += tickRate;
+        }
+    }
+
+    /// <summary>
+    /// 적의 이동 일정시간 정지
+    /// </summary>
+    public void ApplyStun(float duration)
+    {
+        if (_isDead) return;
+
+        if (stunCoroutine != null)
+        {
+            StopCoroutine(stunCoroutine);
+        }
+
+        stunCoroutine = StartCoroutine(StunRoutine(duration));
+    }
+
+    private IEnumerator StunRoutine(float duration)
+    {
+        IsMovable = false; 
+
+        yield return new WaitForSeconds(duration);
+
+        if (!_isDead)
+        {
+            IsMovable = true;
         }
     }
 }

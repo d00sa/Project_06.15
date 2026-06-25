@@ -23,7 +23,7 @@ public class AoeEffect : MonoBehaviour, IPoolable
     {
         myStat = stat;
         // 스탯의 range 값을 이용해 장판의 실제 크기 바꾸는 로직 아직은 미사용
-        // transform.localScale = new Vector3(myStat.range, myStat.range, 1f);
+        //transform.localScale = new Vector3(myStat.range, myStat.range, 1f);
     }
 
     public void OnSpawn()

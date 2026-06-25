@@ -111,7 +111,7 @@ MonoBehaviour:
   skillAOE: {fileID: 5738497994093055526}
   skillPet: {fileID: 7259789966402149794}
   startingSkills:
-  - {fileID: 11400000, guid: c77baab45161b5a4b8982ae884497394, type: 2}
+  - {fileID: 11400000, guid: 52c1ba9dd5861bf48a3ef6b386bcca9e, type: 2}
   debugSkillName: SpikeTrap
   currentExp: 0
   maxExp: 100
@@ -180,6 +180,7 @@ MonoBehaviour:
   aoeSkills:
   - {fileID: 11400000, guid: 3a9e292ec83326d459a7cd89d1b1ae95, type: 2}
   - {fileID: 11400000, guid: b90d896d1628fe044b9140de0c472b29, type: 2}
+  - {fileID: 11400000, guid: 52c1ba9dd5861bf48a3ef6b386bcca9e, type: 2}
 --- !u!114 &7259789966402149794
 MonoBehaviour:
   m_ObjectHideFlags: 0

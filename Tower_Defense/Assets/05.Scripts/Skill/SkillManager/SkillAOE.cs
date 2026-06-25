@@ -20,23 +20,6 @@ public class SkillAOE : SkillBase
         }
     }
 
-    protected override void Update()
-    {
-        foreach (var skill in activeSkills)
-        {
-            skill.fireTimer += Time.deltaTime;
-
-            // 장판의 다음 소환 타이밍 = "장판 유지 시간(speed)" + "끝난 후 대기 시간(coolTime)"
-            float interval = skill.CurrentStat.speed + skill.CurrentStat.coolTime;
-
-            if (skill.fireTimer >= interval)
-            {
-                skill.fireTimer -= interval;
-                Execute(skill);
-            }
-        }
-    }
-
     protected override void Execute(ActiveSkill skill)
     {
         Debug.Log($"<color=yellow>[AOE 테스트]</color> {skill.data.skillName} 스킬 발동 시도1!");
@@ -53,6 +36,10 @@ public class SkillAOE : SkillBase
         {
             effect.Initialize(skill.CurrentStat);
             SoundManager.Instance.PlaySFX("Trap");
+        }
+        else if (aoe.TryGetComponent<InstantAoeEffect>(out var trap))
+        {
+            trap.Initialize(skill.CurrentStat);
         }
 
     }

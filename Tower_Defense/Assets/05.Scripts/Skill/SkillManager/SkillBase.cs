@@ -25,9 +25,8 @@ public abstract class SkillBase : MonoBehaviour
         {
             skill.fireTimer += Time.deltaTime;
 
-            // ▼ 핵심 변경 포인트: 삼항 연산자를 이용한 스마트 타이머!
             // coolTime이 0보다 크면 쿨타임을 간격으로 쓰고,
-            // 0이라면 기존처럼 (1f / fireRate)를 계산해서 초당 발사 속도로 씁니다.
+            // 0이라면 기존처럼 (1f / fireRate)를 계산해서 초당 발사 속도 씀
             float interval = skill.CurrentStat.coolTime > 0f
                 ? skill.CurrentStat.coolTime
                 : (1f / skill.CurrentStat.fireRate);
