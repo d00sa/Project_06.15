@@ -15,6 +15,7 @@ public class DifficultyData : ScriptableObject
 public class StageData
 {
     public int Stage;   //스테이지 숫자
+    public bool bossStage; //보스 스테이지 유무
     public List<SpawnData> SpawnDataList;   //스테이지마다 소환할 몬스터들 저장소
 }
 

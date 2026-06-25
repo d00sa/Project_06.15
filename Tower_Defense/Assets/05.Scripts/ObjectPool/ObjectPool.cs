@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 [System.Serializable]
@@ -115,10 +116,7 @@ public class ObjectPool : MonoBehaviour
     {
         //이전에 생성한 적이 있다면
         if (poolParentDic.ContainsKey(prefab.name)) {
-            int childCount = poolParentDic[prefab.name].childCount;
-
-            if (childCount - count < 0)
-                InstantiatePool(prefab, poolParentDic[prefab.name], count - childCount);
+            InstantiatePool(prefab, poolParentDic[prefab.name], count);
         }
         else {
             MakeDir(prefab.name);

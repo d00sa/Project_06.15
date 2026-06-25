@@ -34,6 +34,7 @@ public class GameManager : MonoBehaviour
     [Header("[시간 설정 (초 단위)]")]
     [SerializeField] private int _maxReadyTime = 5;
     [SerializeField] private int _maxStageTime = 60;
+    [SerializeField] private int _maxBossTime = 30;
 
     private int _curTime;
     private float _timeTimer;
@@ -165,22 +166,34 @@ public class GameManager : MonoBehaviour
                 break;
             case GameState.GameJudge:
             {
-                    //여기서 승리인지 아니면 패배인지 확인
-            }
+                    //마지막 스테이지까지 소환이 다 되었고 적 유닛이 더 이상 존재하지 않는다면
+                    if (Spawner.Instance.IsFinished && EnemyCount <= 0)
+                        Win = true;
+                    //스테이지가 끝났는데 보스가 살아있다. -> 사망
+                    else if (Spawner.Instance.IsBoss)
+                        Lose = true;
+            }   
                 break;
             case GameState.WaitStage:
                 CurTime = _maxReadyTime;
                 break;
-            case GameState.StartStage:
-                Spawner.Instance.SpawnNext();
-                CurTime = _maxStageTime;
+            case GameState.StartStage: {
+                    Spawner.Instance.SpawnNext();
+
+                    if (Spawner.Instance.IsBoss)
+                        CurTime = _maxBossTime;
+                    else
+                        CurTime = _maxStageTime;
+                }
                 break;
             case GameState.GameClear: {
-                    Time.timeScale = 0f;                    
+                    Time.timeScale = 0f;
+                    Instantiate(Resources.Load<GameClearUI>("Canvas - Victory"));
                 }
                 break;
             case GameState.GameLose: {
                     Time.timeScale = 0f;
+                    Instantiate(Resources.Load<GameLoseUI>("Canvas - Lose"));
                 }
                 break;
             case GameState.WaitForUser:

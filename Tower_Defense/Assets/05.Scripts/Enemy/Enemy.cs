@@ -9,6 +9,7 @@ public class Enemy : MonoBehaviour, IPoolable
 {
     [SerializeField] private float hpMax;
     [SerializeField] private float _hp;
+    [SerializeField] private bool boss;
     private bool _isDead;
     public float HP
     {
@@ -94,6 +95,9 @@ public class Enemy : MonoBehaviour, IPoolable
         Player.Instance.AddExp(_giveExp); // 플레이어에게 경험치 넘겨줌
         SoundManager.Instance.PlaySFX("Death_Zombie");
 
+        if (boss)
+            Spawner.Instance.IsBoss = false;
+
         // 죽으면 지속 데미지 끄기
         if (dotCoroutine != null)
         {
@@ -117,7 +121,6 @@ public class Enemy : MonoBehaviour, IPoolable
         _isDead = false;
         IsMovable = true;
         _currentIdx = 0;
-
         this.gameObject.tag = "Enemy";
     }
 

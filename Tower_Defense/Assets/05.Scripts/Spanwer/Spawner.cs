@@ -8,6 +8,7 @@ public class Spawner : MonoBehaviour
     public static Spawner Instance;
     public bool IsSummonOk; //소환해도 되는가?
     public DifficultyData CurDifficulty;
+    public bool IsBoss; //보스 스테이지인가? -> 보스가 죽으면 끄도록 할거임
     public int CurrentStage => _currentStage;
 
     [SerializeField] private Transform _spawnPoint;
@@ -17,7 +18,7 @@ public class Spawner : MonoBehaviour
     private List<int> _counterList = new List<int>();      //각 스테이지마다 소환해야할 몬스터의 수 저장소
     private List<float> _delayTimersList = new List<float>();  //몬스터 소환 타이머 리스트
     private List<float> _termTimersList = new List<float>();    //몬스터 소환 주기 타이머 리스트   
-    public bool IsFinished => (CurrentStage >= CurDifficulty.StageDataList.Count);
+    public bool IsFinished => (CurrentStage >= CurDifficulty.StageDataList.Count && !IsSummonOk); //모든 스테이지 소환 완료
 
     private void Awake()
     {
@@ -31,6 +32,7 @@ public class Spawner : MonoBehaviour
     {
         RegisterPoolElements();
         IsSummonOk = false;
+        IsBoss = false;
     }
 
     private void Update()
@@ -86,6 +88,9 @@ public class Spawner : MonoBehaviour
 
         _stageSpawnList.Add(stage);
         curStageData = CurDifficulty.StageDataList[stage - 1];
+
+        if (curStageData.bossStage)
+            IsBoss = true;
 
         int length = curStageData.SpawnDataList.Count;
 
