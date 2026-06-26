@@ -9,7 +9,7 @@ public static class TargetingHelper
     /// </summary>
     public static List<Enemy> GetHighestPriorityEnemies()
     {
-        List<Enemy> allEnemies = Enemy.ActiveEnemies;
+        List<Enemy> allEnemies = ObjectPool.Instance.GetEnemy();
 
         if (allEnemies.Count == 0) return null;
 

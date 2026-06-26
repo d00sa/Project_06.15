@@ -833,6 +833,8 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: 5efa317e84c6b9846906f72c974a1477, type: 3}
   - type: 2
     clip: {fileID: 8300000, guid: 0afad52a2ccaa34499f8a8402cbf63d7, type: 3}
+  - type: 2
+    clip: {fileID: 8300000, guid: fce3609dd9cd978498fdff0a096ff118, type: 3}
   _mixer: {fileID: 24100000, guid: bd8420716a4b80549ab8db6877b0e34d, type: 2}
 --- !u!4 &1114869042
 Transform:

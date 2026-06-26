@@ -1,5 +1,6 @@
-using System.Collections;
 using Space;
+using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -17,13 +18,14 @@ public class Enemy : MonoBehaviour, IPoolable
     [SerializeField] private float hpMax;
     [SerializeField] private float _hp;
     [SerializeField] private bool boss;
-    private bool _isDead;
+    public bool IsDead;
+    public event Action<Enemy> OnDead;
     public float HP
     {
         get => _hp;
         set
         {
-            if (_isDead) return;
+            if (IsDead) return;
 
             if (value < 0)
                 value = 0;
@@ -53,13 +55,9 @@ public class Enemy : MonoBehaviour, IPoolable
     [Tooltip("우선순위")]
     public EnemyPriority priority = EnemyPriority.Normal;
 
-    // 씬에 활성화된 모든 적 보관용
-    public static List<Enemy> ActiveEnemies = new List<Enemy>();
-
     private void OnEnable()
     {
         OnSpawn();
-        if (!ActiveEnemies.Contains(this)) ActiveEnemies.Add(this);
     }
 
     private void Start()
@@ -71,7 +69,7 @@ public class Enemy : MonoBehaviour, IPoolable
 
     private void FixedUpdate()
     {
-        if (_isDead) 
+        if (IsDead) 
             return;
 
         if (IsMovable) {
@@ -105,8 +103,9 @@ public class Enemy : MonoBehaviour, IPoolable
     {
         _machine.ChangeState(StateType.Dead);
         this.gameObject.tag = "Untagged";
-        _isDead = true;
+        IsDead = true;
         IsMovable = false;
+        OnDead?.Invoke(this);
         Player.Instance.AddExp(_giveExp); // 플레이어에게 경험치 넘겨줌
         SoundManager.Instance.PlaySFX("Death_Zombie");
 
@@ -126,24 +125,18 @@ public class Enemy : MonoBehaviour, IPoolable
             stunCoroutine = null;
         }
 
+        OnDead = null;
         GameManager.Instance.EnemyCount--;
-        if (ActiveEnemies.Contains(this)) ActiveEnemies.Remove(this);
         ObjectPool.Instance.ReturnObj(this.gameObject, 2f);
-
     }
 
     public void OnSpawn()
     {
         HP = hpMax;
-        _isDead = false;
+        IsDead = false;
         IsMovable = true;
         _currentIdx = 0;
         this.gameObject.tag = "Enemy";
-    }
-    private void OnDisable()
-    {
-        // 몹이 죽거나 풀(Pool)로 돌아가서 꺼질 때, 명부에서 자기 이름을 확실히 지웁니다.
-        if (ActiveEnemies.Contains(this)) ActiveEnemies.Remove(this);
     }
 
     public void Setting(int exp)
@@ -151,15 +144,13 @@ public class Enemy : MonoBehaviour, IPoolable
         _giveExp = exp;
     }
 
-    /// <summary>
-    /// 데미지 주고 피격 방향 반대로 살짝 밈
-    /// </summary>
+    /// <summary> 데미지 주고 피격 방향 반대로 살짝 밈 </summary>
     /// <param name="damage">받을 데미지량</param>
     /// <param name="attackPos">공격의 중심점 (투사체 위치 or area 중심 위치)</param>
     /// <param name="knockbackPower">밀려날 거리</param>
     public void TakeDamage(float damage, Vector3 attackPos, float knockbackPower)
     {
-        if (_isDead) return;
+        if (IsDead) return;
 
         HP -= damage;
         // 데미지 텍스트 플로팅
@@ -172,12 +163,10 @@ public class Enemy : MonoBehaviour, IPoolable
         transform.position += pushDir * knockbackPower;
     }
 
-    /// <summary>
-    /// 지속 데미지(화상, 독)를 부여
-    /// </summary>
+    /// <summary> 지속 데미지(화상, 독)를 부여 </summary>
     public void ApplyDotDamage(float damage, float duration, float tickRate, float knockbackPower)
     {
-        if (_isDead) return;
+        if (IsDead) return;
 
         // 이미 지속데미지에 걸려있다면 기존 데미지를 멈추고 시간을 초기화
         if (dotCoroutine != null)
@@ -204,12 +193,10 @@ public class Enemy : MonoBehaviour, IPoolable
         }
     }
 
-    /// <summary>
-    /// 적의 이동 일정시간 정지
-    /// </summary>
+    /// <summary> 적의 이동 일정시간 정지</summary>
     public void ApplyStun(float duration)
     {
-        if (_isDead) return;
+        if (IsDead) return;
 
         if (stunCoroutine != null)
         {
@@ -225,7 +212,7 @@ public class Enemy : MonoBehaviour, IPoolable
 
         yield return new WaitForSeconds(duration);
 
-        if (!_isDead)
+        if (!IsDead)
         {
             IsMovable = true;
         }

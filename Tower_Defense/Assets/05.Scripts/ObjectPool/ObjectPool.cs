@@ -33,8 +33,10 @@ public class ObjectPool : MonoBehaviour
     private Dictionary<string, Transform> poolParentDic = new Dictionary<string, Transform>();
     //풀링 생성 오브젝트
     private Dictionary<string, PoolObjectData> instantiateObject = new Dictionary<string, PoolObjectData>();
-    //소환된 몬스터들을 관리하는 딕셔너리
+    //소환된 오브젝트들을 관리하는 딕셔너리
     private Dictionary<string, Queue<IPoolable>> _spawnQueueDictionary = new Dictionary<string, Queue<IPoolable>>();
+    //소환된 적들을 관리하는 List
+    private List<Enemy> _activeEnemies = new List<Enemy>();
 
     private void Awake()
     {
@@ -147,6 +149,11 @@ public class ObjectPool : MonoBehaviour
 
             pool.gameObject.SetActive(enable);
 
+            if (pool.gameObject.TryGetComponent<Enemy>(out Enemy enemy)) {
+                _activeEnemies.Add(enemy);
+                enemy.OnDead += (e => _activeEnemies.Remove(e));
+            }
+
             if (pool.gameObject.TryGetComponent<IPoolable>(out IPoolable component)) {
                 component.OnSpawn();
 
@@ -184,6 +191,11 @@ public class ObjectPool : MonoBehaviour
             pool.gameObject.SetActive(enable);
             pool.transform.localPosition = spawn;
 
+            if (pool.gameObject.TryGetComponent<Enemy>(out Enemy enemy)){ 
+                _activeEnemies.Add(enemy);
+                enemy.OnDead += (e => _activeEnemies.Remove(e));
+            }
+
             if (pool.gameObject.TryGetComponent<IPoolable>(out IPoolable component)) {
                 component.OnSpawn();
 
@@ -198,6 +210,8 @@ public class ObjectPool : MonoBehaviour
         // 부족한 경우 추가 생성 후 하나를 반환해 줍니다.
         return InstantiatePool(instantiateObject[id].prefab, poolParentDic[id], instantiateObject[id].poolCount);
     }
+
+    public List<Enemy> GetEnemy() => _activeEnemies.Where(x => !x.IsDead).ToList();
     #endregion
 
     #region Return

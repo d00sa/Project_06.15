@@ -45,12 +45,11 @@ public class SkillAOE : SkillBase
         {
             trap.Initialize(skill.CurrentStat);
         }
-
     }
 
     private Transform FindMostCrowdedEnemy(float skillRange)
     {
-        List<Enemy> allEnemies = Enemy.ActiveEnemies;
+        List<Enemy> allEnemies = ObjectPool.Instance.GetEnemy();
 
         if (allEnemies == null || allEnemies.Count == 0) return null;
 
