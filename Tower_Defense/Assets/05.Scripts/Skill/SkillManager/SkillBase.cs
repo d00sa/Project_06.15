@@ -18,6 +18,14 @@ public abstract class SkillBase : MonoBehaviour
     // 현재 플레이어가 습득한 스킬 상태 리스트
     protected List<ActiveSkill> activeSkills = new List<ActiveSkill>();
 
+    protected virtual float GetInterval(ActiveSkill skill)
+    {
+        // coolTime이 있으면 그걸 쓰고, 없으면 연사속도(1/fireRate)를 사용
+        return skill.CurrentStat.coolTime > 0f
+            ? skill.CurrentStat.coolTime
+            : (1f / skill.CurrentStat.fireRate);
+    }
+
     protected virtual void Update()
     {
         // 각 활성 스킬의 발사 타이머 업데이트 및 발사 실행
@@ -25,11 +33,7 @@ public abstract class SkillBase : MonoBehaviour
         {
             skill.fireTimer += Time.deltaTime;
 
-            // coolTime이 0보다 크면 쿨타임을 간격으로 쓰고,
-            // 0이라면 기존처럼 (1f / fireRate)를 계산해서 초당 발사 속도 씀
-            float interval = skill.CurrentStat.coolTime > 0f
-                ? skill.CurrentStat.coolTime
-                : (1f / skill.CurrentStat.fireRate);
+            float interval = GetInterval(skill);
 
             if (skill.fireTimer >= interval)
             {
@@ -88,4 +92,25 @@ public abstract class SkillBase : MonoBehaviour
 
     // ui 용
     public List<SkillData> GetSkillDataList() => skillDataList;
+
+    /// <summary>
+    /// 현재 배우고 있는 스킬들의 이름 목록만 반환
+    /// </summary>
+    public List<string> GetActiveSkillNames()
+    {
+        List<string> names = new List<string>();
+        foreach (var skill in activeSkills)
+        {
+            names.Add(skill.data.skillName);
+        }
+        return names;
+    }
+
+    /// <summary>
+    /// 습득한 스킬을 전부 초기화
+    /// </summary>
+    public void ClearAllSkills()
+    {
+        activeSkills.Clear();
+    }
 }

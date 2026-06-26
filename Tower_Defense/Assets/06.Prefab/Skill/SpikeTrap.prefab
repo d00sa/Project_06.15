@@ -171,6 +171,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AoeEffect
   animator: {fileID: -7376337966572722049}
+  knockbackPower: 0.2
+  lingerDuration: 0
 --- !u!95 &-7376337966572722049
 Animator:
   serializedVersion: 7

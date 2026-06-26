@@ -54,13 +54,15 @@ public class SkillShooter : SkillBase
 
     private Transform FindClosestEnemy()
     {
-        GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
-        Transform closestEnemy = null;
+        List<Enemy> topPriorityEnemies = TargetingHelper.GetHighestPriorityEnemies();
+        if (topPriorityEnemies == null || topPriorityEnemies.Count == 0)
+            return null;
 
+        Transform closestEnemy = null;
         float minSqrDist = Mathf.Infinity;
         Vector2 myPos = transform.position;
 
-        foreach (GameObject enemy in enemies)
+        foreach (Enemy enemy in topPriorityEnemies)
         {
             Vector2 dirToEnemy = (Vector2)enemy.transform.position - myPos;
             float sqrDist = dirToEnemy.sqrMagnitude;

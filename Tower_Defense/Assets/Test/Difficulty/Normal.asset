@@ -16,14 +16,15 @@ MonoBehaviour:
   UnitCount: 40
   StageDataList:
   - Stage: 1
+    bossStage: 0
     SpawnDataList:
     - Prefab: {fileID: 5722822434754417202, guid: c9dda5e1012cd6549926f2f89d16247e, type: 3}
       Num: 10
       SpawnDelay: 0
       Term: 1
-      Exp: 0
+      Exp: 50
     - Prefab: {fileID: 5722822434754417202, guid: 1c7840dc01f8ba64181f974b9969c519, type: 3}
       Num: 10
       SpawnDelay: 5
       Term: 1
-      Exp: 0
+      Exp: 100

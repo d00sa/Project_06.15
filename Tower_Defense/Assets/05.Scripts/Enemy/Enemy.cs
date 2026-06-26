@@ -4,6 +4,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+public enum EnemyPriority
+{
+    Normal = 0, // 일반 몹
+    Elite = 1,  // 엘리트 몹
+    Boss = 2    // 보스
+}
+
 [RequireComponent(typeof(StateMachine))]
 public class Enemy : MonoBehaviour, IPoolable
 {
@@ -42,9 +49,17 @@ public class Enemy : MonoBehaviour, IPoolable
     private Coroutine dotCoroutine;
     private Coroutine stunCoroutine;
 
+    [Header("타겟팅 설정")]
+    [Tooltip("우선순위")]
+    public EnemyPriority priority = EnemyPriority.Normal;
+
+    // 씬에 활성화된 모든 적 보관용
+    public static List<Enemy> ActiveEnemies = new List<Enemy>();
+
     private void OnEnable()
     {
         OnSpawn();
+        if (!ActiveEnemies.Contains(this)) ActiveEnemies.Add(this);
     }
 
     private void Start()
@@ -112,7 +127,9 @@ public class Enemy : MonoBehaviour, IPoolable
         }
 
         GameManager.Instance.EnemyCount--;
+        if (ActiveEnemies.Contains(this)) ActiveEnemies.Remove(this);
         ObjectPool.Instance.ReturnObj(this.gameObject, 2f);
+
     }
 
     public void OnSpawn()
@@ -122,6 +139,11 @@ public class Enemy : MonoBehaviour, IPoolable
         IsMovable = true;
         _currentIdx = 0;
         this.gameObject.tag = "Enemy";
+    }
+    private void OnDisable()
+    {
+        // 몹이 죽거나 풀(Pool)로 돌아가서 꺼질 때, 명부에서 자기 이름을 확실히 지웁니다.
+        if (ActiveEnemies.Contains(this)) ActiveEnemies.Remove(this);
     }
 
     public void Setting(int exp)

@@ -343,6 +343,7 @@ MonoBehaviour:
   _wayPoints: []
   _hpBar: {fileID: 7580869575054913285}
   speed: 5
+  priority: 2
 --- !u!114 &883812566128600741
 MonoBehaviour:
   m_ObjectHideFlags: 0

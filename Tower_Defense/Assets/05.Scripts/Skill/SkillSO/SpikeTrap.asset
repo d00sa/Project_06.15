@@ -22,24 +22,24 @@ MonoBehaviour:
     fireRate: 5
     speed: 7
     coolTime: 3
-    range: 0
+    range: 1
   - damage: 1
     fireRate: 10
     speed: 7
     coolTime: 3
-    range: 0
+    range: 1
   - damage: 5
     fireRate: 10
     speed: 7
     coolTime: 3
-    range: 0
+    range: 1
   - damage: 5
     fireRate: 10
     speed: 7
     coolTime: 3
-    range: 0
+    range: 1
   - damage: 5
     fireRate: 10
     speed: 7
     coolTime: 3
-    range: 0
+    range: 1

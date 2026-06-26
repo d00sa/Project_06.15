@@ -181,6 +181,10 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 3a9e292ec83326d459a7cd89d1b1ae95, type: 2}
   - {fileID: 11400000, guid: b90d896d1628fe044b9140de0c472b29, type: 2}
   - {fileID: 11400000, guid: 52c1ba9dd5861bf48a3ef6b386bcca9e, type: 2}
+  defaultSearchRadius: 3
+  enemyLayer:
+    serializedVersion: 2
+    m_Bits: 64
 --- !u!114 &7259789966402149794
 MonoBehaviour:
   m_ObjectHideFlags: 0
