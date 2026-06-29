@@ -13,17 +13,20 @@ public abstract class SkillBase : MonoBehaviour
     }
 
     // 스킬 데이터 원본 리스트
-    protected List<SkillData> skillDataList = new List<SkillData>();
+    [SerializeField] protected List<SkillData> skillDataList = new List<SkillData>();
 
     // 현재 플레이어가 습득한 스킬 상태 리스트
     protected List<ActiveSkill> activeSkills = new List<ActiveSkill>();
 
     protected virtual float GetInterval(ActiveSkill skill)
     {
-        // coolTime이 있으면 그걸 쓰고, 없으면 연사속도(1/fireRate)를 사용
-        return skill.CurrentStat.coolTime > 0f
-            ? skill.CurrentStat.coolTime
-            : (1f / skill.CurrentStat.fireRate);
+        float baseInterval = skill.CurrentStat.coolTime > 0f
+                    ? skill.CurrentStat.coolTime
+                    : (1f / skill.CurrentStat.fireRate);
+
+        // 공격 속도 보너스가 클수록 간격(쿨타임)이 짧아짐
+        float speedMultiplier = 1f + StatManager.Instance.attackSpeedBonus;
+        return baseInterval / speedMultiplier;
     }
 
     protected virtual void Update()

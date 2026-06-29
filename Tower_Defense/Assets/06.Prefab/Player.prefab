@@ -111,10 +111,8 @@ MonoBehaviour:
   skillShooter: {fileID: 4603162418315302646}
   skillAOE: {fileID: 5738497994093055526}
   skillPet: {fileID: 7259789966402149794}
-  skillPassive: {fileID: 334546321393106679}
   startingSkills:
   - {fileID: 11400000, guid: 52c1ba9dd5861bf48a3ef6b386bcca9e, type: 2}
-  - {fileID: 11400000, guid: 34bf00e2ed407144cba054fec895cc1f, type: 2}
   debugSkillName: SpikeTrap
   currentExp: 0
   maxExp: 100
@@ -164,10 +162,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4d817b85cda2f946a49ff8e147626f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SkillShooter
-  shooterSkills:
+  skillDataList:
   - {fileID: 11400000, guid: c77baab45161b5a4b8982ae884497394, type: 2}
-  - {fileID: 11400000, guid: 1cf00e682b420ee45b364ffcfbceab1a, type: 2}
   - {fileID: 11400000, guid: bf2f713ff809d4e4582283c6c424289e, type: 2}
+  - {fileID: 11400000, guid: 1cf00e682b420ee45b364ffcfbceab1a, type: 2}
 --- !u!114 &5738497994093055526
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -180,10 +178,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49fdf9bcaea1259468fce273939ea31b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SkillAOE
-  aoeSkills:
+  skillDataList:
+  - {fileID: 11400000, guid: 52c1ba9dd5861bf48a3ef6b386bcca9e, type: 2}
   - {fileID: 11400000, guid: 3a9e292ec83326d459a7cd89d1b1ae95, type: 2}
   - {fileID: 11400000, guid: b90d896d1628fe044b9140de0c472b29, type: 2}
-  - {fileID: 11400000, guid: 52c1ba9dd5861bf48a3ef6b386bcca9e, type: 2}
   defaultSearchRadius: 3
   enemyLayer:
     serializedVersion: 2
@@ -200,8 +198,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 638e3ddcf2fc510428c4ea9cb7ecb61b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SkillPet
-  petSkills:
+  skillDataList:
   - {fileID: 11400000, guid: 4827ca61c43fcf047b0125444d617c85, type: 2}
+  - {fileID: 11400000, guid: 34bf00e2ed407144cba054fec895cc1f, type: 2}
 --- !u!114 &334546321393106679
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -214,5 +213,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2960845b3e28e1245890a076d28b4dcb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SkillPassive
-  passiveSkills:
-  - {fileID: 11400000, guid: 34bf00e2ed407144cba054fec895cc1f, type: 2}
+  skillDataList: []

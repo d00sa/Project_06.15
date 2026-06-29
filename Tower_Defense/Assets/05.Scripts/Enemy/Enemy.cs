@@ -156,6 +156,8 @@ public class Enemy : MonoBehaviour, IPoolable
         // 데미지 텍스트 플로팅
         DamageTextManager.Instance.ShowDamage(damage, transform.position);
 
+        if (!IsMovable) return;
+
         Transform targetWaypoint = _wayPoints[_currentIdx];
         Vector3 pushDir = (transform.position - targetWaypoint.position).normalized;
 

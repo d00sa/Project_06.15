@@ -44,7 +44,7 @@ public class InstantAoeEffect : MonoBehaviour
         {
             if (col.CompareTag("Enemy") && col.TryGetComponent<Enemy>(out var enemy))
             {
-                enemy.TakeDamage(myStat.damage, transform.position, 0f);
+                enemy.TakeDamage(myStat.damage + StatManager.Instance.aoeDamageBonus, transform.position, 0f);
                 enemy.ApplyStun(stunDuration);
             }
         }

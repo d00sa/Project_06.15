@@ -6,13 +6,6 @@ using UnityEngine;
 
 public class SkillPassive : SkillBase
 {
-    [Header("[패시브] 스킬 목록")]
-    [SerializeField] private List<SkillData> passiveSkills = new List<SkillData>();
-    private void Awake()
-    {
-        base.skillDataList = passiveSkills;
-    }
-
     protected override void Update()
     {        
         //아직 쓸 일 없음.

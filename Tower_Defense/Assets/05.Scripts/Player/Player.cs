@@ -9,7 +9,7 @@ public class Player : MonoBehaviour
     [SerializeField] private SkillShooter skillShooter;
     [SerializeField] private SkillAOE skillAOE;
     [SerializeField] private SkillPet skillPet;
-    [SerializeField] private SkillPassive skillPassive;
+    // [SerializeField] private SkillPassive skillPassive;
 
     [Header("시작 스킬 설정")]
     [Tooltip("기본 시작 스킬 넣어주세요 （〜^∇^)〜 ")]
@@ -54,7 +54,12 @@ public class Player : MonoBehaviour
     /// </summary>
     public void AddExp(int amount)
     {
-        currentExp += amount;
+
+        // 기본 경험치 + 보너스 경험치 (ex: expGainedBonus가 0.1이면 10% 추가)
+        float bonusMultiplier = 1f + StatManager.Instance.expGainedBonus;
+        int finalAmount = Mathf.RoundToInt(amount * bonusMultiplier);
+
+        currentExp += finalAmount;
 
         while (currentExp >= maxExp)
         {
@@ -90,7 +95,7 @@ public class Player : MonoBehaviour
         if (skillShooter != null) newLevel = skillShooter.LevelUp(skillName);
         if (newLevel == -1 && skillAOE != null) newLevel = skillAOE.LevelUp(skillName);
         if (newLevel == -1 && skillPet != null) newLevel = skillPet.LevelUp(skillName);
-        if (newLevel == -1 && skillPassive != null) newLevel = skillPassive.LevelUp(skillName);
+        // if (newLevel == -1 && skillPassive != null) newLevel = skillPassive.LevelUp(skillName);
 
         // 레벨업 성공 처리
         if (newLevel != -1)
@@ -112,7 +117,7 @@ public class Player : MonoBehaviour
         if (skillShooter != null) level = skillShooter.GetSkillLevel(skillName);
         if (level == 0 && skillAOE != null) level = skillAOE.GetSkillLevel(skillName);
         if (level == 0 && skillPet != null) level = skillPet.GetSkillLevel(skillName);
-        if (level == 0 && skillPet != null) level = skillPassive.GetSkillLevel(skillName);
+        // if (level == 0 && skillPassive != null) level = skillPassive.GetSkillLevel(skillName);
         return level;
     }
 
@@ -125,7 +130,7 @@ public class Player : MonoBehaviour
         if (skillShooter != null) list.AddRange(skillShooter.GetSkillDataList());
         if (skillAOE != null) list.AddRange(skillAOE.GetSkillDataList());
         if (skillPet != null) list.AddRange(skillPet.GetSkillDataList());
-        if (skillPassive != null) list.AddRange(skillPassive.GetSkillDataList());
+        // if (skillPassive != null) list.AddRange(skillPassive.GetSkillDataList());
 
         // null 제거
         list.RemoveAll(item => item == null);

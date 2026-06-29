@@ -78,7 +78,7 @@ public class BoomerangProjectile : MonoBehaviour, IPoolable
             if (hitEnemies.Contains(collision)) return;
 
             // 데미지 주기
-            collision.GetComponent<Enemy>().TakeDamage(myStat.damage, transform.position, 0.2f);
+            collision.GetComponent<Enemy>().TakeDamage(myStat.damage + StatManager.Instance.projectileDamageBonus, transform.position, 0.2f);
 
             // 적 등록
             hitEnemies.Add(collision);

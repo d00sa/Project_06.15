@@ -86,7 +86,7 @@ public class AoeEffect : MonoBehaviour, IPoolable
 
             if (isTickTime)
             {
-                enemy.TakeDamage(myStat.damage, transform.position, knockbackPower);
+                enemy.TakeDamage(myStat.damage + StatManager.Instance.aoeDamageBonus, transform.position, knockbackPower);
             }
         }
     }

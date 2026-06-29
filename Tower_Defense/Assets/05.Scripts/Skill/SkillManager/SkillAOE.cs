@@ -3,18 +3,11 @@ using UnityEngine;
 
 public class SkillAOE : SkillBase
 {
-    [Header("장판 계열 스킬 SO 목록")]
-    [SerializeField] private List<SkillData> aoeSkills = new List<SkillData>();
 
     [Header("타겟팅 설정")]
     [Tooltip("스킬 Range가 0 이하일 때 사용할 기본 탐색 반경")]
     [SerializeField] private float defaultSearchRadius = 3f;
     [SerializeField] private LayerMask enemyLayer;
-
-    private void Awake()
-    {
-        base.skillDataList = aoeSkills;
-    }
 
     private void Start()
     {

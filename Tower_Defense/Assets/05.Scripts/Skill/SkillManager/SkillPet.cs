@@ -4,13 +4,6 @@ using UnityEngine.InputSystem;
 
 public class SkillPet : SkillBase
 {
-    [Header("팻 스킬 SO 목록")]
-    [SerializeField] private List<SkillData> petSkills = new List<SkillData>();
-
-    private void Awake()
-    {
-        base.skillDataList = petSkills;
-    }
 
     // 일단 위치는 고정
     [Header("펫 소환 위치 오프셋 (좌, 우, 상, 하)")]

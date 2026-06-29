@@ -8,16 +8,6 @@ public class SkillShooter : SkillBase
 {
     private Transform target = null;
 
-    [Header("발사체 계열 스킬 SO 목록")]
-    [SerializeField] private List<SkillData> shooterSkills = new List<SkillData>();
-
-    private void Awake()
-    {
-        // 인스펙터에서 넣은 리스트를 부모(SkillBase)시스템에 전달
-        base.skillDataList = shooterSkills;
-
-    }
-
     private void Start()
     {
         // 옵젝풀 등록
