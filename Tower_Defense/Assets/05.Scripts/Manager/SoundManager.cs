@@ -1,8 +1,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Audio;
-using Space;
 using System;
+
+public enum Sounds
+{
+    Master, BGM, SFX
+}
 
 [Serializable]
 public class SoundInfo

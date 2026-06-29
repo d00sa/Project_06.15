@@ -1,5 +1,4 @@
-﻿using Space;
-public interface IState
+﻿public interface IState
 {
     bool IsExecuteOK { get; }
     Commands Current { get; }

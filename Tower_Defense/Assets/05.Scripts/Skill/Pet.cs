@@ -12,6 +12,7 @@ public class Pet : MonoBehaviour
 
     protected SkillLevelStat currentPetStat;
 
+
     /// <summary>
     /// SkillPet.cs에서 펫을 최초 소환할 때 호출하는 초기화 함수
     /// </summary>

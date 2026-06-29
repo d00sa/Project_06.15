@@ -1,9 +1,17 @@
-﻿using Space;
+﻿
 using System;
 using System.Collections.Generic;
 using System.Text;
 using UnityEngine;
+public enum Commands
+{
+    Idle, Prepare, Casting, OnAction, Finish
+}
 
+public enum StateType
+{
+    Idle, Move, Dead, EOF
+}
 public abstract class StateBase : IState
 {
     protected StateMachine _machine;

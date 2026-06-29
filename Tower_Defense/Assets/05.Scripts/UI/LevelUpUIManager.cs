@@ -6,7 +6,7 @@ public class LevelUpUIManager : MonoBehaviour
     public static LevelUpUIManager Instance { get; private set; }
 
     [Header("UI 연결")]
-    [SerializeField] private GameObject levelUpPanel;
+    [SerializeField] private RectTransform levelUpPanel;
     [SerializeField] private SkillCardUI[] skillCards = new SkillCardUI[3];
 
     private void Awake()
@@ -20,7 +20,7 @@ public class LevelUpUIManager : MonoBehaviour
 
     private void Start()
     {
-        levelUpPanel.SetActive(false);
+        levelUpPanel = GetComponent<RectTransform>();
     }
 
 
@@ -28,7 +28,7 @@ public class LevelUpUIManager : MonoBehaviour
     public void ShowLevelUpUI()
     {
         Time.timeScale = 0f; // 게임 일시 정지
-        levelUpPanel.SetActive(true);
+        levelUpPanel.localScale = Vector3.one;
 
         List<SkillData> allSkills = Player.Instance.GetAllSkillData();
 
@@ -64,7 +64,7 @@ public class LevelUpUIManager : MonoBehaviour
 
         Player.Instance.LevelUpSkill(selectedData.skillName);
 
-        levelUpPanel.SetActive(false);
+        levelUpPanel.localScale = Vector3.zero;
         Time.timeScale = 1f;
     }
 }

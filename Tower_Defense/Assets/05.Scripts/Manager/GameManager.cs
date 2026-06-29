@@ -1,10 +1,23 @@
 using NaughtyAttributes;
-using Space;
 using System;
-using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
+
+public enum GameState
+{
+    Idle,
+    LoadDifficultData,
+    StartGame,
+    WaitUntilStartGame,
+    LoadData,
+    GameJudge,
+    WaitStage, //스테이지 대기
+    StartStage, //스테이지 진행
+    GameClear, //게임 클리어
+    GameLose, //게임패배
+    WaitForUser //유저 대기
+}
 
 public class GameManager : MonoBehaviour
 {
@@ -226,5 +239,11 @@ public class GameManager : MonoBehaviour
     private void Testing()
     {
         ChangeState(GameState.GameJudge);
+    }
+
+    [Button("Sample Scene Test")]
+    private void Testing2()
+    {
+        Current = GameState.GameClear;
     }
 }

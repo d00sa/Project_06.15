@@ -1,7 +1,13 @@
 using System;
-using Space;
 using System.Collections.Generic;
 using UnityEngine;
+
+public enum Degree
+{
+    Easy,
+    Normal,
+    Hard
+}
 
 [CreateAssetMenu(fileName = "Difficulty", menuName = "Scriptable Objects/Difficulty")]
 public class DifficultyData : ScriptableObject

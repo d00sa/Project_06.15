@@ -1,5 +1,4 @@
 ﻿using UnityEngine;
-using Space;
 using System.Diagnostics;
 
 public class StateIdle : StateBase

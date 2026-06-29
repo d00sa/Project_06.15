@@ -1,5 +1,4 @@
-﻿using Space;
-using System;
+﻿using System;
 using Unity;
 public class StateDead : StateBase
 {
