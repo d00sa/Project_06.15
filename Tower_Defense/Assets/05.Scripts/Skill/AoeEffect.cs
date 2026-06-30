@@ -12,18 +12,34 @@ public class AoeEffect : MonoBehaviour, IPoolable
 
     [Header("장판 설정")]
     [SerializeField] private Animator animator;
-    [Tooltip("이 장판이 적을 밀쳐내는 힘 (독 늪은 0, 폭발은 높게 설정)")]
+    [Tooltip("이 장판이 적을 밀쳐내는 힘")]
     [SerializeField] private float knockbackPower = 0.2f;
 
     [Header("상태 이상 (독/화상)")]
     [Tooltip("장판을 벗어난 후에도 데미지가 지속되는 시간 (0이면 없음)")]
     [SerializeField] private float lingerDuration = 3f;
 
+    [Header("특수 옵션")]
+    [Tooltip("체크 시 데미지 스탯을 무시하고, 맵 전체의 '일반(Normal)' 몹만 999999 데미지로 즉사시킵니다.")]
+    [SerializeField] private bool instaKillNormalOnly = false;
+
     public void Initialize(SkillLevelStat stat)
     {
         myStat = stat;
-        // 스탯의 range 값을 이용해 장판의 실제 크기 바꾸는 로직 아직은 미사용
-        //transform.localScale = new Vector3(myStat.range, myStat.range, 1f);
+
+        if (instaKillNormalOnly)
+        {
+            List<Enemy> allEnemies = ObjectPool.Instance.GetEnemy();
+
+            for (int i = allEnemies.Count - 1; i >= 0; i--)
+            {
+                Enemy enemy = allEnemies[i];
+                if (enemy.gameObject.activeInHierarchy && enemy.priority == EnemyPriority.Normal)
+                {
+                    enemy.TakeDamage(999999f, transform.position, 0f);
+                }
+            }
+        }
     }
 
     public void OnSpawn()
@@ -34,9 +50,8 @@ public class AoeEffect : MonoBehaviour, IPoolable
 
         if (animator != null) animator.SetBool("isDead", false);
     }
-    public void OnDespawn()
-    {
-    }
+
+    public void OnDespawn() { }
 
     private void Update()
     {
@@ -45,15 +60,16 @@ public class AoeEffect : MonoBehaviour, IPoolable
         currentDuration += Time.deltaTime;
         tickTimer += Time.deltaTime;
 
-        if (currentDuration >= myStat.speed) 
+        if (currentDuration >= myStat.speed)
         {
-            if (lingerDuration > 0f)
+            if (lingerDuration > 0f && !instaKillNormalOnly)
             {
                 foreach (var enemy in enemiesInside)
                 {
                     if (enemy != null && enemy.gameObject.activeInHierarchy)
                     {
-                        enemy.ApplyDotDamage(myStat.damage, lingerDuration, 1f / myStat.fireRate, knockbackPower);
+                        float tickRate = myStat.fireRate > 0f ? 1f / myStat.fireRate : 1f;
+                        enemy.ApplyDotDamage(myStat.damage, lingerDuration, tickRate, knockbackPower);
                     }
                 }
             }
@@ -65,17 +81,17 @@ public class AoeEffect : MonoBehaviour, IPoolable
         }
 
         EnemyAttack();
-
     }
 
     private void EnemyAttack()
     {
-        bool isTickTime = tickTimer >= (1f / myStat.fireRate);
+        if (instaKillNormalOnly) return; // 즉사기는 필요 없음
+
+        bool isTickTime = myStat.fireRate > 0f && tickTimer >= (1f / myStat.fireRate);
         if (isTickTime) tickTimer = 0f;
 
         for (int i = enemiesInside.Count - 1; i >= 0; i--)
         {
-            // OnTriggerEnter2D에서 추가된 적들 -> enemiesInside
             Enemy enemy = enemiesInside[i];
 
             if (enemy == null || !enemy.gameObject.activeInHierarchy || !enemy.CompareTag("Enemy"))
@@ -93,6 +109,9 @@ public class AoeEffect : MonoBehaviour, IPoolable
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        // 즉사기일 때는 콜라이더 판정 무시
+        if (instaKillNormalOnly) return;
+
         if (collision.CompareTag("Enemy"))
         {
             if (collision.TryGetComponent<Enemy>(out var enemy))
@@ -105,15 +124,18 @@ public class AoeEffect : MonoBehaviour, IPoolable
 
     private void OnTriggerExit2D(Collider2D collision)
     {
+        if (instaKillNormalOnly) return; // 즉사기 무시
+
         if (collision.CompareTag("Enemy"))
         {
             if (collision.TryGetComponent<Enemy>(out var enemy))
             {
                 enemiesInside.Remove(enemy);
-                
+
                 if (lingerDuration > 0f)
                 {
-                    enemy.ApplyDotDamage(myStat.damage, lingerDuration, 1f / myStat.fireRate, knockbackPower);
+                    float tickRate = myStat.fireRate > 0f ? 1f / myStat.fireRate : 1f;
+                    enemy.ApplyDotDamage(myStat.damage, lingerDuration, tickRate, knockbackPower);
                 }
             }
         }

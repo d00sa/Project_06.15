@@ -4,54 +4,82 @@ using UnityEngine.InputSystem;
 
 public class SkillPet : SkillBase
 {
-
-    // 일단 위치는 고정
     [Header("펫 소환 위치 오프셋 (좌, 우, 상, 하)")]
     private Vector2[] petOffsets = new Vector2[]
     {
-        new Vector2(-1.5f, 0f),  // 1번째 펫: 좌
-        new Vector2(1.5f, 0f),   // 2번째 펫: 우
-        new Vector2(0f, 1.5f),   // 3번째 펫: 상
-        new Vector2(0f, -1.5f)   // 4번째 펫: 하
+        new Vector2(-1.5f, 0f),
+        new Vector2(1.5f, 0f),
+        new Vector2(0f, 1.5f),
+        new Vector2(0f, -1.5f)
     };
 
     // 현재 소환된 펫들을 기억 (중복 소환 방지 및 레벨업 관리용)
-    private Dictionary<string, Pet> spawnedPets = new Dictionary<string, Pet>();
+    private Dictionary<string, List<Pet>> spawnedPets = new Dictionary<string, List<Pet>>();
 
     protected override void Update()
     {
-        // update 쓸모없음 그냥 덮어쓰기 용
     }
 
     protected override void Execute(ActiveSkill skill)
     {
-        // 이미 소환된 펫이라면 무시
-        if (spawnedPets.ContainsKey(skill.data.skillName))
+        // 1레벨(최초 소환)일 때만 작동
+        if (spawnedPets.ContainsKey(skill.data.skillName) && spawnedPets[skill.data.skillName].Count > 0)
             return;
 
-        // 소환되고 말거니까 옵젝풀은 생략
-        GameObject petObj = Instantiate(skill.data.skillPrefab, transform.position, Quaternion.identity, this.transform);
-
-        // 위치 배정
-        int offsetIndex = spawnedPets.Count % 4;
-        petObj.transform.localPosition = petOffsets[offsetIndex];
-
-        // 펫 초기화
-        Pet petComponent = petObj.GetComponent<Pet>();
-        if (petComponent != null)
-        {
-            petComponent.Initialize(skill.CurrentStat);
-        }
-
-        // Dictionary 등록
-        spawnedPets.Add(skill.data.skillName, petComponent);
+        SpawnPetObj(skill);
     }
 
     protected override void OnLevelUp(ActiveSkill skill)
     {
-        if (spawnedPets.TryGetValue(skill.data.skillName, out Pet pet))
+        if (spawnedPets.TryGetValue(skill.data.skillName, out List<Pet> petList))
         {
-            pet.UpgradePet(skill.level, skill.CurrentStat);
+            bool shouldAddQuantity = false;
+
+            // 기존에 소환되어 있던 모든 펫의 스탯 업그레이드
+            foreach (var pet in petList)
+            {
+                if (pet != null)
+                {
+                    pet.UpgradePet(skill.level, skill.CurrentStat);
+                    if (pet.isQuantityType) shouldAddQuantity = true;
+                }
+            }
+
+            // 만약 마리수가 늘어나는 타입이라면 1마리 추가
+            if (shouldAddQuantity)
+            {
+                SpawnPetObj(skill);
+            }
+        }
+    }
+
+    private void SpawnPetObj(ActiveSkill skill)
+    {
+        if (skill.data.skillPrefab == null) return;
+
+        GameObject petObj = Instantiate(skill.data.skillPrefab, transform.position, Quaternion.identity);
+        Pet petComponent = petObj.GetComponent<Pet>();
+
+        if (petComponent != null)
+        {
+            if (!spawnedPets.ContainsKey(skill.data.skillName))
+                spawnedPets[skill.data.skillName] = new List<Pet>();
+
+            if (!petComponent.isFreeMoving)
+            {
+                // 플레이어 옆에 둥둥 떠다니는 고정 펫
+                petObj.transform.SetParent(this.transform);
+                int offsetIndex = spawnedPets[skill.data.skillName].Count % 4;
+                petObj.transform.localPosition = petOffsets[offsetIndex];
+            }
+            else
+            {
+                petObj.transform.SetParent(null);
+            }
+
+            petComponent.Initialize(skill.CurrentStat);
+
+            spawnedPets[skill.data.skillName].Add(petComponent);
         }
     }
 }

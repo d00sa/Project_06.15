@@ -4,11 +4,27 @@ public class Projectile : MonoBehaviour, IPoolable
 {
     private Transform target;
     private SkillLevelStat myStat;
-    private Vector2 startPos;
     private Vector2 currentDir;
+
+    [Header("기본 설정")]
+    [Tooltip("피격 시 적이 밀려나는 힘")]
+    [SerializeField] private float knockbackPower = 0.1f;
+
+    [Header("상태 이상 옵션 (0이면 발동 안함)")]
+    [Tooltip("느려지는 비율 (예: 0.9 = 90% 슬로우)")]
+    [Range(0f, 1f)] public float slowPercentage = 0f;
+    [Tooltip("슬로우 지속 시간 (초)")]
+    public float slowDuration = 0f;
+    [Tooltip("기절(스턴) 지속 시간 (초)")]
+    public float stunDuration = 0f;
+
+    [Header("특수 이동 옵션")]
+    [Tooltip("체크 시 타겟을 무시하고 랜덤한 방향으로 직선 비행합니다")]
+    public bool isRandomDirection = false;
 
     [Header("이미지 회전 보정값")]
     [SerializeField] private float rotationOffset = -45f; // 보통 45나 -45? 이미지 따라 알잘딱
+
     [Header("타겟 재탐색 설정")]
     [SerializeField] private float searchRadius = 3f; // 탐색 반경
     [SerializeField] private LayerMask enemyLayer; // 인스펙터에서 Enemy 레이어 선택
@@ -16,9 +32,13 @@ public class Projectile : MonoBehaviour, IPoolable
     {
         target = targetTransform;
         myStat = stat;
-        //startPos = transform.position;
 
-        if (target != null)
+        if (isRandomDirection)
+        {
+            currentDir = new Vector2(Random.Range(-1f, 1f), Random.Range(-1f, 1f)).normalized;
+            UpdateRotation();
+        }
+        else if (target != null)
         {
             currentDir = ((Vector2)target.position - (Vector2)transform.position).normalized;
             UpdateRotation();
@@ -27,7 +47,7 @@ public class Projectile : MonoBehaviour, IPoolable
 
     public void OnSpawn()
     {
-        //gameObject.transform.position = startPos;
+
     }
 
     public void OnDespawn()
@@ -39,16 +59,18 @@ public class Projectile : MonoBehaviour, IPoolable
     {
         if (myStat == null) return;
 
-        if (target != null && target.gameObject.activeInHierarchy && target.CompareTag("Enemy"))
+        if (!isRandomDirection)
         {
-            currentDir = ((Vector2)target.position - (Vector2)transform.position).normalized;
-            UpdateRotation();
-        }
-        else
-        {
-            // 타겟 재설정
-            target = FindClosestEnemy();
-            if (target == null) ObjectPool.Instance.ReturnObj(gameObject);
+            if (target != null && target.gameObject.activeInHierarchy && target.CompareTag("Enemy"))
+            {
+                currentDir = ((Vector2)target.position - (Vector2)transform.position).normalized;
+                UpdateRotation();
+            }
+            else
+            {
+                target = FindClosestEnemy();
+                if (target == null) ObjectPool.Instance.ReturnObj(gameObject);
+            }
         }
 
         transform.Translate(currentDir * myStat.speed * Time.deltaTime, UnityEngine.Space.World);
@@ -63,9 +85,21 @@ public class Projectile : MonoBehaviour, IPoolable
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Enemy"))
+        if (collision.CompareTag("Enemy") && collision.TryGetComponent<Enemy>(out var enemy))
         {
-            collision.GetComponent<Enemy>().TakeDamage(myStat.damage + StatManager.Instance.projectileDamageBonus, transform.position, 0.1f);
+            // 데미지 및 넉백
+            enemy.TakeDamage(myStat.damage + StatManager.Instance.projectileDamageBonus, transform.position, knockbackPower);
+
+            // 상태 이상
+            if (slowPercentage > 0f && slowDuration > 0f)
+            {
+                enemy.ApplySlow(slowPercentage, slowDuration);
+            }
+            if (stunDuration > 0f)
+            {
+                enemy.ApplyStun(stunDuration);
+            }
+
             ObjectPool.Instance.ReturnObj(gameObject);
         }
     }

@@ -49,6 +49,8 @@ public class Enemy : MonoBehaviour, IPoolable
 
     private Coroutine dotCoroutine;
     private Coroutine stunCoroutine;
+    private Coroutine slowCoroutine;
+    private float originalSpeed = -1f; // 몬스터의 원래 속도 변수
 
     [Header("타겟팅 설정")]
     [Tooltip("우선순위")]
@@ -122,6 +124,16 @@ public class Enemy : MonoBehaviour, IPoolable
         {
             StopCoroutine(stunCoroutine);
             stunCoroutine = null;
+        }
+        // 죽으면 슬로우 끄고 속도도 원래대로 되돌려놓음
+        if (slowCoroutine != null)
+        {
+            StopCoroutine(slowCoroutine);
+            slowCoroutine = null;
+        }
+        if (originalSpeed > 0)
+        {
+            speed = originalSpeed;
         }
 
         OnDead = null;
@@ -216,6 +228,34 @@ public class Enemy : MonoBehaviour, IPoolable
         if (!IsDead)
         {
             IsMovable = true;
+        }
+    }
+
+    /// <summary> 적의 이동 속도를 일정 시간 동안 감소 </summary>
+
+    public void ApplySlow(float slowPercentage, float duration) 
+    {
+        if (IsDead) return;
+
+        if (originalSpeed < 0)
+            originalSpeed = speed;
+
+        if (slowCoroutine != null)
+            StopCoroutine(slowCoroutine);
+
+        slowCoroutine = StartCoroutine(SlowRoutine(slowPercentage, duration));
+    }
+
+    private IEnumerator SlowRoutine(float slowPercentage, float duration)
+    {
+        speed = originalSpeed * (1f - slowPercentage);
+
+        yield return new WaitForSeconds(duration);
+
+        if (!IsDead)
+        {
+            speed = originalSpeed;
+            slowCoroutine = null;
         }
     }
 }

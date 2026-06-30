@@ -59,6 +59,9 @@ public abstract class SkillBase : MonoBehaviour
             if (existingSkill.level >= targetData.maxLevel) return -1;
             existingSkill.level++;
             OnLevelUp(existingSkill);
+            Execute(existingSkill);
+            existingSkill.fireTimer = 0f; // 타이머 리셋
+
             return existingSkill.level;
         }
         else
@@ -68,6 +71,7 @@ public abstract class SkillBase : MonoBehaviour
             OnLevelUp(newSkill);
 
             Execute(newSkill);
+            newSkill.fireTimer = 0f;
 
             return 1;
         }

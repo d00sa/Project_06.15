@@ -3,7 +3,13 @@ using UnityEngine;
 
 public class Pet : MonoBehaviour
 {
-    [Header("펫 스킬 매니저")]
+    [Header("펫 특성 옵션")]
+    [Tooltip("체크 시 레벨업 할 때마다 펫 마리수가 1마리씩 증가")]
+    public bool isQuantityType = false;
+    [Tooltip("체크 시 플레이어 주변(고정 위치)을 따라다니지 않고 월드를 자유롭게 돌아다님")]
+    public bool isFreeMoving = false;
+
+    [Header("펫 스킬 매니저 (없으면 비워둠)")]
     [SerializeField] private SkillShooter skillShooter;
     [SerializeField] private SkillAOE skillAOE;
 
@@ -11,7 +17,6 @@ public class Pet : MonoBehaviour
     [SerializeField] private List<SkillData> startingSkills = new List<SkillData>();
 
     protected SkillLevelStat currentPetStat;
-
 
     /// <summary>
     /// SkillPet.cs에서 펫을 최초 소환할 때 호출하는 초기화 함수

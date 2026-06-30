@@ -1,0 +1,45 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b086d55aac52e7240be871bc15296cf3, type: 3}
+  m_Name: HolyLight
+  m_EditorClassIdentifier: Assembly-CSharp::SkillData
+  skillName: HolyLight
+  description: 
+  icon: {fileID: 7350208548822532109, guid: a6c4c85c97ce51547bd09bb4006dc405, type: 3}
+  skillPrefab: {fileID: 1213255530224665756, guid: a23b01c23e118ae4bace7692a6424b72, type: 3}
+  maxLevel: 5
+  levelStats:
+  - damage: 0
+    fireRate: 0
+    speed: 1
+    coolTime: 10
+    range: 0
+  - damage: 0
+    fireRate: 0
+    speed: 1
+    coolTime: 40
+    range: 0
+  - damage: 0
+    fireRate: 0
+    speed: 1
+    coolTime: 35
+    range: 0
+  - damage: 0
+    fireRate: 0
+    speed: 1
+    coolTime: 30
+    range: 0
+  - damage: 0
+    fireRate: 0
+    speed: 1
+    coolTime: 25
+    range: 0
