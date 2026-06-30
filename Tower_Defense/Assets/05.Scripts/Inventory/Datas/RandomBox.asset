@@ -15,7 +15,7 @@ MonoBehaviour:
   ID: 7
   ItemName: RandomBox
   Icon: {fileID: -5938411374528227644, guid: 659a30afce9ba31409e8030fc975673a, type: 3}
-  Description: "\uB79C\uB364\uBC15\uC2A4"
+  Description: RandomRandom
   ItemType: 1
   Stat: 0
   Add: 0

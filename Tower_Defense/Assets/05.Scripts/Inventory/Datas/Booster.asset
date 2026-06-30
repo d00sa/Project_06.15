@@ -15,7 +15,7 @@ MonoBehaviour:
   ID: 6
   ItemName: Booster
   Icon: {fileID: -8616133655320195221, guid: abd0a99dc511fb344ae512d5f75a404a, type: 3}
-  Description: "\uBD80\uC2A4\uD130"
+  Description: EXP UPUP!
   ItemType: 0
   Stat: 3
   Add: 30

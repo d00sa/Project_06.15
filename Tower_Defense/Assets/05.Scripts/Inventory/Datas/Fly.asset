@@ -15,7 +15,7 @@ MonoBehaviour:
   ID: 5
   ItemName: Fly
   Icon: {fileID: 772592002672757856, guid: fb520c9a9a0bf7949ba2d082e0bfe7dc, type: 3}
-  Description: "\uB09C\uB2E4"
+  Description: Fly Fly
   ItemType: 0
   Stat: 2
   Add: 20

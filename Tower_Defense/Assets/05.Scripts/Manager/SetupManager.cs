@@ -9,8 +9,9 @@ public class SetupManager : MonoBehaviour
     {
         get
         {
-            if (_instance == null)
+            if (_instance == null) {
                 _instance = Instantiate(Resources.Load<SetupManager>("SetupManager"));
+            }
 
             return _instance;
         }
@@ -23,10 +24,13 @@ public class SetupManager : MonoBehaviour
 
     private void Awake()
     {
-        if (Instance == this)
-            DontDestroyOnLoad(this.gameObject);
-        else
-            Destroy(this.gameObject);
+        if (_instance != null && _instance != this) {
+            Destroy(gameObject);
+            return;
+        }
+
+        _instance = this;
+        DontDestroyOnLoad(gameObject);
     }
 
     private void Start()

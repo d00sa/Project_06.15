@@ -14,6 +14,7 @@ public class InventoryManager : MonoBehaviour
 
     private void Awake()
     {
+        Debug.Log("InventoryManager Awake");
         Instance = this;
     }
 
@@ -56,7 +57,8 @@ public class InventoryManager : MonoBehaviour
         switch (item.Data.ItemType) {
             case ItemType.RandomBox: {
                     ItemData data = item.Data.LootTable.GetRandomItem();
-                    Add(data);
+                    if (Remove(item))
+                        Add(data);
                 }
                 break;
         }

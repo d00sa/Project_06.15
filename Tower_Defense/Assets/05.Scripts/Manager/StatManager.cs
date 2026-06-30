@@ -45,7 +45,7 @@ public class StatManager : MonoBehaviour
             case StatType.EXPGained: expGainedBonus += value; break;
         }
 
-        Debug.Log(" {type} 스탯 {value}만큼 증가");
+        Debug.Log($" {type} 스탯 {value}만큼 증가");
 
         OnStatChanged?.Invoke();
     }
