@@ -777,7 +777,7 @@ MonoBehaviour:
   _maxStageTime: 13
   _maxBossTime: 30
   Current: 1
-  Data: {fileID: 11400000, guid: 0f89bafcd33a2bd4dbaf209e87c0bbd0, type: 2}
+  Data: {fileID: 11400000, guid: d988fd1f6752c604e8a1fb369c63fd06, type: 2}
   Win: 0
   Lose: 0
 --- !u!4 &270040854
@@ -1594,17 +1594,9 @@ PrefabInstance:
       value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 5723180952184992513, guid: 24ddef4e6ae733648be7a3e464718ccc, type: 3}
-      propertyPath: 'startingSkills.Array.data[1]'
-      value: 
-      objectReference: {fileID: 11400000, guid: c799d839848728f4b8c9f034cd7ff4f1, type: 2}
-    - target: {fileID: 7259789966402149794, guid: 24ddef4e6ae733648be7a3e464718ccc, type: 3}
-      propertyPath: skillDataList.Array.size
-      value: 3
+      propertyPath: debugSkillName
+      value: BouncyBall
       objectReference: {fileID: 0}
-    - target: {fileID: 7259789966402149794, guid: 24ddef4e6ae733648be7a3e464718ccc, type: 3}
-      propertyPath: 'skillDataList.Array.data[2]'
-      value: 
-      objectReference: {fileID: 11400000, guid: c799d839848728f4b8c9f034cd7ff4f1, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -11570,7 +11562,7 @@ TilemapRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  - {fileID: 2100000, guid: 948ee58bd493ac2488ee5caee054a9fc, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

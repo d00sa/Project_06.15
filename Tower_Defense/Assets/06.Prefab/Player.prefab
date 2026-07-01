@@ -112,9 +112,9 @@ MonoBehaviour:
   skillAOE: {fileID: 5738497994093055526}
   skillPet: {fileID: 7259789966402149794}
   startingSkills:
-  - {fileID: 11400000, guid: 52c1ba9dd5861bf48a3ef6b386bcca9e, type: 2}
+  - {fileID: 11400000, guid: 93fdffa4aa83e6d44a594b05f1050dba, type: 2}
   - {fileID: 11400000, guid: c799d839848728f4b8c9f034cd7ff4f1, type: 2}
-  debugSkillName: SpikeTrap
+  debugSkillName: BouncyBall
   currentExp: 0
   maxExp: 100
   playerLevel: 1
@@ -186,6 +186,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 3a9e292ec83326d459a7cd89d1b1ae95, type: 2}
   - {fileID: 11400000, guid: b90d896d1628fe044b9140de0c472b29, type: 2}
   - {fileID: 11400000, guid: 50578391f6f15a54cae815e01eb9bea7, type: 2}
+  - {fileID: 11400000, guid: 93fdffa4aa83e6d44a594b05f1050dba, type: 2}
   defaultSearchRadius: 3
   enemyLayer:
     serializedVersion: 2
@@ -203,9 +204,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SkillPet
   skillDataList:
-  - {fileID: 11400000, guid: 4827ca61c43fcf047b0125444d617c85, type: 2}
   - {fileID: 11400000, guid: 34bf00e2ed407144cba054fec895cc1f, type: 2}
   - {fileID: 11400000, guid: c799d839848728f4b8c9f034cd7ff4f1, type: 2}
+  - {fileID: 11400000, guid: 40fe5125b7ee973469be63e70e836098, type: 2}
 --- !u!114 &334546321393106679
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -52,6 +52,9 @@ public class Enemy : MonoBehaviour, IPoolable
     private Coroutine slowCoroutine;
     private float originalSpeed = -1f; // 몬스터의 원래 속도 변수
 
+    public delegate float DamageModifier(float baseDamage);
+    public event DamageModifier OnCalculateBonusDamage;
+
     [Header("타겟팅 설정")]
     [Tooltip("우선순위")]
     public EnemyPriority priority = EnemyPriority.Normal;
@@ -163,9 +166,19 @@ public class Enemy : MonoBehaviour, IPoolable
     {
         if (IsDead) return;
 
-        HP -= damage;
+        float finalDamage = damage;
+
+        if (OnCalculateBonusDamage != null)
+        {
+            foreach (DamageModifier modifier in OnCalculateBonusDamage.GetInvocationList())
+            {
+                finalDamage += modifier(damage);
+            }
+        }
+
+        HP -= finalDamage;
         // 데미지 텍스트 플로팅
-        DamageTextManager.Instance.ShowDamage(damage, transform.position);
+        DamageTextManager.Instance.ShowDamage(finalDamage, transform.position);
 
         if (!IsMovable) return;
 

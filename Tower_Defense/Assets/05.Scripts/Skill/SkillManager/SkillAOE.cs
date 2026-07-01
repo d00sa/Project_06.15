@@ -9,6 +9,7 @@ public class SkillAOE : SkillBase
     [SerializeField] private float defaultSearchRadius = 3f;
     [SerializeField] private LayerMask enemyLayer;
 
+    private Dictionary<string, Revolver> activeRevolvers = new Dictionary<string, Revolver>();
     private void Start()
     {
         foreach (var data in skillDataList)
@@ -23,6 +24,19 @@ public class SkillAOE : SkillBase
 
         if (skill.data.skillPrefab == null) return;
 
+        if (skill.data.skillPrefab.TryGetComponent<Revolver>(out var revolverPrefab))
+        {
+            if (!activeRevolvers.ContainsKey(skill.data.skillName))
+            {
+                GameObject pmObj = ObjectPool.Instance.GetObj(skill.data.skillPrefab.name, Vector3.zero, null, true);
+                Revolver inst = pmObj.GetComponent<Revolver>();
+                inst.Initialize(skill.CurrentStat);
+
+                activeRevolvers.Add(skill.data.skillName, inst);
+            }
+            return;
+        }
+
         Transform target = FindMostCrowdedEnemy(skill.CurrentStat.range);
         if (target == null) return;
 
@@ -36,6 +50,15 @@ public class SkillAOE : SkillBase
         else if (aoe.TryGetComponent<InstantAoeEffect>(out var trap))
         {
             trap.Initialize(skill.CurrentStat);
+        }
+    }
+    protected override void OnLevelUp(ActiveSkill skill)
+    {
+        base.OnLevelUp(skill);
+
+        if (activeRevolvers.TryGetValue(skill.data.skillName, out var rev))
+        {
+            rev.Initialize(skill.CurrentStat);
         }
     }
 
@@ -88,29 +111,5 @@ public class SkillAOE : SkillBase
         // 총 발사 간격 = (원래 쿨타임) + (장판 지속시간)
         return base.GetInterval(skill) + skill.CurrentStat.speed;
     }
-
-    //private Transform FindClosestEnemy()
-    //{
-    //    GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
-    //    Transform closestEnemy = null;
-
-    //    float minSqrDist = Mathf.Infinity;
-    //    Vector2 myPos = transform.position;
-
-    //    foreach (GameObject enemy in enemies)
-    //    {
-    //        Vector2 dirToEnemy = (Vector2)enemy.transform.position - myPos;
-    //        float sqrDist = dirToEnemy.sqrMagnitude;
-
-    //        if (sqrDist < minSqrDist)
-    //        {
-    //            minSqrDist = sqrDist;
-    //            closestEnemy = enemy.transform;
-    //        }
-    //    }
-
-    //    return closestEnemy;
-    //}
-
 
 }
