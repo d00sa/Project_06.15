@@ -1,17 +1,17 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+public class ActiveSkill
+{
+    public SkillData data;
+    public int level;
+    public float fireTimer;
+
+    public SkillLevelStat CurrentStat => data.GetStat(level);
+}
+
 public abstract class SkillBase : MonoBehaviour
 {
-    protected class ActiveSkill
-    {
-        public SkillData data;
-        public int level;
-        public float fireTimer;
-
-        public SkillLevelStat CurrentStat => data.GetStat(level);
-    }
-
     // 스킬 데이터 원본 리스트
     [SerializeField] protected List<SkillData> skillDataList = new List<SkillData>();
 
@@ -112,6 +112,8 @@ public abstract class SkillBase : MonoBehaviour
         }
         return names;
     }
+
+    public List<ActiveSkill> GetActiveSkill() => activeSkills;
 
     /// <summary>
     /// 습득한 스킬을 전부 초기화

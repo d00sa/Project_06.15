@@ -106,7 +106,7 @@ public class SkillAOE : SkillBase
         return bestTarget;
     }
 
-    protected override float GetInterval(SkillBase.ActiveSkill skill)
+    protected override float GetInterval(ActiveSkill skill)
     {
         // 총 발사 간격 = (원래 쿨타임) + (장판 지속시간)
         return base.GetInterval(skill) + skill.CurrentStat.speed;

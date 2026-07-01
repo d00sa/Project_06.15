@@ -1,3 +1,6 @@
+using NUnit.Framework;
+using System.Collections;
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -28,7 +31,7 @@ public class Player : MonoBehaviour
     [Tooltip("X축: 플레이어 레벨, Y축: 해당 레벨업에 필요한 경험치 총량")]
     [SerializeField] private AnimationCurve expCurve;
 
-    public event System.Action<string, int> OnSkillLevelChanged;
+    public event Action<string, int> OnSkillLevelChanged;
 
     private void Awake()
     {
@@ -119,6 +122,18 @@ public class Player : MonoBehaviour
         if (level == 0 && skillPet != null) level = skillPet.GetSkillLevel(skillName);
         // if (level == 0 && skillPassive != null) level = skillPassive.GetSkillLevel(skillName);
         return level;
+    }
+
+    /// <summary>
+    /// 플레이어가 현재 습득한 스킬 반환
+    /// </summary>
+    public List<ActiveSkill> GetCurrentSkill()
+    {
+        List<ActiveSkill> skills = new List<ActiveSkill>();
+        if (skillShooter != null) skills.AddRange(skillShooter.GetActiveSkill());
+        if (skillAOE != null) skills.AddRange(skillAOE.GetActiveSkill());
+        if (skillPet != null) skills.AddRange(skillPet.GetActiveSkill());
+        return skills;
     }
 
     /// <summary>

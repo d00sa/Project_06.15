@@ -1,36 +1,37 @@
-﻿using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Text;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
+using static UnityEditor.Progress;
 
-public class InventorySlot : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IPointerDownHandler, IPointerUpHandler, IPointerClickHandler
+public class SkillSlot : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IPointerDownHandler, IPointerUpHandler
 {
-    private Item _item;
+    private ActiveSkill _skill;
     [SerializeField] private RectTransform _pos;
     [SerializeField] private Image _image;
 
     Coroutine _curCoroutine;
-    public void SetItem(Item item)
+    public void SetSkill(ActiveSkill skill)
     {
-        _item = item;
+        _skill = skill;
 
-        if (item == null) {
+        if (skill == null) {
             _image.sprite = null;
+            gameObject.SetActive(false);
             return;
         }
 
-        _image.sprite = _item.Data.Icon;
+        _image.sprite = _skill.data.icon;
+        gameObject.SetActive(true);
     }
 
     public void OnPointerEnter(PointerEventData eventData)
     {
-        if (_item is null) 
+        if (_skill is null)
             return;
 
-        UIManager.Instance.ShowItemInfo(_item.Data, _pos);
+        UIManager.Instance.ShowSkillInfo(_skill, _pos);
     }
 
     public void OnPointerExit(PointerEventData eventData)
@@ -40,7 +41,7 @@ public class InventorySlot : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
 
     public void OnPointerDown(PointerEventData eventData)
     {
-        if (_item is null)
+        if (_skill is null)
             return;
 
         _curCoroutine = StartCoroutine(LongPress());
@@ -55,17 +56,11 @@ public class InventorySlot : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
         }
     }
 
-    public void OnPointerClick(PointerEventData eventData)
-    {
-        if (_item.Data.ItemType == ItemType.RandomBox)
-            InventoryManager.Instance.Use(_item);
-    }
-
     private IEnumerator LongPress()
     {
         yield return new WaitForSeconds(0.5f);
 
-        if (_item != null)
-            UIManager.Instance.ShowItemInfo(_item.Data, _pos);
+        if (_skill != null)
+            UIManager.Instance.ShowSkillInfo(_skill, _pos);
     }
 }

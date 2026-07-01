@@ -1,5 +1,6 @@
 using NUnit.Framework;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
@@ -13,6 +14,7 @@ public class UIManager : MonoBehaviour
     [SerializeField] private TMP_Text _enemyCountText;
     [SerializeField] private TMP_Text _stageTime;
     [SerializeField] private List<InventorySlot> _slots;
+    [SerializeField] private List<SkillSlot> _skillSlots;
 
     [Header("[ItemInfos]")]
     [SerializeField] private RectTransform _itemInfoPanel;
@@ -20,6 +22,13 @@ public class UIManager : MonoBehaviour
     [SerializeField] private TMP_Text _name;
     [SerializeField] private TMP_Text _type;
     [SerializeField] private TMP_Text _description;
+
+    [Header("[SkillInfos]")]
+    [SerializeField] private RectTransform _skillInfoPanel;
+    [SerializeField] private Image _sIcon;
+    [SerializeField] private TMP_Text _sName;
+    [SerializeField] private TMP_Text _sType;
+    [SerializeField] private TMP_Text _sDescription;
 
     private void Awake()
     {
@@ -30,7 +39,8 @@ public class UIManager : MonoBehaviour
     {
         Remove();
         Add();
-        HideItemInfo();
+        HideInfo();
+        StartCoroutine(Setting());
     }
 
     private void OnDestroy()
@@ -43,6 +53,7 @@ public class UIManager : MonoBehaviour
         GameManager.Instance.OnEnemyCountChanged += ChangeEnemyCount;
         GameManager.Instance.OnTimeChanged += ChangeStageTime;
         InventoryManager.Instance.OnInventoryChanged += RefreshInventory;
+        Player.Instance.OnSkillLevelChanged += RefreshSkills;
     }
 
     private void Remove()
@@ -54,6 +65,9 @@ public class UIManager : MonoBehaviour
         
         if (InventoryManager.Instance != null)
             InventoryManager.Instance.OnInventoryChanged -= RefreshInventory;
+
+        if (Player.Instance != null)
+            Player.Instance.OnSkillLevelChanged -= RefreshSkills;
     }
 
     private void ChangeEnemyCount(int count)
@@ -80,8 +94,28 @@ public class UIManager : MonoBehaviour
         }
     }
 
+    private void RefreshSkills(string name, int level)
+    {
+        var skills = Player.Instance.GetCurrentSkill();
+
+        for (int i = 0; i < _skillSlots.Count; i++) {
+            _skillSlots[i].SetSkill(i < skills.Count ? skills[i] : null);
+        }
+    }
+
+    private IEnumerator Setting()
+    {
+        //한 프레임 기다렸다가 호출
+        yield return null;
+        RefreshInventory();
+        RefreshSkills("",1);
+    }
+
     public void ShowItemInfo(ItemData data, RectTransform slotPos)
     {
+        if (_itemInfoPanel.localScale == Vector3.one) 
+            return;
+
         _itemInfoPanel.localScale = Vector3.one;
 
         Vector3[] corners = new Vector3[4];
@@ -96,7 +130,25 @@ public class UIManager : MonoBehaviour
         _description.text = data.Description;
     }
 
-    public void HideItemInfo()
+    public void ShowSkillInfo(ActiveSkill data, RectTransform slotPos)
+    {
+        if (_skillInfoPanel.localScale == Vector3.one)
+            return;
+
+        _skillInfoPanel.localScale = Vector3.one;
+
+        Vector3[] corners = new Vector3[4];
+        slotPos.GetWorldCorners(corners);
+        _skillInfoPanel.position = Vector3.right * (corners[1].x + corners[2].x) * 0.5f +
+                                  Vector3.up * (corners[1].y + _skillInfoPanel.rect.height / 1.8f);
+
+        _sIcon.sprite = data.data.icon;
+        _sName.text = data.data.skillName;
+        _sType.text = data.data.GetType().ToString();
+        _sDescription.text = data.data.description + '\n' + data.level.ToString();
+    }
+
+    public void HideInfo()
     {
         _itemInfoPanel.localScale = Vector3.zero;
 
@@ -104,5 +156,12 @@ public class UIManager : MonoBehaviour
         _name.text = "";
         _type.text = "";
         _description.text = "";
+
+        _skillInfoPanel.localScale = Vector3.zero;
+
+        _sIcon.sprite = null;
+        _sName.text = "";
+        _sType.text = "";
+        _sDescription.text = "";
     }
 }
