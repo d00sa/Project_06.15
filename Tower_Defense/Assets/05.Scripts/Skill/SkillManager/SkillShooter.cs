@@ -66,4 +66,9 @@ public class SkillShooter : SkillBase
 
         return closestEnemy;
     }
+
+    protected override void OnSkillRemoved(ActiveSkill skill)
+    {
+        base.OnSkillRemoved(skill);
+    }
 }

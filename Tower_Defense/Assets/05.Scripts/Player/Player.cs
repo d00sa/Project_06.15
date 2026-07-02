@@ -18,10 +18,6 @@ public class Player : MonoBehaviour
     [Tooltip("기본 시작 스킬 넣어주세요 （〜^∇^)〜 ")]
     [SerializeField] private List<SkillData> startingSkills = new List<SkillData>();
 
-    [Header("에디터 테스트 ")]
-    [Tooltip("테스트하고 싶은 스킬 이름을 적고 ⋮ 아이콘 클릭 -> 테스트: 이 스킬 레벨업 시키기")]
-    [SerializeField] private string debugSkillName = "Fireball";
-
     [Header("경험치 및 레벨")]
     [SerializeField] private int currentExp = 0;
     [SerializeField] private int maxExp = 100;
@@ -30,6 +26,12 @@ public class Player : MonoBehaviour
     [Header("경험치 요구량 커브 (계단식)")]
     [Tooltip("X축: 플레이어 레벨, Y축: 해당 레벨업에 필요한 경험치 총량")]
     [SerializeField] private AnimationCurve expCurve;
+
+    [Header("에디터 테스트 ")]
+    [Tooltip("테스트하고 싶은 스킬 이름을 적고 ⋮ 아이콘 클릭 -> 테스트: 이 스킬 레벨업 시키기")]
+    [SerializeField] private string debugSkillName = "Fireball";
+    [Tooltip("테스트 시 단번에 올릴 목표 레벨")]
+    [SerializeField] private int debugTargetLevel = 5;
 
     public event Action<string, int> OnSkillLevelChanged;
 
@@ -104,6 +106,12 @@ public class Player : MonoBehaviour
         if (newLevel != -1)
         {
             OnSkillLevelChanged?.Invoke(skillName, newLevel);
+
+            if (FusionSkillManager.Instance != null)
+            {
+                FusionSkillManager.Instance.CheckFusionAvailability();
+            }
+
             return true;
         }
 
@@ -145,23 +153,89 @@ public class Player : MonoBehaviour
         if (skillShooter != null) list.AddRange(skillShooter.GetSkillDataList());
         if (skillAOE != null) list.AddRange(skillAOE.GetSkillDataList());
         if (skillPet != null) list.AddRange(skillPet.GetSkillDataList());
-        // if (skillPassive != null) list.AddRange(skillPassive.GetSkillDataList());
 
         // null 제거
         list.RemoveAll(item => item == null);
+
+        if (FusionSkillManager.Instance != null && FusionSkillManager.Instance.allRecipes != null)
+        {
+            foreach (var recipe in FusionSkillManager.Instance.allRecipes)
+            {
+                if (recipe != null && recipe.resultFusionSkill != null)
+                {
+                    list.Remove(recipe.resultFusionSkill);
+                }
+            }
+        }
+
         return list;
     }
 
-    [ContextMenu("테스트: 이 스킬 레벨업 시키기")]
-    public void TestLevelUpSkill()
+    /// <summary>
+    /// 융합 등으로 인해 특정 스킬을 플레이어에게서 완전히 제거
+    /// </summary>
+    public bool RemoveSkill(string skillName)
+    {
+        // Shooter, AOE, Pet 매니저를 순서대로 찌르면서 스킬을 지웠는지 확인
+        if (skillShooter != null && skillShooter.RemoveSkill(skillName)) return true;
+        if (skillAOE != null && skillAOE.RemoveSkill(skillName)) return true;
+        if (skillPet != null && skillPet.RemoveSkill(skillName)) return true;
+        // if (skillPassive != null && skillPassive.RemoveSkill(skillName)) return true;
+
+        Debug.LogWarning($"[Fusion] '{skillName}' 스킬을 지우려 했으나 찾을 수 없습니다.");
+        return false;
+    }
+
+    [ContextMenu("테스트: 이 스킬 지정 레벨로 강제 세팅")]
+    public void TestSetSkillLevel()
+    {
+        if (!Application.isPlaying)
+        {
+            Debug.LogWarning("게임이 실행 중일 때만 테스트할 수 있습니다");
+            return;
+        }
+
+        int currentLevel = GetSkillLevel(debugSkillName);
+
+        if (currentLevel >= debugTargetLevel)
+        {
+            Debug.Log($"<color=yellow>[디버그]</color> '{debugSkillName}' 스킬은 이미 {currentLevel}레벨 이상입니다.");
+            return;
+        }
+
+        int upgradesNeeded = debugTargetLevel - currentLevel;
+        bool lastUpgradeSuccess = false;
+
+        for (int i = 0; i < upgradesNeeded; i++)
+        {
+            lastUpgradeSuccess = LevelUpSkill(debugSkillName);
+
+            if (!lastUpgradeSuccess) break;
+        }
+
+        int finalLevel = GetSkillLevel(debugSkillName);
+
+        if (finalLevel == debugTargetLevel)
+            Debug.Log($"<color=green>[디버그]</color> '{debugSkillName}' 스킬 {debugTargetLevel}레벨 달성 성공! (융합 조건 체크!)");
+        else
+            Debug.LogWarning($"<color=red>[디버그]</color> '{debugSkillName}' 스킬 세팅 완료 (현재 레벨: {finalLevel}). 만렙이거나 이름 오타를 확인하세요.");
+
+        if (FusionSkillManager.Instance != null)
+        {
+            FusionSkillManager.Instance.CheckFusionAvailability(); // 수정된 함수 호출
+        }
+    }
+
+    [ContextMenu("테스트: 이 스킬 삭제 시키기")]
+    public void TestRemoveSkill()
     {
         if (Application.isPlaying)
         {
-            bool success = LevelUpSkill(debugSkillName);
+            bool success = RemoveSkill(debugSkillName);
             if (success)
-                Debug.Log($"<color=green>[디버그]</color> '{debugSkillName}' 스킬 강제 레벨업 성공");
+                Debug.Log($"<color=yellow>[디버그]</color> '{debugSkillName}' 스킬 강제 삭제 완료!");
             else
-                Debug.LogWarning($"<color=red>[디버그]</color> '{debugSkillName}' 스킬 레벨업 실패 (이름 오타 확인 또는 만렙)");
+                Debug.LogWarning($"<color=red>[디버그]</color> '{debugSkillName}' 스킬 삭제 실패 (배우지 않은 스킬이거나 이름 오타)");
         }
         else
         {

@@ -51,6 +51,10 @@ public class SkillAOE : SkillBase
         {
             trap.Initialize(skill.CurrentStat);
         }
+        else if (aoe.TryGetComponent<HeavySnow>(out var snow))
+        {
+            snow.Initialize(skill.CurrentStat);
+        }
     }
     protected override void OnLevelUp(ActiveSkill skill)
     {
@@ -110,6 +114,24 @@ public class SkillAOE : SkillBase
     {
         // 총 발사 간격 = (원래 쿨타임) + (장판 지속시간)
         return base.GetInterval(skill) + skill.CurrentStat.speed;
+    }
+
+    protected override void OnSkillRemoved(ActiveSkill skill)
+    {
+        base.OnSkillRemoved(skill);
+
+        if (activeRevolvers.TryGetValue(skill.data.skillName, out var rev))
+        {
+            if (rev != null)
+            {
+                rev.OnDespawn();
+
+                // 무한 루프를 끄고 풀로 반환
+                ObjectPool.Instance.ReturnObj(rev.gameObject);
+            }
+
+            activeRevolvers.Remove(skill.data.skillName);
+        }
     }
 
 }

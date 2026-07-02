@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eac5e2daba367c145893f8e113f4c037, type: 3}
+  m_Name: HeavySnow
+  m_EditorClassIdentifier: Assembly-CSharp::FusionSkillData
+  requiredSkill1: {fileID: 11400000, guid: e10ec7e1476508440bbff644c7c673c9, type: 2}
+  requiredSkill2: {fileID: 11400000, guid: 52c1ba9dd5861bf48a3ef6b386bcca9e, type: 2}
+  resultFusionSkill: {fileID: 11400000, guid: 41b104e5dba56224b8dc99d18b08d0b6, type: 2}
+  isReplacement: 1

@@ -122,4 +122,28 @@ public abstract class SkillBase : MonoBehaviour
     {
         activeSkills.Clear();
     }
+
+    /// <summary>
+    /// 습득한 스킬을 삭제하고 true를 반환 (융합 시스템용)
+    /// </summary>
+    public bool RemoveSkill(string skillName)
+    {
+        ActiveSkill target = activeSkills.Find(x => x.data != null && x.data.skillName == skillName);
+
+        if (target != null)
+        {
+            // 자식 클래스(SkillPet 등)에서 이미 소환된 오브젝트들을 지울 수 있도록 알림
+            OnSkillRemoved(target);
+
+            activeSkills.Remove(target);
+            return true;
+        }
+
+        return false;
+    }
+
+    /// <summary>
+    /// 스킬이 삭제될 때 호출됩니다. 화면에 남은 투사체, 장판, 펫 등을 회수할 때 오버라이드 
+    /// </summary>
+    protected virtual void OnSkillRemoved(ActiveSkill skill) { }
 }

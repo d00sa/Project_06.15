@@ -559,6 +559,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::UIManager
   _enemyCountText: {fileID: 1615191229}
   _stageTime: {fileID: 438059523}
+  _slots: []
+  _skillSlots: []
+  _itemInfoPanel: {fileID: 0}
+  _icon: {fileID: 0}
+  _name: {fileID: 0}
+  _type: {fileID: 0}
+  _description: {fileID: 0}
+  _skillInfoPanel: {fileID: 0}
+  _sIcon: {fileID: 0}
+  _sName: {fileID: 0}
+  _sType: {fileID: 0}
+  _sDescription: {fileID: 0}
 --- !u!4 &280961981
 Transform:
   m_ObjectHideFlags: 0
@@ -7893,6 +7905,53 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1409093865}
   m_CullTransparentMesh: 1
+--- !u!1 &1461983889
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1461983891}
+  - component: {fileID: 1461983890}
+  m_Layer: 0
+  m_Name: FusionSkillManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1461983890
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1461983889}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 46f93890ecdecac44bb14e9ef7e7841f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FusionSkillManager
+  allRecipes:
+  - {fileID: 11400000, guid: 17c7c1f9020d70140945eb2bf0d43ff4, type: 2}
+  readyFusions: []
+--- !u!4 &1461983891
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1461983889}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1.2131, y: 0.75519, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1483444349
 GameObject:
   m_ObjectHideFlags: 0
@@ -10048,6 +10107,7 @@ SceneRoots:
   - {fileID: 280961981}
   - {fileID: 167233616}
   - {fileID: 362092677}
+  - {fileID: 1461983891}
   - {fileID: 182442822}
   - {fileID: 221828729}
   - {fileID: 1483444350}

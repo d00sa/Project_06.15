@@ -113,8 +113,6 @@ MonoBehaviour:
   skillPet: {fileID: 7259789966402149794}
   startingSkills:
   - {fileID: 11400000, guid: 93fdffa4aa83e6d44a594b05f1050dba, type: 2}
-  - {fileID: 11400000, guid: c799d839848728f4b8c9f034cd7ff4f1, type: 2}
-  debugSkillName: BouncyBall
   currentExp: 0
   maxExp: 100
   playerLevel: 1
@@ -151,6 +149,8 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+  debugSkillName: LightningTrap
+  debugTargetLevel: 5
 --- !u!114 &4603162418315302646
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -187,6 +187,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: b90d896d1628fe044b9140de0c472b29, type: 2}
   - {fileID: 11400000, guid: 50578391f6f15a54cae815e01eb9bea7, type: 2}
   - {fileID: 11400000, guid: 93fdffa4aa83e6d44a594b05f1050dba, type: 2}
+  - {fileID: 11400000, guid: 41b104e5dba56224b8dc99d18b08d0b6, type: 2}
   defaultSearchRadius: 3
   enemyLayer:
     serializedVersion: 2

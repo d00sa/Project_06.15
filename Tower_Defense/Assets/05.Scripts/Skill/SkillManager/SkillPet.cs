@@ -82,4 +82,24 @@ public class SkillPet : SkillBase
             spawnedPets[skill.data.skillName].Add(petComponent);
         }
     }
+
+    protected override void OnSkillRemoved(ActiveSkill skill)
+    {
+        base.OnSkillRemoved(skill);
+
+        // 이 스킬 이름으로 소환된 펫 목록이 있는지 확인
+        if (spawnedPets.TryGetValue(skill.data.skillName, out List<Pet> petList))
+        {
+
+            foreach (var pet in petList)
+            {
+                if (pet != null)
+                {
+                    Destroy(pet.gameObject);
+                }
+            }
+
+            spawnedPets.Remove(skill.data.skillName);
+        }
+    }
 }
