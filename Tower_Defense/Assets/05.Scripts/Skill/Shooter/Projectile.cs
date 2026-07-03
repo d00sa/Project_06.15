@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Projectile : MonoBehaviour, IPoolable
+public class Projectile : MonoBehaviour, ISkillEffect
 {
     private Transform target;
     private SkillLevelStat myStat;
@@ -28,10 +28,11 @@ public class Projectile : MonoBehaviour, IPoolable
     [Header("타겟 재탐색 설정")]
     [SerializeField] private float searchRadius = 3f; // 탐색 반경
     [SerializeField] private LayerMask enemyLayer; // 인스펙터에서 Enemy 레이어 선택
-    public void Initialize(Transform targetTransform, SkillLevelStat stat)
+
+    public void Initialize(SkillEffectContext ctx)
     {
-        target = targetTransform;
-        myStat = stat;
+        target = ctx.target;
+        myStat = ctx.stat;
 
         if (isRandomDirection)
         {
@@ -43,6 +44,8 @@ public class Projectile : MonoBehaviour, IPoolable
             currentDir = ((Vector2)target.position - (Vector2)transform.position).normalized;
             UpdateRotation();
         }
+
+        SoundManager.Instance.PlaySFX("Arrow");
     }
 
     public void OnSpawn()
@@ -73,7 +76,7 @@ public class Projectile : MonoBehaviour, IPoolable
             }
         }
 
-        transform.Translate(currentDir * myStat.speed * Time.deltaTime, UnityEngine.Space.World);
+        transform.Translate(currentDir * myStat.ProjectileSpeed * Time.deltaTime, UnityEngine.Space.World);
 
     }
 
@@ -114,7 +117,7 @@ public class Projectile : MonoBehaviour, IPoolable
         float minSqrDist = Mathf.Infinity;
         Vector2 myPos = transform.position;
 
-        
+
         foreach (Collider2D col in colliders)
         {
             if (!col.CompareTag("Enemy")) continue;

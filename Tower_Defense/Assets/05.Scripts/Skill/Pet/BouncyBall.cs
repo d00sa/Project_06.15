@@ -40,7 +40,7 @@ public class BouncyBall : Pet
         UpdateScreenBounds();
 
         // 스탯 매니저의 currentPetStat.speed 적용
-        transform.Translate(moveDirection * currentPetStat.speed * Time.deltaTime, Space.World);
+        transform.Translate(moveDirection * currentPetStat.ProjectileSpeed * Time.deltaTime, Space.World);
         CheckBoundsAndBounce();
     }
 

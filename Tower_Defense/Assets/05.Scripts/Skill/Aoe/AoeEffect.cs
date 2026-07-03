@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AoeEffect : MonoBehaviour, IPoolable
+public class AoeEffect : MonoBehaviour, ISkillEffect
 {
     private SkillLevelStat myStat;
     private float currentDuration;
@@ -23,9 +23,9 @@ public class AoeEffect : MonoBehaviour, IPoolable
     [Tooltip("체크 시 데미지 스탯을 무시하고, 맵 전체의 '일반(Normal)' 몹만 999999 데미지로 즉사시킵니다.")]
     [SerializeField] private bool instaKillNormalOnly = false;
 
-    public void Initialize(SkillLevelStat stat)
+    public void Initialize(SkillEffectContext ctx)
     {
-        myStat = stat;
+        myStat = ctx.stat;
 
         if (instaKillNormalOnly)
         {
@@ -40,6 +40,8 @@ public class AoeEffect : MonoBehaviour, IPoolable
                 }
             }
         }
+
+        SoundManager.Instance.PlaySFX("Trap");
     }
 
     public void OnSpawn()
@@ -60,7 +62,7 @@ public class AoeEffect : MonoBehaviour, IPoolable
         currentDuration += Time.deltaTime;
         tickTimer += Time.deltaTime;
 
-        if (currentDuration >= myStat.speed)
+        if (currentDuration >= myStat.Duration)
         {
             if (lingerDuration > 0f && !instaKillNormalOnly)
             {

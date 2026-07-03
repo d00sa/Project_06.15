@@ -1,9 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
 using UnityEngine;
 
-public class Revolver : MonoBehaviour, IPoolable
+public class Revolver : MonoBehaviour, IPersistentSkillEffect
 {
     private SkillLevelStat myStat;
 
@@ -32,6 +31,15 @@ public class Revolver : MonoBehaviour, IPoolable
         StartCoroutine(RevolverRoutine());
     }
 
+    /// <summary>
+    /// 레벨업 시 호출됨. 예전엔 Initialize()를 재호출해서 코루틴이 중복으로 또 시작되는
+    /// 버그가 있었음 (리볼버가 2배, 4배... 속도로 발사되는 원인). 스탯만 갱신하도록 수정.
+    /// </summary>
+    public void UpgradeEffect(SkillLevelStat stat)
+    {
+        myStat = stat;
+    }
+
     public void OnSpawn() { }
 
     public void OnDespawn()
@@ -45,23 +53,11 @@ public class Revolver : MonoBehaviour, IPoolable
     {
         while (true)
         {
-            List<Enemy> allEnemies = ObjectPool.Instance.GetEnemy();
-            List<Enemy> validEnemies = new List<Enemy>();
+            // 유효한 적들 중 최대 maxTargets명을 무작위로 조준
+            List<Enemy> validEnemies = TargetingHelper.GetRandomValidTargets(maxTargets);
 
-            foreach (var e in allEnemies)
+            foreach (Enemy target in validEnemies)
             {
-                if (e.gameObject.activeInHierarchy && !e.IsDead)
-                    validEnemies.Add(e);
-            }
-
-            // 랜덤 조준을 위해 리스트를 무작위로 섞기
-            validEnemies = validEnemies.OrderBy(x => Random.value).ToList();
-
-            // 순차적으로 타겟 조준
-            int targetCount = Mathf.Min(maxTargets, validEnemies.Count);
-            for (int i = 0; i < targetCount; i++)
-            {
-                Enemy target = validEnemies[i];
                 lockedTargets.Add(target);
 
                 if (crosshairPrefab != null)
@@ -76,7 +72,7 @@ public class Revolver : MonoBehaviour, IPoolable
             }
 
             // 사격 전 대기
-            if (targetCount > 0)
+            if (lockedTargets.Count > 0)
                 yield return new WaitForSeconds(waitBeforeShoot);
 
             // 순차적으로 사격 개시

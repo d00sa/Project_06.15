@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
-public class HeavySnow : MonoBehaviour, IPoolable
+public class HeavySnow : MonoBehaviour, ISkillEffect
 {
     private SkillLevelStat myStat;
 
@@ -15,9 +15,17 @@ public class HeavySnow : MonoBehaviour, IPoolable
     [Tooltip("라이트닝 트랩 프리팹")]
     [SerializeField] private GameObject lightningTrapPrefab;
 
-    public void Initialize(SkillLevelStat stat)
+    private void Awake()
     {
-        myStat = stat;
+        // 내부적으로 GetObj(lightningTrapPrefab.name, ...)으로 꺼내 쓰기 때문에
+        // 풀에 미리 등록이 안 되어 있으면 트랩이 생성되지 않음 (조용히 실패)
+        if (lightningTrapPrefab != null)
+            ObjectPool.Instance.RegisterPoolElement(lightningTrapPrefab, 5);
+    }
+
+    public void Initialize(SkillEffectContext ctx)
+    {
+        myStat = ctx.stat;
         StartCoroutine(HeavySnowRoutine());
     }
 
@@ -37,7 +45,7 @@ public class HeavySnow : MonoBehaviour, IPoolable
 
         ApplyGlobalSlow();
 
-        float dropInterval = myStat.speed > 0 ? myStat.speed / trapCount : 0.5f;
+        float dropInterval = myStat.Duration > 0 ? myStat.Duration / trapCount : 0.5f;
         for (int i = 0; i < trapCount; i++)
         {
             DropTrapOnRandomEnemy();
@@ -53,7 +61,7 @@ public class HeavySnow : MonoBehaviour, IPoolable
         {
             if (enemy.gameObject.activeInHierarchy && !enemy.IsDead)
             {
-                enemy.ApplySlow(slowPercentage, myStat.speed);
+                enemy.ApplySlow(slowPercentage, myStat.Duration);
             }
         }
     }
@@ -70,9 +78,15 @@ public class HeavySnow : MonoBehaviour, IPoolable
             {
                 GameObject trap = ObjectPool.Instance.GetObj(lightningTrapPrefab.name, target.transform.position, null, true);
 
-                if (trap.TryGetComponent<InstantAoeEffect>(out var trapEffect))
+                if (trap == null)
                 {
-                    trapEffect.Initialize(myStat);
+                    Debug.LogError("[폭설] 트랩 생성 실패: ObjectPool에 lightningTrapPrefab이 등록되지 않았거나 GetObj가 null을 반환했습니다.");
+                    return;
+                }
+
+                if (trap.TryGetComponent<ISkillEffect>(out var trapEffect))
+                {
+                    trapEffect.Initialize(new SkillEffectContext(myStat));
                 }
             }
         }

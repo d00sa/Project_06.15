@@ -30,11 +30,22 @@ public class SkillLevelStat
 {
     [Header("공통 스탯")]
     public float damage = 10f;
-    [Tooltip("초당 공격 횟수")]
+
+    [Tooltip("초당 공격 횟수 / 틱(Tick) 데미지 주기")]
     public float fireRate = 1f;
-    [Tooltip("Projectile는 투사체 이동 속도/ AOE는 지속시간")]
+
+    [Tooltip("발사체: 이동 속도 / 장판, 폭설: 지속 시간")]
     public float speed = 5f;
-    [Tooltip("")]
+
+    [Tooltip("재사용 대기시간 (0이면 fireRate 기준)")]
     public float coolTime = 1f;
+
+    [Tooltip("탐색/폭발 반경 및 사거리")]
     public float range = 5f;
+
+    // 문맥별 별칭 (내가 짰지만 내가 헷갈려서,,)
+
+    public float Duration => speed;          // AOE, HeavySnow 지속 시간
+    public float ProjectileSpeed => speed;   // Shooter 투사체 속도
+    public float DamageMultiplier => damage; // 저주(Curse) 등 데미지 배율
 }

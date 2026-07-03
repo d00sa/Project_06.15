@@ -36,8 +36,8 @@ public class Curse : Pet
 
         while (true)
         {
-            // 타겟 찾기 (랜덤 적)
-            targetEnemy = GetRandomEnemy();
+            // 타겟 찾기 (이미 저주 걸린 적은 제외한 랜덤 적)
+            targetEnemy = TargetingHelper.GetRandomValidTarget(currentlyCursedEnemies);
 
             if (targetEnemy == null)
             {
@@ -72,27 +72,8 @@ public class Curse : Pet
     private float CalculateCurseDamage(float originalDamage)
     {
         if (currentPetStat == null) return 0f;
-        // 스탯의 damage를 비율로 사용 (ex: damage 값이 0.2면 원래 데미지의 20%를 추가 데미지로 반환)
-        return originalDamage * currentPetStat.damage;
-    }
-
-    private Enemy GetRandomEnemy()
-    {
-        List<Enemy> allEnemies = ObjectPool.Instance.GetEnemy();
-        List<Enemy> validEnemies = new List<Enemy>();
-
-        foreach (var enemy in allEnemies)
-        {
-            if (enemy.gameObject.activeInHierarchy && !enemy.IsDead && !currentlyCursedEnemies.Contains(enemy))
-            {
-                validEnemies.Add(enemy);
-            }
-        }
-
-        if (validEnemies.Count > 0)
-            return validEnemies[Random.Range(0, validEnemies.Count)];
-
-        return null;
+        // 스탯의 damage를 비율로 사용 (ex: DamageMultiplier 값이 0.2면 원래 데미지의 20%를 추가 데미지로 반환)
+        return originalDamage * currentPetStat.DamageMultiplier;
     }
 
     // 펫이 레벨업으로 갱신되거나 파괴될 때 에러를 막기 위한 안전장치

@@ -9,7 +9,9 @@ public class SkillAOE : SkillBase
     [SerializeField] private float defaultSearchRadius = 3f;
     [SerializeField] private LayerMask enemyLayer;
 
-    private Dictionary<string, Revolver> activeRevolvers = new Dictionary<string, Revolver>();
+    // 리볼버뿐 아니라 앞으로 생길 모든 "지속형" AOE 스킬이 여기에 등록됨
+    private Dictionary<string, IPersistentSkillEffect> activePersistentEffects = new Dictionary<string, IPersistentSkillEffect>();
+
     private void Start()
     {
         foreach (var data in skillDataList)
@@ -21,48 +23,45 @@ public class SkillAOE : SkillBase
 
     protected override void Execute(ActiveSkill skill)
     {
-
         if (skill.data.skillPrefab == null) return;
 
-        if (skill.data.skillPrefab.TryGetComponent<Revolver>(out var revolverPrefab))
+        // 지속형 이펙트(리볼버류)는 최초 1회만 스폰하고, 이후엔 OnLevelUp에서 갱신만 함
+        if (skill.data.skillPrefab.TryGetComponent<IPersistentSkillEffect>(out _))
         {
-            if (!activeRevolvers.ContainsKey(skill.data.skillName))
+            if (!activePersistentEffects.ContainsKey(skill.data.skillName))
             {
-                GameObject pmObj = ObjectPool.Instance.GetObj(skill.data.skillPrefab.name, Vector3.zero, null, true);
-                Revolver inst = pmObj.GetComponent<Revolver>();
-                inst.Initialize(skill.CurrentStat);
+                GameObject obj = ObjectPool.Instance.GetObj(skill.data.skillPrefab.name, Vector3.zero, null, true);
+                var persistent = obj.GetComponent<IPersistentSkillEffect>();
+                persistent.Initialize(skill.CurrentStat);
 
-                activeRevolvers.Add(skill.data.skillName, inst);
+                activePersistentEffects.Add(skill.data.skillName, persistent);
             }
             return;
         }
 
+        // 나머지는 전부 일회성 이펙트
         Transform target = FindMostCrowdedEnemy(skill.CurrentStat.range);
         if (target == null) return;
 
         GameObject aoe = ObjectPool.Instance.GetObj(skill.data.skillPrefab.name, target.position, null, true);
 
-        if (aoe.TryGetComponent<AoeEffect>(out var effect))
+        if (aoe.TryGetComponent<ISkillEffect>(out var effect))
         {
-            effect.Initialize(skill.CurrentStat);
-            SoundManager.Instance.PlaySFX("Trap");
+            effect.Initialize(new SkillEffectContext(skill.CurrentStat, caster: transform, target: target));
         }
-        else if (aoe.TryGetComponent<InstantAoeEffect>(out var trap))
+        else
         {
-            trap.Initialize(skill.CurrentStat);
-        }
-        else if (aoe.TryGetComponent<HeavySnow>(out var snow))
-        {
-            snow.Initialize(skill.CurrentStat);
+            Debug.LogWarning($"[SkillAOE] '{skill.data.skillPrefab.name}' 프리팹에 ISkillEffect/IPersistentSkillEffect 구현체가 없습니다.");
         }
     }
+
     protected override void OnLevelUp(ActiveSkill skill)
     {
         base.OnLevelUp(skill);
 
-        if (activeRevolvers.TryGetValue(skill.data.skillName, out var rev))
+        if (activePersistentEffects.TryGetValue(skill.data.skillName, out var persistent))
         {
-            rev.Initialize(skill.CurrentStat);
+            persistent.UpgradeEffect(skill.CurrentStat);
         }
     }
 
@@ -82,7 +81,7 @@ public class SkillAOE : SkillBase
         {
             if (!centerEnemy.gameObject.activeInHierarchy) continue;
 
-            // 중심점 주변 반경에 있는 모든 적 텀색
+            // 중심점 주변 반경에 있는 모든 적 탐색
             Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(centerEnemy.transform.position, actualRadius, enemyLayer);
 
             int currentScore = 0;
@@ -92,7 +91,7 @@ public class SkillAOE : SkillBase
             {
                 if (hit.TryGetComponent<Enemy>(out Enemy caughtEnemy))
                 {
-                    // 일반몹 1점, 엘리트몹 3점, 보스 5점으로 계산
+                    // 일반몹 1점, 엘리트몹 3점, 보스 10점으로 계산
                     if (caughtEnemy.priority == EnemyPriority.Normal) currentScore += 1;
                     else if (caughtEnemy.priority == EnemyPriority.Elite) currentScore += 3;
                     else if (caughtEnemy.priority == EnemyPriority.Boss) currentScore += 10;
@@ -113,24 +112,24 @@ public class SkillAOE : SkillBase
     protected override float GetInterval(ActiveSkill skill)
     {
         // 총 발사 간격 = (원래 쿨타임) + (장판 지속시간)
-        return base.GetInterval(skill) + skill.CurrentStat.speed;
+        return base.GetInterval(skill) + skill.CurrentStat.Duration;
     }
 
     protected override void OnSkillRemoved(ActiveSkill skill)
     {
         base.OnSkillRemoved(skill);
 
-        if (activeRevolvers.TryGetValue(skill.data.skillName, out var rev))
+        if (activePersistentEffects.TryGetValue(skill.data.skillName, out var persistent))
         {
-            if (rev != null)
+            if (persistent != null)
             {
-                rev.OnDespawn();
+                persistent.OnDespawn();
 
                 // 무한 루프를 끄고 풀로 반환
-                ObjectPool.Instance.ReturnObj(rev.gameObject);
+                ObjectPool.Instance.ReturnObj(((MonoBehaviour)persistent).gameObject);
             }
 
-            activeRevolvers.Remove(skill.data.skillName);
+            activePersistentEffects.Remove(skill.data.skillName);
         }
     }
 

@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class InstantAoeEffect : MonoBehaviour
+public class InstantAoeEffect : MonoBehaviour, ISkillEffect
 {
     private SkillLevelStat myStat;
 
@@ -14,9 +14,10 @@ public class InstantAoeEffect : MonoBehaviour
     [SerializeField] private Transform rangeIndicator;
     [Tooltip("위치로부터 미세 조정")]
     [SerializeField] private Vector3 positionOffset = Vector3.zero;
-    public void Initialize(SkillLevelStat stat)
+
+    public void Initialize(SkillEffectContext ctx)
     {
-        myStat = stat;
+        myStat = ctx.stat;
 
         transform.position += positionOffset;
 

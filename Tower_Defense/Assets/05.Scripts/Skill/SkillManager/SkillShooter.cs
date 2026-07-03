@@ -27,18 +27,17 @@ public class SkillShooter : SkillBase
 
         if (target == null) return;
 
-        GameObject pjt = ObjectPool.Instance.GetObj(skill.data.skillPrefab.name, transform.position, null, true);
-        
-        if (pjt.TryGetComponent<Projectile>(out var projectile))
+        GameObject obj = ObjectPool.Instance.GetObj(skill.data.skillPrefab.name, transform.position, null, true);
+
+        // 새로운 발사체 종류가 추가되어도 이 매니저는 건드릴 필요 없음.
+        // 프리팹에 ISkillEffect를 구현한 컴포넌트만 붙이면 됨.
+        if (obj.TryGetComponent<ISkillEffect>(out var effect))
         {
-            projectile.Initialize(target, skill.CurrentStat);
-            SoundManager.Instance.PlaySFX("Arrow");
+            effect.Initialize(new SkillEffectContext(skill.CurrentStat, caster: transform, target: target));
         }
-        else if (pjt.TryGetComponent<BoomerangProjectile>(out var boomerang))
+        else
         {
-            boomerang.Initialize(target, skill.CurrentStat, this.transform);
-            //SoundManager.Instance.PlaySFX("Boomerang");
-            SoundManager.Instance.PlaySFX("Gun");
+            Debug.LogWarning($"[SkillShooter] '{skill.data.skillPrefab.name}' 프리팹에 ISkillEffect 구현체가 없습니다.");
         }
     }
 

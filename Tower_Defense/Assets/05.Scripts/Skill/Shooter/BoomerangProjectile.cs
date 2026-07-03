@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BoomerangProjectile : MonoBehaviour, IPoolable
+public class BoomerangProjectile : MonoBehaviour, ISkillEffect
 {
     private Transform shooter;       // 돌아갈 발사자 (플레이어 or 펫)
     private Vector2 targetPoint;     // 찍고 돌아올 목표점
@@ -14,27 +14,26 @@ public class BoomerangProjectile : MonoBehaviour, IPoolable
     [Header("부메랑 설정")]
     [SerializeField] private float spinSpeed = 1000f; // 회전 속도 (대강 빠르게)
 
-    /// <summary>
-    /// 초기화
-    /// </summary>
-    public void Initialize(Transform targetTransform, SkillLevelStat stat, Transform shooterTransform)
+    public void Initialize(SkillEffectContext ctx)
     {
-        myStat = stat;
-        shooter = shooterTransform;
+        myStat = ctx.stat;
+        shooter = ctx.caster;
         isReturning = false;
         hitEnemies.Clear(); // 때린 적 초기화
 
-        if (targetTransform != null)
+        if (ctx.target != null)
         {
             // 타겟 방향으로 range 만큼 떨어진 곳을 반환점으로 설정
-            Vector2 dir = ((Vector2)targetTransform.position - (Vector2)transform.position).normalized;
-            targetPoint = (Vector2)targetTransform.position + dir * myStat.range;
+            Vector2 dir = ((Vector2)ctx.target.position - (Vector2)transform.position).normalized;
+            targetPoint = (Vector2)ctx.target.position + dir * myStat.range;
         }
         else
         {
             // 타겟이 없으면 그냥 오른쪽으로 날아감
             targetPoint = (Vector2)transform.position + Vector2.right * myStat.range;
         }
+
+        SoundManager.Instance.PlaySFX("Gun");
     }
 
     public void OnSpawn() { }
@@ -48,7 +47,7 @@ public class BoomerangProjectile : MonoBehaviour, IPoolable
 
         if (!isReturning)
         {
-            transform.position = Vector2.MoveTowards(transform.position, targetPoint, myStat.speed * Time.deltaTime);
+            transform.position = Vector2.MoveTowards(transform.position, targetPoint, myStat.ProjectileSpeed * Time.deltaTime);
 
             // 반환점에 거의 도달했으면 복귀 모드로 전환
             if (Vector2.Distance(transform.position, targetPoint) < 0.1f)
@@ -60,7 +59,7 @@ public class BoomerangProjectile : MonoBehaviour, IPoolable
         else
         {
             // 발사자에게 돌아가기
-            transform.position = Vector2.MoveTowards(transform.position, shooter.position, myStat.speed * Time.deltaTime);
+            transform.position = Vector2.MoveTowards(transform.position, shooter.position, myStat.ProjectileSpeed * Time.deltaTime);
 
             // 발사자에게 도착하면 풀로 반환
             if (Vector2.Distance(transform.position, shooter.position) < 0.5f)
