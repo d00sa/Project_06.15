@@ -31,6 +31,20 @@ public class LevelUpUIManager : MonoBehaviour
         levelUpPanel.localScale = Vector3.one;
 
         List<SkillData> allSkills = Player.Instance.GetAllSkillData();
+
+        // 이미 만렙을 찍은 스킬은 카드 후보에서 제외
+        allSkills.RemoveAll(skill =>
+        {
+            int level = Player.Instance.GetSkillLevel(skill.skillName);
+            return level > 0 && level >= skill.maxLevel;
+        });
+
+        // 대체형 융합으로 소모되어 사라진 스킬은 다시 등장하지 않도록 제외
+        if (FusionSkillManager.Instance != null)
+        {
+            allSkills.RemoveAll(skill => FusionSkillManager.Instance.consumedFusionSkills.Contains(skill.skillName));
+        }
+
         List<SkillData> selectedSkills = new List<SkillData>();
 
         if (FusionSkillManager.Instance != null && FusionSkillManager.Instance.readyFusions.Count > 0)
@@ -70,22 +84,20 @@ public class LevelUpUIManager : MonoBehaviour
                 skillCards[i].gameObject.SetActive(true);
             }
             else
-            {
                 skillCards[i].gameObject.SetActive(false);
-            }
         }
     }
 
     private void OnCardSelected(SkillData selectedData)
     {
-        // 유저가 선택한 스킬이 '융합 스킬'인지 확인합니다.
+        // 유저가 선택한 스킬이 융합 스킬인지 확인
         FusionSkillData appliedRecipe = null;
         if (FusionSkillManager.Instance != null)
         {
             appliedRecipe = FusionSkillManager.Instance.readyFusions.Find(r => r.resultFusionSkill == selectedData);
         }
 
-        // 💡 2. 융합 스킬을 선택했을 경우의 특수 처리
+        // 융합 스킬을 선택했을 경우의 특수 처리
         if (appliedRecipe != null)
         {
             Debug.Log($"<color=yellow>[Fusion]</color> '{selectedData.skillName}' 융합 성공!");
@@ -93,11 +105,15 @@ public class LevelUpUIManager : MonoBehaviour
             // 대기열에서 제거 (다음에 또 뜨지 않게)
             FusionSkillManager.Instance.readyFusions.Remove(appliedRecipe);
 
-            // [대체형] 융합이라면 기존 스킬 2개를 플레이어에게서 삭제!
+            // [대체형] 융합이라면 기존 스킬 2개를 플레이어에게서 삭제
             if (appliedRecipe.isReplacement)
             {
                 Player.Instance.RemoveSkill(appliedRecipe.requiredSkill1.skillName);
                 Player.Instance.RemoveSkill(appliedRecipe.requiredSkill2.skillName);
+
+                // 소모된 스킬로 기록 -> 이후 레벨업 카드 풀에서 영구 제외
+                FusionSkillManager.Instance.consumedFusionSkills.Add(appliedRecipe.requiredSkill1.skillName);
+                FusionSkillManager.Instance.consumedFusionSkills.Add(appliedRecipe.requiredSkill2.skillName);
             }
 
             // 새로운 융합 스킬 획득 (1레벨)
@@ -108,13 +124,6 @@ public class LevelUpUIManager : MonoBehaviour
             // 일반 스킬 레벨업
             Debug.Log($"<color=cyan>[UI]</color> 플레이어가 '{selectedData.skillName}' 스킬을 선택했습니다");
             Player.Instance.LevelUpSkill(selectedData.skillName);
-        }
-
-        // 💡 3. 스킬 선택 후 다음 융합 조건 달성 여부 검사 (일반 스킬을 만렙 찍었을 수 있으므로)
-        if (FusionSkillManager.Instance != null)
-        {
-            // Player 안의 스킬을 관리하는 객체(SkillBase 등)를 넘겨주면 됩니다.
-            // FusionManager.Instance.CheckFusionAvailability(Player.Instance.GetComponent<SkillBase>());
         }
 
         levelUpPanel.localScale = Vector3.zero;

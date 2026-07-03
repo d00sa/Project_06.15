@@ -11,6 +11,9 @@ public class FusionSkillManager : MonoBehaviour
     // UI에 확정으로 띄워주기 위해 대기 중인 융합 스킬들을 모아두는 리스트
     public List<FusionSkillData> readyFusions = new List<FusionSkillData>();
 
+    // 대체형(isReplacement) 융합으로 인해 사라진 스킬 이름 기록 (이후 레벨업 카드에 다시 안 뜨게 하기 위함)
+    public HashSet<string> consumedFusionSkills = new HashSet<string>();
+
     private void Awake()
     {
         Instance = this;
@@ -34,7 +37,7 @@ public class FusionSkillManager : MonoBehaviour
             // 이미 배운 융합 스킬이면 패스
             if (Player.Instance.GetSkillLevel(recipe.resultFusionSkill.skillName) > 0) continue;
 
-            // 💡 Player.Instance를 통해 직접 레벨을 가져옵니다.
+            // Player.Instance를 통해 직접 레벨을 가져옴
             int level1 = Player.Instance.GetSkillLevel(recipe.requiredSkill1.skillName);
             int level2 = Player.Instance.GetSkillLevel(recipe.requiredSkill2.skillName);
 

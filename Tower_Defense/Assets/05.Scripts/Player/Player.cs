@@ -15,7 +15,7 @@ public class Player : MonoBehaviour
     // [SerializeField] private SkillPassive skillPassive;
 
     [Header("시작 스킬 설정")]
-    [Tooltip("기본 시작 스킬 넣어주세요 （〜^∇^)〜 ")]
+    [Tooltip("기본 시작 스킬 ")]
     [SerializeField] private List<SkillData> startingSkills = new List<SkillData>();
 
     [Header("경험치 및 레벨")]
@@ -218,7 +218,7 @@ public class Player : MonoBehaviour
         if (finalLevel == debugTargetLevel)
             Debug.Log($"<color=green>[디버그]</color> '{debugSkillName}' 스킬 {debugTargetLevel}레벨 달성 성공! (융합 조건 체크!)");
         else
-            Debug.LogWarning($"<color=red>[디버그]</color> '{debugSkillName}' 스킬 세팅 완료 (현재 레벨: {finalLevel}). 만렙이거나 이름 오타를 확인하세요.");
+            Debug.LogWarning($"<color=red>[디버그]</color> '{debugSkillName}' 스킬 세팅 완료 (현재 레벨: {finalLevel}). 만렙이거나 이름 오타.");
 
         if (FusionSkillManager.Instance != null)
         {
