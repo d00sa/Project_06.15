@@ -14,7 +14,6 @@ public class InventoryManager : MonoBehaviour
 
     private void Awake()
     {
-        Debug.Log("InventoryManager Awake");
         Instance = this;
     }
 
@@ -43,8 +42,8 @@ public class InventoryManager : MonoBehaviour
     }    
     public IReadOnlyList<Item> Items => _items;
     public bool Contains(ItemData data) => _items.Any(x => x.Data == data);
-    public Item FindFirst(ItemData data) => _items.FirstOrDefault(x => x.Data == data);
-    public List<Item> FindAll(ItemData data) => _items.Where(x => x.Data == data).ToList();
+    public Item Find(ItemData data) => _items.Find(x => x.Data == data);
+    public List<Item> FindAll(ItemType type) => _items.Where(x => x.Data.ItemType == type).ToList();
     public bool IsFull() => _items.Count >= _maxCount;
     public void Clear()
     {

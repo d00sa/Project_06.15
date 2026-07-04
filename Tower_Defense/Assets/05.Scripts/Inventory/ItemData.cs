@@ -17,7 +17,7 @@ public class ItemData : ScriptableObject
 
     [Header("장비 정보")] //그 외에는 나중에 추가
     public StatType Stat; //타입
-    public float Add; //추가치
+    public float[] Add; //추가치
 
     [Header("랜덤 뽑기 정보")]
     public LootTable LootTable;
