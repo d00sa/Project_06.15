@@ -54,7 +54,7 @@ public class Spawner : MonoBehaviour
                             spawn: _spawnPoint.position
                         );
 
-                        obj.GetComponent<Enemy>().Setting(curStageData.SpawnDataList[i].Exp);
+                        obj.GetComponent<Enemy>().Setting(curStageData.SpawnDataList[i].Exp, curStageData.SpawnDataList[i].Money);
                         GameManager.Instance.EnemyCount++;
 
                         _termTimersList[i] = curStageData.SpawnDataList[i].Term;

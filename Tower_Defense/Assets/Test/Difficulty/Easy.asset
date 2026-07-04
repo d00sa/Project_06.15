@@ -23,6 +23,7 @@ MonoBehaviour:
       SpawnDelay: 0
       Term: 0.5
       Exp: 50
+      Money: 5
   - Stage: 2
     bossStage: 0
     SpawnDataList:
@@ -31,6 +32,7 @@ MonoBehaviour:
       SpawnDelay: 0
       Term: 0.5
       Exp: 5
+      Money: 5
   - Stage: 3
     bossStage: 1
     SpawnDataList:
@@ -39,3 +41,4 @@ MonoBehaviour:
       SpawnDelay: 0
       Term: 0.5
       Exp: 5
+      Money: 50

@@ -13,6 +13,7 @@ public class UIManager : MonoBehaviour
     [Header("[GameUI]")]
     [SerializeField] private TMP_Text _enemyCountText;
     [SerializeField] private TMP_Text _stageTime;
+    [SerializeField] private TMP_Text _money;
     [SerializeField] private List<InventorySlot> _slots;
     [SerializeField] private List<SkillSlot> _skillSlots;
 
@@ -52,6 +53,7 @@ public class UIManager : MonoBehaviour
     {
         GameManager.Instance.OnEnemyCountChanged += ChangeEnemyCount;
         GameManager.Instance.OnTimeChanged += ChangeStageTime;
+        GameManager.Instance.OnMoneyChanged += ChangeMoney;
         InventoryManager.Instance.OnInventoryChanged += RefreshInventory;
         Player.Instance.OnSkillLevelChanged += RefreshSkills;
     }
@@ -61,6 +63,7 @@ public class UIManager : MonoBehaviour
         if (GameManager.Instance != null) {
             GameManager.Instance.OnTimeChanged -= ChangeStageTime;
             GameManager.Instance.OnEnemyCountChanged -= ChangeEnemyCount;
+            GameManager.Instance.OnMoneyChanged -= ChangeMoney;
         }
         
         if (InventoryManager.Instance != null)
@@ -83,6 +86,14 @@ public class UIManager : MonoBehaviour
         int minute = time / 60;
         int second = time % 60;
         _stageTime.text = $"{minute:00} : {second:00}";
+    }
+
+    private void ChangeMoney(int value)
+    {
+        if (value < 0)
+            value = 0;
+
+        _money.text = $"Money : {value}";
     }
 
     private void RefreshInventory()

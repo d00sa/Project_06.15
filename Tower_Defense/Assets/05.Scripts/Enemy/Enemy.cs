@@ -43,6 +43,7 @@ public class Enemy : MonoBehaviour, IPoolable
     private StateMachine _machine;
     private int _currentIdx = 0;
     private int _giveExp;
+    private int _giveMoney;
 
     public float speed = 3f;
     public bool IsMovable { get; set; } = true;
@@ -141,6 +142,7 @@ public class Enemy : MonoBehaviour, IPoolable
 
         OnDead = null;
         GameManager.Instance.EnemyCount--;
+        GameManager.Instance.Money += _giveMoney;
         ObjectPool.Instance.ReturnObj(this.gameObject, 2f);
     }
 
@@ -153,9 +155,10 @@ public class Enemy : MonoBehaviour, IPoolable
         this.gameObject.tag = "Enemy";
     }
 
-    public void Setting(int exp)
+    public void Setting(int exp, int money)
     {
         _giveExp = exp;
+        _giveMoney = money;
     }
 
     /// <summary> 데미지 주고 피격 방향 반대로 살짝 밈 </summary>

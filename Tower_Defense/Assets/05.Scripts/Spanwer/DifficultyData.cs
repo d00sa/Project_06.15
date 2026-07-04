@@ -33,4 +33,5 @@ public class SpawnData
     public float SpawnDelay;    //소환 시작 딜레이
     public float Term;  //소환 주기
     public int Exp; //적이 죽으면 주는 경험치
+    public int Money; //적이 죽으면 주는 돈
 }
