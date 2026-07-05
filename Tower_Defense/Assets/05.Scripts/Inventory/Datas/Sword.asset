@@ -17,6 +17,8 @@ MonoBehaviour:
   Icon: {fileID: -7677771107549969453, guid: 0c7a337e82abc0648a6be76b1bb8a705, type: 3}
   Description: SSSSSSSSSword
   ItemType: 0
+  Price: 100
+  Rarity: 0
   Stat: 0
   Add: 5
   LootTable: {fileID: 0}

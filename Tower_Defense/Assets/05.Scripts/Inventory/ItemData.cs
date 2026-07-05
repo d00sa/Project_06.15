@@ -15,6 +15,10 @@ public class ItemData : ScriptableObject
     [Header("아이템 타입")]
     public ItemType ItemType;
 
+    [Header("상점")]
+    public int Price; //가격
+    public ItemRarity Rarity; //희귀도
+
     [Header("장비 정보")] //그 외에는 나중에 추가
     public StatType Stat; //타입
     public float Add; //추가치

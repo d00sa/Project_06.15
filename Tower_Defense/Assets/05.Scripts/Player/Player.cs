@@ -71,9 +71,10 @@ public class Player : MonoBehaviour
             currentExp -= maxExp; // 남은 경험치 이월
             playerLevel++;
 
+            //레벨 업 사운드 재생
+            SoundManager.Instance.PlaySFX("LevelUp");
             // 렙업 후 다음 레벨의 경험치 최대치 갱신
             UpdateMaxExp();
-
             // 레벨업 창 띄우기
             LevelUpUIManager.Instance.ShowLevelUpUI();
         }

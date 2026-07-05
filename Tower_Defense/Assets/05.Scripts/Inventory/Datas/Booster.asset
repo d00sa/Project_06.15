@@ -17,6 +17,8 @@ MonoBehaviour:
   Icon: {fileID: -8616133655320195221, guid: abd0a99dc511fb344ae512d5f75a404a, type: 3}
   Description: EXP UPUP!
   ItemType: 0
+  Price: 100
+  Rarity: 0
   Stat: 3
   Add: 30
   LootTable: {fileID: 0}

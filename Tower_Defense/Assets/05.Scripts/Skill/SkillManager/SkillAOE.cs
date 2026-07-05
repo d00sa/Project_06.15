@@ -55,9 +55,9 @@ public class SkillAOE : SkillBase
         }
     }
 
-    protected override void OnLevelUp(ActiveSkill skill)
+    protected override void OnLevelUp(ActiveSkill skill, bool exist)
     {
-        base.OnLevelUp(skill);
+        base.OnLevelUp(skill,exist);
 
         if (activePersistentEffects.TryGetValue(skill.data.skillName, out var persistent))
         {

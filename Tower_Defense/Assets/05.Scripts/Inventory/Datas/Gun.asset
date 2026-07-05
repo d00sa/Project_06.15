@@ -17,6 +17,8 @@ MonoBehaviour:
   Icon: {fileID: 7138463840677348831, guid: 0ce8b207c057fcf45931c2edd47fc467, type: 3}
   Description: Chong
   ItemType: 0
+  Price: 100
+  Rarity: 0
   Stat: 1
   Add: 20
   LootTable: {fileID: 0}

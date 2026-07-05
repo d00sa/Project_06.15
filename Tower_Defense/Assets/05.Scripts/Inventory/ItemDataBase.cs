@@ -13,14 +13,10 @@ public class ItemDataBase : MonoBehaviour
         Instance = this;
     }
 
-    private void Start()
-    {
-        InventoryManager.Instance.Add(Find(debugId));
-    }
-
     public ItemData Find(int id) => _datas.Find(x => x.ID == id);
     public ItemData Find(string name) => _datas.Find(x => x.ItemName == name);
     public List<ItemData> FindAll(ItemType type) => _datas.FindAll(x => x.ItemType == type);
+    public IReadOnlyList<ItemData> ItemDatas => _datas;
 
     [ContextMenu("테스트: 장비 장착")]
     public void Test()

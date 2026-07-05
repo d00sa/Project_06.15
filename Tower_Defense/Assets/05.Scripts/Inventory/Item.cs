@@ -11,6 +11,11 @@ public enum ItemType
     Equipment, RandomBox
 }
 
+public enum ItemRarity
+{
+    Common, Rare, Epic, Legendary
+}
+
 public class Item
 {
     public ItemData Data;

@@ -15,21 +15,28 @@ public class UIManager : MonoBehaviour
     [SerializeField] private TMP_Text _stageTime;
     [SerializeField] private TMP_Text _money;
     [SerializeField] private List<InventorySlot> _slots;
-    [SerializeField] private List<SkillSlot> _skillSlots;
 
-    [Header("[ItemInfos]")]
+    [Header("[Skills]")]
+    public Transform SkillPanel;
+    public List<SkillSlot> SkillSlots = new();
+
+    [Header("[ItemPanels]")]
     [SerializeField] private RectTransform _itemInfoPanel;
     [SerializeField] private Image _icon;
     [SerializeField] private TMP_Text _name;
     [SerializeField] private TMP_Text _type;
     [SerializeField] private TMP_Text _description;
 
-    [Header("[SkillInfos]")]
+    [Header("[SkillPanels]")]
     [SerializeField] private RectTransform _skillInfoPanel;
     [SerializeField] private Image _sIcon;
     [SerializeField] private TMP_Text _sName;
     [SerializeField] private TMP_Text _sType;
     [SerializeField] private TMP_Text _sDescription;
+
+    [Header("[Stores]")]
+    [SerializeField] private RectTransform _storePanel;
+    [SerializeField] private Button _reRoll;
 
     private void Awake()
     {
@@ -54,6 +61,7 @@ public class UIManager : MonoBehaviour
         GameManager.Instance.OnEnemyCountChanged += ChangeEnemyCount;
         GameManager.Instance.OnTimeChanged += ChangeStageTime;
         GameManager.Instance.OnMoneyChanged += ChangeMoney;
+        StoreManager.Instance.OnBuyGoods += RefreshStore;
         InventoryManager.Instance.OnInventoryChanged += RefreshInventory;
         Player.Instance.OnSkillLevelChanged += RefreshSkills;
     }
@@ -65,12 +73,15 @@ public class UIManager : MonoBehaviour
             GameManager.Instance.OnEnemyCountChanged -= ChangeEnemyCount;
             GameManager.Instance.OnMoneyChanged -= ChangeMoney;
         }
-        
+
         if (InventoryManager.Instance != null)
             InventoryManager.Instance.OnInventoryChanged -= RefreshInventory;
 
         if (Player.Instance != null)
             Player.Instance.OnSkillLevelChanged -= RefreshSkills;
+
+        if (StoreManager.Instance != null)
+            StoreManager.Instance.OnBuyGoods -= RefreshStore;
     }
 
     private void ChangeEnemyCount(int count)
@@ -109,8 +120,19 @@ public class UIManager : MonoBehaviour
     {
         var skills = Player.Instance.GetCurrentSkill();
 
-        for (int i = 0; i < _skillSlots.Count; i++) {
-            _skillSlots[i].SetSkill(i < skills.Count ? skills[i] : null);
+        for (int i = 0; i < SkillSlots.Count; i++) {
+            SkillSlots[i].SetSkill(i < skills.Count ? skills[i] : null);
+        }
+    }
+
+    private void RefreshStore()
+    {
+        //상점이 닫혀있다면 return
+        if (_storePanel.localScale == Vector3.zero)
+            return;
+
+        foreach (var goods in StoreManager.Instance.Goods) {
+            goods.Refresh();
         }
     }
 
@@ -157,6 +179,30 @@ public class UIManager : MonoBehaviour
         _sName.text = data.data.skillName;
         _sType.text = data.data.GetType().ToString();
         _sDescription.text = data.data.description + '\n' + data.level.ToString();
+    }
+
+    public void ShowStore()
+    {
+        _storePanel.localScale = Vector3.one;
+        _reRoll.interactable = true;
+        _reRoll.GetComponent<Image>().color = new Color32(255, 255, 255, 255);
+
+        StoreManager.Instance.SetRandomGoods();
+        RefreshStore();
+    }
+
+    public void HideStore()
+    {
+        _storePanel.localScale = Vector3.zero;
+        Time.timeScale = 1f;
+    }
+
+    public void ReRoll()
+    {
+        _reRoll.interactable = false;
+        _reRoll.GetComponent<Image>().color = new Color32(150, 150, 150, 255);
+
+        StoreManager.Instance.SetRandomGoods();
     }
 
     public void HideInfo()

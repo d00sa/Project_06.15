@@ -17,6 +17,8 @@ MonoBehaviour:
   Icon: {fileID: 128288948224760586, guid: 99c465db2ff28ee40acbb2c271da164d, type: 3}
   Description: HHHHHammerrrrr
   ItemType: 0
+  Price: 100
+  Rarity: 0
   Stat: 0
   Add: 15
   LootTable: {fileID: 0}
