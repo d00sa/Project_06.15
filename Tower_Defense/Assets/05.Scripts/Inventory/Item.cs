@@ -14,19 +14,17 @@ public enum ItemType
 public class Item
 {
     public ItemData Data;
-    public int Upgrade; //강화 수치.. 10렙까지?
 
     public float Increase
     {
         get
         {
-            return Data.Add[Upgrade];
+            return Data.Add;
         }
     }
 
     public Item(ItemData data)
     {
         Data = data;
-        Upgrade = 0;
     }
 }

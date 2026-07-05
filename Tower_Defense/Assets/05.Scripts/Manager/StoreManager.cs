@@ -11,17 +11,4 @@ public class StoreManager : MonoBehaviour
     {
         Instance = this;
     }
-
-    public void Upgrade(ItemType type)
-    {
-
-    }
-
-    public int GetUpgradeCost(ItemType type)
-    {
-        switch (type) {            
-        }
-
-        return 0;
-    }
 }
