@@ -3,6 +3,7 @@ using UnityEngine;
 public class InstantAoeEffect : MonoBehaviour, ISkillEffect
 {
     private SkillLevelStat myStat;
+    private StatType damageBonusType;
 
     [Header("번개 트랩 설정")]
     [SerializeField] private Animator animator;
@@ -18,6 +19,7 @@ public class InstantAoeEffect : MonoBehaviour, ISkillEffect
     public void Initialize(SkillEffectContext ctx)
     {
         myStat = ctx.stat;
+        damageBonusType = ctx.damageBonusType;
 
         transform.position += positionOffset;
 
@@ -45,7 +47,7 @@ public class InstantAoeEffect : MonoBehaviour, ISkillEffect
         {
             if (col.CompareTag("Enemy") && col.TryGetComponent<Enemy>(out var enemy))
             {
-                enemy.TakeDamage(myStat.damage + StatManager.Instance.aoeDamageBonus, transform.position, 0f);
+                enemy.TakeDamage(myStat.damage + Player.Instance.Stat.GetStat(damageBonusType), transform.position, 0f);
                 enemy.ApplyStun(stunDuration);
             }
         }

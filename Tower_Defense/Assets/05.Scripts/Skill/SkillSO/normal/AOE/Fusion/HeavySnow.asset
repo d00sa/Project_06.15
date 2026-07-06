@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: HeavySnow
   m_EditorClassIdentifier: Assembly-CSharp::SkillData
   skillName: HeavySnow
+  skillType: 2
   description: 
   icon: {fileID: 5812342495278332318, guid: b1dde178d112f4d48bf64e484cf681eb, type: 3}
   skillPrefab: {fileID: 270401880592756938, guid: 8fcfa9d0524102945b0aa2a193d4e224, type: 3}
@@ -43,3 +44,4 @@ MonoBehaviour:
     speed: 3
     coolTime: 5
     range: 5
+  damageBonusType: 1

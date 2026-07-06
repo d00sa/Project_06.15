@@ -74,10 +74,11 @@ public class Enemy : MonoBehaviour, IPoolable
 
     private void FixedUpdate()
     {
-        if (IsDead) 
+        if (IsDead)
             return;
 
-        if (IsMovable) {
+        if (IsMovable)
+        {
             _machine.ChangeState(StateType.Move);
             Move();
         }
@@ -142,7 +143,7 @@ public class Enemy : MonoBehaviour, IPoolable
 
         OnDead = null;
         GameManager.Instance.EnemyCount--;
-        GameManager.Instance.Money += _giveMoney;
+        GameManager.Instance.Money += Mathf.RoundToInt(_giveMoney * (1f + Player.Instance.Stat.GetStat(StatType.MoneyBonus)));
         ObjectPool.Instance.ReturnObj(this.gameObject, 2f);
     }
 
@@ -170,6 +171,12 @@ public class Enemy : MonoBehaviour, IPoolable
         if (IsDead) return;
 
         float finalDamage = damage;
+
+        bool isCritical = false;
+        if (Player.Instance != null && Player.Instance.Stat != null)
+        {
+            finalDamage = Player.Instance.Stat.RollCriticalDamage(finalDamage, out isCritical);
+        }
 
         if (OnCalculateBonusDamage != null)
         {
@@ -202,7 +209,7 @@ public class Enemy : MonoBehaviour, IPoolable
         {
             StopCoroutine(dotCoroutine);
         }
-        
+
         // 새로운 데미지 코루틴 시작
         dotCoroutine = StartCoroutine(DotRoutine(damage, duration, tickRate, knockbackPower));
     }
@@ -215,9 +222,9 @@ public class Enemy : MonoBehaviour, IPoolable
         while (elapsed < duration)
         {
             yield return new WaitForSeconds(tickRate);
-            
+
             TakeDamage(damage, transform.position, knockbackPower);
-            
+
             elapsed += tickRate;
         }
     }
@@ -237,7 +244,7 @@ public class Enemy : MonoBehaviour, IPoolable
 
     private IEnumerator StunRoutine(float duration)
     {
-        IsMovable = false; 
+        IsMovable = false;
 
         yield return new WaitForSeconds(duration);
 
@@ -249,7 +256,7 @@ public class Enemy : MonoBehaviour, IPoolable
 
     /// <summary> 적의 이동 속도를 일정 시간 동안 감소 </summary>
 
-    public void ApplySlow(float slowPercentage, float duration) 
+    public void ApplySlow(float slowPercentage, float duration)
     {
         if (IsDead) return;
 

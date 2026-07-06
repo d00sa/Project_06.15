@@ -1,10 +1,20 @@
 using UnityEngine;
 
+public enum SkillType
+{
+    None = 0,
+    Shooter,    // 발사체 (Fireball, Arrow 등)
+    AOE,        // 장판 및 지속형 (Snowball, Revolver 등)
+    Pet,        // 소환수 (BounceBall, Curse 등)
+    Passive,    // 패시브 스킬
+}
+
 [CreateAssetMenu(fileName = "SkillData", menuName = "Scriptable Objects/SkillData")]
 public class SkillData : ScriptableObject
 {
     [Header("기본 정보")]
     public string skillName = "스킬 이름";
+    public SkillType skillType = SkillType.Shooter;
     [TextArea] public string description = "";
     public Sprite icon;
 
@@ -16,6 +26,12 @@ public class SkillData : ScriptableObject
 
     [Header("레벨별 스탯 (인덱스 0 = 레벨 1)")]
     public SkillLevelStat[] levelStats;
+
+    [Header("데미지 보정 카테고리")]
+    [Tooltip("이 스킬의 데미지가 StatManager의 어떤 보정값을 받을지 결정. " +
+                 "퓨전 스킬을 새로 만들 때도 코드 수정 없이 여기서 카테고리만 골라주면 됨.")]
+    public StatType damageBonusType = StatType.ProjectileDamage;
+
 
     /// <summary>현재 레벨에 맞는 스탯 반환 (1-based)</summary>
     public SkillLevelStat GetStat(int level)

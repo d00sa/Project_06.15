@@ -5,6 +5,7 @@ using UnityEngine;
 public class Revolver : MonoBehaviour, IPersistentSkillEffect
 {
     private SkillLevelStat myStat;
+    private StatType damageBonusType;
 
     [Header("리볼버 설정")]
     [Tooltip("조준할 최대 적의 수 (기본 6발)")]
@@ -23,9 +24,10 @@ public class Revolver : MonoBehaviour, IPersistentSkillEffect
     private List<Enemy> lockedTargets = new List<Enemy>();
     private List<GameObject> spawnedCrosshairs = new List<GameObject>();
 
-    public void Initialize(SkillLevelStat stat)
+    public void Initialize(SkillLevelStat stat, StatType damageBonusType)
     {
         myStat = stat;
+        this.damageBonusType = damageBonusType;
         lockedTargets.Clear();
         spawnedCrosshairs.Clear();
         StartCoroutine(RevolverRoutine());
@@ -90,7 +92,7 @@ public class Revolver : MonoBehaviour, IPersistentSkillEffect
                 if (target != null && target.gameObject.activeInHierarchy && !target.IsDead)
                 {
                     // TODO 총소리 재생
-                    target.TakeDamage(myStat.damage + StatManager.Instance.aoeDamageBonus, target.transform.position, 0f);
+                    target.TakeDamage(myStat.damage + Player.Instance.Stat.GetStat(damageBonusType), target.transform.position, 0f);
                 }
 
                 yield return new WaitForSeconds(shootInterval);

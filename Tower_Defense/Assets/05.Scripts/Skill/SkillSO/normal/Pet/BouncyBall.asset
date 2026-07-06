@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: BouncyBall
   m_EditorClassIdentifier: Assembly-CSharp::SkillData
   skillName: BouncyBall
+  skillType: 3
   description: Bouncing Ball!
   icon: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
   skillPrefab: {fileID: 6489666389487729107, guid: 73441d1e52f0b7847aab42340e451c07, type: 3}
@@ -43,3 +44,4 @@ MonoBehaviour:
     speed: 20
     coolTime: 0
     range: 0
+  damageBonusType: 0

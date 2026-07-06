@@ -6,6 +6,11 @@ public class BoomerangProjectile : MonoBehaviour, ISkillEffect
     private Transform shooter;       // 돌아갈 발사자 (플레이어 or 펫)
     private Vector2 targetPoint;     // 찍고 돌아올 목표점
     private SkillLevelStat myStat;
+    private StatType damageBonusType;
+
+    // 속도 보정(StatType.ProjectileSpeed)이 적용된 실제 이동 속도
+    private float effectiveSpeed;
+
     private bool isReturning = false;
 
     // 다단히트 버그 방지용
@@ -17,6 +22,8 @@ public class BoomerangProjectile : MonoBehaviour, ISkillEffect
     public void Initialize(SkillEffectContext ctx)
     {
         myStat = ctx.stat;
+        damageBonusType = ctx.damageBonusType;
+        effectiveSpeed = myStat.speed * (1f + Player.Instance.Stat.GetStat(StatType.ProjectileSpeed));
         shooter = ctx.caster;
         isReturning = false;
         hitEnemies.Clear(); // 때린 적 초기화
@@ -47,7 +54,7 @@ public class BoomerangProjectile : MonoBehaviour, ISkillEffect
 
         if (!isReturning)
         {
-            transform.position = Vector2.MoveTowards(transform.position, targetPoint, myStat.ProjectileSpeed * Time.deltaTime);
+            transform.position = Vector2.MoveTowards(transform.position, targetPoint, effectiveSpeed * Time.deltaTime);
 
             // 반환점에 거의 도달했으면 복귀 모드로 전환
             if (Vector2.Distance(transform.position, targetPoint) < 0.1f)
@@ -59,7 +66,7 @@ public class BoomerangProjectile : MonoBehaviour, ISkillEffect
         else
         {
             // 발사자에게 돌아가기
-            transform.position = Vector2.MoveTowards(transform.position, shooter.position, myStat.ProjectileSpeed * Time.deltaTime);
+            transform.position = Vector2.MoveTowards(transform.position, shooter.position, effectiveSpeed * Time.deltaTime);
 
             // 발사자에게 도착하면 풀로 반환
             if (Vector2.Distance(transform.position, shooter.position) < 0.5f)
@@ -77,7 +84,7 @@ public class BoomerangProjectile : MonoBehaviour, ISkillEffect
             if (hitEnemies.Contains(collision)) return;
 
             // 데미지 주기
-            collision.GetComponent<Enemy>().TakeDamage(myStat.damage + StatManager.Instance.projectileDamageBonus, transform.position, 0.2f);
+            collision.GetComponent<Enemy>().TakeDamage(myStat.damage + Player.Instance.Stat.GetStat(damageBonusType), transform.position, 0.2f);
 
             // 적 등록
             hitEnemies.Add(collision);

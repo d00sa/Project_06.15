@@ -33,7 +33,7 @@ public class SkillShooter : SkillBase
         // 프리팹에 ISkillEffect를 구현한 컴포넌트만 붙이면 됨.
         if (obj.TryGetComponent<ISkillEffect>(out var effect))
         {
-            effect.Initialize(new SkillEffectContext(skill.CurrentStat, caster: transform, target: target));
+            effect.Initialize(new SkillEffectContext(skill.CurrentStat, skill.data.damageBonusType, caster: transform, target: target));
         }
         else
         {

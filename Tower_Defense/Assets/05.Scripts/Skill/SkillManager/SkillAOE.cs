@@ -32,7 +32,7 @@ public class SkillAOE : SkillBase
             {
                 GameObject obj = ObjectPool.Instance.GetObj(skill.data.skillPrefab.name, Vector3.zero, null, true);
                 var persistent = obj.GetComponent<IPersistentSkillEffect>();
-                persistent.Initialize(skill.CurrentStat);
+                persistent.Initialize(skill.CurrentStat, skill.data.damageBonusType);
 
                 activePersistentEffects.Add(skill.data.skillName, persistent);
             }
@@ -47,7 +47,7 @@ public class SkillAOE : SkillBase
 
         if (aoe.TryGetComponent<ISkillEffect>(out var effect))
         {
-            effect.Initialize(new SkillEffectContext(skill.CurrentStat, caster: transform, target: target));
+            effect.Initialize(new SkillEffectContext(skill.CurrentStat, skill.data.damageBonusType, caster: transform, target: target));
         }
         else
         {
@@ -55,9 +55,9 @@ public class SkillAOE : SkillBase
         }
     }
 
-    protected override void OnLevelUp(ActiveSkill skill, bool exist)
+    protected override void OnLevelUp(ActiveSkill skill)
     {
-        base.OnLevelUp(skill,exist);
+        base.OnLevelUp(skill);
 
         if (activePersistentEffects.TryGetValue(skill.data.skillName, out var persistent))
         {
@@ -111,8 +111,11 @@ public class SkillAOE : SkillBase
 
     protected override float GetInterval(ActiveSkill skill)
     {
-        // 총 발사 간격 = (원래 쿨타임) + (장판 지속시간)
-        return base.GetInterval(skill) + skill.CurrentStat.Duration;
+        // 총 발사 간격 = (원래 쿨타임) + (실제로 늘어난 장판 지속시간)
+        // AoeDuration 보정을 여기서도 똑같이 반영해야, 장판이 실제로 사라지기 전에
+        // 다음 장판이 또 깔리는 타이밍 어긋남이 안 생김
+        float effectiveDuration = skill.CurrentStat.speed * (1f + Player.Instance.Stat.GetStat(StatType.AoeDuration));
+        return base.GetInterval(skill) + effectiveDuration;
     }
 
     protected override void OnSkillRemoved(ActiveSkill skill)

@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: LightningTrap
   m_EditorClassIdentifier: Assembly-CSharp::SkillData
   skillName: LightningTrap
+  skillType: 2
   description: "\uBC88\uAC1C \uC2A4\uD0AC \uC801 \uC2A4\uD134\uC6A9 AOE\uC5D0 \uC801\uC6A9"
   icon: {fileID: 6623151957235123224, guid: 2aaa7b28731b76a46b542141ed8d38da, type: 3}
   skillPrefab: {fileID: 3655849318367500703, guid: 31c423c248fb26341818094b4e9d7fdc, type: 3}
@@ -43,3 +44,4 @@ MonoBehaviour:
     speed: 0
     coolTime: 5
     range: 10
+  damageBonusType: 1

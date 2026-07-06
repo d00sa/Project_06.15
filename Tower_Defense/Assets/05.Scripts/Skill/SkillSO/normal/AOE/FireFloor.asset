@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: FireFloor
   m_EditorClassIdentifier: Assembly-CSharp::SkillData
   skillName: FireFloor
+  skillType: 2
   description: "\uBD88 \uC7A5\uD310 \uC2A4\uD0AC AOE\uC5D0 \uC801"
   icon: {fileID: -7603872502387391663, guid: d8dc51e4ac127274cbfe489c951cd965, type: 3}
   skillPrefab: {fileID: 7911863364059629638, guid: 0e48e44dca8ee3845ad394273faeafc3, type: 3}
@@ -43,3 +44,4 @@ MonoBehaviour:
     speed: 10
     coolTime: 5
     range: 0
+  damageBonusType: 1

@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: SpikeTrap
   m_EditorClassIdentifier: Assembly-CSharp::SkillData
   skillName: SpikeTrap
+  skillType: 2
   description: "SpikeTrap AOE\uC5D0 \uC801\uC6A9"
   icon: {fileID: 7945056504642708236, guid: 246b8068ebdf7fb449790e17e323a580, type: 3}
   skillPrefab: {fileID: 2240467497310843589, guid: 010c88e9d65f86a409c13d82da7a549e, type: 3}
@@ -43,3 +44,4 @@ MonoBehaviour:
     speed: 7
     coolTime: 3
     range: 1
+  damageBonusType: 1

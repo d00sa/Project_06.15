@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: CopyPet
   m_EditorClassIdentifier: Assembly-CSharp::SkillData
   skillName: CopyPet
+  skillType: 3
   description: "CopyPet \uC18C\uD658 SkillPet\uC5D0 \uC5F0\uACB0"
   icon: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
   skillPrefab: {fileID: 4014847982353176724, guid: eefa7666089a4e240a24885f9cc1fd41, type: 3}
@@ -43,3 +44,4 @@ MonoBehaviour:
     speed: 10
     coolTime: 0
     range: 0
+  damageBonusType: 0

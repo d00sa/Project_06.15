@@ -4,6 +4,11 @@ using UnityEngine;
 public class AoeEffect : MonoBehaviour, ISkillEffect
 {
     private SkillLevelStat myStat;
+    private StatType damageBonusType;
+
+    // 지속시간 보정(StatType.AoeDuration)이 적용된 실제 지속시간
+    private float effectiveDuration;
+
     private float currentDuration;
     private float tickTimer = 0f;
 
@@ -26,6 +31,8 @@ public class AoeEffect : MonoBehaviour, ISkillEffect
     public void Initialize(SkillEffectContext ctx)
     {
         myStat = ctx.stat;
+        damageBonusType = ctx.damageBonusType;
+        effectiveDuration = myStat.speed * (1f + Player.Instance.Stat.GetStat(StatType.AoeDuration));
 
         if (instaKillNormalOnly)
         {
@@ -62,7 +69,7 @@ public class AoeEffect : MonoBehaviour, ISkillEffect
         currentDuration += Time.deltaTime;
         tickTimer += Time.deltaTime;
 
-        if (currentDuration >= myStat.Duration)
+        if (currentDuration >= effectiveDuration)
         {
             if (lingerDuration > 0f && !instaKillNormalOnly)
             {
@@ -104,7 +111,7 @@ public class AoeEffect : MonoBehaviour, ISkillEffect
 
             if (isTickTime)
             {
-                enemy.TakeDamage(myStat.damage + StatManager.Instance.aoeDamageBonus, transform.position, knockbackPower);
+                enemy.TakeDamage(myStat.damage + Player.Instance.Stat.GetStat(damageBonusType), transform.position, knockbackPower);
             }
         }
     }

@@ -6,6 +6,10 @@ using UnityEngine;
 public class HeavySnow : MonoBehaviour, ISkillEffect
 {
     private SkillLevelStat myStat;
+    private StatType damageBonusType;
+
+    // 지속시간 보정(StatType.AoeDuration)이 적용된 실제 지속시간
+    private float effectiveDuration;
 
     [Header("폭설 설정")]
     [Tooltip("느려지는 비율 (예: 0.9 = 90% 슬로우)")]
@@ -26,6 +30,9 @@ public class HeavySnow : MonoBehaviour, ISkillEffect
     public void Initialize(SkillEffectContext ctx)
     {
         myStat = ctx.stat;
+        damageBonusType = ctx.damageBonusType;
+        effectiveDuration = myStat.speed * (1f + Player.Instance.Stat.GetStat(StatType.AoeDuration));
+
         StartCoroutine(HeavySnowRoutine());
     }
 
@@ -45,7 +52,7 @@ public class HeavySnow : MonoBehaviour, ISkillEffect
 
         ApplyGlobalSlow();
 
-        float dropInterval = myStat.Duration > 0 ? myStat.Duration / trapCount : 0.5f;
+        float dropInterval = effectiveDuration > 0 ? effectiveDuration / trapCount : 0.5f;
         for (int i = 0; i < trapCount; i++)
         {
             DropTrapOnRandomEnemy();
@@ -61,7 +68,7 @@ public class HeavySnow : MonoBehaviour, ISkillEffect
         {
             if (enemy.gameObject.activeInHierarchy && !enemy.IsDead)
             {
-                enemy.ApplySlow(slowPercentage, myStat.Duration);
+                enemy.ApplySlow(slowPercentage, effectiveDuration);
             }
         }
     }
@@ -86,7 +93,7 @@ public class HeavySnow : MonoBehaviour, ISkillEffect
 
                 if (trap.TryGetComponent<ISkillEffect>(out var trapEffect))
                 {
-                    trapEffect.Initialize(new SkillEffectContext(myStat));
+                    trapEffect.Initialize(new SkillEffectContext(myStat, damageBonusType));
                 }
             }
         }

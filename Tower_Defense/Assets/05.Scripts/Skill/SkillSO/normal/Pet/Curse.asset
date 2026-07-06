@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Curse
   m_EditorClassIdentifier: Assembly-CSharp::SkillData
   skillName: Curse
+  skillType: 3
   description: 
   icon: {fileID: 8820753214136849641, guid: b235080c5045de14caa8ab739672fad4, type: 3}
   skillPrefab: {fileID: 3232582429455102803, guid: 7b620dd19860a524cac5a2c87a0096b5, type: 3}
@@ -43,3 +44,4 @@ MonoBehaviour:
     speed: 0
     coolTime: 3
     range: 0
+  damageBonusType: 0

@@ -8,6 +8,11 @@ public class Player : MonoBehaviour
 {
     public static Player Instance { get; private set; }
 
+    /// <summary>
+    /// 같은 프리팹에 부착된 StatManager. StatManager.Instance 대신 이걸로 접근.
+    /// </summary>
+    public StatManager Stat { get; private set; }
+
     [Header("스킬 매니저 컴포넌트 연결")]
     [SerializeField] private SkillShooter skillShooter;
     [SerializeField] private SkillAOE skillAOE;
@@ -39,6 +44,12 @@ public class Player : MonoBehaviour
     {
         if (Instance != null && Instance != this) { Destroy(gameObject); return; }
         Instance = this;
+
+        Stat = GetComponent<StatManager>();
+        if (Stat == null)
+        {
+            Debug.LogError("[Player] StatManager 컴포넌트가 같은 오브젝트에 없습니다.");
+        }
     }
 
     private void Start()
@@ -61,7 +72,7 @@ public class Player : MonoBehaviour
     {
 
         // 기본 경험치 + 보너스 경험치 (ex: expGainedBonus가 0.1이면 10% 추가)
-        float bonusMultiplier = 1f + StatManager.Instance.expGainedBonus;
+        float bonusMultiplier = 1f + Stat.GetStat(StatType.EXPGained);
         int finalAmount = Mathf.RoundToInt(amount * bonusMultiplier);
 
         currentExp += finalAmount;
@@ -177,7 +188,6 @@ public class Player : MonoBehaviour
     /// </summary>
     public bool RemoveSkill(string skillName)
     {
-        // Shooter, AOE, Pet 매니저를 순서대로 찌르면서 스킬을 지웠는지 확인
         if (skillShooter != null && skillShooter.RemoveSkill(skillName)) return true;
         if (skillAOE != null && skillAOE.RemoveSkill(skillName)) return true;
         if (skillPet != null && skillPet.RemoveSkill(skillName)) return true;

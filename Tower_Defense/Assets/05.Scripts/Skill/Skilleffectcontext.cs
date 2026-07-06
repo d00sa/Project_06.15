@@ -10,15 +10,19 @@ public readonly struct SkillEffectContext
     /// <summary>현재 스킬 레벨의 스탯</summary>
     public readonly SkillLevelStat stat;
 
+    /// <summary>이 스킬의 데미지가 어떤 StatManager 보정 카테고리를 받는지 (SkillData에서 옴)</summary>
+    public readonly StatType damageBonusType;
+
     /// <summary>이 이펙트를 발사/소환한 주체 (플레이어, 펫 등). 필요 없으면 null.</summary>
     public readonly Transform caster;
 
     /// <summary>조준 대상. 필요 없으면 null.</summary>
     public readonly Transform target;
 
-    public SkillEffectContext(SkillLevelStat stat, Transform caster = null, Transform target = null)
+    public SkillEffectContext(SkillLevelStat stat, StatType damageBonusType, Transform caster = null, Transform target = null)
     {
         this.stat = stat;
+        this.damageBonusType = damageBonusType;
         this.caster = caster;
         this.target = target;
     }

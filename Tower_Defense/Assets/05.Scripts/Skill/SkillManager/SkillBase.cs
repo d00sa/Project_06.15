@@ -25,7 +25,7 @@ public abstract class SkillBase : MonoBehaviour
                     : (1f / skill.CurrentStat.fireRate);
 
         // 공격 속도 보너스가 클수록 간격(쿨타임)이 짧아짐
-        float speedMultiplier = 1f + StatManager.Instance.attackSpeedBonus;
+        float speedMultiplier = 1f + Player.Instance.Stat.GetStat(StatType.AttackSpeed);
         return baseInterval / speedMultiplier;
     }
 
@@ -58,7 +58,7 @@ public abstract class SkillBase : MonoBehaviour
         {
             if (existingSkill.level >= targetData.maxLevel) return -1;
             existingSkill.level++;
-            OnLevelUp(existingSkill, true);
+            OnLevelUp(existingSkill);
             Execute(existingSkill);
             existingSkill.fireTimer = 0f; // 타이머 리셋
 
@@ -68,7 +68,7 @@ public abstract class SkillBase : MonoBehaviour
         {
             ActiveSkill newSkill = new ActiveSkill { data = targetData, level = 1, fireTimer = 0f };
             activeSkills.Add(newSkill);
-            OnLevelUp(newSkill, false);
+            OnLevelUp(newSkill);
 
             Execute(newSkill);
             newSkill.fireTimer = 0f;
@@ -90,15 +90,10 @@ public abstract class SkillBase : MonoBehaviour
         return 0; // 아직 한 번도 안 배운 스킬
     }
 
-    /// <summary> 레벨업 시 추가 효과 구현 </summary>
-    protected virtual void OnLevelUp(ActiveSkill skill, bool exist) {
-        if (!exist) {
-            GameObject obj = ObjectPool.Instance.GetObj("Image - Skill", UIManager.Instance.SkillPanel);
-            SkillSlot slot = obj.GetComponent<SkillSlot>();
-            slot.SetSkill(skill);
-            UIManager.Instance.SkillSlots.Add(slot);
-        }
-    }
+    /// <summary>
+    /// 레벨업 시 추가 효과 구현(아마 사운드나 아마 이펙트나 그런거?)
+    /// </summary>
+    protected virtual void OnLevelUp(ActiveSkill skill) { }
 
     protected abstract void Execute(ActiveSkill skill);
 

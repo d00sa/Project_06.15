@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 5738497994093055526}
   - component: {fileID: 7259789966402149794}
   - component: {fileID: 334546321393106679}
+  - component: {fileID: 1612046705408944468}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -112,7 +113,7 @@ MonoBehaviour:
   skillAOE: {fileID: 5738497994093055526}
   skillPet: {fileID: 7259789966402149794}
   startingSkills:
-  - {fileID: 11400000, guid: 93fdffa4aa83e6d44a594b05f1050dba, type: 2}
+  - {fileID: 11400000, guid: c77baab45161b5a4b8982ae884497394, type: 2}
   currentExp: 0
   maxExp: 100
   playerLevel: 1
@@ -221,3 +222,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SkillPassive
   skillDataList: []
+--- !u!114 &1612046705408944468
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4714271137520415422}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 159f4f87b38b50f4eb4e3f08e2ab5878, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::StatManager
+  statEntriesView: []

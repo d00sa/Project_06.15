@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: RoadRoller
   m_EditorClassIdentifier: Assembly-CSharp::SkillData
   skillName: RoadRoller
+  skillType: 3
   description: "\uB85C\uB4DC\uB864\uB7EC \uD328\uC2DC\uBE0C \uC2A4\uD0AC"
   icon: {fileID: 4170916019764683559, guid: 050573e4f6668d242924cfbf0bde9ae4, type: 3}
   skillPrefab: {fileID: 3346492310710175041, guid: 1945727112558fe4a8e134b09b3954c7, type: 3}
@@ -43,3 +44,4 @@ MonoBehaviour:
     speed: 50
     coolTime: 0
     range: 0
+  damageBonusType: 0

@@ -256,54 +256,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 19421395}
   m_CullTransparentMesh: 1
---- !u!1 &37337134
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 37337136}
-  - component: {fileID: 37337135}
-  m_Layer: 0
-  m_Name: StatManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &37337135
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 37337134}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 159f4f87b38b50f4eb4e3f08e2ab5878, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::StatManager
-  projectileDamageBonus: 0
-  aoeDamageBonus: 0
-  attackSpeedBonus: 0
-  expGainedBonus: 0
---- !u!4 &37337136
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 37337134}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.23399, y: -0.17946, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &64777833
 GameObject:
   m_ObjectHideFlags: 0
@@ -2126,14 +2078,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1612046705408944468, guid: 24ddef4e6ae733648be7a3e464718ccc, type: 3}
+      propertyPath: statEntriesView.Array.size
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4714271137520415422, guid: 24ddef4e6ae733648be7a3e464718ccc, type: 3}
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 5723180952184992513, guid: 24ddef4e6ae733648be7a3e464718ccc, type: 3}
-      propertyPath: 'startingSkills.Array.data[0]'
-      value: 
-      objectReference: {fileID: 11400000, guid: 93fdffa4aa83e6d44a594b05f1050dba, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -15666,7 +15618,6 @@ SceneRoots:
   - {fileID: 739801948}
   - {fileID: 323067918}
   - {fileID: 280961981}
-  - {fileID: 37337136}
   - {fileID: 270040854}
   - {fileID: 182442822}
   - {fileID: 221828729}

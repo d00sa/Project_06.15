@@ -24,7 +24,7 @@ public class InventoryManager : MonoBehaviour
 
         Item item = new Item(data);
         _items.Add(item);
-        StatManager.Instance.AddStat(data.Stat, item.Increase);
+        Player.Instance.Stat.AddStat(data.Stat, item.Increase);
 
         OnInventoryChanged?.Invoke();
         return item;
@@ -34,7 +34,7 @@ public class InventoryManager : MonoBehaviour
         bool result = _items.Remove(item);
 
         if (result) {
-            StatManager.Instance.AddStat(item.Data.Stat, -item.Increase);
+            Player.Instance.Stat.AddStat(item.Data.Stat, -item.Increase);
             OnInventoryChanged?.Invoke();
         }
 
