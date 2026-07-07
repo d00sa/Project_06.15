@@ -1,0 +1,47 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b086d55aac52e7240be871bc15296cf3, type: 3}
+  m_Name: NuclearBomb
+  m_EditorClassIdentifier: Assembly-CSharp::SkillData
+  skillName: NuclearBomb
+  skillType: 2
+  description: 
+  icon: {fileID: 7044448977598011056, guid: dbcf054bd96334b47892dd9ced4d369f, type: 3}
+  skillPrefab: {fileID: 2648037592479618916, guid: 2d3cf0e5834cce84e8c501ee4b6e4b08, type: 3}
+  maxLevel: 5
+  levelStats:
+  - damage: 200
+    fireRate: 0
+    speed: 5
+    coolTime: 10
+    range: 0
+  - damage: 200
+    fireRate: 0
+    speed: 5
+    coolTime: 10
+    range: 0
+  - damage: 200
+    fireRate: 0
+    speed: 5
+    coolTime: 10
+    range: 0
+  - damage: 200
+    fireRate: 0
+    speed: 5
+    coolTime: 10
+    range: 0
+  - damage: 200
+    fireRate: 0
+    speed: 5
+    coolTime: 10
+    range: 0
+  damageBonusType: 0

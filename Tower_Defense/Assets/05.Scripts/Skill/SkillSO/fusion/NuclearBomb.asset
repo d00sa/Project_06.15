@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eac5e2daba367c145893f8e113f4c037, type: 3}
+  m_Name: NuclearBomb
+  m_EditorClassIdentifier: Assembly-CSharp::FusionSkillData
+  requiredSkill1: {fileID: 11400000, guid: b90d896d1628fe044b9140de0c472b29, type: 2}
+  requiredSkill2: {fileID: 11400000, guid: 50578391f6f15a54cae815e01eb9bea7, type: 2}
+  resultFusionSkill: {fileID: 11400000, guid: 048920edd3c18c248bd998798e2e8ef2, type: 2}
+  isReplacement: 1

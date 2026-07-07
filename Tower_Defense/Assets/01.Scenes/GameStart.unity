@@ -3481,6 +3481,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 5723180952184992513, guid: 24ddef4e6ae733648be7a3e464718ccc, type: 3}
+      propertyPath: 'startingSkills.Array.data[0]'
+      value: 
+      objectReference: {fileID: 11400000, guid: c77baab45161b5a4b8982ae884497394, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -10449,6 +10453,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::FusionSkillManager
   allRecipes:
   - {fileID: 11400000, guid: 17c7c1f9020d70140945eb2bf0d43ff4, type: 2}
+  - {fileID: 11400000, guid: 899c26b3d7ccfbe428efb9ceaf0e7e50, type: 2}
+  - {fileID: 11400000, guid: ff432590f82d68c41b93a31a3093f90e, type: 2}
   readyFusions: []
 --- !u!4 &1461983891
 Transform:

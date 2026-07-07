@@ -3,21 +3,30 @@ using UnityEngine;
 
 public class BoomerangProjectile : MonoBehaviour, ISkillEffect
 {
-    private Transform shooter;       // 돌아갈 발사자 (플레이어 or 펫)
-    private Vector2 targetPoint;     // 찍고 돌아올 목표점
+    private Transform shooter;
     private SkillLevelStat myStat;
     private StatType damageBonusType;
-
-    // 속도 보정(StatType.ProjectileSpeed)이 적용된 실제 이동 속도
     private float effectiveSpeed;
 
-    private bool isReturning = false;
-
-    // 다단히트 버그 방지용
+    // 공통: 다단히트 방지용
     private HashSet<Collider2D> hitEnemies = new HashSet<Collider2D>();
 
     [Header("부메랑 설정")]
-    [SerializeField] private float spinSpeed = 1000f; // 회전 속도 (대강 빠르게)
+    [SerializeField] private float spinSpeed = 2000f;
+
+    [Header("특수 이동 옵션")]
+    [Tooltip("체크 시 타겟을 무시하고 무작위 360도 방향으로 날아갔다가 돌아옵니다.")]
+    public bool isRandomDirection = false;
+    [SerializeField]  private float actualRange = 20f;
+
+    private Vector2 targetPoint;
+    private bool isReturning = false;
+
+    private Vector2 randomDir;
+    private float distanceTraveled = 0f;
+    private bool isChakramReturning = false;
+
+
 
     public void Initialize(SkillEffectContext ctx)
     {
@@ -25,19 +34,32 @@ public class BoomerangProjectile : MonoBehaviour, ISkillEffect
         damageBonusType = ctx.damageBonusType;
         effectiveSpeed = myStat.speed * (1f + Player.Instance.Stat.GetStat(StatType.ProjectileSpeed));
         shooter = ctx.caster;
-        isReturning = false;
-        hitEnemies.Clear(); // 때린 적 초기화
+        hitEnemies.Clear();
 
-        if (ctx.target != null)
+        // 💡 분기점: 랜덤 체크 여부에 따라 초기화도 완전히 다르게 진행
+        if (isRandomDirection)
         {
-            // 타겟 방향으로 range 만큼 떨어진 곳을 반환점으로 설정
-            Vector2 dir = ((Vector2)ctx.target.position - (Vector2)transform.position).normalized;
-            targetPoint = (Vector2)ctx.target.position + dir * myStat.range;
+            // [새로운 로직] 차크람 초기화
+            randomDir = UnityEngine.Random.insideUnitCircle.normalized;
+            if (randomDir == Vector2.zero) randomDir = Vector2.up;
+
+            distanceTraveled = 0f;
+            isChakramReturning = false;
+            actualRange = myStat.range > 1f ? myStat.range : 5f; // 사거리 0 에러 방지
         }
         else
         {
-            // 타겟이 없으면 그냥 오른쪽으로 날아감
-            targetPoint = (Vector2)transform.position + Vector2.right * myStat.range;
+            // [기존 로직] 일반 부메랑 초기화
+            isReturning = false;
+            if (ctx.target != null)
+            {
+                Vector2 dir = ((Vector2)ctx.target.position - (Vector2)transform.position).normalized;
+                targetPoint = (Vector2)ctx.target.position + dir * myStat.range;
+            }
+            else
+            {
+                targetPoint = (Vector2)transform.position + Vector2.right * myStat.range;
+            }
         }
 
         SoundManager.Instance.PlaySFX("Gun");
@@ -48,27 +70,76 @@ public class BoomerangProjectile : MonoBehaviour, ISkillEffect
 
     void Update()
     {
-        if (myStat == null || shooter == null) return;
+        if (myStat == null || shooter == null || !shooter.gameObject.activeInHierarchy)
+        {
+            ObjectPool.Instance.ReturnObj(gameObject);
+            return;
+        }
 
+        // 빙글빙글 도는 시각 효과는 공통
         transform.Rotate(Vector3.forward, spinSpeed * Time.deltaTime);
 
-        if (!isReturning)
+        // 💡 분기점: 실행 함수를 완전히 쪼갬
+        if (isRandomDirection)
         {
-            transform.position = Vector2.MoveTowards(transform.position, targetPoint, effectiveSpeed * Time.deltaTime);
+            HandleRandomChakram(); // 새 로직
+        }
+        else
+        {
+            HandleNormalBoomerang(); // 기존 로직
+        }
+    }
 
-            // 반환점에 거의 도달했으면 복귀 모드로 전환
-            if (Vector2.Distance(transform.position, targetPoint) < 0.1f)
+    // ==========================================
+    // 💡 새 함수: 랜덤 차크람 전용 이동 로직
+    // ==========================================
+    private void HandleRandomChakram()
+    {
+        if (!isChakramReturning)
+        {
+            // 무조건 지정된 랜덤 방향(randomDir)으로 직진
+            float step = effectiveSpeed * Time.deltaTime;
+            transform.Translate(randomDir * step, Space.World);
+            distanceTraveled += step;
+
+            // 특정 거리(actualRange)만큼 날아갔으면 복귀
+            if (distanceTraveled >= actualRange)
             {
-                isReturning = true;
-                hitEnemies.Clear(); // 올 때 한 번 더 때릴 수 있게 초기화
+                isChakramReturning = true;
+                hitEnemies.Clear(); // 돌아올 때 다단히트 리셋
             }
         }
         else
         {
-            // 발사자에게 돌아가기
+            // 플레이어에게 복귀
             transform.position = Vector2.MoveTowards(transform.position, shooter.position, effectiveSpeed * Time.deltaTime);
 
-            // 발사자에게 도착하면 풀로 반환
+            if (Vector2.Distance(transform.position, shooter.position) < 0.5f)
+            {
+                ObjectPool.Instance.ReturnObj(gameObject);
+            }
+        }
+    }
+
+    // ==========================================
+    // 💡 기존 함수: 일반 부메랑 이동 로직 (원형 보존)
+    // ==========================================
+    private void HandleNormalBoomerang()
+    {
+        if (!isReturning)
+        {
+            transform.position = Vector2.MoveTowards(transform.position, targetPoint, effectiveSpeed * Time.deltaTime);
+
+            if (Vector2.Distance(transform.position, targetPoint) < 0.1f)
+            {
+                isReturning = true;
+                hitEnemies.Clear();
+            }
+        }
+        else
+        {
+            transform.position = Vector2.MoveTowards(transform.position, shooter.position, effectiveSpeed * Time.deltaTime);
+
             if (Vector2.Distance(transform.position, shooter.position) < 0.5f)
             {
                 ObjectPool.Instance.ReturnObj(gameObject);
@@ -80,15 +151,10 @@ public class BoomerangProjectile : MonoBehaviour, ISkillEffect
     {
         if (collision.CompareTag("Enemy"))
         {
-            // 다단히트 방지
             if (hitEnemies.Contains(collision)) return;
 
-            // 데미지 주기
             collision.GetComponent<Enemy>().TakeDamage(myStat.damage + Player.Instance.Stat.GetStat(damageBonusType), transform.position, 0.2f);
-
-            // 적 등록
             hitEnemies.Add(collision);
-
         }
     }
 }

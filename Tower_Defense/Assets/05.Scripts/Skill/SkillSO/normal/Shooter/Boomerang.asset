@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b086d55aac52e7240be871bc15296cf3, type: 3}
   m_Name: Boomerang
   m_EditorClassIdentifier: Assembly-CSharp::SkillData
-  skillName: boomerang
+  skillName: Boomerang
+  skillType: 1
   description: "\uBD80\uBA54\uB791"
   icon: {fileID: 919508462713514613, guid: d8dc51e4ac127274cbfe489c951cd965, type: 3}
   skillPrefab: {fileID: 7752684502632871730, guid: 1fb898e05c6b39742ab21c553ad24c3b, type: 3}
@@ -43,3 +44,4 @@ MonoBehaviour:
     speed: 20
     coolTime: 3
     range: 5
+  damageBonusType: 0
