@@ -10,15 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d6eec44603fccd34d9017135b7b2ace0, type: 3}
-  m_Name: Spear
+  m_Name: Kang_Hyung-wook
   m_EditorClassIdentifier: Assembly-CSharp::ItemData
-  ID: 2
-  ItemName: Spear
-  Icon: {fileID: -7160923591487466191, guid: 4c8c451b8da681349812d03863d6af36, type: 3}
-  Description: HHHHHHHHH
-  ItemType: 0
-  Price: 100
-  Rarity: 0
-  Stat: 0
-  Add: 10
+  ID: 4
+  ItemName: Kang_Hyung-wook
+  Icon: {fileID: -8004965270653714688, guid: 31eccc2f3278cc540968de5394dd5d58, type: 3}
+  Description: DOG_KING
+  ItemType: 2
+  Price: 400
+  Rarity: 2
+  Modifiers:
+  - StatType: 2
+    Value: 40
   LootTable: {fileID: 0}

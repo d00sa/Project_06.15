@@ -10,18 +10,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d6eec44603fccd34d9017135b7b2ace0, type: 3}
-  m_Name: Hammer
+  m_Name: NullReference
   m_EditorClassIdentifier: Assembly-CSharp::ItemData
-  ID: 3
-  ItemName: Construction_Site_Ace
-  Icon: {fileID: 128288948224760586, guid: 99c465db2ff28ee40acbb2c271da164d, type: 3}
-  Description: Ace!
-  ItemType: 0
-  Price: 300
-  Rarity: 1
+  ID: 0
+  ItemName: NullReference
+  Icon: {fileID: -2187722006804314621, guid: 0c1e7becab487f741b68ff632ef511b6, type: 3}
+  Description: Null
+  ItemType: 2
+  Price: 500
+  Rarity: 3
   Modifiers:
-  - StatType: 0
-    Value: 20
-  - StatType: 2
-    Value: 20
+  - StatType: 9
+    Value: 1
+  - StatType: 4
+    Value: 1
   LootTable: {fileID: 0}

@@ -37,6 +37,10 @@ public class UIManager : MonoBehaviour
     [Header("[Stores]")]
     [SerializeField] private RectTransform _storePanel;
     [SerializeField] private Button _reRoll;
+    [SerializeField] private RectTransform _goodsInfoPanel;
+    [SerializeField] private TMP_Text _gName;
+    [SerializeField] private TMP_Text _gType;
+    [SerializeField] private TMP_Text _gDescription;
 
     private void Awake()
     {
@@ -161,6 +165,26 @@ public class UIManager : MonoBehaviour
         _name.text = data.ItemName;
         _type.text = data.ItemType.ToString();
         _description.text = data.Description;
+        //아마 스텟 설명도 들어갈 듯.
+    }
+
+    public void ShowGoodsInfo(ItemData data, RectTransform slotPos)
+    {
+        if (_goodsInfoPanel.localScale == Vector3.one)
+            return;
+
+        _goodsInfoPanel.localScale = Vector3.one;
+
+        Vector3[] corners = new Vector3[4];
+        slotPos.GetWorldCorners(corners);
+        _goodsInfoPanel.position = corners[1] +
+                                  Vector3.left * _goodsInfoPanel.rect.width / 1.9f +
+                                  Vector3.up * _goodsInfoPanel.rect.height / 1.9f;
+
+        _gName.text = data.ItemName;
+        _gType.text = data.ItemType.ToString();
+        _gDescription.text = data.Description;
+        //아마 스텟 설명도 들어갈 듯. (아니면 상품 팔 때 띄우거나)
     }
 
     public void ShowSkillInfo(ActiveSkill data, RectTransform slotPos)
@@ -183,6 +207,7 @@ public class UIManager : MonoBehaviour
 
     public void ShowStore()
     {
+        Time.timeScale = 0f;
         _storePanel.localScale = Vector3.one;
         _reRoll.interactable = true;
         _reRoll.GetComponent<Image>().color = new Color32(255, 255, 255, 255);
@@ -220,5 +245,11 @@ public class UIManager : MonoBehaviour
         _sName.text = "";
         _sType.text = "";
         _sDescription.text = "";
+
+        _goodsInfoPanel.localScale = Vector3.zero;
+
+        _gName.text = "";
+        _gType.text = "";
+        _gDescription.text = "";
     }
 }

@@ -10,15 +10,20 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d6eec44603fccd34d9017135b7b2ace0, type: 3}
-  m_Name: Fly
+  m_Name: Final Final Final Real Final Sword
   m_EditorClassIdentifier: Assembly-CSharp::ItemData
-  ID: 5
-  ItemName: Fly
-  Icon: {fileID: 772592002672757856, guid: fb520c9a9a0bf7949ba2d082e0bfe7dc, type: 3}
-  Description: Fly Fly
+  ID: 999
+  ItemName: Final Final Final Real Final Sword
+  Icon: {fileID: 1254808720806941322, guid: d8dc51e4ac127274cbfe489c951cd965, type: 3}
+  Description: Final Final Final Real Final Sword
   ItemType: 0
-  Price: 100
-  Rarity: 0
-  Stat: 2
-  Add: 20
+  Price: 500
+  Rarity: 3
+  Modifiers:
+  - StatType: 3
+    Value: 1
+  - StatType: 6
+    Value: 1
+  - StatType: 7
+    Value: 0.2
   LootTable: {fileID: 0}

@@ -115,8 +115,10 @@ public class Enemy : MonoBehaviour, IPoolable
         Player.Instance.AddExp(_giveExp); // 플레이어에게 경험치 넘겨줌
         SoundManager.Instance.PlaySFX("Death_Zombie");
 
-        if (boss)
+        if (boss) {
             Spawner.Instance.IsBoss = false;
+            UIManager.Instance.ShowStore(); //일단은 보스가 죽으면 상점이 열리도록 합시다.
+        }
 
         // 죽으면 지속 데미지 끄기
         if (dotCoroutine != null)

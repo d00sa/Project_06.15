@@ -25,9 +25,9 @@ public class ItemDataBase : MonoBehaviour
             Item success = InventoryManager.Instance.Add(Find(debugId));
 
             if (success is not null)
-                Debug.Log($"<color=green>[디버그]</color> '{success.Data.name}' 획득!");
+                Debug.Log($"<color=green>[디버그]</color> '{success.Name}' 획득!");
             else
-                Debug.LogWarning($"<color=red>[디버그]</color> '{success.Data.name}'이 존재하지 않습니다!");
+                Debug.LogWarning($"<color=red>[디버그]</color> 아이템 : {debugId}이 존재하지 않습니다!");
         }
         else 
             Debug.LogWarning("게임이 실행 중일 때만 테스트할 수 있습니다");

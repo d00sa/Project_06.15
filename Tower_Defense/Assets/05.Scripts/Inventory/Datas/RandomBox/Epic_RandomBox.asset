@@ -10,18 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d6eec44603fccd34d9017135b7b2ace0, type: 3}
-  m_Name: Hammer
+  m_Name: Epic_RandomBox
   m_EditorClassIdentifier: Assembly-CSharp::ItemData
-  ID: 3
-  ItemName: Construction_Site_Ace
-  Icon: {fileID: 128288948224760586, guid: 99c465db2ff28ee40acbb2c271da164d, type: 3}
-  Description: Ace!
-  ItemType: 0
+  ID: 7777
+  ItemName: Rare_RandomBox
+  Icon: {fileID: -5938411374528227644, guid: 659a30afce9ba31409e8030fc975673a, type: 3}
+  Description: Rare_RandomBox
+  ItemType: 3
   Price: 300
   Rarity: 1
-  Modifiers:
-  - StatType: 0
-    Value: 20
-  - StatType: 2
-    Value: 20
-  LootTable: {fileID: 0}
+  Modifiers: []
+  LootTable: {fileID: 11400000, guid: cec8404bd882b5843a7f24c748d0db74, type: 2}

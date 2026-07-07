@@ -6,9 +6,8 @@ using Random = UnityEngine.Random;
 
 public enum ItemType
 {
-    //여기에 이제 추가할 듯 (검,해머,총, 등등) -> 아이템 종류
-    //장비템, 랜덤박스
-    Equipment, RandomBox
+    //아이템 종류
+    Sword, Pipe, Relic, RandomBox
 }
 
 public enum ItemRarity
@@ -18,15 +17,15 @@ public enum ItemRarity
 
 public class Item
 {
-    public ItemData Data;
-
-    public float Increase
-    {
-        get
-        {
-            return Data.Add;
-        }
-    }
+    public ItemData Data { get; }
+    public string Name => Data.ItemName;
+    public string Description => Data.Description;
+    public Sprite Icon => Data.Icon;
+    public ItemType Type => Data.ItemType;
+    public ItemRarity Rarity => Data.Rarity;
+    public int Price => Data.Price;
+    public List<StatModifier> stats => Data.Modifiers;
+    public LootTable root => Data.LootTable;
 
     public Item(ItemData data)
     {

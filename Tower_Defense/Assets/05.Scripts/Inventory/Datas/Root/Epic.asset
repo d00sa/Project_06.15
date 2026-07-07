@@ -10,14 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b69b4af72ad274c43b8289d1aa654f25, type: 3}
-  m_Name: Good
+  m_Name: Epic
   m_EditorClassIdentifier: Assembly-CSharp::LootTable
   Items:
-  - Item: {fileID: 11400000, guid: c102e26fcf8784b4e8b1efcde4b1ce21, type: 2}
-    Weight: 25
-  - Item: {fileID: 11400000, guid: cdff209e38565154b873f2cef3d809ef, type: 2}
-    Weight: 25
-  - Item: {fileID: 11400000, guid: bc6d994bc2d088c4bace4368ee5c2cbe, type: 2}
-    Weight: 50
-  - Item: {fileID: 11400000, guid: a754ea95fba5a864c9fb24dc6104a970, type: 2}
-    Weight: 50
+  - Item: {fileID: 11400000, guid: 5e9613aaaa386084482e3a49fc1d4687, type: 2}
+    Weight: 20
+  - Item: {fileID: 11400000, guid: 9a5f48dd5b7edeb4981f07e4c30873da, type: 2}
+    Weight: 80

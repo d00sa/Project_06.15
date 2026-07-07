@@ -9,6 +9,7 @@ public class Spawner : MonoBehaviour
     public DifficultyData CurDifficulty;
     public bool IsBoss; //보스 스테이지인가? -> 보스가 죽으면 끄도록 할거임
     public int CurrentStage => _currentStage;
+    public event Action<int> OnWaveChanged;
 
     [SerializeField] private Transform _spawnPoint;
     [SerializeField] private int _currentStage;
@@ -105,6 +106,7 @@ public class Spawner : MonoBehaviour
     public void SpawnNext()
     {
         _currentStage++;
+        OnWaveChanged?.Invoke(_currentStage);
         StartSpawn(_currentStage);
     }
 

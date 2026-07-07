@@ -22,7 +22,7 @@ public class InventorySlot : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
             return;
         }
 
-        _image.sprite = _item.Data.Icon;
+        _image.sprite = _item.Icon;
     }
 
     public void OnPointerEnter(PointerEventData eventData)
@@ -57,7 +57,7 @@ public class InventorySlot : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
 
     public void OnPointerClick(PointerEventData eventData)
     {
-        if (_item.Data.ItemType == ItemType.RandomBox)
+        if (_item.Type == ItemType.RandomBox)
             InventoryManager.Instance.Use(_item);
     }
 

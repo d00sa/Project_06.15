@@ -10,15 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d6eec44603fccd34d9017135b7b2ace0, type: 3}
-  m_Name: Gun
+  m_Name: Rare_RandomBox
   m_EditorClassIdentifier: Assembly-CSharp::ItemData
-  ID: 4
-  ItemName: Gun
-  Icon: {fileID: 7138463840677348831, guid: 0ce8b207c057fcf45931c2edd47fc467, type: 3}
-  Description: Chong
-  ItemType: 0
-  Price: 100
-  Rarity: 0
-  Stat: 1
-  Add: 20
-  LootTable: {fileID: 0}
+  ID: 7777
+  ItemName: Rare_RandomBox
+  Icon: {fileID: -5938411374528227644, guid: 659a30afce9ba31409e8030fc975673a, type: 3}
+  Description: Rare_RandomBox
+  ItemType: 3
+  Price: 500
+  Rarity: 1
+  Modifiers: []
+  LootTable: {fileID: 11400000, guid: 5d2d168505a45d34e9f52c4305824788, type: 2}

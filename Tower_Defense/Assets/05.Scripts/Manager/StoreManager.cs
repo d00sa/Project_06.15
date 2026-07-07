@@ -24,6 +24,16 @@ public class StoreManager : MonoBehaviour
         Instance = this;
     }
 
+    private void Start()
+    {
+        Spawner.Instance.OnWaveChanged += UpdateRarityWeight;
+    }
+
+    private void OnDestroy()
+    {
+        Spawner.Instance.OnWaveChanged -= UpdateRarityWeight;
+    }
+
     public IReadOnlyList<Goods> Goods => _goods;
 
     public bool TryBuy(ItemData item)
@@ -73,6 +83,22 @@ public class StoreManager : MonoBehaviour
         }
 
         return null;
+    }
+
+    private void UpdateRarityWeight(int wave)
+    {
+        if (wave >= 10) {
+            _rarityWeight[ItemRarity.Common] = 70;
+            _rarityWeight[ItemRarity.Rare] = 60;
+            _rarityWeight[ItemRarity.Epic] = 25;
+            _rarityWeight[ItemRarity.Legendary] = 10;
+        }
+        else {
+            _rarityWeight[ItemRarity.Common] = 100;
+            _rarityWeight[ItemRarity.Rare] = 40;
+            _rarityWeight[ItemRarity.Epic] = 15;
+            _rarityWeight[ItemRarity.Legendary] = 5;
+        }
     }
 
     private int GetWeight(ItemRarity rarity) => _rarityWeight[rarity];

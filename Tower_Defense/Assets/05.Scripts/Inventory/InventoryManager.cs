@@ -24,7 +24,9 @@ public class InventoryManager : MonoBehaviour
 
         Item item = new Item(data);
         _items.Add(item);
-        Player.Instance.Stat.AddStat(data.Stat, item.Increase);
+
+        foreach(StatModifier stat in data.Modifiers)
+            Player.Instance.Stat.AddStat(stat.StatType, stat.Value);
 
         OnInventoryChanged?.Invoke();
         return item;
@@ -34,7 +36,8 @@ public class InventoryManager : MonoBehaviour
         bool result = _items.Remove(item);
 
         if (result) {
-            Player.Instance.Stat.AddStat(item.Data.Stat, -item.Increase);
+            foreach (StatModifier stat in item.Data.Modifiers)
+                Player.Instance.Stat.AddStat(stat.StatType, -stat.Value);
             OnInventoryChanged?.Invoke();
         }
 
@@ -43,7 +46,7 @@ public class InventoryManager : MonoBehaviour
     public IReadOnlyList<Item> Items => _items;
     public bool Contains(ItemData data) => _items.Any(x => x.Data == data);
     public Item Find(ItemData data) => _items.Find(x => x.Data == data);
-    public List<Item> FindAll(ItemType type) => _items.Where(x => x.Data.ItemType == type).ToList();
+    public List<Item> FindAll(ItemType type) => _items.Where(x => x.Type == type).ToList();
     public bool IsFull() => _items.Count >= _maxCount;
     public void Clear()
     {
@@ -53,9 +56,12 @@ public class InventoryManager : MonoBehaviour
     public int GetCount(ItemData data) => _items.Count(x => x.Data == data);
     public void Use(Item item)
     {
-        switch (item.Data.ItemType) {
+        switch (item.Type) {
             case ItemType.RandomBox: {
-                    ItemData data = item.Data.LootTable.GetRandomItem();
+                    if (item.root == null) 
+                        return;
+
+                    ItemData data = item.root.GetRandomItem();
                     if (Remove(item))
                         Add(data);
                 }

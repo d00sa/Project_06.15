@@ -10,15 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d6eec44603fccd34d9017135b7b2ace0, type: 3}
-  m_Name: RandomBox
+  m_Name: Legendary_RandomBox
   m_EditorClassIdentifier: Assembly-CSharp::ItemData
-  ID: 7
-  ItemName: RandomBox
+  ID: 7777
+  ItemName: Rare_RandomBox
   Icon: {fileID: -5938411374528227644, guid: 659a30afce9ba31409e8030fc975673a, type: 3}
-  Description: RandomRandom
-  ItemType: 1
-  Price: 100
-  Rarity: 1
-  Stat: 0
-  Add: 0
-  LootTable: {fileID: 11400000, guid: 74867f4cd1b7cfa479875bd1c085df3a, type: 2}
+  Description: Rare_RandomBox
+  ItemType: 3
+  Price: 1000
+  Rarity: 3
+  Modifiers: []
+  LootTable: {fileID: 11400000, guid: bb0642ac0bec297458e978c5cc762c70, type: 2}

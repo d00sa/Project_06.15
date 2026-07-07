@@ -10,18 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d6eec44603fccd34d9017135b7b2ace0, type: 3}
-  m_Name: Hammer
+  m_Name: Goblin_Sword
   m_EditorClassIdentifier: Assembly-CSharp::ItemData
-  ID: 3
-  ItemName: Construction_Site_Ace
-  Icon: {fileID: 128288948224760586, guid: 99c465db2ff28ee40acbb2c271da164d, type: 3}
-  Description: Ace!
+  ID: 2
+  ItemName: Goblin_Sword
+  Icon: {fileID: 8404239582222955159, guid: f1f05e80184fd7344adc1074cfde6105, type: 3}
+  Description: Goblin_Sword
   ItemType: 0
-  Price: 300
-  Rarity: 1
+  Price: 100
+  Rarity: 0
   Modifiers:
   - StatType: 0
-    Value: 20
-  - StatType: 2
     Value: 20
   LootTable: {fileID: 0}

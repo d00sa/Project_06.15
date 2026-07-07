@@ -3,6 +3,13 @@ using System.Collections.Generic;
 using System.Text;
 using UnityEngine;
 
+[Serializable]
+public class StatModifier
+{
+    public StatType StatType;
+    public float Value;
+}
+
 [CreateAssetMenu(menuName = "Item/ItemData")]
 public class ItemData : ScriptableObject
 {
@@ -19,9 +26,8 @@ public class ItemData : ScriptableObject
     public int Price; //가격
     public ItemRarity Rarity; //희귀도
 
-    [Header("장비 정보")] //그 외에는 나중에 추가
-    public StatType Stat; //타입
-    public float Add; //추가치
+    [Header("장비 정보")]
+    public List<StatModifier> Modifiers; //장비가 주는 스탯들
 
     [Header("랜덤 뽑기 정보")]
     public LootTable LootTable;
