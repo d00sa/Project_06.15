@@ -1352,6 +1352,10 @@ MonoBehaviour:
   _sDescription: {fileID: 864549437}
   _storePanel: {fileID: 0}
   _reRoll: {fileID: 0}
+  _goodsInfoPanel: {fileID: 0}
+  _gName: {fileID: 0}
+  _gType: {fileID: 0}
+  _gDescription: {fileID: 0}
 --- !u!4 &420320786
 Transform:
   m_ObjectHideFlags: 0
@@ -3482,9 +3486,17 @@ PrefabInstance:
       value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 5723180952184992513, guid: 24ddef4e6ae733648be7a3e464718ccc, type: 3}
+      propertyPath: startingSkills.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5723180952184992513, guid: 24ddef4e6ae733648be7a3e464718ccc, type: 3}
       propertyPath: 'startingSkills.Array.data[0]'
       value: 
-      objectReference: {fileID: 11400000, guid: c77baab45161b5a4b8982ae884497394, type: 2}
+      objectReference: {fileID: 11400000, guid: 145b9632939dbd7489303c348e4f83ad, type: 2}
+    - target: {fileID: 5723180952184992513, guid: 24ddef4e6ae733648be7a3e464718ccc, type: 3}
+      propertyPath: 'startingSkills.Array.data[1]'
+      value: 
+      objectReference: {fileID: 11400000, guid: a87f96db392ba1e44b7b16fad1d36eda, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -10455,6 +10467,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 17c7c1f9020d70140945eb2bf0d43ff4, type: 2}
   - {fileID: 11400000, guid: 899c26b3d7ccfbe428efb9ceaf0e7e50, type: 2}
   - {fileID: 11400000, guid: ff432590f82d68c41b93a31a3093f90e, type: 2}
+  - {fileID: 11400000, guid: 1880255c1d1d65644b4d81500d213986, type: 2}
+  - {fileID: 11400000, guid: f311cd436e821014f86e2100f6e881b8, type: 2}
   readyFusions: []
 --- !u!4 &1461983891
 Transform:

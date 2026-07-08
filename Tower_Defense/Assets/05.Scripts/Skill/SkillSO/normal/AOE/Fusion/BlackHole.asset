@@ -1,0 +1,47 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b086d55aac52e7240be871bc15296cf3, type: 3}
+  m_Name: BlackHole
+  m_EditorClassIdentifier: Assembly-CSharp::SkillData
+  skillName: BlackHole
+  skillType: 2
+  description: 
+  icon: {fileID: 3055689465800281512, guid: b600a8d968957cf4b8eed9c64306e934, type: 3}
+  skillPrefab: {fileID: 976605177427196170, guid: d9ad549dd7dfc9b439986bdc08973d82, type: 3}
+  maxLevel: 5
+  levelStats:
+  - damage: 5
+    fireRate: 2
+    speed: 5
+    coolTime: 3
+    range: 0
+  - damage: 5
+    fireRate: 2
+    speed: 5
+    coolTime: 3
+    range: 0
+  - damage: 5
+    fireRate: 2
+    speed: 5
+    coolTime: 3
+    range: 0
+  - damage: 5
+    fireRate: 2
+    speed: 5
+    coolTime: 3
+    range: 0
+  - damage: 5
+    fireRate: 2
+    speed: 5
+    coolTime: 3
+    range: 0
+  damageBonusType: 1
