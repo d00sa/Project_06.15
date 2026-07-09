@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 1240587754478349943}
   m_Layer: 0
   m_Name: Bullet_Yellow
-  m_TagString: Untagged
+  m_TagString: Projectile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -106,6 +106,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b0fac91fb5cad74b8eca0ef5f14b274, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Projectile
+  knockbackPower: 0.1
+  slowPercentage: 0
+  slowDuration: 0
+  stunDuration: 0
+  isRandomDirection: 0
   rotationOffset: 90
   searchRadius: 5
   enemyLayer:

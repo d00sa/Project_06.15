@@ -114,7 +114,7 @@ MonoBehaviour:
   skillPet: {fileID: 7259789966402149794}
   startingSkills:
   - {fileID: 11400000, guid: 145b9632939dbd7489303c348e4f83ad, type: 2}
-  - {fileID: 11400000, guid: a87f96db392ba1e44b7b16fad1d36eda, type: 2}
+  - {fileID: 11400000, guid: 695628fea9a60b14180310d6bc79e42c, type: 2}
   currentExp: 0
   maxExp: 100
   playerLevel: 1

@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 111641294050432104}
   m_Layer: 0
   m_Name: BouncyBall
-  m_TagString: Untagged
+  m_TagString: Projectile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -175,3 +175,4 @@ MonoBehaviour:
   skillAOE: {fileID: 0}
   startingSkills: []
   knockbackPower: 0.5
+  damageBonusType: 0

@@ -58,22 +58,19 @@ public class BlackHoleEffect : MonoBehaviour, ISkillEffect
 
     private void HandleGravityAndDamage()
     {
-        // fireRate가 0일 경우 에러 방지를 위해 기본 1초 주기로 강제 보정
         float actualFireRate = myStat.fireRate > 0f ? myStat.fireRate : 1f;
         float tickInterval = 1f / actualFireRate;
-
-
         bool isTickTime = tickTimer >= tickInterval;
 
-        Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(transform.position, pullRadius);
+        Collider2D[] hitColliders = Physics2D.OverlapCircleAll(transform.position, pullRadius);
 
-        foreach (Collider2D col in hitEnemies)
+        foreach (Collider2D col in hitColliders)
         {
+            // Enemy 끌어당기기 및 데미지 로직
             if (col.CompareTag("Enemy") && col.TryGetComponent<Enemy>(out var enemy))
             {
                 if (enemy.IsDead || !enemy.gameObject.activeInHierarchy) continue;
 
-                // 중심부로 끌어당기기
                 float distance = Vector2.Distance(transform.position, enemy.transform.position);
                 if (distance > 0.1f)
                 {
@@ -81,18 +78,33 @@ public class BlackHoleEffect : MonoBehaviour, ISkillEffect
                     enemy.transform.position += pullDir * pullSpeed * Time.deltaTime;
                 }
 
-                // 블랙홀 슬로우
                 enemy.ApplySlow(slowPercentage, 0.2f);
 
-                // 주기마다 도트 딜 적용
                 if (isTickTime)
                 {
                     enemy.TakeDamage(myStat.damage + Player.Instance.Stat.GetStat(damageBonusType), transform.position, 0f);
                 }
             }
+
+            // Projectile 끌어당기기 로직
+            else if (col.CompareTag("Projectile") || col.TryGetComponent<ReplicatingCell>(out _) || col.TryGetComponent<BouncyBall>(out _))
+            {
+                if (col.gameObject == this.gameObject) continue;
+
+                float distance = Vector2.Distance(transform.position, col.transform.position);
+                if (distance > 0.1f)
+                {
+                    Vector3 pullDir = (transform.position - col.transform.position).normalized;
+
+                    // 거리에 반비례하여 당기는 힘을 증가
+                    // 중심부에 가까울수록 최대 10배의 힘으로 당김
+                    float gravityMultiplier = Mathf.Lerp(10f, 2f, distance / pullRadius);
+
+                    col.transform.position += pullDir * (pullSpeed * gravityMultiplier) * Time.deltaTime;
+                }
+            }
         }
 
-        // 모든 적에게 데미지 판정을 돌린 후에 타이머 초기화
         if (isTickTime)
         {
             tickTimer = 0f;

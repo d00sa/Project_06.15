@@ -11,14 +11,15 @@ public class ReplicatingCell : MonoBehaviour, ISkillEffect
     private Vector2 moveDirection;
     private float currentDamage;
 
+    // 크기에 따라 변하는 현재 넉백 수치
+    private float currentKnockbackPower;
+
     [Header("세포 분열 설정")]
     [Tooltip("최대 분열 횟수 (예: 3이면 1->2->4->8개까지 늘어나고 끝남)")]
     [SerializeField] private int maxSplitCount = 3;
     [SerializeField] private float knockbackPower = 0.5f;
 
     private int currentSplitCount = 0;
-
-    // 연쇄 분열 방지용 변수
     private Enemy ignoredEnemy = null;
 
     private Vector2 minBounds;
@@ -35,7 +36,9 @@ public class ReplicatingCell : MonoBehaviour, ISkillEffect
         transform.localScale = Vector3.one;
         currentDamage = myStat.damage + Player.Instance.Stat.GetStat(damageBonusType);
 
-        ignoredEnemy = null; // 초기화 시 초기화
+        // 초기 넉백 파워 설정
+        currentKnockbackPower = knockbackPower;
+        ignoredEnemy = null;
 
         if (ctx.target != null)
             moveDirection = ((Vector2)ctx.target.position - (Vector2)transform.position).normalized;
@@ -49,9 +52,9 @@ public class ReplicatingCell : MonoBehaviour, ISkillEffect
     }
 
     /// <summary>
-    /// 분열된 자식 세포 전용 셋업 (무시할 적 추가)
+    /// 분열 시 부모의 데미지와 넉백 파워를 전달받아 절반으로 설정
     /// </summary>
-    public void SetupAsChild(SkillLevelStat stat, StatType bonusType, Transform casterTrans, int splitGen, Vector2 dir, Vector3 parentScale, float parentDamage, Enemy enemyToIgnore)
+    public void SetupAsChild(SkillLevelStat stat, StatType bonusType, Transform casterTrans, int splitGen, Vector2 dir, Vector3 parentScale, float parentDamage, float parentKnockback, Enemy enemyToIgnore)
     {
         myStat = stat;
         damageBonusType = bonusType;
@@ -63,6 +66,9 @@ public class ReplicatingCell : MonoBehaviour, ISkillEffect
 
         transform.localScale = parentScale * 0.5f;
         currentDamage = parentDamage * 0.5f;
+
+
+        currentKnockbackPower = parentKnockback * 0.5f;
 
         ignoredEnemy = enemyToIgnore;
     }
@@ -115,11 +121,9 @@ public class ReplicatingCell : MonoBehaviour, ISkillEffect
         if (collision.CompareTag("Enemy") && collision.TryGetComponent<Enemy>(out var enemy))
         {
             if (enemy.IsDead || !enemy.gameObject.activeInHierarchy) return;
-
-            // 막 떄린 적은 그냥 통과 (연쇄 폭발 완벽 방지)
             if (enemy == ignoredEnemy) return;
 
-            enemy.TakeDamage(currentDamage, transform.position, knockbackPower);
+            enemy.TakeDamage(currentDamage, transform.position, currentKnockbackPower);
 
             if (currentSplitCount < maxSplitCount)
             {
@@ -127,6 +131,18 @@ public class ReplicatingCell : MonoBehaviour, ISkillEffect
             }
 
             ObjectPool.Instance.ReturnObj(gameObject);
+        }
+        else if (collision.TryGetComponent<ReplicatingCell>(out var otherCell))
+        {
+            if (this.currentSplitCount < otherCell.currentSplitCount)
+                return;
+            Vector2 normal = ((Vector2)transform.position - (Vector2)otherCell.transform.position).normalized;
+            if (normal == Vector2.zero) return;
+            moveDirection = Vector2.Reflect(moveDirection, normal).normalized;
+            if (this.currentSplitCount > otherCell.currentSplitCount)
+            {
+                transform.position += (Vector3)normal * 0.3f;
+            }
         }
     }
 
@@ -144,7 +160,7 @@ public class ReplicatingCell : MonoBehaviour, ISkillEffect
         GameObject cell = ObjectPool.Instance.GetObj(gameObject.name, transform.position, null, true);
         if (cell.TryGetComponent<ReplicatingCell>(out var rep))
         {
-            rep.SetupAsChild(myStat, damageBonusType, caster, currentSplitCount + 1, dir, transform.localScale, currentDamage, hitEnemy);
+            rep.SetupAsChild(myStat, damageBonusType, caster, currentSplitCount + 1, dir, transform.localScale, currentDamage, currentKnockbackPower, hitEnemy);
         }
     }
 }
