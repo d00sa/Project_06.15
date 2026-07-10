@@ -17,6 +17,13 @@ public class BlackHoleEffect : MonoBehaviour, ISkillEffect
     [Tooltip("적이 느려지는 비율 (예: 0.9 = 90% 느려짐)")]
     [SerializeField] private float slowPercentage = 0.9f;
 
+    [Header("애니메이션 설정")]
+    [SerializeField] private Animator animator;
+    [Tooltip("End 애니메이션이 재생되는 시간 (이 시간이 지나면 풀로 반환)")]
+    [SerializeField] private float endAnimationDuration = 0.5f;
+
+    private bool isEnding = false;
+
     public void Initialize(SkillEffectContext ctx)
     {
         myStat = ctx.stat;
@@ -24,19 +31,24 @@ public class BlackHoleEffect : MonoBehaviour, ISkillEffect
         effectiveDuration = myStat.speed * (1f + Player.Instance.Stat.GetStat(StatType.AoeDuration));
 
         currentDuration = 0f;
-
         tickTimer = 999f;
 
         // 사거리(Range) 적용
         if (myStat.range > 0f) pullRadius = myStat.range;
         if (pullRadius <= 0f) pullRadius = 3f;
 
-        transform.localScale = new Vector3(pullRadius * 2f, pullRadius * 2f, 1f);
-
         SoundManager.Instance.PlaySFX("Trap");
     }
 
-    public void OnSpawn() { }
+    public void OnSpawn()
+    {
+        isEnding = false;
+        currentDuration = 0f;
+        tickTimer = 0f;
+
+        if (animator != null)
+            animator.SetBool("isDead", false);
+    }
 
     public void OnDespawn() { }
 
@@ -44,12 +56,20 @@ public class BlackHoleEffect : MonoBehaviour, ISkillEffect
     {
         if (myStat == null) return;
 
+        if (isEnding) return;
+
         currentDuration += Time.deltaTime;
         tickTimer += Time.deltaTime;
 
+        // 지속 시간이 다 끝났을 때
         if (currentDuration >= effectiveDuration)
         {
-            ObjectPool.Instance.ReturnObj(gameObject);
+            isEnding = true; // 다시 이 블록에 들어오지 못하게 막음
+
+            if (animator != null)
+                animator.SetBool("isDead", true);
+
+            ObjectPool.Instance.ReturnObj(gameObject, endAnimationDuration);
             return;
         }
 
@@ -66,7 +86,6 @@ public class BlackHoleEffect : MonoBehaviour, ISkillEffect
 
         foreach (Collider2D col in hitColliders)
         {
-            // Enemy 끌어당기기 및 데미지 로직
             if (col.CompareTag("Enemy") && col.TryGetComponent<Enemy>(out var enemy))
             {
                 if (enemy.IsDead || !enemy.gameObject.activeInHierarchy) continue;
@@ -85,8 +104,6 @@ public class BlackHoleEffect : MonoBehaviour, ISkillEffect
                     enemy.TakeDamage(myStat.damage + Player.Instance.Stat.GetStat(damageBonusType), transform.position, 0f);
                 }
             }
-
-            // Projectile 끌어당기기 로직
             else if (col.CompareTag("Projectile") || col.TryGetComponent<ReplicatingCell>(out _) || col.TryGetComponent<BouncyBall>(out _))
             {
                 if (col.gameObject == this.gameObject) continue;
@@ -95,11 +112,7 @@ public class BlackHoleEffect : MonoBehaviour, ISkillEffect
                 if (distance > 0.1f)
                 {
                     Vector3 pullDir = (transform.position - col.transform.position).normalized;
-
-                    // 거리에 반비례하여 당기는 힘을 증가
-                    // 중심부에 가까울수록 최대 10배의 힘으로 당김
                     float gravityMultiplier = Mathf.Lerp(10f, 2f, distance / pullRadius);
-
                     col.transform.position += pullDir * (pullSpeed * gravityMultiplier) * Time.deltaTime;
                 }
             }

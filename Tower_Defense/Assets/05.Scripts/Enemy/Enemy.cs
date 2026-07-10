@@ -60,6 +60,11 @@ public class Enemy : MonoBehaviour, IPoolable
     [Tooltip("우선순위")]
     public EnemyPriority priority = EnemyPriority.Normal;
 
+    [Header("상태이상 이펙트")]
+    [Tooltip("지속 데미지(DOT) 상태일 때 표시할 이펙트 오브젝트. " +
+             "ApplyDotDamage를 호출하는 모든 스킬에 적용")]
+    [SerializeField] private GameObject dotEffectObject;
+
     private void OnEnable()
     {
         OnSpawn();
@@ -115,7 +120,8 @@ public class Enemy : MonoBehaviour, IPoolable
         Player.Instance.AddExp(_giveExp); // 플레이어에게 경험치 넘겨줌
         SoundManager.Instance.PlaySFX("Death_Zombie");
 
-        if (boss) {
+        if (boss)
+        {
             Spawner.Instance.IsBoss = false;
             UIManager.Instance.ShowStore(); //일단은 보스가 죽으면 상점이 열리도록 합시다.
         }
@@ -143,6 +149,9 @@ public class Enemy : MonoBehaviour, IPoolable
             speed = originalSpeed;
         }
 
+        // 죽으면 불타는 이펙트도 꺼줌
+        if (dotEffectObject != null) dotEffectObject.SetActive(false);
+
         OnDead = null;
         GameManager.Instance.EnemyCount--;
         GameManager.Instance.Money += Mathf.RoundToInt(_giveMoney * (1f + Player.Instance.Stat.GetStat(StatType.MoneyBonus)));
@@ -156,6 +165,9 @@ public class Enemy : MonoBehaviour, IPoolable
         IsMovable = true;
         _currentIdx = 0;
         this.gameObject.tag = "Enemy";
+
+        // 풀에서 재사용될 때 이전 상태의 이펙트가 켜진 채로 남아있지 않도록 리셋
+        if (dotEffectObject != null) dotEffectObject.SetActive(false);
     }
 
     public void Setting(int exp, int money)
@@ -212,6 +224,9 @@ public class Enemy : MonoBehaviour, IPoolable
             StopCoroutine(dotCoroutine);
         }
 
+        // 이미 켜져있으면 깜빡이지 않고 그대로 유지, 안 켜져있으면 켜줌
+        if (dotEffectObject != null) dotEffectObject.SetActive(true);
+
         // 새로운 데미지 코루틴 시작
         dotCoroutine = StartCoroutine(DotRoutine(damage, duration, tickRate, knockbackPower));
     }
@@ -229,6 +244,10 @@ public class Enemy : MonoBehaviour, IPoolable
 
             elapsed += tickRate;
         }
+
+
+        if (dotEffectObject != null) dotEffectObject.SetActive(false);
+        dotCoroutine = null;
     }
 
     /// <summary> 적의 이동 일정시간 정지</summary>
