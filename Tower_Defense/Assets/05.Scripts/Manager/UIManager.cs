@@ -209,7 +209,8 @@ public class UIManager : MonoBehaviour
     {
         Time.timeScale = 0f;
         _storePanel.localScale = Vector3.one;
-        _reRoll.interactable = true;
+
+        _reRoll.interactable = GameManager.Instance.Money >= 100;
         _reRoll.GetComponent<Image>().color = new Color32(255, 255, 255, 255);
 
         StoreManager.Instance.SetRandomGoods();
