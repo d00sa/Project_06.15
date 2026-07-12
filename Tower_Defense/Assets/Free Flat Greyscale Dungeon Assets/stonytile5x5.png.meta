@@ -1,0 +1,1196 @@
+fileFormatVersion: 2
+guid: 8872616bb6207564b8273a0f7e44e1ca
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 3371269070898590799
+    second: stonytile5x5_0
+  - first:
+      213: 2535311875524643532
+    second: stonytile5x5_1
+  - first:
+      213: -6908009294272626336
+    second: stonytile5x5_2
+  - first:
+      213: -3163688018496344169
+    second: stonytile5x5_3
+  - first:
+      213: 3192478016214072765
+    second: stonytile5x5_4
+  - first:
+      213: -4092279753587436947
+    second: stonytile5x5_5
+  - first:
+      213: -7894852670855711567
+    second: stonytile5x5_6
+  - first:
+      213: -9025562366265534845
+    second: stonytile5x5_7
+  - first:
+      213: -412784590476248975
+    second: stonytile5x5_8
+  - first:
+      213: 2466040615793780517
+    second: stonytile5x5_9
+  - first:
+      213: -1650367050141452991
+    second: stonytile5x5_10
+  - first:
+      213: -4610899257309631354
+    second: stonytile5x5_11
+  - first:
+      213: -3574042877761797280
+    second: stonytile5x5_12
+  - first:
+      213: 493032673595444418
+    second: stonytile5x5_13
+  - first:
+      213: 7790524221616872607
+    second: stonytile5x5_14
+  - first:
+      213: 2129708414980809937
+    second: stonytile5x5_15
+  - first:
+      213: -8740583373774883147
+    second: stonytile5x5_16
+  - first:
+      213: -3494619519479836767
+    second: stonytile5x5_17
+  - first:
+      213: 4224866474316664128
+    second: stonytile5x5_18
+  - first:
+      213: -8843861053883569616
+    second: stonytile5x5_19
+  - first:
+      213: 8788359255504096218
+    second: stonytile5x5_20
+  - first:
+      213: -7266443258361510715
+    second: stonytile5x5_21
+  - first:
+      213: -5445792526909087334
+    second: stonytile5x5_22
+  - first:
+      213: 2909856122400761927
+    second: stonytile5x5_23
+  - first:
+      213: 6637410603455806947
+    second: stonytile5x5_24
+  - first:
+      213: -5662143915642651079
+    second: stonytile5x5_25
+  - first:
+      213: -6631949243597582798
+    second: stonytile5x5_26
+  - first:
+      213: -9222066588864942591
+    second: stonytile5x5_27
+  - first:
+      213: 4862339671666855186
+    second: stonytile5x5_28
+  - first:
+      213: 2521468408271793580
+    second: stonytile5x5_29
+  - first:
+      213: -1925004118538398566
+    second: stonytile5x5_30
+  - first:
+      213: -1577128012772548591
+    second: stonytile5x5_31
+  - first:
+      213: 6220540480122375676
+    second: stonytile5x5_32
+  - first:
+      213: -3088430067672367099
+    second: stonytile5x5_33
+  - first:
+      213: 2417870489242708364
+    second: stonytile5x5_34
+  - first:
+      213: 884102274954219810
+    second: stonytile5x5_35
+  - first:
+      213: -9200965123427943708
+    second: stonytile5x5_36
+  - first:
+      213: 7273330044516442576
+    second: stonytile5x5_37
+  - first:
+      213: -315119483404821916
+    second: stonytile5x5_38
+  - first:
+      213: -5701802041231609141
+    second: stonytile5x5_39
+  - first:
+      213: -4918422141525226423
+    second: stonytile5x5_40
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: stonytile5x5_0
+      rect:
+        serializedVersion: 2
+        x: 246
+        y: 338
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f44fb25bb5729ce20800000000000000
+      internalID: 3371269070898590799
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: stonytile5x5_1
+      rect:
+        serializedVersion: 2
+        x: 321
+        y: 343
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ccac977d7bc3f2320800000000000000
+      internalID: 2535311875524643532
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: stonytile5x5_2
+      rect:
+        serializedVersion: 2
+        x: 21
+        y: 295
+        width: 33
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 06188c5a522d120a0800000000000000
+      internalID: -6908009294272626336
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: stonytile5x5_3
+      rect:
+        serializedVersion: 2
+        x: 306
+        y: 329
+        width: 10
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 79fad5552825814d0800000000000000
+      internalID: -3163688018496344169
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: stonytile5x5_4
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 318
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dbdfead57d5fd4c20800000000000000
+      internalID: 3192478016214072765
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: stonytile5x5_5
+      rect:
+        serializedVersion: 2
+        x: 222
+        y: 312
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d62d5e5fe3d4537c0800000000000000
+      internalID: -4092279753587436947
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: stonytile5x5_6
+      rect:
+        serializedVersion: 2
+        x: 116
+        y: 307
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1b4f9971359df6290800000000000000
+      internalID: -7894852670855711567
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: stonytile5x5_7
+      rect:
+        serializedVersion: 2
+        x: 138
+        y: 271
+        width: 41
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 386db9ce8d2ceb280800000000000000
+      internalID: -9025562366265534845
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: stonytile5x5_8
+      rect:
+        serializedVersion: 2
+        x: 342
+        y: 307
+        width: 8
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 17878eb1a9e754af0800000000000000
+      internalID: -412784590476248975
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: stonytile5x5_9
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 220
+        width: 53
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 527e21adfd2293220800000000000000
+      internalID: 2466040615793780517
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: stonytile5x5_10
+      rect:
+        serializedVersion: 2
+        x: 198
+        y: 252
+        width: 41
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1453f4379e7b819e0800000000000000
+      internalID: -1650367050141452991
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: stonytile5x5_11
+      rect:
+        serializedVersion: 2
+        x: 286
+        y: 259
+        width: 20
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 68c62f81e8bc200c0800000000000000
+      internalID: -4610899257309631354
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: stonytile5x5_12
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 239
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0634ef250f2766ec0800000000000000
+      internalID: -3574042877761797280
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: stonytile5x5_13
+      rect:
+        serializedVersion: 2
+        x: 103
+        y: 226
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2cc415cba9a97d600800000000000000
+      internalID: 493032673595444418
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: stonytile5x5_14
+      rect:
+        serializedVersion: 2
+        x: 195
+        y: 217
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f9cdc8be0808d1c60800000000000000
+      internalID: 7790524221616872607
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: stonytile5x5_15
+      rect:
+        serializedVersion: 2
+        x: 50
+        y: 198
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1d4671e058e3e8d10800000000000000
+      internalID: 2129708414980809937
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: stonytile5x5_16
+      rect:
+        serializedVersion: 2
+        x: 138
+        y: 193
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5b6767c2bb533b680800000000000000
+      internalID: -8740583373774883147
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: stonytile5x5_17
+      rect:
+        serializedVersion: 2
+        x: 157
+        y: 174
+        width: 26
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1af0244ff0e908fc0800000000000000
+      internalID: -3494619519479836767
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: stonytile5x5_18
+      rect:
+        serializedVersion: 2
+        x: 250
+        y: 191
+        width: 42
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 04d0a119cadb1aa30800000000000000
+      internalID: 4224866474316664128
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: stonytile5x5_19
+      rect:
+        serializedVersion: 2
+        x: 325
+        y: 192
+        width: 8
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 03aab507a3b444580800000000000000
+      internalID: -8843861053883569616
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: stonytile5x5_20
+      rect:
+        serializedVersion: 2
+        x: 62
+        y: 172
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: adb86de1e2686f970800000000000000
+      internalID: 8788359255504096218
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: stonytile5x5_21
+      rect:
+        serializedVersion: 2
+        x: 111
+        y: 159
+        width: 27
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5c484d41b58682b90800000000000000
+      internalID: -7266443258361510715
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: stonytile5x5_22
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 145
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a916b11cc88ac64b0800000000000000
+      internalID: -5445792526909087334
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: stonytile5x5_23
+      rect:
+        serializedVersion: 2
+        x: 135
+        y: 152
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 748613be9b2e16820800000000000000
+      internalID: 2909856122400761927
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: stonytile5x5_24
+      rect:
+        serializedVersion: 2
+        x: 226
+        y: 145
+        width: 14
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3edf46ff6c1dc1c50800000000000000
+      internalID: 6637410603455806947
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: stonytile5x5_25
+      rect:
+        serializedVersion: 2
+        x: 13
+        y: 135
+        width: 17
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 93efaf8ab160c61b0800000000000000
+      internalID: -5662143915642651079
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: stonytile5x5_26
+      rect:
+        serializedVersion: 2
+        x: 198
+        y: 118
+        width: 15
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 23e02feec4596f3a0800000000000000
+      internalID: -6631949243597582798
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: stonytile5x5_27
+      rect:
+        serializedVersion: 2
+        x: 269
+        y: 103
+        width: 37
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 10ee4bb4c43a40080800000000000000
+      internalID: -9222066588864942591
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: stonytile5x5_28
+      rect:
+        serializedVersion: 2
+        x: 14
+        y: 99
+        width: 15
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 21d0efa6b208a7340800000000000000
+      internalID: 4862339671666855186
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: stonytile5x5_29
+      rect:
+        serializedVersion: 2
+        x: 71
+        y: 61
+        width: 27
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cade863782e0ef220800000000000000
+      internalID: 2521468408271793580
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: stonytile5x5_30
+      rect:
+        serializedVersion: 2
+        x: 270
+        y: 84
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a94da5b04f20945e0800000000000000
+      internalID: -1925004118538398566
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: stonytile5x5_31
+      rect:
+        serializedVersion: 2
+        x: 338
+        y: 80
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 110ef59ad6aec1ae0800000000000000
+      internalID: -1577128012772548591
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: stonytile5x5_32
+      rect:
+        serializedVersion: 2
+        x: 146
+        y: 60
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cfdc1acdb9cc35650800000000000000
+      internalID: 6220540480122375676
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: stonytile5x5_33
+      rect:
+        serializedVersion: 2
+        x: 188
+        y: 59
+        width: 8
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 500c0c67731b325d0800000000000000
+      internalID: -3088430067672367099
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: stonytile5x5_34
+      rect:
+        serializedVersion: 2
+        x: 46
+        y: 52
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c89263846600e8120800000000000000
+      internalID: 2417870489242708364
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: stonytile5x5_35
+      rect:
+        serializedVersion: 2
+        x: 97
+        y: 8
+        width: 48
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 221d2cbb556f44c00800000000000000
+      internalID: 884102274954219810
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: stonytile5x5_36
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 3
+        width: 24
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4eab15318fa9f4080800000000000000
+      internalID: -9200965123427943708
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: stonytile5x5_37
+      rect:
+        serializedVersion: 2
+        x: 295
+        y: 21
+        width: 20
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0d12495c32f00f460800000000000000
+      internalID: 7273330044516442576
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: stonytile5x5_38
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 0
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 46ad9d9df7870abf0800000000000000
+      internalID: -315119483404821916
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: stonytile5x5_39
+      rect:
+        serializedVersion: 2
+        x: 277
+        y: 4
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bc2fac0c0412fd0b0800000000000000
+      internalID: -5701802041231609141
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: stonytile5x5_40
+      rect:
+        serializedVersion: 2
+        x: 285
+        y: 2
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 94c09f60f114ebbb0800000000000000
+      internalID: -4918422141525226423
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      stonytile5x5_0: 3371269070898590799
+      stonytile5x5_1: 2535311875524643532
+      stonytile5x5_10: -1650367050141452991
+      stonytile5x5_11: -4610899257309631354
+      stonytile5x5_12: -3574042877761797280
+      stonytile5x5_13: 493032673595444418
+      stonytile5x5_14: 7790524221616872607
+      stonytile5x5_15: 2129708414980809937
+      stonytile5x5_16: -8740583373774883147
+      stonytile5x5_17: -3494619519479836767
+      stonytile5x5_18: 4224866474316664128
+      stonytile5x5_19: -8843861053883569616
+      stonytile5x5_2: -6908009294272626336
+      stonytile5x5_20: 8788359255504096218
+      stonytile5x5_21: -7266443258361510715
+      stonytile5x5_22: -5445792526909087334
+      stonytile5x5_23: 2909856122400761927
+      stonytile5x5_24: 6637410603455806947
+      stonytile5x5_25: -5662143915642651079
+      stonytile5x5_26: -6631949243597582798
+      stonytile5x5_27: -9222066588864942591
+      stonytile5x5_28: 4862339671666855186
+      stonytile5x5_29: 2521468408271793580
+      stonytile5x5_3: -3163688018496344169
+      stonytile5x5_30: -1925004118538398566
+      stonytile5x5_31: -1577128012772548591
+      stonytile5x5_32: 6220540480122375676
+      stonytile5x5_33: -3088430067672367099
+      stonytile5x5_34: 2417870489242708364
+      stonytile5x5_35: 884102274954219810
+      stonytile5x5_36: -9200965123427943708
+      stonytile5x5_37: 7273330044516442576
+      stonytile5x5_38: -315119483404821916
+      stonytile5x5_39: -5701802041231609141
+      stonytile5x5_4: 3192478016214072765
+      stonytile5x5_40: -4918422141525226423
+      stonytile5x5_5: -4092279753587436947
+      stonytile5x5_6: -7894852670855711567
+      stonytile5x5_7: -9025562366265534845
+      stonytile5x5_8: -412784590476248975
+      stonytile5x5_9: 2466040615793780517
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
