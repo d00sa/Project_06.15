@@ -15,7 +15,7 @@ MonoBehaviour:
   skillName: Boomerang
   skillType: 1
   description: "\uBD80\uBA54\uB791"
-  icon: {fileID: 919508462713514613, guid: d8dc51e4ac127274cbfe489c951cd965, type: 3}
+  icon: {fileID: 4847369764756557779, guid: 9a20ef0c588b9a84bbab66a06d5feb3f, type: 3}
   skillPrefab: {fileID: 7752684502632871730, guid: 1fb898e05c6b39742ab21c553ad24c3b, type: 3}
   maxLevel: 5
   levelStats:

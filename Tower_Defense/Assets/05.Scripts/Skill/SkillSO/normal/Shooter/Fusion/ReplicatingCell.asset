@@ -15,7 +15,7 @@ MonoBehaviour:
   skillName: ReplicatingCell
   skillType: 1
   description: 
-  icon: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
+  icon: {fileID: -2437828431676441964, guid: 9a20ef0c588b9a84bbab66a06d5feb3f, type: 3}
   skillPrefab: {fileID: 2363354929599991526, guid: f2c36698ad7c69b4aaba7ad3509c382c, type: 3}
   maxLevel: 5
   levelStats:

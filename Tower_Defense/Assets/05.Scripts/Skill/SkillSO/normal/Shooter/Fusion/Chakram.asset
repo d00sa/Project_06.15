@@ -15,7 +15,7 @@ MonoBehaviour:
   skillName: Chakram
   skillType: 1
   description: 
-  icon: {fileID: -4592025861476826146, guid: d8dc51e4ac127274cbfe489c951cd965, type: 3}
+  icon: {fileID: 3752513558811816232, guid: 9a20ef0c588b9a84bbab66a06d5feb3f, type: 3}
   skillPrefab: {fileID: 1343178135998350853, guid: 85ece7df0041f3247811775c6c58bc8c, type: 3}
   maxLevel: 5
   levelStats:

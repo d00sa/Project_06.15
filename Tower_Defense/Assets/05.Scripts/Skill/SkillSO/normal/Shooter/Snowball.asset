@@ -13,8 +13,9 @@ MonoBehaviour:
   m_Name: Snowball
   m_EditorClassIdentifier: Assembly-CSharp::SkillData
   skillName: Snowball
+  skillType: 1
   description: 
-  icon: {fileID: 4424473075009730107, guid: 318fea03ac1229f4994b9ec077eee43c, type: 3}
+  icon: {fileID: 8870068061523937776, guid: 46afd6fcf051ae34b8efcc63811d67ee, type: 3}
   skillPrefab: {fileID: 922487672666026981, guid: f585b3841ee33054abb6ce809a1e8a19, type: 3}
   maxLevel: 5
   levelStats:
@@ -43,3 +44,4 @@ MonoBehaviour:
     speed: 10
     coolTime: 2
     range: 0
+  damageBonusType: 0

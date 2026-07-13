@@ -87,7 +87,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 1
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 2324236343598682440, guid: b37c7310219b23e42ad73d3ca8cacaed, type: 3}
+  m_Sprite: {fileID: -1103561165793913307, guid: 894af96a4c746354da8abe8b32889074, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -112,8 +112,7 @@ MonoBehaviour:
   skillShooter: {fileID: 4603162418315302646}
   skillAOE: {fileID: 5738497994093055526}
   skillPet: {fileID: 7259789966402149794}
-  startingSkills:
-  - {fileID: 11400000, guid: c77baab45161b5a4b8982ae884497394, type: 2}
+  startingSkills: []
   currentExp: 0
   maxExp: 100
   playerLevel: 1
