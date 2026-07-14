@@ -15,7 +15,7 @@ MonoBehaviour:
   skillName: BouncyBall
   skillType: 3
   description: Bouncing Ball!
-  icon: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
+  icon: {fileID: -8054514882241036619, guid: c138acecadeebfd4eacef3c005b4caaf, type: 3}
   skillPrefab: {fileID: 6489666389487729107, guid: 73441d1e52f0b7847aab42340e451c07, type: 3}
   maxLevel: 5
   levelStats:

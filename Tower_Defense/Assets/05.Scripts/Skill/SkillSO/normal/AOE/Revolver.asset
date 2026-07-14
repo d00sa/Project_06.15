@@ -15,7 +15,7 @@ MonoBehaviour:
   skillName: Revolver
   skillType: 2
   description: Revolver!!
-  icon: {fileID: -6744220647528510142, guid: 8a59b515515c5ca42a33f13795c3455d, type: 3}
+  icon: {fileID: 5845848120623958032, guid: c138acecadeebfd4eacef3c005b4caaf, type: 3}
   skillPrefab: {fileID: 7579822758801172862, guid: 0c8db06b5d6d39b41bdf5a011644327a, type: 3}
   maxLevel: 5
   levelStats:

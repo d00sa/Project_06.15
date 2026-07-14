@@ -84,7 +84,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 5
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 4170916019764683559, guid: 050573e4f6668d242924cfbf0bde9ae4, type: 3}
+  m_Sprite: {fileID: 803606205333192718, guid: a9da1fc3207f1f648aac82150919c323, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 1
   m_FlipY: 0
@@ -132,7 +132,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 3.4933333, y: 2.2666667}
+    oldSize: {x: 9.63, y: 10.2}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -179,6 +179,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6039553b96869d4428dc7763e42834c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::RoadRoller
+  isQuantityType: 0
+  isFreeMoving: 0
+  skillShooter: {fileID: 0}
+  skillAOE: {fileID: 0}
+  startingSkills: []
   _targetLayer:
     serializedVersion: 2
     m_Bits: 64

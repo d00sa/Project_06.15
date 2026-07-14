@@ -20,6 +20,12 @@ public class AoeEffect : MonoBehaviour, ISkillEffect
     [Tooltip("이 장판이 적을 밀쳐내는 힘")]
     [SerializeField] private float knockbackPower = 0.2f;
 
+    [Header("회전 설정")]
+    [Tooltip("체크 시 장판이 회전합니다.")]
+    [SerializeField] private bool isRotating = false;
+    [Tooltip("회전 속도 (양수: 반시계, 음수: 시계 방향)")]
+    [SerializeField] private float rotationSpeed = 90f;
+
     [Header("상태 이상 (독/화상)")]
     [Tooltip("장판을 벗어난 후에도 데미지가 지속되는 시간 (0이면 없음)")]
     [SerializeField] private float lingerDuration = 3f;
@@ -123,6 +129,11 @@ public class AoeEffect : MonoBehaviour, ISkillEffect
             if (animator != null) animator.SetBool("isDead", true);
             ObjectPool.Instance.ReturnObj(gameObject, 0.8f);
             return;
+        }
+
+        if (isRotating)
+        {
+            transform.Rotate(0f, 0f, rotationSpeed * Time.deltaTime);
         }
 
         EnemyAttack();
