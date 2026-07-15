@@ -27,6 +27,7 @@ public class Player : MonoBehaviour
     [SerializeField] private int currentExp = 0;
     [SerializeField] private int maxExp = 100;
     [SerializeField] private int playerLevel = 1;
+    public event Action<int, int> OnExpChanged;
 
     [Header("경험치 요구량 커브 (계단식)")]
     [Tooltip("X축: 플레이어 레벨, Y축: 해당 레벨업에 필요한 경험치 총량")]
@@ -70,7 +71,6 @@ public class Player : MonoBehaviour
     /// </summary>
     public void AddExp(int amount)
     {
-
         // 기본 경험치 + 보너스 경험치 (ex: expGainedBonus가 0.1이면 10% 추가)
         float bonusMultiplier = 1f + Stat.GetStat(StatType.EXPGained);
         int finalAmount = Mathf.RoundToInt(amount * bonusMultiplier);
@@ -89,6 +89,8 @@ public class Player : MonoBehaviour
             // 레벨업 창 띄우기
             LevelUpUIManager.Instance.ShowLevelUpUI();
         }
+
+        OnExpChanged?.Invoke(currentExp, maxExp);
     }
 
     /// <summary>

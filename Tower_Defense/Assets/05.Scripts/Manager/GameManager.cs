@@ -22,8 +22,9 @@ public enum GameState
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
-
-    public event Action<int> OnEnemyCountChanged;
+    private readonly float[] _speedTable = { 1f, 1.5f, 2f };
+    private int _speedIndex = 0;
+    public event Action<int,int> OnEnemyCountChanged;
     private int _enemyCount;
     public int EnemyCount
     {
@@ -32,7 +33,7 @@ public class GameManager : MonoBehaviour
         {
             if (_enemyCount != value) {
                 _enemyCount = value;
-                OnEnemyCountChanged?.Invoke(_enemyCount);
+                OnEnemyCountChanged?.Invoke(_enemyCount, Data.UnitCount);
 
                 //die
                 if (_enemyCount >= Spawner.Instance.CurDifficulty.UnitCount) {
@@ -57,7 +58,7 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public event Action<int> OnTimeChanged;
+    public event Action<int,int> OnTimeChanged;
     [Header("[시간 설정 (초 단위)]")]
     [SerializeField] private int _maxReadyTime = 5;
     [SerializeField] private int _maxStageTime = 60;
@@ -71,7 +72,7 @@ public class GameManager : MonoBehaviour
         private set
         {
             _curTime = value;
-            OnTimeChanged?.Invoke(_curTime);
+            OnTimeChanged?.Invoke(_curTime, Spawner.Instance.CurrentStage);
         }
     }
 
@@ -80,7 +81,7 @@ public class GameManager : MonoBehaviour
     public DifficultyData Data;
     public bool Win = false;
     public bool Lose = false;
-
+    public float CurSpeed = 1.0f;
 
     void Awake()
     {
@@ -106,13 +107,15 @@ public class GameManager : MonoBehaviour
     private void WorkFlow()
     {
         if (Keyboard.current.escapeKey.wasPressedThisFrame) {
-            Time.timeScale = Time.timeScale < 0.1f ? 1f : 0f;
-            SetupManager.Instance.gameObject.SetActive(!SetupManager.Instance.gameObject.activeSelf);
+            if (!SetupManager.Instance.Open())
+                SetupManager.Instance.Closed();
         }
 
         switch (Current) {
             case GameState.Idle:
                 {
+                    if (SceneManager.GetActiveScene().name == "SampleScene") return;
+
                     //게임시작 창
                     if ((Keyboard.current.anyKey.wasPressedThisFrame && !Keyboard.current.escapeKey.wasPressedThisFrame) || Mouse.current.leftButton.wasPressedThisFrame) {
                         TitleManager.Instance.EnterToGame();
@@ -247,6 +250,15 @@ public class GameManager : MonoBehaviour
 
         if (SceneManager.GetActiveScene().name == "GameStart")
             LoadSceneManager.Instance.LoadScene("Enter");
+    }
+
+    public float SpeedUp()
+    {
+        _speedIndex = (_speedIndex + 1) % _speedTable.Length;
+        CurSpeed = _speedTable[_speedIndex];
+        Time.timeScale = CurSpeed;
+
+        return CurSpeed;
     }
 
     [Button("Sample Scene Game Start")]

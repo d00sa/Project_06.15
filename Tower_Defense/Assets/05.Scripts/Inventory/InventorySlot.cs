@@ -13,16 +13,19 @@ public class InventorySlot : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
     [SerializeField] private Image _image;
 
     Coroutine _curCoroutine;
+
     public void SetItem(Item item)
     {
         _item = item;
 
         if (item == null) {
             _image.sprite = null;
+            _image.rectTransform.localScale = Vector3.zero;
             return;
         }
 
         _image.sprite = _item.Icon;
+        _image.rectTransform.localScale = Vector3.one;
     }
 
     public void OnPointerEnter(PointerEventData eventData)

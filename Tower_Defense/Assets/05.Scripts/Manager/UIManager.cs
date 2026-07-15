@@ -14,7 +14,13 @@ public class UIManager : MonoBehaviour
     [SerializeField] private TMP_Text _enemyCountText;
     [SerializeField] private TMP_Text _stageTime;
     [SerializeField] private TMP_Text _money;
+    [SerializeField] private TMP_Text _exp;
+    [SerializeField] private TMP_Text _acceleration;
+    [SerializeField] private Image _pauseButton;
+    [SerializeField] private List<Sprite> _pauseStart;
+    [SerializeField] private List<TMP_Text> _stats;
     [SerializeField] private List<InventorySlot> _slots;
+
 
     [Header("[Skills]")]
     public Transform SkillPanel;
@@ -68,6 +74,8 @@ public class UIManager : MonoBehaviour
         StoreManager.Instance.OnBuyGoods += RefreshStore;
         InventoryManager.Instance.OnInventoryChanged += RefreshInventory;
         Player.Instance.OnSkillLevelChanged += RefreshSkills;
+        Player.Instance.OnExpChanged += ChangeExp;
+        Player.Instance.Stat.OnStatChanged += ChangeStat;
     }
 
     private void Remove()
@@ -81,26 +89,38 @@ public class UIManager : MonoBehaviour
         if (InventoryManager.Instance != null)
             InventoryManager.Instance.OnInventoryChanged -= RefreshInventory;
 
-        if (Player.Instance != null)
+        if (Player.Instance != null) {
             Player.Instance.OnSkillLevelChanged -= RefreshSkills;
+            Player.Instance.OnExpChanged -= ChangeExp;
+            Player.Instance.Stat.OnStatChanged -= ChangeStat;
+        }
 
         if (StoreManager.Instance != null)
             StoreManager.Instance.OnBuyGoods -= RefreshStore;
     }
 
-    private void ChangeEnemyCount(int count)
+    private void ChangeEnemyCount(int count, int deadLine)
     {
         if (count < 0)
             count = 0;
 
-        _enemyCountText.text = $"Enemy : {count}";
+        _enemyCountText.text = $"{count:D2} / {deadLine:D2}";
     }
 
-    private void ChangeStageTime(int time)
+    private void ChangeStageTime(int time, int stage)
     {
         int minute = time / 60;
         int second = time % 60;
-        _stageTime.text = $"{minute:00} : {second:00}";
+
+        if (GameManager.Instance.Current == GameState.WaitStage)
+            _stageTime.text = $"Next Stage\n{minute:00} : {second:00}";
+        else if (GameManager.Instance.Current == GameState.StartStage)
+            _stageTime.text = $"Stage {stage}\n{minute:00} : {second:00}";
+    }
+
+    private void ChangeExp(int curExp, int maxExp)
+    {
+        _exp.text = $"{curExp} / {maxExp}";
     }
 
     private void ChangeMoney(int value)
@@ -108,7 +128,33 @@ public class UIManager : MonoBehaviour
         if (value < 0)
             value = 0;
 
-        _money.text = $"Money : {value}";
+        _money.text = $"{value}";
+    }
+
+    private void ChangeStat()
+    {
+        foreach (StatType stat in Enum.GetValues(typeof(StatType))) {
+            switch (stat) {
+                case StatType.ProjectileDamage:
+                case StatType.AoeDamage:
+                case StatType.PetDamage:
+                case StatType.AttackSpeed:
+                    _stats[(int)stat].text = $"{Player.Instance.Stat.GetStat(stat)}";
+                    break;
+                case StatType.EXPGained:
+                    _stats[(int)stat].text = $"{Player.Instance.Stat.GetStat(stat)}%";
+                    break;
+                case StatType.AoeDuration:
+                case StatType.ProjectileSpeed:
+                    _stats[(int)stat].text = $"{Player.Instance.Stat.GetStat(stat)}";
+                    break;
+                case StatType.CritChance:
+                case StatType.CritDamageMultiplier:
+                case StatType.MoneyBonus:
+                    _stats[(int)stat].text = $"{Player.Instance.Stat.GetStat(stat)}%";
+                    break;
+            }
+        }
     }
 
     private void RefreshInventory()
@@ -146,6 +192,10 @@ public class UIManager : MonoBehaviour
         yield return null;
         RefreshInventory();
         RefreshSkills("",1);
+        ChangeStat();
+        ChangeMoney(0);
+        ChangeEnemyCount(0, GameManager.Instance.Data.UnitCount);
+        Player.Instance.AddExp(0);
     }
 
     public void ShowItemInfo(ItemData data, RectTransform slotPos)
@@ -220,7 +270,7 @@ public class UIManager : MonoBehaviour
     public void HideStore()
     {
         _storePanel.localScale = Vector3.zero;
-        Time.timeScale = 1f;
+        Time.timeScale = GameManager.Instance.CurSpeed;
     }
 
     public void ReRoll()
@@ -252,5 +302,28 @@ public class UIManager : MonoBehaviour
         _gName.text = "";
         _gType.text = "";
         _gDescription.text = "";
+    }
+
+    public void SetUp()
+    {
+        SetupManager.Instance.Open();
+    }
+
+    public void Pause()
+    {
+        if (Time.timeScale > 0f) {
+            _pauseButton.sprite = _pauseStart[1];
+            Time.timeScale = 0f;
+        }
+        else if (Time.timeScale < 0.1f) {
+            _pauseButton.sprite = _pauseStart[0];
+            Time.timeScale = GameManager.Instance.CurSpeed;
+        }
+    }
+
+    public void Acceleration()
+    {
+        float speed = GameManager.Instance.SpeedUp();
+        _acceleration.text = $"{speed:F1}x";
     }
 }

@@ -29,7 +29,7 @@ public class SkillPet : SkillBase
         SpawnPetObj(skill);
     }
 
-    protected override void OnLevelUp(ActiveSkill skill)
+    protected override void OnLevelUp(ActiveSkill skill, bool exist)
     {
         if (spawnedPets.TryGetValue(skill.data.skillName, out List<Pet> petList))
         {

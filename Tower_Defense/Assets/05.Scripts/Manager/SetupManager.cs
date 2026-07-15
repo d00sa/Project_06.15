@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using UnityEngine.Audio;
 using UnityEngine.UI;
 using static UnityEngine.InputSystem.Controls.AxisControl;
@@ -95,6 +96,16 @@ public class SetupManager : MonoBehaviour
         }
     }
 
+    public bool Open()
+    {
+        //이미 켜져있다면
+        if (transform.localScale == Vector3.one) return false;
+
+        Time.timeScale = 0f;
+        transform.localScale = Vector3.one;
+        return true;
+    }
+
     public void GameQuit()
     {
         GameManager.Instance.GameQuit();
@@ -110,7 +121,7 @@ public class SetupManager : MonoBehaviour
 
     public void Closed()
     {
-        Time.timeScale = 1f;
-        gameObject.SetActive(false);
+        Time.timeScale = GameManager.Instance.CurSpeed;
+        transform.localScale = Vector3.zero;
     }
 }

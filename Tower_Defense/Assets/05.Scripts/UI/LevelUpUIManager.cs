@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class LevelUpUIManager : MonoBehaviour
 {
@@ -8,6 +9,7 @@ public class LevelUpUIManager : MonoBehaviour
     [Header("UI 연결")]
     [SerializeField] private RectTransform levelUpPanel;
     [SerializeField] private SkillCardUI[] skillCards = new SkillCardUI[3];
+    private GraphicRaycaster _graphic;
 
     private void Awake()
     {
@@ -20,7 +22,8 @@ public class LevelUpUIManager : MonoBehaviour
 
     private void Start()
     {
-        levelUpPanel = GetComponent<RectTransform>();
+        _graphic = GetComponent<GraphicRaycaster>();
+        _graphic.enabled = false;
     }
 
 
@@ -29,6 +32,7 @@ public class LevelUpUIManager : MonoBehaviour
     {
         Time.timeScale = 0f; // 게임 일시 정지
         levelUpPanel.localScale = Vector3.one;
+        _graphic.enabled = true;
 
         List<SkillData> allSkills = Player.Instance.GetAllSkillData();
 
@@ -127,6 +131,7 @@ public class LevelUpUIManager : MonoBehaviour
         }
 
         levelUpPanel.localScale = Vector3.zero;
-        Time.timeScale = 1f;
+        Time.timeScale = GameManager.Instance.CurSpeed;
+        _graphic.enabled = false;
     }
 }

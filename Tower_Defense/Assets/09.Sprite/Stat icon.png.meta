@@ -1,0 +1,466 @@
+fileFormatVersion: 2
+guid: c5c058b531f0abe489f9363d563dac44
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 2329609781018451336
+    second: Stat icon_0
+  - first:
+      213: -1941801295775803067
+    second: Stat icon_1
+  - first:
+      213: -8252369746683244802
+    second: Stat icon_2
+  - first:
+      213: -4612894769206874488
+    second: Stat icon_3
+  - first:
+      213: 5973400230134415795
+    second: Stat icon_4
+  - first:
+      213: -6780418301633262260
+    second: Stat icon_5
+  - first:
+      213: -5015900668194138434
+    second: Stat icon_6
+  - first:
+      213: 7351449673002507418
+    second: Stat icon_7
+  - first:
+      213: -4942035780272551383
+    second: Stat icon_8
+  - first:
+      213: -1793640812432716377
+    second: Stat icon_9
+  - first:
+      213: -7158722905741777043
+    second: Stat icon_10
+  - first:
+      213: -3126161606018066664
+    second: Stat icon_11
+  - first:
+      213: -5563732973071247899
+    second: Stat icon_12
+  - first:
+      213: 5679601675929921946
+    second: Stat icon_13
+  - first:
+      213: 2621032732476129308
+    second: Stat icon_14
+  - first:
+      213: -1529919195846370048
+    second: Stat icon_15
+  - first:
+      213: 2922493579880007418
+    second: Stat icon_16
+  - first:
+      213: 5279807736932849
+    second: Stat icon_17
+  - first:
+      213: -6887122543110973512
+    second: Stat icon_18
+  - first:
+      213: 5398578485398261063
+    second: Stat icon_19
+  - first:
+      213: 6901621959187309418
+    second: Stat icon_20
+  - first:
+      213: 1508996495394186357
+    second: Stat icon_21
+  - first:
+      213: 7633566939622565869
+    second: Stat icon_22
+  - first:
+      213: 8215183720955034196
+    second: Stat icon_23
+  - first:
+      213: 6354084777292925981
+    second: Stat icon_24
+  - first:
+      213: -5794095785648341007
+    second: Stat icon_25
+  - first:
+      213: -3036677366304948635
+    second: Stat icon_26
+  - first:
+      213: -8267573817416221154
+    second: Stat icon_27
+  - first:
+      213: 5951240684725264426
+    second: Stat icon_28
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Stat icon_0
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 496
+        width: 189
+        height: 169
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 88d51e6c0cf645020800000000000000
+      internalID: 2329609781018451336
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Stat icon_1
+      rect:
+        serializedVersion: 2
+        x: 282
+        y: 499
+        width: 211
+        height: 174
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 549d3e472065d05e0800000000000000
+      internalID: -1941801295775803067
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Stat icon_2
+      rect:
+        serializedVersion: 2
+        x: 538
+        y: 502
+        width: 219
+        height: 155
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: efec3c53071b97d80800000000000000
+      internalID: -8252369746683244802
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Stat icon_3
+      rect:
+        serializedVersion: 2
+        x: 796
+        y: 506
+        width: 178
+        height: 142
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 88eaa27c5a4bbffb0800000000000000
+      internalID: -4612894769206874488
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Stat icon_6
+      rect:
+        serializedVersion: 2
+        x: 1066
+        y: 516
+        width: 122
+        height: 114
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eb6d4abeae0f36ab0800000000000000
+      internalID: -5015900668194138434
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Stat icon_17
+      rect:
+        serializedVersion: 2
+        x: 37
+        y: 228
+        width: 204
+        height: 134
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1f964a805f1c21000800000000000000
+      internalID: 5279807736932849
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Stat icon_18
+      rect:
+        serializedVersion: 2
+        x: 285
+        y: 279
+        width: 220
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8b7194d59860c60a0800000000000000
+      internalID: -6887122543110973512
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Stat icon_19
+      rect:
+        serializedVersion: 2
+        x: 546
+        y: 219
+        width: 172
+        height: 167
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 74dca32978a9bea40800000000000000
+      internalID: 5398578485398261063
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Stat icon_20
+      rect:
+        serializedVersion: 2
+        x: 776
+        y: 210
+        width: 192
+        height: 170
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a6325630b9c77cf50800000000000000
+      internalID: 6901621959187309418
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Stat icon_22
+      rect:
+        serializedVersion: 2
+        x: 1064
+        y: 220
+        width: 155
+        height: 157
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: de76e5defa0efe960800000000000000
+      internalID: 7633566939622565869
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 54af41ff42b21274bb7bde8e4a7e26fa
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Stat icon_0: 2329609781018451336
+      Stat icon_1: -1941801295775803067
+      Stat icon_10: -7158722905741777043
+      Stat icon_11: -3126161606018066664
+      Stat icon_12: -5563732973071247899
+      Stat icon_13: 5679601675929921946
+      Stat icon_14: 2621032732476129308
+      Stat icon_15: -1529919195846370048
+      Stat icon_16: 2922493579880007418
+      Stat icon_17: 5279807736932849
+      Stat icon_18: -6887122543110973512
+      Stat icon_19: 5398578485398261063
+      Stat icon_2: -8252369746683244802
+      Stat icon_20: 6901621959187309418
+      Stat icon_21: 1508996495394186357
+      Stat icon_22: 7633566939622565869
+      Stat icon_23: 8215183720955034196
+      Stat icon_24: 6354084777292925981
+      Stat icon_25: -5794095785648341007
+      Stat icon_26: -3036677366304948635
+      Stat icon_27: -8267573817416221154
+      Stat icon_28: 5951240684725264426
+      Stat icon_3: -4612894769206874488
+      Stat icon_4: 5973400230134415795
+      Stat icon_5: -6780418301633262260
+      Stat icon_6: -5015900668194138434
+      Stat icon_7: 7351449673002507418
+      Stat icon_8: -4942035780272551383
+      Stat icon_9: -1793640812432716377
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
