@@ -17,10 +17,18 @@ public class BlackHoleEffect : MonoBehaviour, ISkillEffect
     [Tooltip("적이 느려지는 비율 (예: 0.9 = 90% 느려짐)")]
     [SerializeField] private float slowPercentage = 0.9f;
 
-    [Header("애니메이션 설정")]
-    [SerializeField] private Animator animator;
-    [Tooltip("End 애니메이션이 재생되는 시간 (이 시간이 지나면 풀로 반환)")]
-    [SerializeField] private float endAnimationDuration = 0.5f;
+    [Header("회전 설정")]
+    [Tooltip("체크 시 프리팹이 회전")]
+    [SerializeField] private bool isRotating = true;
+    [Tooltip("회전 속도")]
+    [SerializeField] private float rotationSpeed = 500f;
+
+    //[Header("애니메이션 설정")]
+    //[SerializeField] private Animator animator;
+    //[Tooltip("End 애니메이션이 재생되는 시간 (이 시간이 지나면 풀로 반환)")]
+    //[SerializeField] private float endAnimationDuration = 0.5f;
+
+
 
     private bool isEnding = false;
 
@@ -46,8 +54,8 @@ public class BlackHoleEffect : MonoBehaviour, ISkillEffect
         currentDuration = 0f;
         tickTimer = 0f;
 
-        if (animator != null)
-            animator.SetBool("isDead", false);
+        //if (animator != null)
+        //    animator.SetBool("isDead", false);
     }
 
     public void OnDespawn() { }
@@ -66,11 +74,16 @@ public class BlackHoleEffect : MonoBehaviour, ISkillEffect
         {
             isEnding = true; // 다시 이 블록에 들어오지 못하게 막음
 
-            if (animator != null)
-                animator.SetBool("isDead", true);
+            //if (animator != null)
+            //    animator.SetBool("isDead", true);
 
-            ObjectPool.Instance.ReturnObj(gameObject, endAnimationDuration);
+            ObjectPool.Instance.ReturnObj(gameObject);
             return;
+        }
+
+        if (isRotating)
+        {
+            transform.Rotate(0f, 0f, rotationSpeed * Time.deltaTime);
         }
 
         HandleGravityAndDamage();

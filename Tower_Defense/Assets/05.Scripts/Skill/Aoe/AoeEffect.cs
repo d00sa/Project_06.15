@@ -3,12 +3,11 @@ using UnityEngine;
 
 public class AoeEffect : MonoBehaviour, ISkillEffect
 {
-    private SkillLevelStat myStat;
-    private StatType damageBonusType;
+    protected SkillLevelStat myStat;
+    protected StatType damageBonusType;
 
     // 지속시간 보정(StatType.AoeDuration)이 적용된 실제 지속시간
-    private float effectiveDuration;
-
+    protected float effectiveDuration;
     private float currentDuration;
     private float tickTimer = 0f;
 
@@ -16,84 +15,26 @@ public class AoeEffect : MonoBehaviour, ISkillEffect
     private List<Enemy> enemiesInside = new List<Enemy>();
 
     [Header("장판 설정")]
-    [SerializeField] private Animator animator;
-    [Tooltip("이 장판이 적을 밀쳐내는 힘")]
-    [SerializeField] private float knockbackPower = 0.2f;
+    [SerializeField] protected Animator animator;
+    [SerializeField] protected float knockbackPower = 0.2f;
 
     [Header("회전 설정")]
-    [Tooltip("체크 시 장판이 회전합니다.")]
-    [SerializeField] private bool isRotating = false;
-    [Tooltip("회전 속도 (양수: 반시계, 음수: 시계 방향)")]
-    [SerializeField] private float rotationSpeed = 90f;
+    [SerializeField] protected bool isRotating = false;
+    [SerializeField] protected float rotationSpeed = 90f;
 
     [Header("상태 이상 (독/화상)")]
-    [Tooltip("장판을 벗어난 후에도 데미지가 지속되는 시간 (0이면 없음)")]
-    [SerializeField] private float lingerDuration = 3f;
+    [SerializeField] protected float lingerDuration = 3f;
 
-    [Header("특수 옵션")]
-    [Tooltip("체크 시 데미지 스탯을 무시하고, 맵 전체의 '일반(Normal)' 몹만 999999 데미지로 즉사시킵니다.")]
-    [SerializeField] private bool instaKillNormalOnly = false;
-
-    [Header("핵폭탄 (융합) 옵션")]
-    [Tooltip("체크 시 일반몹 즉사 + 보스/엘리트 즉발 데미지 후 맵 전체 남은 적에게 방사능(DoT) 부여")]
-    [SerializeField] private bool isNukeFusion = false;
-
-    public void Initialize(SkillEffectContext ctx)
+    public virtual void Initialize(SkillEffectContext ctx)
     {
         myStat = ctx.stat;
         damageBonusType = ctx.damageBonusType;
         effectiveDuration = myStat.speed * (1f + Player.Instance.Stat.GetStat(StatType.AoeDuration));
 
-        if (isNukeFusion)
-        {
-            List<Enemy> allEnemies = ObjectPool.Instance.GetEnemy();
-            float tickRate = myStat.fireRate > 0f ? 1f / myStat.fireRate : 1f;
-            float finalDamage = myStat.damage + Player.Instance.Stat.GetStat(damageBonusType);
-
-            // 리스트에서 삭제될 것을 대비해 역순으로 순회
-            for (int i = allEnemies.Count - 1; i >= 0; i--)
-            {
-                Enemy enemy = allEnemies[i];
-                if (enemy.gameObject.activeInHierarchy)
-                {
-                    if (enemy.priority == EnemyPriority.Normal)
-                    {
-                        // 일반 몹은 즉사
-                        enemy.TakeDamage(999999f, transform.position, 0f);
-                    }
-                    else
-                    {
-                        // 엘리트나 보스는 핵 데미지 적용
-                        enemy.TakeDamage(finalDamage, transform.position, 0f);
-
-                        // 즉발 데미지를 맞고도 살아남았다면 DOT데미지 적용
-                        if (!enemy.IsDead)
-                        {
-                            // effectiveDuration(speed) 시간 동안, tickRate 주기로 도트딜 부여
-                            enemy.ApplyDotDamage(finalDamage * 0.5f, effectiveDuration, tickRate, 0f);
-                        }
-                    }
-                }
-            }
-        }
-        else if (instaKillNormalOnly)
-        {
-            List<Enemy> allEnemies = ObjectPool.Instance.GetEnemy();
-
-            for (int i = allEnemies.Count - 1; i >= 0; i--)
-            {
-                Enemy enemy = allEnemies[i];
-                if (enemy.gameObject.activeInHierarchy && enemy.priority == EnemyPriority.Normal)
-                {
-                    enemy.TakeDamage(999999f, transform.position, 0f);
-                }
-            }
-        }
-
         SoundManager.Instance.PlaySFX("Trap");
     }
 
-    public void OnSpawn()
+    public virtual void OnSpawn()
     {
         currentDuration = 0f;
         tickTimer = 0f;
@@ -102,9 +43,9 @@ public class AoeEffect : MonoBehaviour, ISkillEffect
         if (animator != null) animator.SetBool("isDead", false);
     }
 
-    public void OnDespawn() { }
+    public virtual void OnDespawn() { }
 
-    private void Update()
+    protected virtual void Update()
     {
         if (myStat == null) return;
 
@@ -113,7 +54,7 @@ public class AoeEffect : MonoBehaviour, ISkillEffect
 
         if (currentDuration >= effectiveDuration)
         {
-            if (lingerDuration > 0f && !instaKillNormalOnly)
+            if (lingerDuration > 0f)
             {
                 foreach (var enemy in enemiesInside)
                 {
@@ -139,10 +80,8 @@ public class AoeEffect : MonoBehaviour, ISkillEffect
         EnemyAttack();
     }
 
-    private void EnemyAttack()
+    protected virtual void EnemyAttack()
     {
-        if (instaKillNormalOnly || isNukeFusion) return;
-
         bool isTickTime = myStat.fireRate > 0f && tickTimer >= (1f / myStat.fireRate);
         if (isTickTime) tickTimer = 0f;
 
@@ -163,11 +102,8 @@ public class AoeEffect : MonoBehaviour, ISkillEffect
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    protected virtual void OnTriggerEnter2D(Collider2D collision)
     {
-        // 즉사기일 때는 콜라이더 판정 무시
-        if (instaKillNormalOnly) return;
-
         if (collision.CompareTag("Enemy"))
         {
             if (collision.TryGetComponent<Enemy>(out var enemy))
@@ -178,10 +114,8 @@ public class AoeEffect : MonoBehaviour, ISkillEffect
         }
     }
 
-    private void OnTriggerExit2D(Collider2D collision)
+    protected virtual void OnTriggerExit2D(Collider2D collision)
     {
-        if (instaKillNormalOnly) return; // 즉사기 무시
-
         if (collision.CompareTag("Enemy"))
         {
             if (collision.TryGetComponent<Enemy>(out var enemy))
