@@ -2,12 +2,11 @@ using UnityEngine;
 
 public class Projectile : MonoBehaviour, ISkillEffect
 {
+    // 캐싱해 둘 최종 데미지
+    protected float calculatedFinalDamage;
+
     private Transform target;
     private SkillLevelStat myStat;
-    private StatType damageBonusType;
-
-    // 속도 보정(StatType.ProjectileSpeed)이 적용된 실제 이동 속도
-    private float effectiveSpeed;
 
     private Vector2 currentDir;
 
@@ -38,8 +37,12 @@ public class Projectile : MonoBehaviour, ISkillEffect
     {
         target = ctx.target;
         myStat = ctx.stat;
-        damageBonusType = ctx.damageBonusType;
-        effectiveSpeed = myStat.speed * (1f + Player.Instance.Stat.GetStat(StatType.ProjectileSpeed));
+
+        calculatedFinalDamage = Player.Instance.Stat.CalculateFinalDamage(
+            myStat.damage,
+            myStat.coolTime,
+            myStat.fireRate
+        );
 
         if (isRandomDirection)
         {
@@ -83,7 +86,7 @@ public class Projectile : MonoBehaviour, ISkillEffect
             }
         }
 
-        transform.Translate(currentDir * effectiveSpeed * Time.deltaTime, UnityEngine.Space.World);
+        transform.Translate(currentDir * myStat.speed * Time.deltaTime, UnityEngine.Space.World);
 
     }
 
@@ -98,7 +101,7 @@ public class Projectile : MonoBehaviour, ISkillEffect
         if (collision.CompareTag("Enemy") && collision.TryGetComponent<Enemy>(out var enemy))
         {
             // 데미지 및 넉백
-            enemy.TakeDamage(myStat.damage + Player.Instance.Stat.GetStat(damageBonusType), transform.position, knockbackPower);
+            enemy.TakeDamage(calculatedFinalDamage, transform.position, knockbackPower);
 
             // 상태 이상
             if (slowPercentage > 0f && slowDuration > 0f)

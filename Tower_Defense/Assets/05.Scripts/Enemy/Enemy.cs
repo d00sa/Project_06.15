@@ -177,7 +177,7 @@ public class Enemy : MonoBehaviour, IPoolable
     }
 
     /// <summary> 데미지 주고 피격 방향 반대로 살짝 밈 </summary>
-    /// <param name="damage">받을 데미지량</param>
+    /// <param name="damage">받을 데미지량(damage가 넘어올 때 스탯의 보너스 데미지 이미 적용되어 있는 상태임)</param>
     /// <param name="attackPos">공격의 중심점 (투사체 위치 or area 중심 위치)</param>
     /// <param name="knockbackPower">밀려날 거리</param>
     public void TakeDamage(float damage, Vector3 attackPos, float knockbackPower)
@@ -192,6 +192,7 @@ public class Enemy : MonoBehaviour, IPoolable
             finalDamage = Player.Instance.Stat.RollCriticalDamage(finalDamage, out isCritical);
         }
 
+        // Curse 스킬 전용 스탯 관련 아님!!!!!
         if (OnCalculateBonusDamage != null)
         {
             foreach (DamageModifier modifier in OnCalculateBonusDamage.GetInvocationList())

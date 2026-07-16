@@ -38870,6 +38870,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 8427968885779218570, guid: 24ddef4e6ae733648be7a3e464718ccc, type: 3}
+      propertyPath: startingSkills.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8427968885779218570, guid: 24ddef4e6ae733648be7a3e464718ccc, type: 3}
+      propertyPath: 'startingSkills.Array.data[0]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 34bf00e2ed407144cba054fec895cc1f, type: 2}
+    - target: {fileID: 8427968885779218570, guid: 24ddef4e6ae733648be7a3e464718ccc, type: 3}
+      propertyPath: 'startingSkills.Array.data[1]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 3a9e292ec83326d459a7cd89d1b1ae95, type: 2}
+    - target: {fileID: 8427968885779218570, guid: 24ddef4e6ae733648be7a3e464718ccc, type: 3}
+      propertyPath: 'startingSkills.Array.data[2]'
+      value: 
+      objectReference: {fileID: 11400000, guid: e10ec7e1476508440bbff644c7c673c9, type: 2}
+    - target: {fileID: 8427968885779218570, guid: 24ddef4e6ae733648be7a3e464718ccc, type: 3}
+      propertyPath: 'startingSkills.Array.data[3]'
+      value: 
+      objectReference: {fileID: 11400000, guid: b90d896d1628fe044b9140de0c472b29, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

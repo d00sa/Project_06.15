@@ -4,13 +4,9 @@ using UnityEngine;
 
 public enum StatType
 {
-    ProjectileDamage,    // 투사체류 데미지 증가
-    AoeDamage,           // 장판/즉발형 데미지 증가
-    PetDamage,           // 펫류 데미지 증가 (필요한 펫 스킬에서 선택적으로 사용)
+    AttackDamage,        // 투사체, AOE, 펫 데미지를 하나로 통합한 기본 공격력 추가값
     AttackSpeed,         // 공격 속도 증가 (쿨타임 감소)
     EXPGained,           // 경험치 획득량 (ex: 0.1이면 10% 추가)
-    AoeDuration,         // AOE 장판/폭설류 지속시간 증가 (비율, 0.2 = +20%)
-    ProjectileSpeed,     // 투사체 이동 속도 증가 (비율, fireRate와 무관)
     CritChance,          // 치명타 확률 (0.1 = 10%)
     CritDamageMultiplier,// 치명타 데미지 배율 (2 = 2배)
     MoneyBonus,          // 돈 획득량 보너스 (0.1 = 10% )
@@ -31,7 +27,7 @@ public class StatManager : MonoBehaviour
     [Header("현재 스탯 현황 (인스펙터 확인용, 런타임에 자동 갱신됨)")]
     [SerializeField] private List<StatEntry> statEntriesView = new List<StatEntry>();
 
-    // 스탯이 변경되었을 때 UI나 다른 시스템에 알려주기 위한 이벤트
+    // 스탯이 변경되었을 때를 위한 이벤트
     public event Action OnStatChanged;
 
     private void Awake()
@@ -79,6 +75,27 @@ public class StatManager : MonoBehaviour
         isCritical = critChance > 0f && UnityEngine.Random.value < critChance;
 
         return isCritical ? baseDamage * GetStat(StatType.CritDamageMultiplier) : baseDamage;
+    }
+
+    /// <summary>
+    /// 스킬의 쿨타임과 연사력을 바탕으로 효율(비율)이 적용된 최종 데미지를 계산하여 반환.
+    /// </summary>
+    public float CalculateFinalDamage(float baseDamage, float coolTime, float fireRate)
+    {
+        float bonusDamage = GetStat(StatType.AttackDamage);
+
+        // 데미지 계수 계싼
+        float effectiveness = 1f;
+        if (coolTime > 0f)
+        {
+            effectiveness = coolTime;
+        }
+        else if (fireRate > 0f)
+        {
+            effectiveness = 1f / fireRate;
+        }
+
+        return baseDamage + (bonusDamage * effectiveness);
     }
 
     private void SyncDictionaryFromInspector()

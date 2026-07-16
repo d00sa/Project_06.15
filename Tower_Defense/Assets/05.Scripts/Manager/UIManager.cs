@@ -133,21 +133,18 @@ public class UIManager : MonoBehaviour
 
     private void ChangeStat()
     {
-        foreach (StatType stat in Enum.GetValues(typeof(StatType))) {
-            switch (stat) {
-                case StatType.ProjectileDamage:
-                case StatType.AoeDamage:
-                case StatType.PetDamage:
+        foreach (StatType stat in Enum.GetValues(typeof(StatType)))
+        {
+            switch (stat)
+            {
+                // 숫자만 출력
+                case StatType.AttackDamage:
                 case StatType.AttackSpeed:
                     _stats[(int)stat].text = $"{Player.Instance.Stat.GetStat(stat)}";
                     break;
+
+                // %붙여서 출력
                 case StatType.EXPGained:
-                    _stats[(int)stat].text = $"{Player.Instance.Stat.GetStat(stat)}%";
-                    break;
-                case StatType.AoeDuration:
-                case StatType.ProjectileSpeed:
-                    _stats[(int)stat].text = $"{Player.Instance.Stat.GetStat(stat)}";
-                    break;
                 case StatType.CritChance:
                 case StatType.CritDamageMultiplier:
                 case StatType.MoneyBonus:

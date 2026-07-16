@@ -4,10 +4,10 @@ using UnityEngine;
 public class AoeEffect : MonoBehaviour, ISkillEffect
 {
     protected SkillLevelStat myStat;
-    protected StatType damageBonusType;
 
-    // 지속시간 보정(StatType.AoeDuration)이 적용된 실제 지속시간
-    protected float effectiveDuration;
+    // 최종 데미지 캐싱용
+    protected float calculatedFinalDamage;
+
     private float currentDuration;
     private float tickTimer = 0f;
 
@@ -28,8 +28,12 @@ public class AoeEffect : MonoBehaviour, ISkillEffect
     public virtual void Initialize(SkillEffectContext ctx)
     {
         myStat = ctx.stat;
-        damageBonusType = ctx.damageBonusType;
-        effectiveDuration = myStat.speed * (1f + Player.Instance.Stat.GetStat(StatType.AoeDuration));
+
+        calculatedFinalDamage = Player.Instance.Stat.CalculateFinalDamage(
+            myStat.damage,
+            myStat.coolTime,
+            myStat.fireRate
+        );
 
         SoundManager.Instance.PlaySFX("Trap");
     }
@@ -52,7 +56,7 @@ public class AoeEffect : MonoBehaviour, ISkillEffect
         currentDuration += Time.deltaTime;
         tickTimer += Time.deltaTime;
 
-        if (currentDuration >= effectiveDuration)
+        if (currentDuration >= myStat.Duration)
         {
             if (lingerDuration > 0f)
             {
@@ -97,7 +101,7 @@ public class AoeEffect : MonoBehaviour, ISkillEffect
 
             if (isTickTime)
             {
-                enemy.TakeDamage(myStat.damage + Player.Instance.Stat.GetStat(damageBonusType), transform.position, knockbackPower);
+                enemy.TakeDamage(calculatedFinalDamage, transform.position, knockbackPower);
             }
         }
     }

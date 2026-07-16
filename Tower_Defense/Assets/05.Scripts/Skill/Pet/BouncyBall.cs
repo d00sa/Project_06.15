@@ -3,23 +3,28 @@ using UnityEngine;
 [RequireComponent(typeof(Collider2D))]
 public class BouncyBall : Pet
 {
+    // 캐싱해 둘 최종 데미지
+    protected float calculatedFinalDamage;
+
     private Vector2 moveDirection;
 
     [Header("탱탱볼 전용 설정")]
     [Tooltip("적에게 맞았을 때 밀쳐내는 힘")]
     [SerializeField] private float knockbackPower = 0.5f;
 
-    [Tooltip("이 펫의 데미지가 StatManager의 어떤 보정값을 받을지. " +
-             "Pet은 SkillData를 안 거치고 소환되기 때문에 여기서 직접 지정.")]
-    [SerializeField] private StatType damageBonusType = StatType.ProjectileDamage;
-
     private Vector2 minBounds;
     private Vector2 maxBounds;
 
-    // Initialize 함수 오버라이드 (기존 펫 로직 + 탱탱볼 전용 로직)
     public override void Initialize(SkillLevelStat stat)
     {
         base.Initialize(stat);
+
+        calculatedFinalDamage = Player.Instance.Stat.CalculateFinalDamage(
+            currentPetStat.damage,
+            currentPetStat.coolTime,
+            currentPetStat.fireRate
+        );
+
         // 랜덤한 방향으로 튕기기
         moveDirection = new Vector2(Random.Range(-1f, 1f), Random.Range(-1f, 1f)).normalized;
     }
@@ -77,7 +82,7 @@ public class BouncyBall : Pet
             // 죽은 적(시체)이거나 꺼진 몬스터라면 무시하고 통과
             if (enemy.IsDead || !enemy.gameObject.activeInHierarchy) return;
 
-            enemy.TakeDamage(currentPetStat.damage + Player.Instance.Stat.GetStat(damageBonusType), transform.position, knockbackPower);
+            enemy.TakeDamage(calculatedFinalDamage, transform.position, knockbackPower);
 
             Vector2 normal = ((Vector2)transform.position - (Vector2)enemy.transform.position).normalized;
             moveDirection = Vector2.Reflect(moveDirection, normal).normalized;

@@ -2,8 +2,10 @@ using UnityEngine;
 
 public class InstantAoeEffect : MonoBehaviour, ISkillEffect
 {
+    // 캐싱해 둘 최종 데미지
+    protected float calculatedFinalDamage;
+
     private SkillLevelStat myStat;
-    private StatType damageBonusType;
 
     [Header("번개 트랩 설정")]
     [SerializeField] private Animator animator;
@@ -19,7 +21,12 @@ public class InstantAoeEffect : MonoBehaviour, ISkillEffect
     public void Initialize(SkillEffectContext ctx)
     {
         myStat = ctx.stat;
-        damageBonusType = ctx.damageBonusType;
+
+        calculatedFinalDamage = Player.Instance.Stat.CalculateFinalDamage(
+            myStat.damage,
+            myStat.coolTime,
+            myStat.fireRate
+        );
 
         transform.position += positionOffset;
 
@@ -47,7 +54,7 @@ public class InstantAoeEffect : MonoBehaviour, ISkillEffect
         {
             if (col.CompareTag("Enemy") && col.TryGetComponent<Enemy>(out var enemy))
             {
-                enemy.TakeDamage(myStat.damage + Player.Instance.Stat.GetStat(damageBonusType), transform.position, 0f);
+                enemy.TakeDamage(calculatedFinalDamage, transform.position, 0f);
                 enemy.ApplyStun(stunDuration);
             }
         }

@@ -113,7 +113,6 @@ MonoBehaviour:
   skillPet: {fileID: 4579924407499128926}
   startingSkills:
   - {fileID: 11400000, guid: c77baab45161b5a4b8982ae884497394, type: 2}
-  - {fileID: 11400000, guid: 145b9632939dbd7489303c348e4f83ad, type: 2}
   currentExp: 0
   maxExp: 100
   playerLevel: 1
@@ -166,6 +165,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SkillShooter
   skillDataList:
   - {fileID: 11400000, guid: c77baab45161b5a4b8982ae884497394, type: 2}
+  - {fileID: 11400000, guid: bf2f713ff809d4e4582283c6c424289e, type: 2}
+  - {fileID: 11400000, guid: 677e1585f739c514994e14debf624f20, type: 2}
+  - {fileID: 11400000, guid: e10ec7e1476508440bbff644c7c673c9, type: 2}
+  - {fileID: 11400000, guid: 695628fea9a60b14180310d6bc79e42c, type: 2}
+  - {fileID: 11400000, guid: 1cf00e682b420ee45b364ffcfbceab1a, type: 2}
+  - {fileID: 11400000, guid: a87f96db392ba1e44b7b16fad1d36eda, type: 2}
 --- !u!114 &1784072199689249204
 MonoBehaviour:
   m_ObjectHideFlags: 0

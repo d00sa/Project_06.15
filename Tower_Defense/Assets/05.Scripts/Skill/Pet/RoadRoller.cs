@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class RoadRoller : Pet
 {
+    // 캐싱해 둘 최종 데미지
+    protected float calculatedFinalDamage;
+
     [Header("[설정]")]
     [SerializeField] LayerMask _targetLayer;
     [SerializeField] float _minTime;
@@ -28,7 +31,7 @@ public class RoadRoller : Pet
         _nextPlayTime = Random.Range(_minTime, _maxTime);
 
         transform.SetParent(null);
-        transform.localScale = Vector3.one;
+        //transform.localScale = Vector3.one;
 
         if (WayPointManager.Instance != null)
             _wayPoints = WayPointManager.Instance.wayPoints;
@@ -40,6 +43,13 @@ public class RoadRoller : Pet
     public override void Initialize(SkillLevelStat stat)
     {
         currentPetStat = stat;
+
+        calculatedFinalDamage = Player.Instance.Stat.CalculateFinalDamage(
+            currentPetStat.damage,
+            currentPetStat.coolTime,
+            currentPetStat.fireRate
+        );
+
         _hitEnemies.Clear();
 
         if (_wayPoints == null && WayPointManager.Instance != null)
@@ -123,7 +133,7 @@ public class RoadRoller : Pet
         _hitEnemies.Add(enemy);
 
         for (int i = 0; i < currentPetStat.fireRate; i++)
-            enemy.TakeDamage(currentPetStat.damage, transform.position, 0f);
+            enemy.TakeDamage(calculatedFinalDamage, transform.position, 0f);
     }
 
     private void OnTriggerExit2D(Collider2D other)

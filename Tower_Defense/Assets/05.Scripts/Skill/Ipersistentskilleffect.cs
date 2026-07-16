@@ -8,8 +8,8 @@ using UnityEngine;
 /// </summary>
 public interface IPersistentSkillEffect : IPoolable
 {
-    /// <summary>최초 스폰 시 1회 호출. damageBonusType은 SkillData에서 옴.</summary>
-    void Initialize(SkillLevelStat stat, StatType damageBonusType);
+    /// <summary>최초 스폰 시 1회 호출</summary>
+    void Initialize(SkillLevelStat stat);
 
     /// <summary>스킬 레벨업 시 호출. 재시작이 아니라 내부 스탯만 갱신해야 함</summary>
     void UpgradeEffect(SkillLevelStat stat);

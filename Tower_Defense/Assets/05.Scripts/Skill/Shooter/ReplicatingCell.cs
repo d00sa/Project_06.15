@@ -3,14 +3,15 @@ using UnityEngine;
 [RequireComponent(typeof(Collider2D))]
 public class ReplicatingCell : MonoBehaviour, ISkillEffect
 {
+    // 최종 데미지 캐싱용
+    protected float calculatedFinalDamage;
+
     private SkillLevelStat myStat;
-    private StatType damageBonusType;
     private Transform caster;
-
-    private float effectiveSpeed;
     private Vector2 moveDirection;
-    private float currentDamage;
 
+    // 크기에 따라 변하는 현재 데미지 수치
+    private float currentDamage;
     // 크기에 따라 변하는 현재 넉백 수치
     private float currentKnockbackPower;
 
@@ -28,13 +29,18 @@ public class ReplicatingCell : MonoBehaviour, ISkillEffect
     public void Initialize(SkillEffectContext ctx)
     {
         myStat = ctx.stat;
-        damageBonusType = ctx.damageBonusType;
         caster = ctx.caster;
-        effectiveSpeed = myStat.speed * (1f + Player.Instance.Stat.GetStat(StatType.ProjectileSpeed));
 
         currentSplitCount = 0;
         transform.localScale = Vector3.one;
-        currentDamage = myStat.damage + Player.Instance.Stat.GetStat(damageBonusType);
+
+        calculatedFinalDamage = Player.Instance.Stat.CalculateFinalDamage(
+            myStat.damage,
+            myStat.coolTime,
+            myStat.fireRate
+        );
+
+        currentDamage = calculatedFinalDamage;
 
         // 초기 넉백 파워 설정
         currentKnockbackPower = knockbackPower;
@@ -54,12 +60,10 @@ public class ReplicatingCell : MonoBehaviour, ISkillEffect
     /// <summary>
     /// 분열 시 부모의 데미지와 넉백 파워를 전달받아 절반으로 설정
     /// </summary>
-    public void SetupAsChild(SkillLevelStat stat, StatType bonusType, Transform casterTrans, int splitGen, Vector2 dir, Vector3 parentScale, float parentDamage, float parentKnockback, Enemy enemyToIgnore)
+    public void SetupAsChild(SkillLevelStat stat, Transform casterTrans, int splitGen, Vector2 dir, Vector3 parentScale, float parentDamage, float parentKnockback, Enemy enemyToIgnore)
     {
         myStat = stat;
-        damageBonusType = bonusType;
         caster = casterTrans;
-        effectiveSpeed = myStat.speed * (1f + Player.Instance.Stat.GetStat(StatType.ProjectileSpeed));
 
         currentSplitCount = splitGen;
         moveDirection = dir.normalized;
@@ -91,7 +95,7 @@ public class ReplicatingCell : MonoBehaviour, ISkillEffect
         if (myStat == null) return;
 
         UpdateScreenBounds();
-        transform.Translate(moveDirection * effectiveSpeed * Time.deltaTime, Space.World);
+        transform.Translate(moveDirection * Time.deltaTime * myStat.speed, Space.World);
         CheckBoundsAndBounce();
     }
 
@@ -160,7 +164,7 @@ public class ReplicatingCell : MonoBehaviour, ISkillEffect
         GameObject cell = ObjectPool.Instance.GetObj(gameObject.name, transform.position, null, true);
         if (cell.TryGetComponent<ReplicatingCell>(out var rep))
         {
-            rep.SetupAsChild(myStat, damageBonusType, caster, currentSplitCount + 1, dir, transform.localScale, currentDamage, currentKnockbackPower, hitEnemy);
+            rep.SetupAsChild(myStat, caster, currentSplitCount + 1, dir, transform.localScale, currentDamage, currentKnockbackPower, hitEnemy);
         }
     }
 }

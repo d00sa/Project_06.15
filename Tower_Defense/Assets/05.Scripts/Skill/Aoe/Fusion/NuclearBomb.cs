@@ -104,7 +104,7 @@ public class NuclearBomb : AoeEffect
     {
         List<Enemy> allEnemies = ObjectPool.Instance.GetEnemy();
         float tickRate = myStat.fireRate > 0f ? 1f / myStat.fireRate : 1f;
-        float finalDamage = myStat.damage + Player.Instance.Stat.GetStat(damageBonusType);
+        float finalDamage = calculatedFinalDamage;
 
         for (int i = allEnemies.Count - 1; i >= 0; i--)
         {
@@ -120,7 +120,7 @@ public class NuclearBomb : AoeEffect
                     enemy.TakeDamage(finalDamage, transform.position, 0f);
                     if (!enemy.IsDead)
                     {
-                        enemy.ApplyDotDamage(finalDamage * 0.5f, effectiveDuration, tickRate, 0f);
+                        enemy.ApplyDotDamage(finalDamage * 0.5f, myStat.Duration, tickRate, 0f);
                     }
                 }
             }

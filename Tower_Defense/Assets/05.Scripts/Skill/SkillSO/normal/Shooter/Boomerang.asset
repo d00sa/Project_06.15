@@ -44,4 +44,3 @@ MonoBehaviour:
     speed: 20
     coolTime: 3
     range: 5
-  damageBonusType: 0

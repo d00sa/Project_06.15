@@ -2,10 +2,11 @@ using UnityEngine;
 
 public class BlackHoleEffect : MonoBehaviour, ISkillEffect
 {
-    private SkillLevelStat myStat;
-    private StatType damageBonusType;
+    // 캐싱해 둘 최종 데미지
+    protected float calculatedFinalDamage;
 
-    private float effectiveDuration;
+    private SkillLevelStat myStat;
+
     private float currentDuration;
     private float tickTimer = 0f;
 
@@ -35,8 +36,12 @@ public class BlackHoleEffect : MonoBehaviour, ISkillEffect
     public void Initialize(SkillEffectContext ctx)
     {
         myStat = ctx.stat;
-        damageBonusType = ctx.damageBonusType;
-        effectiveDuration = myStat.speed * (1f + Player.Instance.Stat.GetStat(StatType.AoeDuration));
+
+        calculatedFinalDamage = Player.Instance.Stat.CalculateFinalDamage(
+            myStat.damage,
+            myStat.coolTime,
+            myStat.fireRate
+        );
 
         currentDuration = 0f;
         tickTimer = 999f;
@@ -70,7 +75,7 @@ public class BlackHoleEffect : MonoBehaviour, ISkillEffect
         tickTimer += Time.deltaTime;
 
         // 지속 시간이 다 끝났을 때
-        if (currentDuration >= effectiveDuration)
+        if (currentDuration >= myStat.Duration)
         {
             isEnding = true; // 다시 이 블록에 들어오지 못하게 막음
 
@@ -114,7 +119,7 @@ public class BlackHoleEffect : MonoBehaviour, ISkillEffect
 
                 if (isTickTime)
                 {
-                    enemy.TakeDamage(myStat.damage + Player.Instance.Stat.GetStat(damageBonusType), transform.position, 0f);
+                    enemy.TakeDamage(calculatedFinalDamage, transform.position, 0f);
                 }
             }
             else if (col.CompareTag("Projectile") || col.TryGetComponent<ReplicatingCell>(out _) || col.TryGetComponent<BouncyBall>(out _))
