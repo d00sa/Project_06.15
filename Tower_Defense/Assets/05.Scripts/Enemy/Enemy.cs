@@ -106,8 +106,23 @@ public class Enemy : MonoBehaviour, IPoolable
             speed * Time.fixedDeltaTime
         );
 
-        if (Vector3.Distance(transform.position, target.position) < 0.1f)
+        if (Vector3.Distance(transform.position, target.position) < 0.2f)
+        {
             _currentIdx = (_currentIdx + 1) % _wayPoints.Count;
+        }
+        else if (_currentIdx > 0)
+        {
+            Transform prevTarget = _wayPoints[_currentIdx - 1];
+
+            Vector3 pathDir = (target.position - prevTarget.position).normalized;
+
+            Vector3 toEnemy = transform.position - target.position;
+
+            if (Vector3.Dot(pathDir, toEnemy) > 0f)
+            {
+                _currentIdx = (_currentIdx + 1) % _wayPoints.Count;
+            }
+        }
     }
 
     public void OnDespawn()
