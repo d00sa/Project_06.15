@@ -95,10 +95,10 @@ public class Enemy : MonoBehaviour, IPoolable
     {
         Transform target = _wayPoints[_currentIdx];
 
-        if (_currentIdx == 0 && !_sprite.flipX)
-            _sprite.flipX = true;
-        else if (_currentIdx == 4 && _sprite.flipX)
+        if (_currentIdx == 0 && _sprite.flipX)
             _sprite.flipX = false;
+        else if (_currentIdx == 4 && !_sprite.flipX)
+            _sprite.flipX = true;
 
         transform.position = Vector3.MoveTowards(
             transform.position,

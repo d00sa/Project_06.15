@@ -46,6 +46,18 @@ public class TitleManager : MonoBehaviour
             _buttonList[i].onClick.RemoveAllListeners();
             _buttonList[i].onClick.AddListener(() => SelectDifficulty(idx));
         }
+
+        GameManager.Instance.ChangeState(GameState.LoadDifficultData);
+    }
+
+    public void Setup()
+    {
+        SetupManager.Instance.Open();
+    }
+
+    public void GameQuit()
+    {
+        GameManager.Instance.GameQuit();
     }
 
     private void SelectDifficulty(int idx)

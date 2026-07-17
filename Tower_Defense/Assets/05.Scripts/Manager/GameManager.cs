@@ -112,17 +112,6 @@ public class GameManager : MonoBehaviour
         }
 
         switch (Current) {
-            case GameState.Idle:
-                {
-                    if (SceneManager.GetActiveScene().name == "SampleScene") return;
-
-                    //게임시작 창
-                    if ((Keyboard.current.anyKey.wasPressedThisFrame && !Keyboard.current.escapeKey.wasPressedThisFrame) || Mouse.current.leftButton.wasPressedThisFrame) {
-                        TitleManager.Instance.EnterToGame();
-                        ChangeState(GameState.LoadDifficultData);
-                    }
-                }
-                break;
             case GameState.LoadDifficultData: {
                     if (Data != null)
                         ChangeState(GameState.StartGame);

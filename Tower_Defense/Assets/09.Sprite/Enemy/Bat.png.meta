@@ -1,0 +1,394 @@
+fileFormatVersion: 2
+guid: 0451b72d31b4a2642a00e1b436a725df
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 8647823593821616703
+    second: Bat_0
+  - first:
+      213: 5681806813702538305
+    second: Bat_1
+  - first:
+      213: 697682191857345388
+    second: Bat_2
+  - first:
+      213: 6993031405965254486
+    second: Bat_3
+  - first:
+      213: -8835117555573905559
+    second: Bat_4
+  - first:
+      213: -1477298914128971197
+    second: Bat_5
+  - first:
+      213: -1085711696175172977
+    second: Bat_6
+  - first:
+      213: -650004520372281371
+    second: Bat_7
+  - first:
+      213: 5596611908343470214
+    second: Bat_8
+  - first:
+      213: -2103701215377653077
+    second: Bat_9
+  - first:
+      213: -9149983406214727455
+    second: Bat_10
+  - first:
+      213: 8822500520823344939
+    second: Bat_11
+  - first:
+      213: 8094889547237836083
+    second: Bat_12
+  - first:
+      213: 3715899403775863448
+    second: Bat_13
+  - first:
+      213: 4419668502950860722
+    second: Bat_14
+  - first:
+      213: -3428020802489031309
+    second: Bat_15
+  - first:
+      213: 6413210283945640860
+    second: Bat_16
+  - first:
+      213: 2325743687340750653
+    second: Bat_17
+  - first:
+      213: 3320426517208521458
+    second: Bat_18
+  - first:
+      213: -2066187681226091738
+    second: Bat_19
+  - first:
+      213: -98603050684707610
+    second: Bat_20
+  - first:
+      213: -4268560216294145197
+    second: Bat_21
+  - first:
+      213: -2167074878448691243
+    second: Bat_22
+  - first:
+      213: 2089468192145798013
+    second: Bat_23
+  - first:
+      213: 1636339230361494857
+    second: Bat_24
+  - first:
+      213: -2449850410729766231
+    second: Bat_25
+  - first:
+      213: -7588931421162680773
+    second: Bat_26
+  - first:
+      213: 3565646450698540321
+    second: Bat_27
+  - first:
+      213: 925038087268274908
+    second: Bat_28
+  - first:
+      213: 8381111290613614903
+    second: Bat_29
+  - first:
+      213: -4818874195688012542
+    second: Bat_30
+  - first:
+      213: -2340803120497525164
+    second: Bat_31
+  - first:
+      213: -1221191594444246648
+    second: Bat_32
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 128
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Walk4
+      rect:
+        serializedVersion: 2
+        x: 1146
+        y: 410
+        width: 320
+        height: 180
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f3abafd8dbd330870800000000000000
+      internalID: 8647823593821616703
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Idle
+      rect:
+        serializedVersion: 2
+        x: 62
+        y: 735
+        width: 380
+        height: 180
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f82fdf4f6f6cee0f0800000000000000
+      internalID: -1085711696175172977
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Walk1
+      rect:
+        serializedVersion: 2
+        x: 88
+        y: 414
+        width: 320
+        height: 180
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 89a652fe1d6819330800000000000000
+      internalID: 3715899403775863448
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Walk2
+      rect:
+        serializedVersion: 2
+        x: 451
+        y: 416
+        width: 320
+        height: 180
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2b75e574611d55d30800000000000000
+      internalID: 4419668502950860722
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Walk3
+      rect:
+        serializedVersion: 2
+        x: 790
+        y: 413
+        width: 320
+        height: 180
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 375edf81e393d60d0800000000000000
+      internalID: -3428020802489031309
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Stunned
+      rect:
+        serializedVersion: 2
+        x: 93
+        y: 48
+        width: 293
+        height: 212
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 45e7e99c6fbc38fd0800000000000000
+      internalID: -2340803120497525164
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 8bd0906d336b95041b4eca44f3043744
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Bat_1: 5681806813702538305
+      Bat_10: -9149983406214727455
+      Bat_11: 8822500520823344939
+      Bat_12: 8094889547237836083
+      Bat_16: 6413210283945640860
+      Bat_17: 2325743687340750653
+      Bat_18: 3320426517208521458
+      Bat_19: -2066187681226091738
+      Bat_2: 697682191857345388
+      Bat_20: -98603050684707610
+      Bat_21: -4268560216294145197
+      Bat_22: -2167074878448691243
+      Bat_23: 2089468192145798013
+      Bat_24: 1636339230361494857
+      Bat_25: -2449850410729766231
+      Bat_26: -7588931421162680773
+      Bat_27: 3565646450698540321
+      Bat_28: 925038087268274908
+      Bat_29: 8381111290613614903
+      Bat_3: 6993031405965254486
+      Bat_30: -4818874195688012542
+      Bat_32: -1221191594444246648
+      Bat_4: -8835117555573905559
+      Bat_5: -1477298914128971197
+      Bat_7: -650004520372281371
+      Bat_8: 5596611908343470214
+      Bat_9: -2103701215377653077
+      Idle: -1085711696175172977
+      Stunned: -2340803120497525164
+      Walk1: 3715899403775863448
+      Walk2: 4419668502950860722
+      Walk3: -3428020802489031309
+      Walk4: 8647823593821616703
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

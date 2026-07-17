@@ -13,32 +13,50 @@ MonoBehaviour:
   m_Name: Easy
   m_EditorClassIdentifier: Assembly-CSharp::DifficultyData
   Difficulty: 0
-  UnitCount: 16
+  UnitCount: 50
   StageDataList:
   - Stage: 1
     bossStage: 0
     SpawnDataList:
     - Prefab: {fileID: 5722822434754417202, guid: c9dda5e1012cd6549926f2f89d16247e, type: 3}
-      Num: 5
-      SpawnDelay: 0
-      Term: 0.5
-      Exp: 50
-      Money: 5
+      Num: 10
+      SpawnDelay: 1
+      Term: 1
+      Exp: 5
+      Money: 10
   - Stage: 2
     bossStage: 0
     SpawnDataList:
-    - Prefab: {fileID: 5722822434754417202, guid: c9dda5e1012cd6549926f2f89d16247e, type: 3}
-      Num: 5
-      SpawnDelay: 0
-      Term: 0.5
+    - Prefab: {fileID: 5722822434754417202, guid: 4d87f17dd9ef76c4a933899220278382, type: 3}
+      Num: 10
+      SpawnDelay: 1
+      Term: 1
       Exp: 5
-      Money: 5
+      Money: 10
   - Stage: 3
-    bossStage: 1
+    bossStage: 0
     SpawnDataList:
-    - Prefab: {fileID: 5722822434754417202, guid: 1c7840dc01f8ba64181f974b9969c519, type: 3}
-      Num: 1
-      SpawnDelay: 0
-      Term: 0.5
+    - Prefab: {fileID: 5722822434754417202, guid: e0ed00a839383a243b4fb6a77a3f3b3e, type: 3}
+      Num: 10
+      SpawnDelay: 1
+      Term: 1
       Exp: 5
-      Money: 50
+      Money: 10
+  - Stage: 4
+    bossStage: 0
+    SpawnDataList:
+    - Prefab: {fileID: 5722822434754417202, guid: adee59ce03cdac44aa9aa98bdc7f3c50, type: 3}
+      Num: 10
+      SpawnDelay: 1
+      Term: 1
+      Exp: 5
+      Money: 10
+  - Stage: 5
+    bossStage: 0
+    SpawnDataList:
+    - Prefab: {fileID: 5722822434754417202, guid: cbfe24845816b5947bfa14a4659f3bf8, type: 3}
+      Num: 10
+      SpawnDelay: 1
+      Term: 1
+      Exp: 5
+      Money: 10
