@@ -55,7 +55,7 @@ public class Spawner : MonoBehaviour
                             spawn: _spawnPoint.position
                         );
 
-                        obj.GetComponent<Enemy>().Setting(curStageData.SpawnDataList[i].Exp, curStageData.SpawnDataList[i].Money);
+                        obj.GetComponent<Enemy>().Setting(curStageData.SpawnDataList[i].Exp);
                         GameManager.Instance.EnemyCount++;
 
                         _termTimersList[i] = curStageData.SpawnDataList[i].Term;
@@ -89,8 +89,7 @@ public class Spawner : MonoBehaviour
         _stageSpawnList.Add(stage);
         curStageData = CurDifficulty.StageDataList[stage - 1];
 
-        if (curStageData.bossStage)
-            IsBoss = true;
+        if (curStageData.bossStage) IsBoss = true;
 
         int length = curStageData.SpawnDataList.Count;
 

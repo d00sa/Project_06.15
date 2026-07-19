@@ -3,6 +3,7 @@ using System.Collections;
 using System;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class Player : MonoBehaviour
 {
@@ -28,6 +29,9 @@ public class Player : MonoBehaviour
     [SerializeField] private int maxExp = 100;
     [SerializeField] private int playerLevel = 1;
     public event Action<int, int> OnExpChanged;
+
+    [Header("[보물상자 체크]")]
+    [SerializeField] private LayerMask _chestLayer;
 
     [Header("경험치 요구량 커브 (계단식)")]
     [Tooltip("X축: 플레이어 레벨, Y축: 해당 레벨업에 필요한 경험치 총량")]
@@ -63,6 +67,20 @@ public class Player : MonoBehaviour
             {
                 LevelUpSkill(skill.skillName);
             }
+        }
+    }
+
+    private void Update()
+    {
+        if (Pointer.current.press.wasPressedThisFrame) {
+            Debug.Log("Hit");
+            //스크린 좌표 가져오기 (ex: 980, 500)
+            Vector2 screenPos = Pointer.current.position.ReadValue();
+            //월드 좌표로 변환. (980, 500 -> 5,4)
+            Vector2 worldPos = Camera.main.ScreenToWorldPoint(screenPos);
+
+            Collider2D hit = Physics2D.OverlapPoint(worldPos, _chestLayer);
+            if (hit != null) hit.GetComponent<Chest>()?.OnClick();
         }
     }
 

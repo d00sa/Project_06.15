@@ -7,12 +7,11 @@ using UnityEngine.EventSystems;
 using UnityEngine.UI;
 using static UnityEditor.Progress;
 
-public class Goods : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IPointerDownHandler, IPointerUpHandler
+public class Reward : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IPointerDownHandler, IPointerUpHandler
 {
     [SerializeField] private RectTransform _pos;
     [SerializeField] private ItemData _item;
     [SerializeField] private Image _icon;
-    [SerializeField] private TMP_Text _price;
     [SerializeField] private TMP_Text _name;
     [SerializeField] private Button _button;
 
@@ -22,12 +21,11 @@ public class Goods : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, I
         _pos = GetComponent<RectTransform>();
     }
 
-    public void SetGoods(ItemData item)
+    public void SetRewards(ItemData item)
     {
         if (item == null) {
             _icon.sprite = null;
             _icon.color = Color.clear;
-            _price.text = "";
             _name.text = "";
             _button.interactable = false;
             return;
@@ -37,26 +35,11 @@ public class Goods : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, I
         _icon.enabled = true;
         _icon.sprite = item.Icon;
         _name.text = item.ItemName;
-        _price.text = $"{item.Price:N0}$";
-
-        Refresh();
     }
 
     public void OnClick()
     {
-        StoreManager.Instance.TryBuy(_item);
-    }
-
-    public void Refresh()
-    {
-        if (_item == null)
-            return;
-
-        bool canBuy = StoreManager.Instance.CanBuy(_item);
-
-        _button.interactable = canBuy;
-        _icon.color = canBuy ? Color.white : new Color32(150, 150, 150, 255);
-        _price.color = canBuy ? Color.white : Color.red;
+        RewardManager.Instance.SelectItem(_item);
     }
 
     public void OnPointerEnter(PointerEventData eventData)
@@ -64,7 +47,7 @@ public class Goods : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, I
         if (_item is null)
             return;
 
-        UIManager.Instance.ShowGoodsInfo(_item, _pos);
+        UIManager.Instance.ShowItemInfo(_item, _pos);
     }
 
     public void OnPointerExit(PointerEventData eventData)
@@ -94,7 +77,7 @@ public class Goods : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, I
         yield return new WaitForSeconds(0.5f);
 
         if (_item != null)
-            UIManager.Instance.ShowGoodsInfo(_item, _pos);
+            UIManager.Instance.ShowItemInfo(_item, _pos);
     }
 }
 

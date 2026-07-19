@@ -313,7 +313,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_MaskInteraction: 0
   m_Sprite: {fileID: -3228473437106197626, guid: 2200723884097d348ac361c355f265db, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -339,11 +339,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Enemy
   hpMax: 100
   _hp: 0
-  boss: 0
+  speed: 3
   IsDead: 0
+  _isBoss: 0
+  _defaultFlipX: 0
   _wayPoints: []
   _hpBar: {fileID: 7580869575054913285}
-  speed: 3
   priority: 0
   dotEffectObject: {fileID: 1439172478594923275}
 --- !u!114 &8826004180032480047

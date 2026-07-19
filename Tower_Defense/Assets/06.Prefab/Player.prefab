@@ -116,6 +116,9 @@ MonoBehaviour:
   currentExp: 0
   maxExp: 100
   playerLevel: 1
+  _chestLayer:
+    serializedVersion: 2
+    m_Bits: 1024
   expCurve:
     serializedVersion: 2
     m_Curve:

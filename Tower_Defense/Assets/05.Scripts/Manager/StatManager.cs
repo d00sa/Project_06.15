@@ -4,12 +4,13 @@ using UnityEngine;
 
 public enum StatType
 {
+    //이 순서대로 StatText를 만들어두었으니 만약 숫자(Enum 값)를 바꾼다면 Text 인덱스 순서도 바꿔줘야함.
+
     AttackDamage,        // 투사체, AOE, 펫 데미지를 하나로 통합한 기본 공격력 추가값
     AttackSpeed,         // 공격 속도 증가 (쿨타임 감소)
     EXPGained,           // 경험치 획득량 (ex: 0.1이면 10% 추가)
     CritChance,          // 치명타 확률 (0.1 = 10%)
     CritDamageMultiplier,// 치명타 데미지 배율 (2 = 2배)
-    MoneyBonus,          // 돈 획득량 보너스 (0.1 = 10% )
 }
 
 public class StatManager : MonoBehaviour

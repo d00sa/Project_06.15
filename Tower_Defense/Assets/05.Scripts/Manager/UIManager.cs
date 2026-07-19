@@ -10,19 +10,18 @@ public class UIManager : MonoBehaviour
 {
     public static UIManager Instance;
 
-    [Header("[GameUI]")]
+    [Header("[GameUI - UserInfo]")]
     [SerializeField] private TMP_Text _enemyCountText;
     [SerializeField] private TMP_Text _stageTime;
-    [SerializeField] private TMP_Text _money;
     [SerializeField] private TMP_Text _exp;
+    [SerializeField] private List<TMP_Text> _stats;
+    [Header("[GameUI - Func]")]
     [SerializeField] private TMP_Text _acceleration;
     [SerializeField] private Image _pauseButton;
     [SerializeField] private List<Sprite> _pauseStart;
-    [SerializeField] private List<TMP_Text> _stats;
+    [Header("[GameUI - Items]")]
     [SerializeField] private List<InventorySlot> _slots;
-
-
-    [Header("[Skills]")]
+    [Header("[GameUI - Skills]")]
     public Transform SkillPanel;
     public List<SkillSlot> SkillSlots = new();
 
@@ -41,12 +40,7 @@ public class UIManager : MonoBehaviour
     [SerializeField] private TMP_Text _sDescription;
 
     [Header("[Stores]")]
-    [SerializeField] private RectTransform _storePanel;
-    [SerializeField] private Button _reRoll;
-    [SerializeField] private RectTransform _goodsInfoPanel;
-    [SerializeField] private TMP_Text _gName;
-    [SerializeField] private TMP_Text _gType;
-    [SerializeField] private TMP_Text _gDescription;
+    [SerializeField] private RectTransform _rewardsPanel;
 
     private void Awake()
     {
@@ -70,8 +64,6 @@ public class UIManager : MonoBehaviour
     {
         GameManager.Instance.OnEnemyCountChanged += ChangeEnemyCount;
         GameManager.Instance.OnTimeChanged += ChangeStageTime;
-        GameManager.Instance.OnMoneyChanged += ChangeMoney;
-        StoreManager.Instance.OnBuyGoods += RefreshStore;
         InventoryManager.Instance.OnInventoryChanged += RefreshInventory;
         Player.Instance.OnSkillLevelChanged += RefreshSkills;
         Player.Instance.OnExpChanged += ChangeExp;
@@ -83,7 +75,6 @@ public class UIManager : MonoBehaviour
         if (GameManager.Instance != null) {
             GameManager.Instance.OnTimeChanged -= ChangeStageTime;
             GameManager.Instance.OnEnemyCountChanged -= ChangeEnemyCount;
-            GameManager.Instance.OnMoneyChanged -= ChangeMoney;
         }
 
         if (InventoryManager.Instance != null)
@@ -94,9 +85,6 @@ public class UIManager : MonoBehaviour
             Player.Instance.OnExpChanged -= ChangeExp;
             Player.Instance.Stat.OnStatChanged -= ChangeStat;
         }
-
-        if (StoreManager.Instance != null)
-            StoreManager.Instance.OnBuyGoods -= RefreshStore;
     }
 
     private void ChangeEnemyCount(int count, int deadLine)
@@ -123,14 +111,6 @@ public class UIManager : MonoBehaviour
         _exp.text = $"{curExp} / {maxExp}";
     }
 
-    private void ChangeMoney(int value)
-    {
-        if (value < 0)
-            value = 0;
-
-        _money.text = $"{value}";
-    }
-
     private void ChangeStat()
     {
         foreach (StatType stat in Enum.GetValues(typeof(StatType)))
@@ -147,7 +127,6 @@ public class UIManager : MonoBehaviour
                 case StatType.EXPGained:
                 case StatType.CritChance:
                 case StatType.CritDamageMultiplier:
-                case StatType.MoneyBonus:
                     _stats[(int)stat].text = $"{Player.Instance.Stat.GetStat(stat)}%";
                     break;
             }
@@ -172,17 +151,6 @@ public class UIManager : MonoBehaviour
         }
     }
 
-    private void RefreshStore()
-    {
-        //상점이 닫혀있다면 return
-        if (_storePanel.localScale == Vector3.zero)
-            return;
-
-        foreach (var goods in StoreManager.Instance.Goods) {
-            goods.Refresh();
-        }
-    }
-
     private IEnumerator Setting()
     {
         //한 프레임 기다렸다가 호출
@@ -190,7 +158,6 @@ public class UIManager : MonoBehaviour
         RefreshInventory();
         RefreshSkills("",1);
         ChangeStat();
-        ChangeMoney(0);
         ChangeEnemyCount(0, GameManager.Instance.Data.UnitCount);
         Player.Instance.AddExp(0);
     }
@@ -215,25 +182,6 @@ public class UIManager : MonoBehaviour
         //아마 스텟 설명도 들어갈 듯.
     }
 
-    public void ShowGoodsInfo(ItemData data, RectTransform slotPos)
-    {
-        if (_goodsInfoPanel.localScale == Vector3.one)
-            return;
-
-        _goodsInfoPanel.localScale = Vector3.one;
-
-        Vector3[] corners = new Vector3[4];
-        slotPos.GetWorldCorners(corners);
-        _goodsInfoPanel.position = corners[1] +
-                                  Vector3.left * _goodsInfoPanel.rect.width / 1.9f +
-                                  Vector3.up * _goodsInfoPanel.rect.height / 1.9f;
-
-        _gName.text = data.ItemName;
-        _gType.text = data.ItemType.ToString();
-        _gDescription.text = data.Description;
-        //아마 스텟 설명도 들어갈 듯. (아니면 상품 팔 때 띄우거나)
-    }
-
     public void ShowSkillInfo(ActiveSkill data, RectTransform slotPos)
     {
         if (_skillInfoPanel.localScale == Vector3.one)
@@ -252,30 +200,18 @@ public class UIManager : MonoBehaviour
         _sDescription.text = data.data.description + '\n' + data.level.ToString();
     }
 
-    public void ShowStore()
+    public void ShowRewards()
     {
         Time.timeScale = 0f;
-        _storePanel.localScale = Vector3.one;
+        _rewardsPanel.localScale = Vector3.one;
 
-        _reRoll.interactable = GameManager.Instance.Money >= 100;
-        _reRoll.GetComponent<Image>().color = new Color32(255, 255, 255, 255);
-
-        StoreManager.Instance.SetRandomGoods();
-        RefreshStore();
+        RewardManager.Instance.SetRandomRewards();
     }
 
-    public void HideStore()
+    public void HideRewards()
     {
-        _storePanel.localScale = Vector3.zero;
+        _rewardsPanel.localScale = Vector3.zero;
         Time.timeScale = GameManager.Instance.CurSpeed;
-    }
-
-    public void ReRoll()
-    {
-        _reRoll.interactable = false;
-        _reRoll.GetComponent<Image>().color = new Color32(150, 150, 150, 255);
-
-        StoreManager.Instance.SetRandomGoods();
     }
 
     public void HideInfo()
@@ -293,12 +229,6 @@ public class UIManager : MonoBehaviour
         _sName.text = "";
         _sType.text = "";
         _sDescription.text = "";
-
-        _goodsInfoPanel.localScale = Vector3.zero;
-
-        _gName.text = "";
-        _gType.text = "";
-        _gDescription.text = "";
     }
 
     public void SetUp()

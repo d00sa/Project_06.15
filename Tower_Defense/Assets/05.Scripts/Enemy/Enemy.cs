@@ -14,13 +14,9 @@ public enum EnemyPriority
 [RequireComponent(typeof(StateMachine))]
 public class Enemy : MonoBehaviour, IPoolable
 {
-    [Header("[Enemy 기본 세팅]")]
-    [SerializeField] private float hpMax;
-    [SerializeField] private float _hp;
-    [SerializeField] private bool _boss;
-    [SerializeField] private bool _defaultFlipX;
-    public bool IsDead;
-    public event Action<Enemy> OnDead;
+    [Header("[Enemy - Stat]")]
+    [SerializeField] private float hpMax; //최대 피
+    [SerializeField] private float _hp; //현재 피
     public float HP
     {
         get => _hp;
@@ -38,25 +34,32 @@ public class Enemy : MonoBehaviour, IPoolable
                 OnDespawn();
         }
     }
+    public float speed = 3f;
+    public bool IsDead;
 
-    [SerializeField] private List<Transform> _wayPoints;
+    [Header("[Enemy - Default Setting]")]
+    [SerializeField] private bool _isBoss; //보스인지?
+    [SerializeField] private bool _defaultFlipX; //기본 스프라이트 좌우반전 설정
+    [SerializeField] private List<Transform> _wayPoints; //적 이동 방향
     [SerializeField] private Slider _hpBar;
+    public bool IsMovable { get; set; } = true;
+
+    #region Private - NoSerialize
     private SpriteRenderer _sprite;
     private StateMachine _machine;
     private int _currentIdx = 0;
     private int _giveExp;
-    private int _giveMoney;
-
-    public float speed = 3f;
-    public bool IsMovable { get; set; } = true;
-
     private Coroutine dotCoroutine;
     private Coroutine stunCoroutine;
     private Coroutine slowCoroutine;
     private float originalSpeed = -1f; // 몬스터의 원래 속도 변수
+    #endregion
 
+    #region Event
+    public event Action<Enemy> OnDead;
     public delegate float DamageModifier(float baseDamage);
     public event DamageModifier OnCalculateBonusDamage;
+    #endregion
 
     [Header("[타겟팅 설정]")]
     [Tooltip("우선순위")]
@@ -133,11 +136,8 @@ public class Enemy : MonoBehaviour, IPoolable
         Player.Instance.AddExp(_giveExp); // 플레이어에게 경험치 넘겨줌
         SoundManager.Instance.PlaySFX("Death_Zombie");
 
-        if (_boss)
-        {
+        if (_isBoss)
             Spawner.Instance.IsBoss = false;
-            UIManager.Instance.ShowStore(); //일단은 보스가 죽으면 상점이 열리도록 합시다.
-        }
 
         // 죽으면 지속 데미지 끄기
         if (dotCoroutine != null)
@@ -157,17 +157,19 @@ public class Enemy : MonoBehaviour, IPoolable
             StopCoroutine(slowCoroutine);
             slowCoroutine = null;
         }
+
         if (originalSpeed > 0)
         {
             speed = originalSpeed;
         }
 
         // 죽으면 불타는 이펙트도 꺼줌
-        if (dotEffectObject != null) dotEffectObject.SetActive(false);
+        if (dotEffectObject != null) 
+            dotEffectObject.SetActive(false);
 
         OnDead = null;
         GameManager.Instance.EnemyCount--;
-        GameManager.Instance.Money += Mathf.RoundToInt(_giveMoney * (1f + Player.Instance.Stat.GetStat(StatType.MoneyBonus)));
+        RewardManager.Instance.TrySpawnReward(this, _isBoss);
         ObjectPool.Instance.ReturnObj(this.gameObject, 2f);
     }
 
@@ -183,10 +185,9 @@ public class Enemy : MonoBehaviour, IPoolable
         if (dotEffectObject != null) dotEffectObject.SetActive(false);
     }
 
-    public void Setting(int exp, int money)
+    public void Setting(int exp)
     {
         _giveExp = exp;
-        _giveMoney = money;
     }
 
     /// <summary> 데미지 주고 피격 방향 반대로 살짝 밈 </summary>

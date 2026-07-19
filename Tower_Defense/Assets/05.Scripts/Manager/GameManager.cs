@@ -44,19 +44,7 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public event Action<int> OnMoneyChanged;
     private int _money;
-    public int Money
-    {
-        get => _money;
-        set
-        {
-            if (_money != value) {
-                _money = value;
-                OnMoneyChanged?.Invoke(_money);
-            }
-        }
-    }
 
     public event Action<int,int> OnTimeChanged;
     [Header("[시간 설정 (초 단위)]")]
@@ -260,6 +248,5 @@ public class GameManager : MonoBehaviour
     private void Testing2()
     {
         Current = GameState.GameClear;
-        Money = 500;
     }
 }

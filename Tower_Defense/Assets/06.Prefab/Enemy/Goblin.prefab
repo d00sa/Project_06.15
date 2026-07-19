@@ -313,7 +313,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_MaskInteraction: 0
   m_Sprite: {fileID: -5209251823262861144, guid: a828eda34a044d1499e16c1633cf6eb6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -339,11 +339,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Enemy
   hpMax: 100
   _hp: 0
-  boss: 0
+  speed: 3
   IsDead: 0
+  _isBoss: 0
+  _defaultFlipX: 0
   _wayPoints: []
   _hpBar: {fileID: 7580869575054913285}
-  speed: 3
   priority: 0
   dotEffectObject: {fileID: 1439172478594923275}
 --- !u!114 &8826004180032480047
@@ -419,7 +420,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 3, y: 2.25}
+    oldSize: {x: 2.34375, y: 1.7578125}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
