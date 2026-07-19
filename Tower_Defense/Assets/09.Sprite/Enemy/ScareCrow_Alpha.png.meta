@@ -1,0 +1,410 @@
+fileFormatVersion: 2
+guid: 708e456ab20bbec4a852edef9a68acb6
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 8794589148844276719
+    second: ScareCrow_Alpha_0
+  - first:
+      213: -1224062981646331726
+    second: ScareCrow_Alpha_1
+  - first:
+      213: -8552644633465270002
+    second: ScareCrow_Alpha_2
+  - first:
+      213: -4266578477396149324
+    second: ScareCrow_Alpha_3
+  - first:
+      213: 8876427699548072423
+    second: ScareCrow_Alpha_4
+  - first:
+      213: 8762184222499210991
+    second: ScareCrow_Alpha_5
+  - first:
+      213: 8264076608024657139
+    second: ScareCrow_Alpha_6
+  - first:
+      213: 2122926187074747461
+    second: ScareCrow_Alpha_7
+  - first:
+      213: -5878575071293788454
+    second: ScareCrow_Alpha_8
+  - first:
+      213: 8818867527006213352
+    second: ScareCrow_Alpha_9
+  - first:
+      213: -3613675788385778735
+    second: ScareCrow_Alpha_10
+  - first:
+      213: 2983449470944059253
+    second: ScareCrow_Alpha_11
+  - first:
+      213: -7153979652553624606
+    second: ScareCrow_Alpha_12
+  - first:
+      213: -1006137707148663227
+    second: ScareCrow_Alpha_13
+  - first:
+      213: -7117782505988495293
+    second: ScareCrow_Alpha_14
+  - first:
+      213: -2250396368423552842
+    second: ScareCrow_Alpha_15
+  - first:
+      213: 3592934778152541556
+    second: ScareCrow_Alpha_16
+  - first:
+      213: 759311967700898179
+    second: ScareCrow_Alpha_17
+  - first:
+      213: -466641874371120180
+    second: ScareCrow_Alpha_18
+  - first:
+      213: -4846127301273452535
+    second: ScareCrow_Alpha_19
+  - first:
+      213: -2133182608772805534
+    second: ScareCrow_Alpha_20
+  - first:
+      213: 3496957510802534294
+    second: ScareCrow_Alpha_21
+  - first:
+      213: -3095001709725543698
+    second: ScareCrow_Alpha_22
+  - first:
+      213: 6365136419156428846
+    second: ScareCrow_Alpha_23
+  - first:
+      213: 8986414270602461819
+    second: ScareCrow_Alpha_24
+  - first:
+      213: -7612252160685939881
+    second: ScareCrow_Alpha_25
+  - first:
+      213: -7464014751483194278
+    second: ScareCrow_Alpha_26
+  - first:
+      213: -1882813381325900607
+    second: ScareCrow_Alpha_27
+  - first:
+      213: 588060247145619056
+    second: ScareCrow_Alpha_28
+  - first:
+      213: 1597889464199057098
+    second: ScareCrow_Alpha_29
+  - first:
+      213: -1663564639153842710
+    second: ScareCrow_Alpha_30
+  - first:
+      213: 6020108191383306776
+    second: ScareCrow_Alpha_31
+  - first:
+      213: 1839212366084601251
+    second: ScareCrow_Alpha_32
+  - first:
+      213: -1364234629951791443
+    second: ScareCrow_Alpha_33
+  - first:
+      213: -1358999665384331105
+    second: ScareCrow_Alpha_34
+  - first:
+      213: -6496540415159845688
+    second: ScareCrow_Alpha_35
+  - first:
+      213: -4838766621977360943
+    second: ScareCrow_Alpha_36
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: w4
+      rect:
+        serializedVersion: 2
+        x: 47
+        y: 527
+        width: 320
+        height: 390
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2e33b2fc865f7bc90800000000000000
+      internalID: -7153979652553624606
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: w2
+      rect:
+        serializedVersion: 2
+        x: 792
+        y: 523
+        width: 320
+        height: 390
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 348e01eb58e883d90800000000000000
+      internalID: -7117782505988495293
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: s
+      rect:
+        serializedVersion: 2
+        x: 108
+        y: 53
+        width: 370
+        height: 350
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ae5955e46c4d9e8e0800000000000000
+      internalID: -1663564639153842710
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: d
+      rect:
+        serializedVersion: 2
+        x: 718
+        y: 58
+        width: 700
+        height: 240
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8ccbd6d99e6a7d5a0800000000000000
+      internalID: -6496540415159845688
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: w
+      rect:
+        serializedVersion: 2
+        x: 429
+        y: 527
+        width: 320
+        height: 390
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c01f70bd1a7650a4db4457509b1cc241
+      internalID: -919097235
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: w3
+      rect:
+        serializedVersion: 2
+        x: 1152
+        y: 527
+        width: 320
+        height: 390
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 22668e8947bd7fe4f8bccff5621a4a41
+      internalID: 530940931
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 3600532baccc2ac408857f69274a24d8
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      ScareCrow_Alpha_10: -3613675788385778735
+      ScareCrow_Alpha_11: 2983449470944059253
+      ScareCrow_Alpha_13: -1006137707148663227
+      ScareCrow_Alpha_15: -2250396368423552842
+      ScareCrow_Alpha_16: 3592934778152541556
+      ScareCrow_Alpha_17: 759311967700898179
+      ScareCrow_Alpha_18: -466641874371120180
+      ScareCrow_Alpha_19: -4846127301273452535
+      ScareCrow_Alpha_2: -8552644633465270002
+      ScareCrow_Alpha_20: -2133182608772805534
+      ScareCrow_Alpha_21: 3496957510802534294
+      ScareCrow_Alpha_22: -3095001709725543698
+      ScareCrow_Alpha_23: 6365136419156428846
+      ScareCrow_Alpha_24: 8986414270602461819
+      ScareCrow_Alpha_25: -7612252160685939881
+      ScareCrow_Alpha_26: -7464014751483194278
+      ScareCrow_Alpha_27: -1882813381325900607
+      ScareCrow_Alpha_28: 588060247145619056
+      ScareCrow_Alpha_29: 1597889464199057098
+      ScareCrow_Alpha_3: -4266578477396149324
+      ScareCrow_Alpha_31: 6020108191383306776
+      ScareCrow_Alpha_32: 1839212366084601251
+      ScareCrow_Alpha_33: -1364234629951791443
+      ScareCrow_Alpha_34: -1358999665384331105
+      ScareCrow_Alpha_36: -4838766621977360943
+      ScareCrow_Alpha_4: 8876427699548072423
+      ScareCrow_Alpha_5: 8762184222499210991
+      ScareCrow_Alpha_6: 8264076608024657139
+      ScareCrow_Alpha_7: 2122926187074747461
+      ScareCrow_Alpha_8: -5878575071293788454
+      ScareCrow_Alpha_9: 8818867527006213352
+      d: -6496540415159845688
+      s: -1663564639153842710
+      w: 8794589148844276719
+      w2: -7117782505988495293
+      w3: -1224062981646331726
+      w4: -7153979652553624606
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

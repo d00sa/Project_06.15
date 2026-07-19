@@ -1,0 +1,330 @@
+fileFormatVersion: 2
+guid: e5c270cc5997f4045acecbc5a4946796
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -902522588636750468
+    second: Knight_Alpha_0
+  - first:
+      213: 2767834456503740974
+    second: Knight_Alpha_1
+  - first:
+      213: 782866990801859773
+    second: Knight_Alpha_2
+  - first:
+      213: -5001267070026093173
+    second: Knight_Alpha_3
+  - first:
+      213: -2643985995023226204
+    second: Knight_Alpha_4
+  - first:
+      213: -4925151254636843783
+    second: Knight_Alpha_5
+  - first:
+      213: 331561291625619687
+    second: Knight_Alpha_6
+  - first:
+      213: 4680403295465244621
+    second: Knight_Alpha_7
+  - first:
+      213: 1080117236913584177
+    second: Knight_Alpha_8
+  - first:
+      213: -3958992983270464124
+    second: Knight_Alpha_9
+  - first:
+      213: 732927213200432835
+    second: Knight_Alpha_10
+  - first:
+      213: 6864059657183497984
+    second: Knight_Alpha_11
+  - first:
+      213: -8500783143110316157
+    second: Knight_Alpha_12
+  - first:
+      213: 3097780111113937230
+    second: Knight_Alpha_13
+  - first:
+      213: 6090721145112302908
+    second: Knight_Alpha_14
+  - first:
+      213: -3374098379823341599
+    second: Knight_Alpha_15
+  - first:
+      213: -3092251134273920940
+    second: Knight_Alpha_16
+  - first:
+      213: -3962052565005655411
+    second: Knight_Alpha_17
+  - first:
+      213: 8798296839909285487
+    second: Knight_Alpha_18
+  - first:
+      213: -2460358756489332137
+    second: Knight_Alpha_19
+  - first:
+      213: 5527250897139523639
+    second: Knight_Alpha_20
+  - first:
+      213: -3545081456992841561
+    second: Knight_Alpha_21
+  - first:
+      213: 1472406788302833965
+    second: Knight_Alpha_22
+  - first:
+      213: -4490823132738614993
+    second: Knight_Alpha_23
+  - first:
+      213: -8337268680144389193
+    second: Knight_Alpha_24
+  - first:
+      213: 5030510295023173403
+    second: Knight_Alpha_25
+  - first:
+      213: -5396973034598861466
+    second: Knight_Alpha_26
+  - first:
+      213: 4317163690615024375
+    second: Knight_Alpha_27
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: w1
+      rect:
+        serializedVersion: 2
+        x: 27
+        y: 574
+        width: 345
+        height: 340
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7e06d90fc31f99400800000000000000
+      internalID: 331561291625619687
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: w2
+      rect:
+        serializedVersion: 2
+        x: 408
+        y: 571
+        width: 345
+        height: 340
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dc706c7dff124f040800000000000000
+      internalID: 4680403295465244621
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: s
+      rect:
+        serializedVersion: 2
+        x: 95
+        y: 68
+        width: 400
+        height: 330
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f29020877246da1c0800000000000000
+      internalID: -4490823132738614993
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: d
+      rect:
+        serializedVersion: 2
+        x: 762
+        y: 103
+        width: 540
+        height: 210
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b1f3dc5e576ffc540800000000000000
+      internalID: 5030510295023173403
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: f0162b4d41e16ab43bd17096d13a84c6
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Knight_Alpha_0: -902522588636750468
+      Knight_Alpha_1: 2767834456503740974
+      Knight_Alpha_10: 732927213200432835
+      Knight_Alpha_11: 6864059657183497984
+      Knight_Alpha_12: -8500783143110316157
+      Knight_Alpha_13: 3097780111113937230
+      Knight_Alpha_14: 6090721145112302908
+      Knight_Alpha_15: -3374098379823341599
+      Knight_Alpha_16: -3092251134273920940
+      Knight_Alpha_17: -3962052565005655411
+      Knight_Alpha_18: 8798296839909285487
+      Knight_Alpha_19: -2460358756489332137
+      Knight_Alpha_2: 782866990801859773
+      Knight_Alpha_20: 5527250897139523639
+      Knight_Alpha_21: -3545081456992841561
+      Knight_Alpha_22: 1472406788302833965
+      Knight_Alpha_24: -8337268680144389193
+      Knight_Alpha_26: -5396973034598861466
+      Knight_Alpha_27: 4317163690615024375
+      Knight_Alpha_3: -5001267070026093173
+      Knight_Alpha_4: -2643985995023226204
+      Knight_Alpha_5: -4925151254636843783
+      Knight_Alpha_8: 1080117236913584177
+      Knight_Alpha_9: -3958992983270464124
+      d: 5030510295023173403
+      s: -4490823132738614993
+      w1: 331561291625619687
+      w2: 4680403295465244621
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

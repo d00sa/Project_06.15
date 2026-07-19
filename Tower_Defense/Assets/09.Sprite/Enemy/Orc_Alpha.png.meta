@@ -1,0 +1,366 @@
+fileFormatVersion: 2
+guid: 2200723884097d348ac361c355f265db
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -1056834459014328185
+    second: Orc_Alpha_0
+  - first:
+      213: 1061379991339000765
+    second: Orc_Alpha_1
+  - first:
+      213: -1307611896011126056
+    second: Orc_Alpha_2
+  - first:
+      213: -2888777712605951607
+    second: Orc_Alpha_3
+  - first:
+      213: 2145223608219737785
+    second: Orc_Alpha_4
+  - first:
+      213: -8324845741199802798
+    second: Orc_Alpha_5
+  - first:
+      213: -3228473437106197626
+    second: Orc_Alpha_6
+  - first:
+      213: -8209845961278409724
+    second: Orc_Alpha_7
+  - first:
+      213: -8164154010491198290
+    second: Orc_Alpha_8
+  - first:
+      213: -5212811891987482061
+    second: Orc_Alpha_9
+  - first:
+      213: 7045851184636025147
+    second: Orc_Alpha_10
+  - first:
+      213: -5624144302668972756
+    second: Orc_Alpha_11
+  - first:
+      213: -7240953658150778374
+    second: Orc_Alpha_12
+  - first:
+      213: 4406432293012889592
+    second: Orc_Alpha_13
+  - first:
+      213: -6340565643545483888
+    second: Orc_Alpha_14
+  - first:
+      213: 2551706278211304723
+    second: Orc_Alpha_15
+  - first:
+      213: -197132172797487683
+    second: Orc_Alpha_16
+  - first:
+      213: -5271874718113437480
+    second: Orc_Alpha_17
+  - first:
+      213: 7354005829985780761
+    second: Orc_Alpha_18
+  - first:
+      213: 3345019045799967982
+    second: Orc_Alpha_19
+  - first:
+      213: -7662690372621361206
+    second: Orc_Alpha_20
+  - first:
+      213: 2976659373246520552
+    second: Orc_Alpha_21
+  - first:
+      213: 3854233400135078805
+    second: Orc_Alpha_22
+  - first:
+      213: 1362419070529905431
+    second: Orc_Alpha_23
+  - first:
+      213: 9124281180932860793
+    second: Orc_Alpha_24
+  - first:
+      213: -326547937991151093
+    second: Orc_Alpha_25
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: w4
+      rect:
+        serializedVersion: 2
+        x: 1161
+        y: 554
+        width: 340
+        height: 340
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9be18bb718d55cd10800000000000000
+      internalID: 2145223608219737785
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: w1
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 556
+        width: 350
+        height: 340
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 68b208e93882233d0800000000000000
+      internalID: -3228473437106197626
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: w2
+      rect:
+        serializedVersion: 2
+        x: 426
+        y: 555
+        width: 350
+        height: 340
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 40433598894c01e80800000000000000
+      internalID: -8209845961278409724
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: w3
+      rect:
+        serializedVersion: 2
+        x: 806
+        y: 555
+        width: 340
+        height: 340
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ea46719de2913be80800000000000000
+      internalID: -8164154010491198290
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: s
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 74
+        width: 340
+        height: 330
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 97be84c3465ff9e70800000000000000
+      internalID: 9124281180932860793
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: d
+      rect:
+        serializedVersion: 2
+        x: 786
+        y: 96
+        width: 513
+        height: 215
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b02b6e9616ed77bf0800000000000000
+      internalID: -326547937991151093
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 84550518e823a834c8d319a270638c7c
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Orc_Alpha_0: -1056834459014328185
+      Orc_Alpha_1: 1061379991339000765
+      Orc_Alpha_10: 7045851184636025147
+      Orc_Alpha_11: -5624144302668972756
+      Orc_Alpha_12: -7240953658150778374
+      Orc_Alpha_13: 4406432293012889592
+      Orc_Alpha_14: -6340565643545483888
+      Orc_Alpha_15: 2551706278211304723
+      Orc_Alpha_16: -197132172797487683
+      Orc_Alpha_17: -5271874718113437480
+      Orc_Alpha_18: 7354005829985780761
+      Orc_Alpha_19: 3345019045799967982
+      Orc_Alpha_2: -1307611896011126056
+      Orc_Alpha_20: -7662690372621361206
+      Orc_Alpha_21: 2976659373246520552
+      Orc_Alpha_22: 3854233400135078805
+      Orc_Alpha_23: 1362419070529905431
+      Orc_Alpha_3: -2888777712605951607
+      Orc_Alpha_5: -8324845741199802798
+      Orc_Alpha_9: -5212811891987482061
+      d: -326547937991151093
+      s: 9124281180932860793
+      w1: -3228473437106197626
+      w2: -8209845961278409724
+      w3: -8164154010491198290
+      w4: 2145223608219737785
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

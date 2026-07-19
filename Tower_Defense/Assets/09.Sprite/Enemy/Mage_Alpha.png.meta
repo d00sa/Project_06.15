@@ -1,0 +1,338 @@
+fileFormatVersion: 2
+guid: 58d89a69ce5c85e4d8e2d252b900bc9b
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 2846716199858386274
+    second: Mage_Alpha_0
+  - first:
+      213: 4712174381919310023
+    second: Mage_Alpha_1
+  - first:
+      213: -3652596227607012471
+    second: Mage_Alpha_2
+  - first:
+      213: -8901012583849281658
+    second: Mage_Alpha_3
+  - first:
+      213: 3199418212968379192
+    second: Mage_Alpha_4
+  - first:
+      213: 2648027255501361940
+    second: Mage_Alpha_5
+  - first:
+      213: -8374802220874512958
+    second: Mage_Alpha_6
+  - first:
+      213: -7497782240118951206
+    second: Mage_Alpha_7
+  - first:
+      213: -7369421003999172118
+    second: Mage_Alpha_8
+  - first:
+      213: 4879377240820789387
+    second: Mage_Alpha_9
+  - first:
+      213: -6698824308504102802
+    second: Mage_Alpha_10
+  - first:
+      213: 8167744752583515838
+    second: Mage_Alpha_11
+  - first:
+      213: -2524216794157833209
+    second: Mage_Alpha_12
+  - first:
+      213: -820208953092075323
+    second: Mage_Alpha_13
+  - first:
+      213: -7292178793175674907
+    second: Mage_Alpha_14
+  - first:
+      213: 7234065130080897108
+    second: Mage_Alpha_15
+  - first:
+      213: 7484452250625045087
+    second: Mage_Alpha_16
+  - first:
+      213: 1996556283012663553
+    second: Mage_Alpha_17
+  - first:
+      213: 2431512255759891628
+    second: Mage_Alpha_18
+  - first:
+      213: 6692257003514012031
+    second: Mage_Alpha_19
+  - first:
+      213: -2778255636950574205
+    second: Mage_Alpha_20
+  - first:
+      213: -6465213674933641483
+    second: Mage_Alpha_21
+  - first:
+      213: 2591511649526162466
+    second: Mage_Alpha_22
+  - first:
+      213: 2237053111020235372
+    second: Mage_Alpha_23
+  - first:
+      213: -8503923338895340322
+    second: Mage_Alpha_24
+  - first:
+      213: 2984783228482102254
+    second: Mage_Alpha_25
+  - first:
+      213: 6233917700744075237
+    second: Mage_Alpha_26
+  - first:
+      213: -8034292121858925924
+    second: Mage_Alpha_27
+  - first:
+      213: -3354299913952947339
+    second: Mage_Alpha_28
+  - first:
+      213: 2998720887909027608
+    second: Mage_Alpha_29
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: w1
+      rect:
+        serializedVersion: 2
+        x: 68
+        y: 569
+        width: 300
+        height: 330
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2c54f9070c9b6cb80800000000000000
+      internalID: -8374802220874512958
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: w2
+      rect:
+        serializedVersion: 2
+        x: 445
+        y: 570
+        width: 300
+        height: 330
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ad23a7e07c682f790800000000000000
+      internalID: -7497782240118951206
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: s
+      rect:
+        serializedVersion: 2
+        x: 104
+        y: 79
+        width: 420
+        height: 315
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5e7dedfbe13538650800000000000000
+      internalID: 6233917700744075237
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: d
+      rect:
+        serializedVersion: 2
+        x: 796
+        y: 99
+        width: 530
+        height: 230
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 57316b600022371d0800000000000000
+      internalID: -3354299913952947339
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 21175317dcd628042b6fb8874c8d9ec7
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Mage_Alpha_0: 2846716199858386274
+      Mage_Alpha_1: 4712174381919310023
+      Mage_Alpha_10: -6698824308504102802
+      Mage_Alpha_11: 8167744752583515838
+      Mage_Alpha_12: -2524216794157833209
+      Mage_Alpha_13: -820208953092075323
+      Mage_Alpha_14: -7292178793175674907
+      Mage_Alpha_15: 7234065130080897108
+      Mage_Alpha_16: 7484452250625045087
+      Mage_Alpha_17: 1996556283012663553
+      Mage_Alpha_18: 2431512255759891628
+      Mage_Alpha_19: 6692257003514012031
+      Mage_Alpha_2: -3652596227607012471
+      Mage_Alpha_20: -2778255636950574205
+      Mage_Alpha_21: -6465213674933641483
+      Mage_Alpha_22: 2591511649526162466
+      Mage_Alpha_23: 2237053111020235372
+      Mage_Alpha_24: -8503923338895340322
+      Mage_Alpha_25: 2984783228482102254
+      Mage_Alpha_27: -8034292121858925924
+      Mage_Alpha_29: 2998720887909027608
+      Mage_Alpha_3: -8901012583849281658
+      Mage_Alpha_4: 3199418212968379192
+      Mage_Alpha_5: 2648027255501361940
+      Mage_Alpha_8: -7369421003999172118
+      Mage_Alpha_9: 4879377240820789387
+      d: -3354299913952947339
+      s: 6233917700744075237
+      w1: -8374802220874512958
+      w2: -7497782240118951206
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

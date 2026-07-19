@@ -1,0 +1,435 @@
+fileFormatVersion: 2
+guid: 9a091701aace5da49aa415ab95de9ae0
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 381404438090715189
+    second: Mimic_Alpha_0
+  - first:
+      213: 1121588959542994019
+    second: Mimic_Alpha_1
+  - first:
+      213: 5552446087008423918
+    second: Mimic_Alpha_2
+  - first:
+      213: 1486689955577149345
+    second: Mimic_Alpha_3
+  - first:
+      213: -3589362979822913794
+    second: Mimic_Alpha_4
+  - first:
+      213: 8194812639159429770
+    second: Mimic_Alpha_5
+  - first:
+      213: -2954631728121798626
+    second: Mimic_Alpha_6
+  - first:
+      213: -426576954422253330
+    second: Mimic_Alpha_7
+  - first:
+      213: -1351914064266802879
+    second: Mimic_Alpha_8
+  - first:
+      213: -5161730072064952151
+    second: Mimic_Alpha_9
+  - first:
+      213: -8571372845224454323
+    second: Mimic_Alpha_10
+  - first:
+      213: -167594309036273104
+    second: Mimic_Alpha_11
+  - first:
+      213: 2716808753039855572
+    second: Mimic_Alpha_12
+  - first:
+      213: 8636778814839500087
+    second: Mimic_Alpha_13
+  - first:
+      213: 2365403419892133950
+    second: Mimic_Alpha_14
+  - first:
+      213: -3962640001387596120
+    second: Mimic_Alpha_15
+  - first:
+      213: 344471524133878378
+    second: Mimic_Alpha_16
+  - first:
+      213: 1808305446169502520
+    second: Mimic_Alpha_17
+  - first:
+      213: 7012623827282505504
+    second: Mimic_Alpha_18
+  - first:
+      213: -6798168970970290541
+    second: Mimic_Alpha_19
+  - first:
+      213: 2726171530834937275
+    second: Mimic_Alpha_20
+  - first:
+      213: -1249183679143960715
+    second: Mimic_Alpha_21
+  - first:
+      213: -4345751893255935910
+    second: Mimic_Alpha_22
+  - first:
+      213: 7521108006779779958
+    second: Mimic_Alpha_23
+  - first:
+      213: -7338132396289496263
+    second: Mimic_Alpha_24
+  - first:
+      213: 1622098711549129508
+    second: Mimic_Alpha_25
+  - first:
+      213: -2127195438507786970
+    second: Mimic_Alpha_26
+  - first:
+      213: -8064089143532945279
+    second: Mimic_Alpha_27
+  - first:
+      213: 5665979494315809646
+    second: Mimic_Alpha_28
+  - first:
+      213: 286027047998527565
+    second: Mimic_Alpha_29
+  - first:
+      213: -6128247626304122567
+    second: Mimic_Alpha_30
+  - first:
+      213: -6268745695260067509
+    second: Mimic_Alpha_31
+  - first:
+      213: 803577538341226075
+    second: Mimic_Alpha_32
+  - first:
+      213: 360386132893670560
+    second: Mimic_Alpha_33
+  - first:
+      213: -8632717921229691331
+    second: Mimic_Alpha_34
+  - first:
+      213: -4916879314168905401
+    second: Mimic_Alpha_35
+  - first:
+      213: -128107554872420921
+    second: Mimic_Alpha_36
+  - first:
+      213: 5670685869844541493
+    second: Mimic_Alpha_37
+  - first:
+      213: -5601424009544491631
+    second: Mimic_Alpha_38
+  - first:
+      213: -6627706468998216137
+    second: Mimic_Alpha_39
+  - first:
+      213: 846679631367775634
+    second: Mimic_Alpha_40
+  - first:
+      213: 6419479528267698822
+    second: Mimic_Alpha_41
+  - first:
+      213: -5146593413660651475
+    second: Mimic_Alpha_42
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: w1
+      rect:
+        serializedVersion: 2
+        x: 68
+        y: 595
+        width: 270
+        height: 280
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 73da02e82900cd770800000000000000
+      internalID: 8636778814839500087
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: w3
+      rect:
+        serializedVersion: 2
+        x: 808
+        y: 595
+        width: 270
+        height: 280
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8a6f988e9efd109c0800000000000000
+      internalID: -3962640001387596120
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: s
+      rect:
+        serializedVersion: 2
+        x: 137
+        y: 103
+        width: 290
+        height: 290
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0ac9a194749500500800000000000000
+      internalID: 360386132893670560
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: d
+      rect:
+        serializedVersion: 2
+        x: 765
+        y: 90
+        width: 630
+        height: 250
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7c519ca8bded83ef0800000000000000
+      internalID: -128107554872420921
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: w2
+      rect:
+        serializedVersion: 2
+        x: 436
+        y: 595
+        width: 270
+        height: 280
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7da46a0d26dd1d046b31d97c699e7f17
+      internalID: -1078177167
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: w4
+      rect:
+        serializedVersion: 2
+        x: 1180
+        y: 595
+        width: 270
+        height: 280
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dd5b0b0cdfcb20a4dbb67e0e42ec0aa8
+      internalID: -2136076143
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 724ac6856629d8645a866c08fd8a7db7
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Mimic_Alpha_1: 1121588959542994019
+      Mimic_Alpha_10: -8571372845224454323
+      Mimic_Alpha_11: -167594309036273104
+      Mimic_Alpha_12: 2716808753039855572
+      Mimic_Alpha_14: 2365403419892133950
+      Mimic_Alpha_16: 344471524133878378
+      Mimic_Alpha_17: 1808305446169502520
+      Mimic_Alpha_18: 7012623827282505504
+      Mimic_Alpha_19: -6798168970970290541
+      Mimic_Alpha_2: 5552446087008423918
+      Mimic_Alpha_20: 2726171530834937275
+      Mimic_Alpha_21: -1249183679143960715
+      Mimic_Alpha_22: -4345751893255935910
+      Mimic_Alpha_23: 7521108006779779958
+      Mimic_Alpha_24: -7338132396289496263
+      Mimic_Alpha_25: 1622098711549129508
+      Mimic_Alpha_26: -2127195438507786970
+      Mimic_Alpha_27: -8064089143532945279
+      Mimic_Alpha_28: 5665979494315809646
+      Mimic_Alpha_29: 286027047998527565
+      Mimic_Alpha_3: 1486689955577149345
+      Mimic_Alpha_30: -6128247626304122567
+      Mimic_Alpha_31: -6268745695260067509
+      Mimic_Alpha_32: 803577538341226075
+      Mimic_Alpha_34: -8632717921229691331
+      Mimic_Alpha_35: -4916879314168905401
+      Mimic_Alpha_37: 5670685869844541493
+      Mimic_Alpha_38: -5601424009544491631
+      Mimic_Alpha_39: -6627706468998216137
+      Mimic_Alpha_4: -3589362979822913794
+      Mimic_Alpha_40: 846679631367775634
+      Mimic_Alpha_41: 6419479528267698822
+      Mimic_Alpha_42: -5146593413660651475
+      Mimic_Alpha_5: 8194812639159429770
+      Mimic_Alpha_6: -2954631728121798626
+      Mimic_Alpha_7: -426576954422253330
+      Mimic_Alpha_8: -1351914064266802879
+      Mimic_Alpha_9: -5161730072064952151
+      d: -128107554872420921
+      s: 360386132893670560
+      w1: 8636778814839500087
+      w2: -1078177167
+      w3: -3962640001387596120
+      w4: -2136076143
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

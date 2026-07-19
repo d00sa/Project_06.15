@@ -14,9 +14,11 @@ public enum EnemyPriority
 [RequireComponent(typeof(StateMachine))]
 public class Enemy : MonoBehaviour, IPoolable
 {
+    [Header("[Enemy 기본 세팅]")]
     [SerializeField] private float hpMax;
     [SerializeField] private float _hp;
-    [SerializeField] private bool boss;
+    [SerializeField] private bool _boss;
+    [SerializeField] private bool _defaultFlipX;
     public bool IsDead;
     public event Action<Enemy> OnDead;
     public float HP
@@ -56,11 +58,11 @@ public class Enemy : MonoBehaviour, IPoolable
     public delegate float DamageModifier(float baseDamage);
     public event DamageModifier OnCalculateBonusDamage;
 
-    [Header("타겟팅 설정")]
+    [Header("[타겟팅 설정]")]
     [Tooltip("우선순위")]
     public EnemyPriority priority = EnemyPriority.Normal;
 
-    [Header("상태이상 이펙트")]
+    [Header("[상태이상 이펙트]")]
     [Tooltip("지속 데미지(DOT) 상태일 때 표시할 이펙트 오브젝트. " +
              "ApplyDotDamage를 호출하는 모든 스킬에 적용")]
     [SerializeField] private GameObject dotEffectObject;
@@ -95,11 +97,6 @@ public class Enemy : MonoBehaviour, IPoolable
     {
         Transform target = _wayPoints[_currentIdx];
 
-        if (_currentIdx == 0 && _sprite.flipX)
-            _sprite.flipX = false;
-        else if (_currentIdx == 4 && !_sprite.flipX)
-            _sprite.flipX = true;
-
         transform.position = Vector3.MoveTowards(
             transform.position,
             target.position,
@@ -107,11 +104,9 @@ public class Enemy : MonoBehaviour, IPoolable
         );
 
         if (Vector3.Distance(transform.position, target.position) < 0.2f)
-        {
             _currentIdx = (_currentIdx + 1) % _wayPoints.Count;
-        }
-        else if (_currentIdx > 0)
-        {
+
+        else if (_currentIdx > 0) {
             Transform prevTarget = _wayPoints[_currentIdx - 1];
 
             Vector3 pathDir = (target.position - prevTarget.position).normalized;
@@ -119,10 +114,13 @@ public class Enemy : MonoBehaviour, IPoolable
             Vector3 toEnemy = transform.position - target.position;
 
             if (Vector3.Dot(pathDir, toEnemy) > 0f)
-            {
-                _currentIdx = (_currentIdx + 1) % _wayPoints.Count;
-            }
+                _currentIdx = (_currentIdx + 1) % _wayPoints.Count;           
         }
+
+        if (_currentIdx == 0)
+            _sprite.flipX = _defaultFlipX;
+        else if (_currentIdx == 4)
+            _sprite.flipX = !_defaultFlipX;
     }
 
     public void OnDespawn()
@@ -135,7 +133,7 @@ public class Enemy : MonoBehaviour, IPoolable
         Player.Instance.AddExp(_giveExp); // 플레이어에게 경험치 넘겨줌
         SoundManager.Instance.PlaySFX("Death_Zombie");
 
-        if (boss)
+        if (_boss)
         {
             Spawner.Instance.IsBoss = false;
             UIManager.Instance.ShowStore(); //일단은 보스가 죽으면 상점이 열리도록 합시다.
