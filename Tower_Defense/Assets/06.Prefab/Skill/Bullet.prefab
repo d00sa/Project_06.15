@@ -111,6 +111,8 @@ MonoBehaviour:
   slowDuration: 0
   stunDuration: 0
   isRandomDirection: 0
+  turnSpeed: 1
+  maxLifeTime: 3
   rotationOffset: 0
   searchRadius: 5
   enemyLayer:

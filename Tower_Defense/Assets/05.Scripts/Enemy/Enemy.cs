@@ -53,6 +53,8 @@ public class Enemy : MonoBehaviour, IPoolable
     private Coroutine stunCoroutine;
     private Coroutine slowCoroutine;
     private float originalSpeed = -1f; // 몬스터의 원래 속도 변수
+    private Vector3 _knockbackVelocity = Vector3.zero;
+    private float _knockbackDecay = 10f; // 넉백 마찰력 (값이 높을수록 금방 멈춤)
     #endregion
 
     #region Event
@@ -86,14 +88,26 @@ public class Enemy : MonoBehaviour, IPoolable
     {
         if (IsDead)
             return;
+        // 넉백 처리 로직: 속도에 따라 부드럽게 감속되며 밀려남
+        if (_knockbackVelocity.sqrMagnitude > 0.01f)
+        {
+            _knockbackVelocity = Vector3.Lerp(_knockbackVelocity, Vector3.zero, _knockbackDecay * Time.fixedDeltaTime);
+            transform.position += _knockbackVelocity * Time.fixedDeltaTime;
+        }
+        else
+        {
+            _knockbackVelocity = Vector3.zero;
+        }
 
         if (IsMovable)
         {
             _machine.ChangeState(StateType.Move);
-            Move();
+            Move(); // 기존 이동 로직 그대로 유지
         }
         else
+        {
             _machine.ChangeState(StateType.Idle);
+        }
     }
 
     private void Move()
@@ -225,7 +239,7 @@ public class Enemy : MonoBehaviour, IPoolable
         Vector3 pushDir = (transform.position - targetWaypoint.position).normalized;
 
         //밀기
-        transform.position += pushDir * knockbackPower;
+        _knockbackVelocity += pushDir * knockbackPower * 20f;
     }
 
     /// <summary> 지속 데미지(화상, 독)를 부여 </summary>

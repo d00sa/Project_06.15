@@ -15,7 +15,7 @@ MonoBehaviour:
   skillName: BlackHole
   skillType: 2
   description: 
-  icon: {fileID: 3055689465800281512, guid: b600a8d968957cf4b8eed9c64306e934, type: 3}
+  icon: {fileID: -9071933644031530351, guid: 66fde3b4a65e0ef4ca7c2cf30648c10e, type: 3}
   skillPrefab: {fileID: 976605177427196170, guid: d9ad549dd7dfc9b439986bdc08973d82, type: 3}
   maxLevel: 5
   levelStats:
@@ -44,4 +44,3 @@ MonoBehaviour:
     speed: 5
     coolTime: 3
     range: 0
-  damageBonusType: 1

@@ -26,6 +26,12 @@ public class Projectile : MonoBehaviour, ISkillEffect
     [Tooltip("체크 시 타겟을 무시하고 랜덤한 방향으로 직선 비행합니다")]
     public bool isRandomDirection = false;
 
+    [Header("유도 및 수명 설정")]
+    [Tooltip("타겟을 향해 방향을 트는 속도 (수치가 낮을수록 유도력이 낮아져서 빠른 적을 놓침)")]
+    [SerializeField] private float turnSpeed = 5f;
+    [Tooltip("투사체의 최대 생존 시간 (이 시간이 지나면 허공에서 사라짐)")]
+    [SerializeField] private float maxLifeTime = 3f;
+
     [Header("이미지 회전 보정값")]
     [SerializeField] private float rotationOffset = -45f; // 보통 45나 -45? 이미지 따라 알잘딱
 
@@ -33,10 +39,16 @@ public class Projectile : MonoBehaviour, ISkillEffect
     [SerializeField] private float searchRadius = 3f; // 탐색 반경
     [SerializeField] private LayerMask enemyLayer; // 인스펙터에서 Enemy 레이어 선택
 
+    private float currentLifeTime = 0f;
+    private float finalSpeedStat = 0f;
+
     public void Initialize(SkillEffectContext ctx)
     {
         target = ctx.target;
         myStat = ctx.stat;
+        finalSpeedStat = Player.Instance.Stat.GetStat(StatType.ProjectileSpeed) + myStat.speed;
+
+        currentLifeTime = 0f;
 
         calculatedFinalDamage = Player.Instance.Stat.CalculateFinalDamage(
             myStat.damage,
@@ -72,21 +84,28 @@ public class Projectile : MonoBehaviour, ISkillEffect
     {
         if (myStat == null) return;
 
+        currentLifeTime += Time.deltaTime;
+        if (currentLifeTime >= maxLifeTime)
+        {
+            ObjectPool.Instance.ReturnObj(gameObject);
+            return;
+        }
+
         if (!isRandomDirection)
         {
             if (target != null && target.gameObject.activeInHierarchy && target.CompareTag("Enemy"))
             {
-                currentDir = ((Vector2)target.position - (Vector2)transform.position).normalized;
+                Vector2 targetDir = ((Vector2)target.position - (Vector2)transform.position).normalized;
+                currentDir = Vector3.Slerp(currentDir, targetDir, turnSpeed * Time.deltaTime).normalized;
                 UpdateRotation();
             }
             else
             {
                 target = FindClosestEnemy();
-                if (target == null) ObjectPool.Instance.ReturnObj(gameObject);
             }
         }
 
-        transform.Translate(currentDir * myStat.speed * Time.deltaTime, UnityEngine.Space.World);
+        transform.Translate(currentDir * finalSpeedStat * Time.deltaTime, UnityEngine.Space.World);
 
     }
 

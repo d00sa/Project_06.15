@@ -26,7 +26,7 @@ public class BoomerangProjectile : MonoBehaviour, ISkillEffect
     private Vector2 randomDir;
     private float distanceTraveled = 0f;
     private bool isChakramReturning = false;
-
+    private float finalSpeedStat = 0f;
 
 
     public void Initialize(SkillEffectContext ctx)
@@ -39,6 +39,8 @@ public class BoomerangProjectile : MonoBehaviour, ISkillEffect
         myStat.coolTime,
         myStat.fireRate
         );
+
+        finalSpeedStat = Player.Instance.Stat.GetStat(StatType.ProjectileSpeed) + myStat.speed;
 
         hitEnemies.Clear();
 
@@ -96,7 +98,7 @@ public class BoomerangProjectile : MonoBehaviour, ISkillEffect
         if (!isChakramReturning)
         {
             // 무조건 지정된 랜덤 방향(randomDir)으로 직진
-            float step = myStat.speed * Time.deltaTime;
+            float step = finalSpeedStat * Time.deltaTime;
             transform.Translate(randomDir * step, Space.World);
             distanceTraveled += step;
 
@@ -110,7 +112,7 @@ public class BoomerangProjectile : MonoBehaviour, ISkillEffect
         else
         {
             // 플레이어에게 복귀
-            transform.position = Vector2.MoveTowards(transform.position, shooter.position, myStat.speed * Time.deltaTime);
+            transform.position = Vector2.MoveTowards(transform.position, shooter.position, finalSpeedStat * Time.deltaTime);
 
             if (Vector2.Distance(transform.position, shooter.position) < 0.5f)
             {
@@ -123,7 +125,7 @@ public class BoomerangProjectile : MonoBehaviour, ISkillEffect
     {
         if (!isReturning)
         {
-            transform.position = Vector2.MoveTowards(transform.position, targetPoint, myStat.speed * Time.deltaTime);
+            transform.position = Vector2.MoveTowards(transform.position, targetPoint, finalSpeedStat * Time.deltaTime);
 
             if (Vector2.Distance(transform.position, targetPoint) < 0.1f)
             {
@@ -133,7 +135,7 @@ public class BoomerangProjectile : MonoBehaviour, ISkillEffect
         }
         else
         {
-            transform.position = Vector2.MoveTowards(transform.position, shooter.position, myStat.speed * Time.deltaTime);
+            transform.position = Vector2.MoveTowards(transform.position, shooter.position, finalSpeedStat * Time.deltaTime);
 
             if (Vector2.Distance(transform.position, shooter.position) < 0.5f)
             {

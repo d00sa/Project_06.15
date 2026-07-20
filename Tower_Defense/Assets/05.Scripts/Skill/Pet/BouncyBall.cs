@@ -15,6 +15,8 @@ public class BouncyBall : Pet
     private Vector2 minBounds;
     private Vector2 maxBounds;
 
+    private float finalSpeedStat = 0f;
+
     public override void Initialize(SkillLevelStat stat)
     {
         base.Initialize(stat);
@@ -24,6 +26,8 @@ public class BouncyBall : Pet
             currentPetStat.coolTime,
             currentPetStat.fireRate
         );
+
+        finalSpeedStat = Player.Instance.Stat.GetStat(StatType.ProjectileSpeed) + currentPetStat.speed;
 
         // 랜덤한 방향으로 튕기기
         moveDirection = new Vector2(Random.Range(-1f, 1f), Random.Range(-1f, 1f)).normalized;
@@ -48,8 +52,7 @@ public class BouncyBall : Pet
         // 매 프레임 화면 경계를 새로 계산
         UpdateScreenBounds();
 
-        // 스탯 매니저의 currentPetStat.speed 적용
-        transform.Translate(moveDirection * currentPetStat.speed * Time.deltaTime, Space.World);
+        transform.Translate(moveDirection * finalSpeedStat * Time.deltaTime, Space.World);
         CheckBoundsAndBounce();
     }
 

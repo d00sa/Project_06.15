@@ -15,7 +15,7 @@ MonoBehaviour:
   skillName: NuclearBomb
   skillType: 2
   description: 
-  icon: {fileID: 7044448977598011056, guid: dbcf054bd96334b47892dd9ced4d369f, type: 3}
+  icon: {fileID: 5849307244010171002, guid: 501a648013d79fd4cb6a217e0a3e9528, type: 3}
   skillPrefab: {fileID: 2648037592479618916, guid: 2d3cf0e5834cce84e8c501ee4b6e4b08, type: 3}
   maxLevel: 5
   levelStats:
@@ -44,4 +44,3 @@ MonoBehaviour:
     speed: 5
     coolTime: 10
     range: 0
-  damageBonusType: 0

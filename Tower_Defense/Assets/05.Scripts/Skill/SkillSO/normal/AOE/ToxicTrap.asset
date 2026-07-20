@@ -15,7 +15,7 @@ MonoBehaviour:
   skillName: ToxicTrap
   skillType: 2
   description: "\uB3C5 \uC7A5\uD310 \uC2A4\uD0AC AOE\uC5D0 \uC801\uC6A9"
-  icon: {fileID: -7603872502387391663, guid: d8dc51e4ac127274cbfe489c951cd965, type: 3}
+  icon: {fileID: 1566359928, guid: 501a648013d79fd4cb6a217e0a3e9528, type: 3}
   skillPrefab: {fileID: 7911863364059629638, guid: 0e48e44dca8ee3845ad394273faeafc3, type: 3}
   maxLevel: 5
   levelStats:
@@ -44,4 +44,3 @@ MonoBehaviour:
     speed: 10
     coolTime: 5
     range: 0
-  damageBonusType: 1

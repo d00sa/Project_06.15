@@ -25,11 +25,13 @@ public class ReplicatingCell : MonoBehaviour, ISkillEffect
 
     private Vector2 minBounds;
     private Vector2 maxBounds;
+    private float finalSpeedStat = 0f;
 
     public void Initialize(SkillEffectContext ctx)
     {
         myStat = ctx.stat;
         caster = ctx.caster;
+        finalSpeedStat = Player.Instance.Stat.GetStat(StatType.ProjectileSpeed) + myStat.speed;
 
         currentSplitCount = 0;
         transform.localScale = Vector3.one;
@@ -95,7 +97,7 @@ public class ReplicatingCell : MonoBehaviour, ISkillEffect
         if (myStat == null) return;
 
         UpdateScreenBounds();
-        transform.Translate(moveDirection * Time.deltaTime * myStat.speed, Space.World);
+        transform.Translate(moveDirection * Time.deltaTime * finalSpeedStat, Space.World);
         CheckBoundsAndBounce();
     }
 

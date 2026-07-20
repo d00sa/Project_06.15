@@ -15,7 +15,7 @@ MonoBehaviour:
   skillName: HolyLight
   skillType: 2
   description: 
-  icon: {fileID: 7350208548822532109, guid: a6c4c85c97ce51547bd09bb4006dc405, type: 3}
+  icon: {fileID: 1639970756, guid: 501a648013d79fd4cb6a217e0a3e9528, type: 3}
   skillPrefab: {fileID: 1213255530224665756, guid: a23b01c23e118ae4bace7692a6424b72, type: 3}
   maxLevel: 5
   levelStats:
@@ -44,4 +44,3 @@ MonoBehaviour:
     speed: 1
     coolTime: 25
     range: 0
-  damageBonusType: 1

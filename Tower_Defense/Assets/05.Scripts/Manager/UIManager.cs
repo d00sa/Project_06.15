@@ -120,6 +120,7 @@ public class UIManager : MonoBehaviour
                 // 숫자만 출력
                 case StatType.AttackDamage:
                 case StatType.AttackSpeed:
+                case StatType.ProjectileSpeed:
                     _stats[(int)stat].text = $"{Player.Instance.Stat.GetStat(stat)}";
                     break;
 
