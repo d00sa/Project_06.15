@@ -2,6 +2,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Text;
+using System.Xml.Linq;
+using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
@@ -10,6 +12,8 @@ public class InventorySlot : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
 {
     private Item _item;
     [SerializeField] private RectTransform _pos;
+    [SerializeField] private TMP_Text _name;
+    [SerializeField] private TMP_Text _description;
     [SerializeField] private Image _image;
 
     Coroutine _curCoroutine;
@@ -20,11 +24,15 @@ public class InventorySlot : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
 
         if (item == null) {
             _image.sprite = null;
+            _name.text = "";
+            _description.text = "";
             _image.rectTransform.localScale = Vector3.zero;
             return;
         }
 
         _image.sprite = _item.Icon;
+        _name.text = _item.Name;
+        _description.text = _item.Description;
         _image.rectTransform.localScale = Vector3.one;
     }
 

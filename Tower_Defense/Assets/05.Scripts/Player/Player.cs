@@ -73,7 +73,6 @@ public class Player : MonoBehaviour
     private void Update()
     {
         if (Pointer.current.press.wasPressedThisFrame) {
-            Debug.Log("Hit");
             //스크린 좌표 가져오기 (ex: 980, 500)
             Vector2 screenPos = Pointer.current.position.ReadValue();
             //월드 좌표로 변환. (980, 500 -> 5,4)

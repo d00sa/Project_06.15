@@ -15,12 +15,15 @@ public class UIManager : MonoBehaviour
     [SerializeField] private TMP_Text _stageTime;
     [SerializeField] private TMP_Text _exp;
     [SerializeField] private List<TMP_Text> _stats;
+
     [Header("[GameUI - Func]")]
     [SerializeField] private TMP_Text _acceleration;
     [SerializeField] private Image _pauseButton;
     [SerializeField] private List<Sprite> _pauseStart;
+
     [Header("[GameUI - Items]")]
     [SerializeField] private List<InventorySlot> _slots;
+
     [Header("[GameUI - Skills]")]
     public Transform SkillPanel;
     public List<SkillSlot> SkillSlots = new();

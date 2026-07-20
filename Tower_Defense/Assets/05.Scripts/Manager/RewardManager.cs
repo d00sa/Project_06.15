@@ -51,9 +51,7 @@ public class RewardManager : MonoBehaviour
 
     public void SelectItem(ItemData item)
     {
-        //여기서 이제 아이템 갯수 확인하고 풀이면 교체하는 식으로 ?
         InventoryManager.Instance.Add(item);
-
         UIManager.Instance.HideRewards();
     }
 
