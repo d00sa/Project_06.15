@@ -14,11 +14,22 @@ public class Reward : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, 
     [SerializeField] private Image _icon;
     [SerializeField] private TMP_Text _name;
     [SerializeField] private Button _button;
+    [SerializeField] private TMP_Text _description;
+
+    [Header("[배경 틀(Frame) 설정]")]
+    [SerializeField] private Image _frameImage;
+    [SerializeField] private Sprite _commonFrame;
+    [SerializeField] private Sprite _rareFrame;
+    [SerializeField] private Sprite _epicFrame;
+    [SerializeField] private Sprite _legendaryFrame;
 
     Coroutine _curCoroutine;
     private void Awake()
     {
         _pos = GetComponent<RectTransform>();
+
+        if (_frameImage == null)
+            _frameImage = GetComponent<Image>();
     }
 
     public void SetRewards(ItemData item)
@@ -28,6 +39,11 @@ public class Reward : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, 
             _icon.color = Color.clear;
             _name.text = "";
             _button.interactable = false;
+
+            if (_description != null)
+                _description.text = "";
+
+
             return;
         }
 
@@ -35,6 +51,58 @@ public class Reward : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, 
         _icon.enabled = true;
         _icon.sprite = item.Icon;
         _name.text = item.ItemName;
+
+        if (_frameImage != null)
+        {
+            switch (item.Rarity)
+            {
+                case ItemRarity.Common: _frameImage.sprite = _commonFrame; break;
+                case ItemRarity.Rare: _frameImage.sprite = _rareFrame; break;
+                case ItemRarity.Epic: _frameImage.sprite = _epicFrame; break;
+                case ItemRarity.Legendary: _frameImage.sprite = _legendaryFrame; break;
+            }
+        }
+
+        if (_description != null)
+            _description.text = GenerateStatDescription(item);
+    }
+
+    private string GenerateStatDescription(ItemData item)
+    {
+        System.Text.StringBuilder sb = new System.Text.StringBuilder();
+
+        if (item.Modifiers == null || item.Modifiers.Count == 0)
+            return sb.ToString();
+
+        foreach (var mod in item.Modifiers)
+        {
+            string statName = GetStatNameKorean(mod.StatType);
+            string sign = mod.Value > 0 ? "+" : "";
+
+            string colorHex = mod.Value > 0 ? "#55FF55" : "#FF5555";
+
+            string statValue = mod.Value.ToString();
+            if (mod.StatType == StatType.EXPGained || mod.StatType == StatType.CritChance || mod.StatType == StatType.CritDamageMultiplier)
+                statValue = (mod.Value * 100).ToString("F0") + "%"; // 퍼센트로 표시
+
+            sb.AppendLine($"<color={colorHex}>{statName} {sign}{statValue}</color>");
+        }
+
+        return sb.ToString().TrimEnd();
+    }
+
+    private string GetStatNameKorean(StatType type)
+    {
+        switch (type)
+        {
+            case StatType.AttackDamage: return "공격력";
+            case StatType.AttackSpeed: return "공격 속도";
+            case StatType.ProjectileSpeed: return "투사체 속도";
+            case StatType.EXPGained: return "경험치 획득량";
+            case StatType.CritChance: return "치명타 확률";
+            case StatType.CritDamageMultiplier: return "치명타 데미지";
+            default: return type.ToString();
+        }
     }
 
     public void OnClick()

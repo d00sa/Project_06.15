@@ -16,7 +16,6 @@ public class ItemDataBase : MonoBehaviour
 
     public ItemData Find(int id) => _datas.Find(x => x.ID == id);
     public ItemData Find(string name) => _datas.Find(x => x.ItemName == name);
-    public List<ItemData> FindAll(ItemType type) => _datas.FindAll(x => x.ItemType == type);
     public IReadOnlyList<ItemData> ItemDatas => _datas;
 
     [Button("장비장착")]

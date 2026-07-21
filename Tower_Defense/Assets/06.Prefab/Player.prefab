@@ -227,4 +227,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 159f4f87b38b50f4eb4e3f08e2ab5878, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::StatManager
-  statEntriesView: []
+  statEntriesView:
+  - type: 0
+    value: 0
+  - type: 1
+    value: 0
+  - type: 2
+    value: 0
+  - type: 3
+    value: 0
+  - type: 4
+    value: 0.05
+  - type: 5
+    value: 1

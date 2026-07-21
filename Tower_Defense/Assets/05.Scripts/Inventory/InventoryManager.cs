@@ -50,7 +50,6 @@ public class InventoryManager : MonoBehaviour
     public IReadOnlyList<Item> Items => _items;
     public bool Contains(ItemData data) => _items.Any(x => x.Data == data);
     public Item Find(ItemData data) => _items.Find(x => x.Data == data);
-    public List<Item> FindAll(ItemType type) => _items.Where(x => x.Type == type).ToList();
     public bool IsFull() => _items.Count >= _maxCount;
     public void Clear()
     {
@@ -58,20 +57,7 @@ public class InventoryManager : MonoBehaviour
         OnInventoryChanged?.Invoke();
     }
     public int GetCount(ItemData data) => _items.Count(x => x.Data == data);
-    public void Use(Item item)
-    {
-        switch (item.Type) {
-            case ItemType.RandomBox: {
-                    if (item.root == null) 
-                        return;
 
-                    ItemData data = item.root.GetRandomItem();
-                    if (Remove(item))
-                        Add(data);
-                }
-                break;
-        }
-    }
     /// <summary> 아이템 스왑 </summary>
     private void SwapItem(int index, ItemData newItem)
     {

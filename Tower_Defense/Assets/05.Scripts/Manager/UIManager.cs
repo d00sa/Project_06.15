@@ -181,7 +181,6 @@ public class UIManager : MonoBehaviour
 
         _icon.sprite = data.Icon;
         _name.text = data.ItemName;
-        _type.text = data.ItemType.ToString();
         _description.text = data.Description;
         //아마 스텟 설명도 들어갈 듯.
     }

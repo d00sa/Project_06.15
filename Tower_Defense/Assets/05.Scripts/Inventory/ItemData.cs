@@ -19,16 +19,13 @@ public class ItemData : ScriptableObject
     public Sprite Icon;
     public string Description;
 
-    [Header("아이템 타입")]
-    public ItemType ItemType;
-
     [Header("상점")]
-    public int Price; //가격
+    //public int Price; //가격
     public ItemRarity Rarity; //희귀도
 
     [Header("장비 정보")]
     public List<StatModifier> Modifiers; //장비가 주는 스탯들
 
-    [Header("랜덤 뽑기 정보")]
-    public LootTable LootTable;
+    //[Header("랜덤 뽑기 정보")]
+    //public LootTable LootTable;
 }

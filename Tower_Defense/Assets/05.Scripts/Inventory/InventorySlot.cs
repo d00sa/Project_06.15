@@ -16,6 +16,14 @@ public class InventorySlot : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
     [SerializeField] private TMP_Text _description;
     [SerializeField] private Image _image;
 
+    [Header("[배경 틀(Frame) 설정]")]
+    [SerializeField] private Image _backgroundImage;
+    [SerializeField] private Sprite _defaultFrame; // 빈 슬롯일 때 배경
+    [SerializeField] private Sprite _commonFrame;
+    [SerializeField] private Sprite _rareFrame;
+    [SerializeField] private Sprite _epicFrame;
+    [SerializeField] private Sprite _legendaryFrame;
+
     Coroutine _curCoroutine;
 
     public void SetItem(Item item)
@@ -27,13 +35,74 @@ public class InventorySlot : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
             _name.text = "";
             _description.text = "";
             _image.rectTransform.localScale = Vector3.zero;
+
+            if (_backgroundImage != null && _defaultFrame != null)
+                _backgroundImage.sprite = _defaultFrame;
+
             return;
         }
 
         _image.sprite = _item.Icon;
         _name.text = _item.Name;
-        _description.text = _item.Description;
+        _description.text = GenerateStatDescription(_item.Data);
         _image.rectTransform.localScale = Vector3.one;
+
+        if (_backgroundImage != null)
+        {
+            switch (_item.Data.Rarity)
+            {
+                case ItemRarity.Common: _backgroundImage.sprite = _commonFrame; break;
+                case ItemRarity.Rare: _backgroundImage.sprite = _rareFrame; break;
+                case ItemRarity.Epic: _backgroundImage.sprite = _epicFrame; break;
+                case ItemRarity.Legendary: _backgroundImage.sprite = _legendaryFrame; break;
+            }
+        }
+    }
+
+    private string GenerateStatDescription(ItemData item)
+    {
+        System.Text.StringBuilder sb = new System.Text.StringBuilder();
+
+        if (item.Modifiers == null || item.Modifiers.Count == 0)
+            return sb.ToString();
+
+        for (int i = 0; i < item.Modifiers.Count; i++)
+        {
+            var mod = item.Modifiers[i];
+            string statName = GetStatNameKorean(mod.StatType);
+            string sign = mod.Value > 0 ? "+" : "";
+
+            string colorHex = mod.Value > 0 ? "#55FF55" : "#FF5555";
+
+            string statValue = mod.Value.ToString();
+
+            // 퍼센트로 표시할 스탯들 처리
+            if (mod.StatType == StatType.EXPGained || mod.StatType == StatType.CritChance || mod.StatType == StatType.CritDamageMultiplier)
+                statValue = (mod.Value * 100).ToString("F0") + "%";
+
+            sb.Append($"<color={colorHex}>{statName} {sign}{statValue}</color>");
+
+            if (i < item.Modifiers.Count - 1)
+            {
+                sb.Append(", ");
+            }
+        }
+
+        return sb.ToString().TrimEnd();
+    }
+
+    private string GetStatNameKorean(StatType type)
+    {
+        switch (type)
+        {
+            case StatType.AttackDamage: return "공격력";
+            case StatType.AttackSpeed: return "공격 속도";
+            case StatType.ProjectileSpeed: return "투사체 속도";
+            case StatType.EXPGained: return "경험치 획득량";
+            case StatType.CritChance: return "치명타 확률";
+            case StatType.CritDamageMultiplier: return "치명타 데미지";
+            default: return type.ToString();
+        }
     }
 
     public void OnPointerEnter(PointerEventData eventData)
@@ -68,8 +137,6 @@ public class InventorySlot : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
 
     public void OnPointerClick(PointerEventData eventData)
     {
-        if (_item.Type == ItemType.RandomBox)
-            InventoryManager.Instance.Use(_item);
     }
 
     private IEnumerator LongPress()
