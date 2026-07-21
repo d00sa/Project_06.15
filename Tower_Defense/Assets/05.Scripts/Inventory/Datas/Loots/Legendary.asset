@@ -10,12 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b69b4af72ad274c43b8289d1aa654f25, type: 3}
-  m_Name: Rare
+  m_Name: Legendary
   m_EditorClassIdentifier: Assembly-CSharp::LootTable
   Items:
-  - Item: {fileID: 11400000, guid: 996b78b48a8328243857009380c2c33f, type: 2}
-    Weight: 30
-  - Item: {fileID: 11400000, guid: 9a5f48dd5b7edeb4981f07e4c30873da, type: 2}
-    Weight: 30
-  - Item: {fileID: 11400000, guid: 5e9613aaaa386084482e3a49fc1d4687, type: 2}
-    Weight: 30
+  - Item: {fileID: 11400000, guid: f2b05dcf57d586c44aed82cfa347d8f6, type: 2}
+    Weight: 100

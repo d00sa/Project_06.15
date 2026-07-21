@@ -10,18 +10,20 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d6eec44603fccd34d9017135b7b2ace0, type: 3}
-  m_Name: Named_Wooden_Stick
+  m_Name: UnstableBlackPowder
   m_EditorClassIdentifier: Assembly-CSharp::ItemData
-  ID: 1
-  ItemName: Named wooden stick
-  Icon: {fileID: -4028265949983917466, guid: d8dc51e4ac127274cbfe489c951cd965, type: 3}
-  Description: Wooden Stick
   ItemType: 0
-  Price: 100
-  Rarity: 3
+  ID: 6
+  ItemName: "\uBD88\uC548\uC815\uD55C \uD751\uC0C9\uD654\uC57D"
+  Icon: {fileID: -8533197709653161721, guid: 42cd89132b6daaa41aa9ca965cf5fa07, type: 3}
+  Description: "\uACF5\uACA9 \uB370\uBBF8\uC9C0+3, \uD22C\uC0AC\uCCB4 \uC18D\uB3C4
+    +3,  \uCE58\uBA85\uD0C0 \uD655\uB960 -10%"
+  Rarity: 2
   Modifiers:
   - StatType: 0
-    Value: 50
-  - StatType: 7
-    Value: 0.5
+    Value: 3
+  - StatType: 2
+    Value: 3
+  - StatType: 4
+    Value: -0.3
   LootTable: {fileID: 0}

@@ -14,30 +14,17 @@ public class RoadRoller : Pet
 
 
     SpriteRenderer _sprite;
-    List<Transform> _wayPoints;
+    List<WayPointLine> _wayPoints;
     private HashSet<Enemy> _hitEnemies = new();
 
     private float _timer;
     private float _nextPlayTime;
     int _currentIdx = 0;
+    int _curLine = 0;
 
     private void Awake()
     {
         _sprite = GetComponent<SpriteRenderer>();
-    }
-
-    private void Start()
-    {
-        _nextPlayTime = Random.Range(_minTime, _maxTime);
-
-        transform.SetParent(null);
-        //transform.localScale = Vector3.one;
-
-        if (WayPointManager.Instance != null)
-            _wayPoints = WayPointManager.Instance.wayPoints;
-
-        if (_wayPoints != null && _wayPoints.Count > 0)
-            transform.position = _wayPoints[_currentIdx].position;
     }
 
     public override void Initialize(SkillLevelStat stat)
@@ -51,6 +38,7 @@ public class RoadRoller : Pet
         );
 
         _hitEnemies.Clear();
+        _nextPlayTime = Random.Range(_minTime, _maxTime);
 
         if (_wayPoints == null && WayPointManager.Instance != null)
             _wayPoints = WayPointManager.Instance.wayPoints;
@@ -58,7 +46,8 @@ public class RoadRoller : Pet
         if (_wayPoints != null && _wayPoints.Count > 0)
         {
             _currentIdx = _wayPoints.Count - 1;
-            transform.position = _wayPoints[_currentIdx].position;
+            _curLine = 0;
+            transform.position = _wayPoints[_curLine].Points[_currentIdx].position;
         }
     }
 
@@ -85,7 +74,7 @@ public class RoadRoller : Pet
     {
         if (currentPetStat == null || _wayPoints == null || _wayPoints.Count == 0) return;
 
-        Transform target = _wayPoints[_currentIdx];
+        Transform target = _wayPoints[_curLine].Points[_currentIdx];
 
         float xDiff = target.position.x - transform.position.x;
         if (xDiff > 0.05f)
@@ -102,10 +91,10 @@ public class RoadRoller : Pet
         if (Vector3.Distance(transform.position, target.position) < 0.1f)
         {
             _currentIdx--;
-
+            _curLine = Random.Range(0, _wayPoints.Count);
             if (_currentIdx < 0)
             {
-                _currentIdx = _wayPoints.Count - 1;
+                _currentIdx = _wayPoints[0].Points.Count - 1;
                 _hitEnemies.Clear(); // 타격 기록 초기화
             }
         }

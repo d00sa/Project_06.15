@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using Random = UnityEngine.Random;
 
 public enum EnemyPriority
 {
@@ -40,7 +41,7 @@ public class Enemy : MonoBehaviour, IPoolable
     [Header("[Enemy - Default Setting]")]
     [SerializeField] private bool _isBoss; //보스인지?
     [SerializeField] private bool _defaultFlipX; //기본 스프라이트 좌우반전 설정
-    [SerializeField] private List<Transform> _wayPoints; //적 이동 방향
+    [SerializeField] private List<WayPointLine> _wayPoints; //적 이동 방향
     [SerializeField] private Slider _hpBar;
     public bool IsMovable { get; set; } = true;
 
@@ -48,6 +49,7 @@ public class Enemy : MonoBehaviour, IPoolable
     private SpriteRenderer _sprite;
     private StateMachine _machine;
     private int _currentIdx = 0;
+    private int _curLine = 0;
     private int _giveExp;
     private Coroutine dotCoroutine;
     private Coroutine stunCoroutine;
@@ -112,7 +114,7 @@ public class Enemy : MonoBehaviour, IPoolable
 
     private void Move()
     {
-        Transform target = _wayPoints[_currentIdx];
+        Transform target = _wayPoints[_curLine].Points[_currentIdx];
 
         transform.position = Vector3.MoveTowards(
             transform.position,
@@ -120,24 +122,17 @@ public class Enemy : MonoBehaviour, IPoolable
             speed * Time.fixedDeltaTime
         );
 
-        if (Vector3.Distance(transform.position, target.position) < 0.2f)
-            _currentIdx = (_currentIdx + 1) % _wayPoints.Count;
+        if (Vector3.Distance(transform.position, target.position) < 0.2f) {
+            _currentIdx = (_currentIdx + 1) % _wayPoints[0].Points.Count;
 
-        else if (_currentIdx > 0) {
-            Transform prevTarget = _wayPoints[_currentIdx - 1];
+            int nextLine = _curLine + Random.Range(-1, 2);
+            _curLine = Mathf.Clamp(nextLine, 0, _wayPoints.Count - 1);
 
-            Vector3 pathDir = (target.position - prevTarget.position).normalized;
-
-            Vector3 toEnemy = transform.position - target.position;
-
-            if (Vector3.Dot(pathDir, toEnemy) > 0f)
-                _currentIdx = (_currentIdx + 1) % _wayPoints.Count;           
+            if (_currentIdx == 0)
+                _sprite.flipX = _defaultFlipX;
+            else if (_currentIdx == 4)
+                _sprite.flipX = !_defaultFlipX;
         }
-
-        if (_currentIdx == 0)
-            _sprite.flipX = _defaultFlipX;
-        else if (_currentIdx == 4)
-            _sprite.flipX = !_defaultFlipX;
     }
 
     public void OnDespawn()
@@ -193,6 +188,7 @@ public class Enemy : MonoBehaviour, IPoolable
         IsDead = false;
         IsMovable = true;
         _currentIdx = 0;
+        _curLine = 0;
         this.gameObject.tag = "Enemy";
 
         // 풀에서 재사용될 때 이전 상태의 이펙트가 켜진 채로 남아있지 않도록 리셋
@@ -235,7 +231,7 @@ public class Enemy : MonoBehaviour, IPoolable
 
         if (!IsMovable) return;
 
-        Transform targetWaypoint = _wayPoints[_currentIdx];
+        Transform targetWaypoint = _wayPoints[_curLine].Points[_currentIdx];
         Vector3 pushDir = (transform.position - targetWaypoint.position).normalized;
 
         //밀기

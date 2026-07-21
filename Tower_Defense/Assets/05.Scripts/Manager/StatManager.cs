@@ -16,7 +16,7 @@ public enum StatType
 
 public class StatManager : MonoBehaviour
 {
-    [System.Serializable]
+    [Serializable]
     private class StatEntry
     {
         public StatType type;
@@ -53,7 +53,18 @@ public class StatManager : MonoBehaviour
     /// <summary>특정 카테고리의 현재 보정값을 반환 (없으면 0)</summary>
     public float GetStat(StatType type)
     {
-        return stats.TryGetValue(type, out float value) ? value : 0f;
+        float value = 0f;
+        if (stats.ContainsKey(type)) {
+            value = stats[type];
+            switch (type) {
+                case StatType.ProjectileSpeed:
+                case StatType.EXPGained:
+                case StatType.CritChance:
+                    value *= 100f;
+                    break;
+            }
+        }
+        return value;
     }
 
     /// <summary>아이템 획득 시 스탯을 올려주는 함수</summary>

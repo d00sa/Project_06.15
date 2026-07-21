@@ -45,6 +45,9 @@ public class UIManager : MonoBehaviour
     [Header("[Stores]")]
     [SerializeField] private RectTransform _rewardsPanel;
 
+    [Header("[Frames]")]
+    [SerializeField] private List<Sprite> _frames;
+
     private void Awake()
     {
         Instance = this;
@@ -63,6 +66,7 @@ public class UIManager : MonoBehaviour
         Remove();
     }
 
+    /// <summary> 각 이벤트 구독 </summary>
     private void Add()
     {
         GameManager.Instance.OnEnemyCountChanged += ChangeEnemyCount;
@@ -72,7 +76,7 @@ public class UIManager : MonoBehaviour
         Player.Instance.OnExpChanged += ChangeExp;
         Player.Instance.Stat.OnStatChanged += ChangeStat;
     }
-
+    /// <summary> 각 이벤트 구독 제거 </summary>
     private void Remove()
     {
         if (GameManager.Instance != null) {
@@ -89,7 +93,7 @@ public class UIManager : MonoBehaviour
             Player.Instance.Stat.OnStatChanged -= ChangeStat;
         }
     }
-
+    /// <summary> UI 적 숫자 텍스트 변경 </summary>
     private void ChangeEnemyCount(int count, int deadLine)
     {
         if (count < 0)
@@ -97,7 +101,7 @@ public class UIManager : MonoBehaviour
 
         _enemyCountText.text = $"{count:D2} / {deadLine:D2}";
     }
-
+    /// <summary> UI 스테이지 정보 텍스트 변경 </summary>
     private void ChangeStageTime(int time, int stage)
     {
         int minute = time / 60;
@@ -108,12 +112,12 @@ public class UIManager : MonoBehaviour
         else if (GameManager.Instance.Current == GameState.StartStage)
             _stageTime.text = $"Stage {stage}\n{minute:00} : {second:00}";
     }
-
+    /// <summary> UI 경험치 텍스트 변경 </summary>
     private void ChangeExp(int curExp, int maxExp)
     {
         _exp.text = $"{curExp} / {maxExp}";
     }
-
+    /// <summary> UI 스텟 텍스트 변경 </summary>
     private void ChangeStat()
     {
         foreach (StatType stat in Enum.GetValues(typeof(StatType)))
@@ -136,7 +140,7 @@ public class UIManager : MonoBehaviour
             }
         }
     }
-
+    /// <summary> 인벤토리 리로드 </summary>
     private void RefreshInventory()
     {
         var items = InventoryManager.Instance.Items;
@@ -145,7 +149,7 @@ public class UIManager : MonoBehaviour
             _slots[i].SetItem(i < items.Count ? items[i] : null);
         }
     }
-
+    /// <summary> 스킬 목록 리로드 </summary>
     private void RefreshSkills(string name, int level)
     {
         var skills = Player.Instance.GetCurrentSkill();
@@ -154,7 +158,7 @@ public class UIManager : MonoBehaviour
             SkillSlots[i].SetSkill(i < skills.Count ? skills[i] : null);
         }
     }
-
+    /// <summary> 초기 UI 세팅 </summary>
     private IEnumerator Setting()
     {
         //한 프레임 기다렸다가 호출
@@ -165,7 +169,7 @@ public class UIManager : MonoBehaviour
         ChangeEnemyCount(0, GameManager.Instance.Data.UnitCount);
         Player.Instance.AddExp(0);
     }
-
+    /// <summary> 아이템 정보창 열기 </summary>
     public void ShowItemInfo(ItemData data, RectTransform slotPos)
     {
         if (_itemInfoPanel.localScale == Vector3.one) 
@@ -184,7 +188,7 @@ public class UIManager : MonoBehaviour
         _description.text = data.Description;
         //아마 스텟 설명도 들어갈 듯.
     }
-
+    /// <summary> 스킬 정보창 열기 </summary>
     public void ShowSkillInfo(ActiveSkill data, RectTransform slotPos)
     {
         if (_skillInfoPanel.localScale == Vector3.one)
@@ -202,7 +206,7 @@ public class UIManager : MonoBehaviour
         _sType.text = data.data.GetType().ToString();
         _sDescription.text = data.data.description + '\n' + data.level.ToString();
     }
-
+    /// <summary> 보상창 열기 </summary>
     public void ShowRewards()
     {
         Time.timeScale = 0f;
@@ -210,13 +214,13 @@ public class UIManager : MonoBehaviour
 
         RewardManager.Instance.SetRandomRewards();
     }
-
+    /// <summary> 보상창 숨기기 </summary>
     public void HideRewards()
     {
         _rewardsPanel.localScale = Vector3.zero;
         Time.timeScale = GameManager.Instance.CurSpeed;
     }
-
+    /// <summary> 정보창 숨기기 </summary>
     public void HideInfo()
     {
         _itemInfoPanel.localScale = Vector3.zero;
@@ -233,12 +237,12 @@ public class UIManager : MonoBehaviour
         _sType.text = "";
         _sDescription.text = "";
     }
-
+    /// <summary> 설정창 오픈 </summary>
     public void SetUp()
     {
         SetupManager.Instance.Open();
     }
-
+    /// <summary> 게임 정지 </summary>
     public void Pause()
     {
         if (Time.timeScale > 0f) {
@@ -250,10 +254,19 @@ public class UIManager : MonoBehaviour
             Time.timeScale = GameManager.Instance.CurSpeed;
         }
     }
-
+    /// <summary> 게임 가속 하는 기능 </summary>
     public void Acceleration()
     {
         float speed = GameManager.Instance.SpeedUp();
         _acceleration.text = $"{speed:F1}x";
+    }
+
+    /// <summary> 장비 프레임 가져오는 함수 </summary>
+    /// <param name="idx"> 0: Default, 1: Common, 2: Rare ... </param>
+    public Sprite GetFrame(int idx)
+    {
+        if (idx < 0 || idx >= _frames.Count) return null;
+
+        return _frames[idx];
     }
 }

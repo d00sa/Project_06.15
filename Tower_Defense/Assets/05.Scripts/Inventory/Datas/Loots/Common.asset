@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Common
   m_EditorClassIdentifier: Assembly-CSharp::LootTable
   Items:
-  - Item: {fileID: 11400000, guid: 9a5f48dd5b7edeb4981f07e4c30873da, type: 2}
+  - Item: {fileID: 11400000, guid: 3ea61c2396afc374599fbce343851eef, type: 2}
     Weight: 50
-  - Item: {fileID: 11400000, guid: 996b78b48a8328243857009380c2c33f, type: 2}
+  - Item: {fileID: 11400000, guid: 490f00fde988d3e44b1fd1b47ba0e9c9, type: 2}
     Weight: 50

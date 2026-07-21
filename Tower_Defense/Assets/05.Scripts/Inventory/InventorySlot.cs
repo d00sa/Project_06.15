@@ -11,18 +11,12 @@ using UnityEngine.UI;
 public class InventorySlot : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IPointerDownHandler, IPointerUpHandler, IPointerClickHandler
 {
     private Item _item;
+    [Header("[슬롯 설정]")]
     [SerializeField] private RectTransform _pos;
     [SerializeField] private TMP_Text _name;
     [SerializeField] private TMP_Text _description;
     [SerializeField] private Image _image;
-
-    [Header("[배경 틀(Frame) 설정]")]
     [SerializeField] private Image _backgroundImage;
-    [SerializeField] private Sprite _defaultFrame; // 빈 슬롯일 때 배경
-    [SerializeField] private Sprite _commonFrame;
-    [SerializeField] private Sprite _rareFrame;
-    [SerializeField] private Sprite _epicFrame;
-    [SerializeField] private Sprite _legendaryFrame;
 
     Coroutine _curCoroutine;
 
@@ -35,9 +29,7 @@ public class InventorySlot : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
             _name.text = "";
             _description.text = "";
             _image.rectTransform.localScale = Vector3.zero;
-
-            if (_backgroundImage != null && _defaultFrame != null)
-                _backgroundImage.sprite = _defaultFrame;
+            _backgroundImage.sprite = UIManager.Instance.GetFrame(0);
 
             return;
         }
@@ -46,17 +38,7 @@ public class InventorySlot : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
         _name.text = _item.Name;
         _description.text = GenerateStatDescription(_item.Data);
         _image.rectTransform.localScale = Vector3.one;
-
-        if (_backgroundImage != null)
-        {
-            switch (_item.Data.Rarity)
-            {
-                case ItemRarity.Common: _backgroundImage.sprite = _commonFrame; break;
-                case ItemRarity.Rare: _backgroundImage.sprite = _rareFrame; break;
-                case ItemRarity.Epic: _backgroundImage.sprite = _epicFrame; break;
-                case ItemRarity.Legendary: _backgroundImage.sprite = _legendaryFrame; break;
-            }
-        }
+        _backgroundImage.sprite = UIManager.Instance.GetFrame((int)_item.Rarity);
     }
 
     private string GenerateStatDescription(ItemData item)
@@ -90,7 +72,6 @@ public class InventorySlot : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
 
         return sb.ToString().TrimEnd();
     }
-
     private string GetStatNameKorean(StatType type)
     {
         switch (type)
@@ -104,7 +85,6 @@ public class InventorySlot : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
             default: return type.ToString();
         }
     }
-
     public void OnPointerEnter(PointerEventData eventData)
     {
         if (_item is null) 
@@ -137,6 +117,8 @@ public class InventorySlot : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
 
     public void OnPointerClick(PointerEventData eventData)
     {
+        if (_item.Type == ItemType.RandomBox)
+            InventoryManager.Instance.Use(_item);
     }
 
     private IEnumerator LongPress()

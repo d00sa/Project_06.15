@@ -12,12 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d6eec44603fccd34d9017135b7b2ace0, type: 3}
   m_Name: Legendary_RandomBox
   m_EditorClassIdentifier: Assembly-CSharp::ItemData
-  ID: 7777
+  ItemType: 1
+  ID: 777777
   ItemName: Rare_RandomBox
   Icon: {fileID: -5938411374528227644, guid: 659a30afce9ba31409e8030fc975673a, type: 3}
   Description: Rare_RandomBox
-  ItemType: 3
-  Price: 1000
-  Rarity: 3
+  Rarity: 4
   Modifiers: []
-  LootTable: {fileID: 11400000, guid: bb0642ac0bec297458e978c5cc762c70, type: 2}
+  LootTable: {fileID: 11400000, guid: 169b0167b6c0020419da7e25c9782061, type: 2}

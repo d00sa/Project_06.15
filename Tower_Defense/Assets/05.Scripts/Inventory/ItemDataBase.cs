@@ -15,7 +15,7 @@ public class ItemDataBase : MonoBehaviour
     }
 
     public ItemData Find(int id) => _datas.Find(x => x.ID == id);
-    public ItemData Find(string name) => _datas.Find(x => x.ItemName == name);
+    public ItemData Find(string name) => _datas.Find(x => x.ItemName == name);    
     public IReadOnlyList<ItemData> ItemDatas => _datas;
 
     [Button("장비장착")]
@@ -37,15 +37,7 @@ public class ItemDataBase : MonoBehaviour
     public void Test2()
     {
         if (Application.isPlaying) {
-            Item nullItem = InventoryManager.Instance.Add(Find(999));
-
-            if (nullItem is not null)
-                Debug.Log($"<color=green>[디버그]</color> '{nullItem.Name}' 획득!");
-            else
-                Debug.LogWarning($"<color=red>[디버그]</color> 아이템 : 999이 존재하지 않습니다!");
-
-
-            for (int i = 0; i < 5; i++) {
+            for (int i = 0; i < 6; i++) {
                 Item success = InventoryManager.Instance.Add(Find(i));
 
                 if (success is not null)

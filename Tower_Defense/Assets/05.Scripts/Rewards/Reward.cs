@@ -9,27 +9,20 @@ using static UnityEditor.Progress;
 
 public class Reward : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IPointerDownHandler, IPointerUpHandler
 {
+    [Header("[보상창 초기 설정]")]
     [SerializeField] private RectTransform _pos;
     [SerializeField] private ItemData _item;
-    [SerializeField] private Image _icon;
-    [SerializeField] private TMP_Text _name;
-    [SerializeField] private Button _button;
+    [SerializeField] private Image _icon; //장비 아이콘
+    [SerializeField] private TMP_Text _name; //장비 이름 텍스트
     [SerializeField] private TMP_Text _description;
-
-    [Header("[배경 틀(Frame) 설정]")]
     [SerializeField] private Image _frameImage;
-    [SerializeField] private Sprite _commonFrame;
-    [SerializeField] private Sprite _rareFrame;
-    [SerializeField] private Sprite _epicFrame;
-    [SerializeField] private Sprite _legendaryFrame;
+    [SerializeField] private Button _button;
 
     Coroutine _curCoroutine;
     private void Awake()
     {
         _pos = GetComponent<RectTransform>();
-
-        if (_frameImage == null)
-            _frameImage = GetComponent<Image>();
+        _frameImage = GetComponent<Image>();
     }
 
     public void SetRewards(ItemData item)
@@ -39,10 +32,8 @@ public class Reward : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, 
             _icon.color = Color.clear;
             _name.text = "";
             _button.interactable = false;
-
-            if (_description != null)
-                _description.text = "";
-
+            _description.text = "";
+            _frameImage.sprite = UIManager.Instance.GetFrame(0);
 
             return;
         }
@@ -51,20 +42,8 @@ public class Reward : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, 
         _icon.enabled = true;
         _icon.sprite = item.Icon;
         _name.text = item.ItemName;
-
-        if (_frameImage != null)
-        {
-            switch (item.Rarity)
-            {
-                case ItemRarity.Common: _frameImage.sprite = _commonFrame; break;
-                case ItemRarity.Rare: _frameImage.sprite = _rareFrame; break;
-                case ItemRarity.Epic: _frameImage.sprite = _epicFrame; break;
-                case ItemRarity.Legendary: _frameImage.sprite = _legendaryFrame; break;
-            }
-        }
-
-        if (_description != null)
-            _description.text = GenerateStatDescription(item);
+        _frameImage.sprite = UIManager.Instance.GetFrame((int)_item.Rarity);
+        _description.text = GenerateStatDescription(item);
     }
 
     private string GenerateStatDescription(ItemData item)

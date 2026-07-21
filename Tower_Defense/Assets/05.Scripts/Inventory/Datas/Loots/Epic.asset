@@ -13,7 +13,11 @@ MonoBehaviour:
   m_Name: Epic
   m_EditorClassIdentifier: Assembly-CSharp::LootTable
   Items:
-  - Item: {fileID: 11400000, guid: 5e9613aaaa386084482e3a49fc1d4687, type: 2}
-    Weight: 20
-  - Item: {fileID: 11400000, guid: 9a5f48dd5b7edeb4981f07e4c30873da, type: 2}
-    Weight: 80
+  - Item: {fileID: 11400000, guid: e0b0ee744061fc94b94b15fe6c38868a, type: 2}
+    Weight: 10
+  - Item: {fileID: 11400000, guid: 3ea61c2396afc374599fbce343851eef, type: 2}
+    Weight: 30
+  - Item: {fileID: 11400000, guid: f70b54de920b2dc45b956ceee13d66be, type: 2}
+    Weight: 30
+  - Item: {fileID: 11400000, guid: 3f37734b96f9f0a4da85a9a56eb39b51, type: 2}
+    Weight: 30
