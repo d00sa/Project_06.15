@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using TMPro;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -10,7 +11,24 @@ public class RewardManager : MonoBehaviour
     public static RewardManager Instance;
 
     [SerializeField] List<Reward> _rewards;
-    [SerializeField] float _dropRate = 0.05f;
+    [SerializeField] private float _globalDropRate = 10f;
+    [SerializeField] float _chestDropRate = 5f;
+    [SerializeField] float _DiceDropRate = 10f;
+
+    [Header("[리롤 시스템]")]
+    [SerializeField] private int _rerollCount = 0; // 기본 리롤 횟수 0
+
+    public int RerollCount
+    {
+        get => _rerollCount;
+        private set
+        {
+            _rerollCount = value;
+            // UI에 리롤 횟수 변경시 이벤트
+            OnRerollCountChanged?.Invoke(_rerollCount);
+        }
+    }
+    public event Action<int> OnRerollCountChanged; // 리롤 버튼 텍스트 갱신용 이벤트
 
     //웨이브가 올라갈 수록 가중치를 변경.
     private readonly Dictionary<ItemRarity, int> _rarityWeight = new(){
@@ -40,13 +58,24 @@ public class RewardManager : MonoBehaviour
     {
         //무조건 스폰
         if (isBoss) {
-            DropReward(enemy.transform);
+            DropReward(enemy.transform, "Treasure_Chest");
             return;
         }
 
-        if (Random.value <= _dropRate) {
-            DropReward(enemy.transform);
-        }     
+        if (Random.Range(0f, 100f) > _globalDropRate * (1f + Player.Instance.Stat.GetStat(StatType.Luck)))
+        {
+            return;
+        }
+
+        float randomValue = Random.Range(0f, _chestDropRate + _DiceDropRate);
+
+        if (randomValue <= _chestDropRate) {
+            DropReward(enemy.transform, "Treasure_Chest");
+        }
+        else if (randomValue <= _chestDropRate + _DiceDropRate)
+        {
+            DropReward(enemy.transform, "RerollDice");
+        }
     }
 
     public void SelectItem(ItemData item)
@@ -68,6 +97,21 @@ public class RewardManager : MonoBehaviour
             ItemData item = GetRandomItem(candidates);
             slot.SetRewards(item);
             candidates.Remove(item);
+        }
+    }
+    // 소모성 아이템으로 리롤 횟수 증가
+    public void AddRerollCount(int amount)
+    {
+        RerollCount += amount;
+    }
+
+    public void OnClickRerollButton()
+    {
+        if (RerollCount > 0)
+        {
+            RerollCount--; 
+            SetRandomRewards();
+            // SoundManager.Instance.PlaySFX("Dice_Roll"); // 주사위 굴리는 소리 추가 예정
         }
     }
 
@@ -106,9 +150,9 @@ public class RewardManager : MonoBehaviour
         }
     }
 
-    private void DropReward(Transform transform)
+    private void DropReward(Transform transform, string rewardType)
     {
-        ObjectPool.Instance.GetObj("Treasure_Chest", transform.position);
+        ObjectPool.Instance.GetObj(rewardType, transform.position);
     }
 
     /// <summary> 아직은 모르겠음. 스테이지가 진행되면 될 수록 보물상자 드랍률을 올릴지  </summary>
@@ -118,7 +162,36 @@ public class RewardManager : MonoBehaviour
 
     }
 
-    private int GetWeight(ItemRarity rarity) => _rarityWeight[rarity];
+    private int GetWeight(ItemRarity rarity)
+    {
+        float luck = 0f;
+        if (Player.Instance != null && Player.Instance.Stat != null)
+        {
+            luck = Player.Instance.Stat.GetStat(StatType.Luck);
+        }
+        float weight = _rarityWeight[rarity];
+
+        if (luck > 0)
+        {
+            // 행운 양수 -> 높은 등급일수록 가중치에 더 큰 보너스
+            switch (rarity)
+            {
+                case ItemRarity.Rare: weight *= (1f + luck * 1.5f); break;
+                case ItemRarity.Epic: weight *= (1f + luck * 3.0f); break;
+                case ItemRarity.Legendary: weight *= (1f + luck * 5.0f); break;
+            }
+        }
+        else if (luck < 0)
+        {
+            // 행운 음수 -> Common의 가중치 늘림
+            if (rarity == ItemRarity.Common)
+            {
+                weight *= (1f + Mathf.Abs(luck) * 3.0f);
+            }
+        }
+
+        return Mathf.RoundToInt(weight);
+    }
 
     [Button("Test!")]
     public void Test()

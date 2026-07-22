@@ -216,7 +216,7 @@ public class Enemy : MonoBehaviour, IPoolable
             finalDamage = Player.Instance.Stat.RollCriticalDamage(finalDamage, out isCritical);
         }
 
-        // Curse 스킬 전용 스탯 관련 아님!!!!!
+        // Curse 스킬 전용, 스탯 관련 아님!!!!!
         if (OnCalculateBonusDamage != null)
         {
             foreach (DamageModifier modifier in OnCalculateBonusDamage.GetInvocationList())

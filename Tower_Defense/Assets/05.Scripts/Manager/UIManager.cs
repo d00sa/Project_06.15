@@ -44,6 +44,7 @@ public class UIManager : MonoBehaviour
 
     [Header("[Stores]")]
     [SerializeField] private RectTransform _rewardsPanel;
+    [SerializeField] private TMP_Text _rerollText;
 
     [Header("[Frames]")]
     [SerializeField] private List<Sprite> _frames;
@@ -75,6 +76,7 @@ public class UIManager : MonoBehaviour
         Player.Instance.OnSkillLevelChanged += RefreshSkills;
         Player.Instance.OnExpChanged += ChangeExp;
         Player.Instance.Stat.OnStatChanged += ChangeStat;
+        RewardManager.Instance.OnRerollCountChanged += ChangeRerollText;
     }
     /// <summary> 각 이벤트 구독 제거 </summary>
     private void Remove()
@@ -92,6 +94,9 @@ public class UIManager : MonoBehaviour
             Player.Instance.OnExpChanged -= ChangeExp;
             Player.Instance.Stat.OnStatChanged -= ChangeStat;
         }
+
+        if (RewardManager.Instance != null)
+            RewardManager.Instance.OnRerollCountChanged -= ChangeRerollText;
     }
     /// <summary> UI 적 숫자 텍스트 변경 </summary>
     private void ChangeEnemyCount(int count, int deadLine)
@@ -135,7 +140,9 @@ public class UIManager : MonoBehaviour
                 case StatType.EXPGained:
                 case StatType.CritChance:
                 case StatType.CritDamageMultiplier:
-                    _stats[(int)stat].text = $"{Player.Instance.Stat.GetStat(stat)}%";
+                case StatType.Luck:
+                    float percentValue = Player.Instance.Stat.GetStat(stat) * 100f;
+                    _stats[(int)stat].text = $"{percentValue.ToString("F1")}%";
                     break;
             }
         }
@@ -268,5 +275,16 @@ public class UIManager : MonoBehaviour
         if (idx < 0 || idx >= _frames.Count) return null;
 
         return _frames[idx];
+    }
+
+    /// <summary> 리롤 횟수 텍스트 변경 </summary>
+    private void ChangeRerollText(int count)
+    {
+        if (_rerollText == null) return;
+
+        if (count > 0)
+            _rerollText.text = $"Reroll (<color=#55FF55>{count}</color>)";
+        else
+            _rerollText.text = $"Reroll (<color=#AAAAAA>0</color>)";
     }
 }

@@ -9,9 +9,10 @@ public enum StatType
     AttackDamage,        // 투사체, AOE, 펫 데미지를 하나로 통합한 기본 공격력 추가값
     AttackSpeed,         // 공격 속도 증가 (쿨타임 감소)
     ProjectileSpeed,      // 투사체 속도 증가 (0.1이면 10% 증가)
-    EXPGained,           // 경험치 획득량 (ex: 0.1이면 10% 추가)
     CritChance,          // 치명타 확률 (0.1 = 10%)
     CritDamageMultiplier,// 치명타 데미지 배율 (2 = 2배)
+    EXPGained,           // 경험치 획득량 (0.1이면 10% 추가)
+    Luck,                // 행운 (0.1이면 10% 추가, 아이템 드랍률 증가, 상자 획득시 더 높은 아이템 확률증가)
 }
 
 public class StatManager : MonoBehaviour
@@ -54,17 +55,10 @@ public class StatManager : MonoBehaviour
     public float GetStat(StatType type)
     {
         float value = 0f;
-        if (stats.ContainsKey(type)) {
+        if (stats.ContainsKey(type))
             value = stats[type];
-            switch (type) {
-                case StatType.ProjectileSpeed:
-                case StatType.EXPGained:
-                case StatType.CritChance:
-                    value *= 100f;
-                    break;
-            }
-        }
-        return value;
+ 
+            return value;
     }
 
     /// <summary>아이템 획득 시 스탯을 올려주는 함수</summary>

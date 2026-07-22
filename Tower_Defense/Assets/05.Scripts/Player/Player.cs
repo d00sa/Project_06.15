@@ -79,7 +79,7 @@ public class Player : MonoBehaviour
             Vector2 worldPos = Camera.main.ScreenToWorldPoint(screenPos);
 
             Collider2D hit = Physics2D.OverlapPoint(worldPos, _chestLayer);
-            if (hit != null) hit.GetComponent<Chest>()?.OnClick();
+            if (hit != null) hit.GetComponent<IInteractable>()?.OnClick();
         }
     }
 

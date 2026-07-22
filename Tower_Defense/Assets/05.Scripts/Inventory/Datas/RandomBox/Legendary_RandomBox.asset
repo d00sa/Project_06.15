@@ -15,7 +15,7 @@ MonoBehaviour:
   ItemType: 1
   ID: 777777
   ItemName: Rare_RandomBox
-  Icon: {fileID: -5938411374528227644, guid: 659a30afce9ba31409e8030fc975673a, type: 3}
+  Icon: {fileID: 5270485923306069355, guid: 30a076eb53bc3b64cb1f0bb594fb227f, type: 3}
   Description: Rare_RandomBox
   Rarity: 4
   Modifiers: []
