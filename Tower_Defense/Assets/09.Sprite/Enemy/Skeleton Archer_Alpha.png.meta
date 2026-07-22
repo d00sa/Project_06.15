@@ -1,0 +1,450 @@
+fileFormatVersion: 2
+guid: bc4b9b30be5656743b69a48c7acb6db7
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 5645992022823673709
+    second: Skeleton Archer_Alpha_0
+  - first:
+      213: 7756619540023257174
+    second: Skeleton Archer_Alpha_1
+  - first:
+      213: 6485143958791076134
+    second: Skeleton Archer_Alpha_2
+  - first:
+      213: -7120272029592730205
+    second: Skeleton Archer_Alpha_3
+  - first:
+      213: -4159168459377425045
+    second: Skeleton Archer_Alpha_4
+  - first:
+      213: 969068641208097398
+    second: Skeleton Archer_Alpha_5
+  - first:
+      213: 1622802463610660420
+    second: Skeleton Archer_Alpha_6
+  - first:
+      213: 8642480148101367708
+    second: Skeleton Archer_Alpha_7
+  - first:
+      213: 2558982163615869311
+    second: Skeleton Archer_Alpha_8
+  - first:
+      213: -604881455557054869
+    second: Skeleton Archer_Alpha_9
+  - first:
+      213: 3537370847417879516
+    second: Skeleton Archer_Alpha_10
+  - first:
+      213: 4296357073777154328
+    second: Skeleton Archer_Alpha_11
+  - first:
+      213: 3098004379509781996
+    second: Skeleton Archer_Alpha_12
+  - first:
+      213: -5815191892180385760
+    second: Skeleton Archer_Alpha_13
+  - first:
+      213: -3880237330659499724
+    second: Skeleton Archer_Alpha_14
+  - first:
+      213: 4609806849791175426
+    second: Skeleton Archer_Alpha_15
+  - first:
+      213: -6636767810017709407
+    second: Skeleton Archer_Alpha_16
+  - first:
+      213: 1759213346402274882
+    second: Skeleton Archer_Alpha_17
+  - first:
+      213: 5172032555695739573
+    second: Skeleton Archer_Alpha_18
+  - first:
+      213: 3349719510355037941
+    second: Skeleton Archer_Alpha_19
+  - first:
+      213: 4646825439814088919
+    second: Skeleton Archer_Alpha_20
+  - first:
+      213: 4070408896538026442
+    second: Skeleton Archer_Alpha_21
+  - first:
+      213: 3439317603542695322
+    second: Skeleton Archer_Alpha_22
+  - first:
+      213: -8101908383964745628
+    second: Skeleton Archer_Alpha_23
+  - first:
+      213: 2804705658034016024
+    second: Skeleton Archer_Alpha_24
+  - first:
+      213: 5536742138806037690
+    second: Skeleton Archer_Alpha_25
+  - first:
+      213: -5618928439763307367
+    second: Skeleton Archer_Alpha_26
+  - first:
+      213: 5427989635488828443
+    second: Skeleton Archer_Alpha_27
+  - first:
+      213: 8006177625823340080
+    second: Skeleton Archer_Alpha_28
+  - first:
+      213: -2673272336089342861
+    second: Skeleton Archer_Alpha_29
+  - first:
+      213: -6458992816096834086
+    second: Skeleton Archer_Alpha_30
+  - first:
+      213: 1854230388783485428
+    second: Skeleton Archer_Alpha_31
+  - first:
+      213: -560655944869782284
+    second: Skeleton Archer_Alpha_32
+  - first:
+      213: 4217285485996946029
+    second: Skeleton Archer_Alpha_33
+  - first:
+      213: -4393776908303620168
+    second: Skeleton Archer_Alpha_34
+  - first:
+      213: -8606439076486312504
+    second: Skeleton Archer_Alpha_35
+  - first:
+      213: -4676403910227808553
+    second: Skeleton Archer_Alpha_36
+  - first:
+      213: -3862425997414798668
+    second: Skeleton Archer_Alpha_37
+  - first:
+      213: 4977292770746226056
+    second: Skeleton Archer_Alpha_38
+  - first:
+      213: -5213034924253787730
+    second: Skeleton Archer_Alpha_39
+  - first:
+      213: 2321903960697129135
+    second: Skeleton Archer_Alpha_40
+  - first:
+      213: -7502134464528947639
+    second: Skeleton Archer_Alpha_41
+  - first:
+      213: -841339592356556349
+    second: Skeleton Archer_Alpha_42
+  - first:
+      213: 298878687533083394
+    second: Skeleton Archer_Alpha_43
+  - first:
+      213: 2448300396458379017
+    second: Skeleton Archer_Alpha_44
+  - first:
+      213: -1512586070354486152
+    second: Skeleton Archer_Alpha_45
+  - first:
+      213: 90906446920698917
+    second: Skeleton Archer_Alpha_46
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 128
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: 4
+      rect:
+        serializedVersion: 2
+        x: 1163
+        y: 349
+        width: 285
+        height: 266
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 67add2a7bc2d27d00800000000000000
+      internalID: 969068641208097398
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: s
+      rect:
+        serializedVersion: 2
+        x: 75
+        y: 702
+        width: 306
+        height: 255
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c9782f5a7e140f770800000000000000
+      internalID: 8642480148101367708
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: w1
+      rect:
+        serializedVersion: 2
+        x: 88
+        y: 345
+        width: 286
+        height: 274
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7d8fd591e17dc7040800000000000000
+      internalID: 4646825439814088919
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: w2
+      rect:
+        serializedVersion: 2
+        x: 432
+        y: 345
+        width: 282
+        height: 274
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ac12db0535ffc7830800000000000000
+      internalID: 4070408896538026442
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: w3
+      rect:
+        serializedVersion: 2
+        x: 778
+        y: 347
+        width: 295
+        height: 273
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a9df8ec5329eabf20800000000000000
+      internalID: 3439317603542695322
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: d
+      rect:
+        serializedVersion: 2
+        x: 45
+        y: 35
+        width: 384
+        height: 180
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 87c1158abf6320be0800000000000000
+      internalID: -1512586070354486152
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: d9cc64be57b06784ba019a208f9b7595
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      4: 969068641208097398
+      Skeleton Archer_Alpha_0: 5645992022823673709
+      Skeleton Archer_Alpha_1: 7756619540023257174
+      Skeleton Archer_Alpha_10: 3537370847417879516
+      Skeleton Archer_Alpha_11: 4296357073777154328
+      Skeleton Archer_Alpha_12: 3098004379509781996
+      Skeleton Archer_Alpha_13: -5815191892180385760
+      Skeleton Archer_Alpha_14: -3880237330659499724
+      Skeleton Archer_Alpha_15: 4609806849791175426
+      Skeleton Archer_Alpha_16: -6636767810017709407
+      Skeleton Archer_Alpha_17: 1759213346402274882
+      Skeleton Archer_Alpha_18: 5172032555695739573
+      Skeleton Archer_Alpha_19: 3349719510355037941
+      Skeleton Archer_Alpha_2: 6485143958791076134
+      Skeleton Archer_Alpha_23: -8101908383964745628
+      Skeleton Archer_Alpha_24: 2804705658034016024
+      Skeleton Archer_Alpha_25: 5536742138806037690
+      Skeleton Archer_Alpha_26: -5618928439763307367
+      Skeleton Archer_Alpha_27: 5427989635488828443
+      Skeleton Archer_Alpha_28: 8006177625823340080
+      Skeleton Archer_Alpha_29: -2673272336089342861
+      Skeleton Archer_Alpha_3: -7120272029592730205
+      Skeleton Archer_Alpha_30: -6458992816096834086
+      Skeleton Archer_Alpha_31: 1854230388783485428
+      Skeleton Archer_Alpha_32: -560655944869782284
+      Skeleton Archer_Alpha_33: 4217285485996946029
+      Skeleton Archer_Alpha_34: -4393776908303620168
+      Skeleton Archer_Alpha_35: -8606439076486312504
+      Skeleton Archer_Alpha_36: -4676403910227808553
+      Skeleton Archer_Alpha_37: -3862425997414798668
+      Skeleton Archer_Alpha_38: 4977292770746226056
+      Skeleton Archer_Alpha_39: -5213034924253787730
+      Skeleton Archer_Alpha_4: -4159168459377425045
+      Skeleton Archer_Alpha_40: 2321903960697129135
+      Skeleton Archer_Alpha_41: -7502134464528947639
+      Skeleton Archer_Alpha_42: -841339592356556349
+      Skeleton Archer_Alpha_43: 298878687533083394
+      Skeleton Archer_Alpha_44: 2448300396458379017
+      Skeleton Archer_Alpha_46: 90906446920698917
+      Skeleton Archer_Alpha_6: 1622802463610660420
+      Skeleton Archer_Alpha_8: 2558982163615869311
+      Skeleton Archer_Alpha_9: -604881455557054869
+      d: -1512586070354486152
+      s: 8642480148101367708
+      w1: 4646825439814088919
+      w2: 4070408896538026442
+      w3: 3439317603542695322
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

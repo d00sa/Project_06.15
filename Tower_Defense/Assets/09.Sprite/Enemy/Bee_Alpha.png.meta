@@ -1,0 +1,454 @@
+fileFormatVersion: 2
+guid: 2cf2a7f725b02b74aa0972ace0d85566
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 5519297869458507474
+    second: Bee_Alpha_0
+  - first:
+      213: -7701896423226317318
+    second: Bee_Alpha_1
+  - first:
+      213: -3312179527313730318
+    second: Bee_Alpha_2
+  - first:
+      213: -4276839990941621930
+    second: Bee_Alpha_3
+  - first:
+      213: -6587666259824869152
+    second: Bee_Alpha_4
+  - first:
+      213: 5911502954705136925
+    second: Bee_Alpha_5
+  - first:
+      213: 8342202813310652661
+    second: Bee_Alpha_6
+  - first:
+      213: 279100542114200578
+    second: Bee_Alpha_7
+  - first:
+      213: -5881938269840970321
+    second: Bee_Alpha_8
+  - first:
+      213: -4828680653934810847
+    second: Bee_Alpha_9
+  - first:
+      213: -4532274616609035308
+    second: Bee_Alpha_10
+  - first:
+      213: 7685276703842391710
+    second: Bee_Alpha_11
+  - first:
+      213: -7519046364702833907
+    second: Bee_Alpha_12
+  - first:
+      213: -3051850479787459938
+    second: Bee_Alpha_13
+  - first:
+      213: -5560537639514245852
+    second: Bee_Alpha_14
+  - first:
+      213: 4261747416726946151
+    second: Bee_Alpha_15
+  - first:
+      213: -362301903456097574
+    second: Bee_Alpha_16
+  - first:
+      213: 2230757963315024437
+    second: Bee_Alpha_17
+  - first:
+      213: 2763924988954431948
+    second: Bee_Alpha_18
+  - first:
+      213: 7387467487467872585
+    second: Bee_Alpha_19
+  - first:
+      213: 164462000047057786
+    second: Bee_Alpha_20
+  - first:
+      213: -3978211785084922128
+    second: Bee_Alpha_21
+  - first:
+      213: -2138789822951258248
+    second: Bee_Alpha_22
+  - first:
+      213: -1587571336095752555
+    second: Bee_Alpha_23
+  - first:
+      213: 709645437610509551
+    second: Bee_Alpha_24
+  - first:
+      213: 4303039217703652339
+    second: Bee_Alpha_25
+  - first:
+      213: 2897001990698456863
+    second: Bee_Alpha_26
+  - first:
+      213: 3742658699551396225
+    second: Bee_Alpha_27
+  - first:
+      213: -3081212723467594586
+    second: Bee_Alpha_28
+  - first:
+      213: -4731198972840021089
+    second: Bee_Alpha_29
+  - first:
+      213: 6946848020711416706
+    second: Bee_Alpha_30
+  - first:
+      213: -6286197511969451503
+    second: Bee_Alpha_31
+  - first:
+      213: 5965376129355452052
+    second: Bee_Alpha_32
+  - first:
+      213: 5901983316517234455
+    second: Bee_Alpha_33
+  - first:
+      213: 4314467771451747100
+    second: Bee_Alpha_34
+  - first:
+      213: 2714974514812678579
+    second: Bee_Alpha_35
+  - first:
+      213: -7959801074101200111
+    second: Bee_Alpha_36
+  - first:
+      213: 7188546233503095159
+    second: Bee_Alpha_37
+  - first:
+      213: 2452777770646472857
+    second: Bee_Alpha_38
+  - first:
+      213: -2128539071529553713
+    second: Bee_Alpha_39
+  - first:
+      213: -6585601661360742144
+    second: Bee_Alpha_40
+  - first:
+      213: -3431475136915132751
+    second: Bee_Alpha_41
+  - first:
+      213: -3400848962234020512
+    second: Bee_Alpha_42
+  - first:
+      213: -2858213382286213717
+    second: Bee_Alpha_43
+  - first:
+      213: -4882980880405945514
+    second: Bee_Alpha_44
+  - first:
+      213: -2545721475677618571
+    second: Bee_Alpha_45
+  - first:
+      213: 2333313905347052548
+    second: Bee_Alpha_46
+  - first:
+      213: 1334285036295073187
+    second: Bee_Alpha_47
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: w4
+      rect:
+        serializedVersion: 2
+        x: 1231
+        y: 360
+        width: 250
+        height: 250
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2f4d422c446c802d0800000000000000
+      internalID: -3312179527313730318
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: s
+      rect:
+        serializedVersion: 2
+        x: 105
+        y: 686
+        width: 260
+        height: 250
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4dbaf7ccf302a11c0800000000000000
+      internalID: -4532274616609035308
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: w1
+      rect:
+        serializedVersion: 2
+        x: 103
+        y: 363
+        width: 250
+        height: 250
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0f69dbc757d8ac8c0800000000000000
+      internalID: -3978211785084922128
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: w2
+      rect:
+        serializedVersion: 2
+        x: 455
+        y: 364
+        width: 280
+        height: 250
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 87705c1ecfd7152e0800000000000000
+      internalID: -2138789822951258248
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: w3
+      rect:
+        serializedVersion: 2
+        x: 848
+        y: 361
+        width: 250
+        height: 250
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 59e9b68f740d7f9e0800000000000000
+      internalID: -1587571336095752555
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: d
+      rect:
+        serializedVersion: 2
+        x: 92
+        y: 59
+        width: 340
+        height: 200
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 404c0bd62a8916020800000000000000
+      internalID: 2333313905347052548
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 3a8283055311f81468e92805f7beeb66
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Bee_Alpha_0: 5519297869458507474
+      Bee_Alpha_1: -7701896423226317318
+      Bee_Alpha_11: 7685276703842391710
+      Bee_Alpha_12: -7519046364702833907
+      Bee_Alpha_13: -3051850479787459938
+      Bee_Alpha_14: -5560537639514245852
+      Bee_Alpha_15: 4261747416726946151
+      Bee_Alpha_16: -362301903456097574
+      Bee_Alpha_17: 2230757963315024437
+      Bee_Alpha_18: 2763924988954431948
+      Bee_Alpha_19: 7387467487467872585
+      Bee_Alpha_20: 164462000047057786
+      Bee_Alpha_24: 709645437610509551
+      Bee_Alpha_25: 4303039217703652339
+      Bee_Alpha_26: 2897001990698456863
+      Bee_Alpha_27: 3742658699551396225
+      Bee_Alpha_28: -3081212723467594586
+      Bee_Alpha_29: -4731198972840021089
+      Bee_Alpha_3: -4276839990941621930
+      Bee_Alpha_30: 6946848020711416706
+      Bee_Alpha_31: -6286197511969451503
+      Bee_Alpha_32: 5965376129355452052
+      Bee_Alpha_33: 5901983316517234455
+      Bee_Alpha_34: 4314467771451747100
+      Bee_Alpha_35: 2714974514812678579
+      Bee_Alpha_36: -7959801074101200111
+      Bee_Alpha_37: 7188546233503095159
+      Bee_Alpha_38: 2452777770646472857
+      Bee_Alpha_39: -2128539071529553713
+      Bee_Alpha_4: -6587666259824869152
+      Bee_Alpha_40: -6585601661360742144
+      Bee_Alpha_41: -3431475136915132751
+      Bee_Alpha_42: -3400848962234020512
+      Bee_Alpha_43: -2858213382286213717
+      Bee_Alpha_44: -4882980880405945514
+      Bee_Alpha_45: -2545721475677618571
+      Bee_Alpha_47: 1334285036295073187
+      Bee_Alpha_5: 5911502954705136925
+      Bee_Alpha_6: 8342202813310652661
+      Bee_Alpha_7: 279100542114200578
+      Bee_Alpha_8: -5881938269840970321
+      Bee_Alpha_9: -4828680653934810847
+      d: 2333313905347052548
+      s: -4532274616609035308
+      w1: -3978211785084922128
+      w2: -2138789822951258248
+      w3: -1587571336095752555
+      w4: -3312179527313730318
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

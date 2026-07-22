@@ -1,0 +1,434 @@
+fileFormatVersion: 2
+guid: fd3ac958411e3ee4885abea786c6bd1a
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 1825540823633121694
+    second: Crow_Alpha_0
+  - first:
+      213: 1321329696803038432
+    second: Crow_Alpha_1
+  - first:
+      213: -3374020575628557345
+    second: Crow_Alpha_2
+  - first:
+      213: -2002319865623903297
+    second: Crow_Alpha_3
+  - first:
+      213: -1629692048932590340
+    second: Crow_Alpha_4
+  - first:
+      213: -4933905243382637626
+    second: Crow_Alpha_5
+  - first:
+      213: 6979717084395539812
+    second: Crow_Alpha_6
+  - first:
+      213: -929668973641673152
+    second: Crow_Alpha_7
+  - first:
+      213: 4885625781421893878
+    second: Crow_Alpha_8
+  - first:
+      213: 6959589600932632725
+    second: Crow_Alpha_9
+  - first:
+      213: -1520712577250796379
+    second: Crow_Alpha_10
+  - first:
+      213: 6458706615975342063
+    second: Crow_Alpha_11
+  - first:
+      213: -797012466273364260
+    second: Crow_Alpha_12
+  - first:
+      213: -726796169415408710
+    second: Crow_Alpha_13
+  - first:
+      213: -5103844771608020162
+    second: Crow_Alpha_14
+  - first:
+      213: 2230104359856631010
+    second: Crow_Alpha_15
+  - first:
+      213: -3205823874014905957
+    second: Crow_Alpha_16
+  - first:
+      213: -8053706164034615616
+    second: Crow_Alpha_17
+  - first:
+      213: 538530566258269148
+    second: Crow_Alpha_18
+  - first:
+      213: 7607146457721935820
+    second: Crow_Alpha_19
+  - first:
+      213: 3224307308438874768
+    second: Crow_Alpha_20
+  - first:
+      213: 7936612412296167729
+    second: Crow_Alpha_21
+  - first:
+      213: -8317836208405346628
+    second: Crow_Alpha_22
+  - first:
+      213: -869241581401456349
+    second: Crow_Alpha_23
+  - first:
+      213: 8361936186595767602
+    second: Crow_Alpha_24
+  - first:
+      213: 2024672088492047424
+    second: Crow_Alpha_25
+  - first:
+      213: 8144056755648853070
+    second: Crow_Alpha_26
+  - first:
+      213: 1929453604649913061
+    second: Crow_Alpha_27
+  - first:
+      213: 7241969545413043739
+    second: Crow_Alpha_28
+  - first:
+      213: 4381936161467880797
+    second: Crow_Alpha_29
+  - first:
+      213: -5256203113875308778
+    second: Crow_Alpha_30
+  - first:
+      213: -4482865138063362715
+    second: Crow_Alpha_31
+  - first:
+      213: -400081575874949550
+    second: Crow_Alpha_32
+  - first:
+      213: -1977394321266115213
+    second: Crow_Alpha_33
+  - first:
+      213: -6702664000354383561
+    second: Crow_Alpha_34
+  - first:
+      213: -2328262054769289096
+    second: Crow_Alpha_35
+  - first:
+      213: 5456898985141844392
+    second: Crow_Alpha_36
+  - first:
+      213: 7741814962142732710
+    second: Crow_Alpha_37
+  - first:
+      213: -7033649810687698918
+    second: Crow_Alpha_38
+  - first:
+      213: 4318574292458119484
+    second: Crow_Alpha_39
+  - first:
+      213: -875482823229374176
+    second: Crow_Alpha_40
+  - first:
+      213: -8266188519733137183
+    second: Crow_Alpha_41
+  - first:
+      213: -3172559920004810659
+    second: Crow_Alpha_42
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: w4
+      rect:
+        serializedVersion: 2
+        x: 1190
+        y: 379
+        width: 310
+        height: 260
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cfc281a47bb2269e0800000000000000
+      internalID: -1629692048932590340
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: s
+      rect:
+        serializedVersion: 2
+        x: 97
+        y: 716
+        width: 246
+        height: 224
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6f8642753ca3dc340800000000000000
+      internalID: 4885625781421893878
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: w1
+      rect:
+        serializedVersion: 2
+        x: 87
+        y: 371
+        width: 310
+        height: 260
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 09ae136f96a0fbc20800000000000000
+      internalID: 3224307308438874768
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: w2
+      rect:
+        serializedVersion: 2
+        x: 457
+        y: 371
+        width: 319
+        height: 260
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cb60e1ac90c119c80800000000000000
+      internalID: -8317836208405346628
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: w3
+      rect:
+        serializedVersion: 2
+        x: 811
+        y: 332
+        width: 320
+        height: 260
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 235768488a09b0470800000000000000
+      internalID: 8361936186595767602
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: d
+      rect:
+        serializedVersion: 2
+        x: 116
+        y: 69
+        width: 458
+        height: 200
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d58b87bcf8dc8f3d0800000000000000
+      internalID: -3172559920004810659
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: b1c14e8bfdc73584781186ba9e92908f
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Crow_Alpha_0: 1825540823633121694
+      Crow_Alpha_1: 1321329696803038432
+      Crow_Alpha_10: -1520712577250796379
+      Crow_Alpha_11: 6458706615975342063
+      Crow_Alpha_12: -797012466273364260
+      Crow_Alpha_13: -726796169415408710
+      Crow_Alpha_14: -5103844771608020162
+      Crow_Alpha_15: 2230104359856631010
+      Crow_Alpha_16: -3205823874014905957
+      Crow_Alpha_17: -8053706164034615616
+      Crow_Alpha_18: 538530566258269148
+      Crow_Alpha_19: 7607146457721935820
+      Crow_Alpha_2: -3374020575628557345
+      Crow_Alpha_21: 7936612412296167729
+      Crow_Alpha_23: -869241581401456349
+      Crow_Alpha_25: 2024672088492047424
+      Crow_Alpha_26: 8144056755648853070
+      Crow_Alpha_27: 1929453604649913061
+      Crow_Alpha_28: 7241969545413043739
+      Crow_Alpha_29: 4381936161467880797
+      Crow_Alpha_3: -2002319865623903297
+      Crow_Alpha_30: -5256203113875308778
+      Crow_Alpha_31: -4482865138063362715
+      Crow_Alpha_32: -400081575874949550
+      Crow_Alpha_33: -1977394321266115213
+      Crow_Alpha_34: -6702664000354383561
+      Crow_Alpha_35: -2328262054769289096
+      Crow_Alpha_36: 5456898985141844392
+      Crow_Alpha_37: 7741814962142732710
+      Crow_Alpha_38: -7033649810687698918
+      Crow_Alpha_39: 4318574292458119484
+      Crow_Alpha_40: -875482823229374176
+      Crow_Alpha_41: -8266188519733137183
+      Crow_Alpha_5: -4933905243382637626
+      Crow_Alpha_6: 6979717084395539812
+      Crow_Alpha_7: -929668973641673152
+      Crow_Alpha_9: 6959589600932632725
+      d: -3172559920004810659
+      s: 4885625781421893878
+      w1: 3224307308438874768
+      w2: -8317836208405346628
+      w3: 8361936186595767602
+      w4: -1629692048932590340
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
