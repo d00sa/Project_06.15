@@ -36,7 +36,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 1.15}
+  m_AnchoredPosition: {x: 0, y: 1.9}
   m_SizeDelta: {x: 16, y: 3}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &5108039116339438770
@@ -243,7 +243,7 @@ GameObject:
   - component: {fileID: -8222634222657749162}
   - component: {fileID: -5395861223104540064}
   m_Layer: 6
-  m_Name: Slime_King
+  m_Name: Pumpkin
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -259,7 +259,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.2, y: 1.2, z: 1.2}
+  m_LocalScale: {x: 0.55, y: 0.55, z: 0.55}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 7429479432718106716}
@@ -315,7 +315,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 1
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 2697611003685618497, guid: 201b93da7185b0049a7d90492edb07b8, type: 3}
+  m_Sprite: {fileID: -6077709114011557813, guid: b42a08b5de311274e96e6de3a2c0274e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -337,15 +337,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 273359e8b5adf5b418c55f44c10acbe3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Enemy
-  hpMax: 500
+  hpMax: 100
   _hp: 0
   speed: 3
   IsDead: 0
-  _isBoss: 1
+  _isBoss: 0
   _defaultFlipX: 0
   _wayPoints: []
   _hpBar: {fileID: 7580869575054913285}
-  priority: 2
+  priority: 0
   dotEffectObject: {fileID: 1439172478594923275}
 --- !u!114 &8826004180032480047
 MonoBehaviour:
@@ -370,7 +370,7 @@ Animator:
   m_GameObject: {fileID: 5722822434754417202}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 22100000, guid: 7812bfeb8d8387e4dba9858c9ae4e7be, type: 2}
+  m_Controller: {fileID: 22100000, guid: 0c31cc3f93d525f41baba68117595539, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -420,7 +420,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 3.06, y: 2.02}
+    oldSize: {x: 2.49, y: 2.1}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0

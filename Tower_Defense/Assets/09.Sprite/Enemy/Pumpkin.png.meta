@@ -1,0 +1,530 @@
+fileFormatVersion: 2
+guid: b42a08b5de311274e96e6de3a2c0274e
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -3545189308076068758
+    second: Pumpkin_0
+  - first:
+      213: 4907745874458294902
+    second: Pumpkin_1
+  - first:
+      213: -7487728316265015285
+    second: Pumpkin_2
+  - first:
+      213: -25557983830139815
+    second: Pumpkin_3
+  - first:
+      213: 7185039186225281475
+    second: Pumpkin_4
+  - first:
+      213: -8333431928182952089
+    second: Pumpkin_5
+  - first:
+      213: 4094313082981450608
+    second: Pumpkin_6
+  - first:
+      213: -8898793436815098137
+    second: Pumpkin_7
+  - first:
+      213: -1697837693439996487
+    second: Pumpkin_8
+  - first:
+      213: -7554402120541167402
+    second: Pumpkin_9
+  - first:
+      213: 1830040187526219191
+    second: Pumpkin_10
+  - first:
+      213: -1922761313165979517
+    second: Pumpkin_11
+  - first:
+      213: -5562082883440656936
+    second: Pumpkin_12
+  - first:
+      213: -4457231827667378459
+    second: Pumpkin_13
+  - first:
+      213: -1681876278535725790
+    second: Pumpkin_14
+  - first:
+      213: -2762191624333622873
+    second: Pumpkin_15
+  - first:
+      213: 3745291820567556702
+    second: Pumpkin_16
+  - first:
+      213: 6164812763336808720
+    second: Pumpkin_17
+  - first:
+      213: -2898099354938837833
+    second: Pumpkin_18
+  - first:
+      213: -3216956096954867765
+    second: Pumpkin_19
+  - first:
+      213: 7917173639493392830
+    second: Pumpkin_20
+  - first:
+      213: 7589634979893942344
+    second: Pumpkin_21
+  - first:
+      213: -7114322871238216806
+    second: Pumpkin_22
+  - first:
+      213: 9030862262678814948
+    second: Pumpkin_23
+  - first:
+      213: 5652401010293353303
+    second: Pumpkin_24
+  - first:
+      213: 3927603557531899917
+    second: Pumpkin_25
+  - first:
+      213: 7001467024451536290
+    second: Pumpkin_26
+  - first:
+      213: -2549292487921636542
+    second: Pumpkin_27
+  - first:
+      213: 8469987138063478896
+    second: Pumpkin_28
+  - first:
+      213: -4148540557530480684
+    second: Pumpkin_29
+  - first:
+      213: -2304021922298035419
+    second: Pumpkin_30
+  - first:
+      213: -6077709114011557813
+    second: Pumpkin_31
+  - first:
+      213: 7924118732272500480
+    second: Pumpkin_32
+  - first:
+      213: -2132205366727402445
+    second: Pumpkin_33
+  - first:
+      213: 1480289080765435526
+    second: Pumpkin_34
+  - first:
+      213: -8631594590854829659
+    second: Pumpkin_35
+  - first:
+      213: 8618087608171887568
+    second: Pumpkin_36
+  - first:
+      213: 8435964393628768708
+    second: Pumpkin_37
+  - first:
+      213: 9000032468923297966
+    second: Pumpkin_38
+  - first:
+      213: 628622737154993570
+    second: Pumpkin_39
+  - first:
+      213: -8033124220492593555
+    second: Pumpkin_40
+  - first:
+      213: -3762038957054416909
+    second: Pumpkin_41
+  - first:
+      213: 3447287104171592287
+    second: Pumpkin_42
+  - first:
+      213: -7774086151232829605
+    second: Pumpkin_43
+  - first:
+      213: 7895204998073580737
+    second: Pumpkin_44
+  - first:
+      213: -753350033223775331
+    second: Pumpkin_45
+  - first:
+      213: -5346972120005433976
+    second: Pumpkin_46
+  - first:
+      213: 7277665860564590807
+    second: Pumpkin_47
+  - first:
+      213: -8579681574462460149
+    second: Pumpkin_48
+  - first:
+      213: 8948200999789194312
+    second: Pumpkin_49
+  - first:
+      213: 7943150806226816067
+    second: Pumpkin_50
+  - first:
+      213: -1176330542835256278
+    second: Pumpkin_51
+  - first:
+      213: 6326206293392045791
+    second: Pumpkin_52
+  - first:
+      213: 5203149397208649995
+    second: Pumpkin_53
+  - first:
+      213: 2717107491194916306
+    second: Pumpkin_54
+  - first:
+      213: 2849701735443540467
+    second: Pumpkin_55
+  - first:
+      213: 1774370792923280291
+    second: Pumpkin_56
+  - first:
+      213: -1037233229232211527
+    second: Pumpkin_57
+  - first:
+      213: 836464726608635623
+    second: Pumpkin_58
+  - first:
+      213: 2598138419966350142
+    second: Pumpkin_59
+  - first:
+      213: -6403551265439003890
+    second: Pumpkin_60
+  - first:
+      213: -7245673220335135479
+    second: Pumpkin_61
+  - first:
+      213: 846195991458308766
+    second: Pumpkin_62
+  - first:
+      213: 5340406730841450783
+    second: Pumpkin_63
+  - first:
+      213: -2899502548310589748
+    second: Pumpkin_64
+  - first:
+      213: -179452596498611911
+    second: Pumpkin_65
+  - first:
+      213: -7136312878538997457
+    second: Pumpkin_66
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: w4
+      rect:
+        serializedVersion: 2
+        x: 1176
+        y: 360
+        width: 286
+        height: 204
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7eefe0d5482218480800000000000000
+      internalID: -8898793436815098137
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: s
+      rect:
+        serializedVersion: 2
+        x: 66
+        y: 693
+        width: 230
+        height: 200
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8dd3d3136138fc2b0800000000000000
+      internalID: -5562082883440656936
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: w3
+      rect:
+        serializedVersion: 2
+        x: 820
+        y: 360
+        width: 229
+        height: 245
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 52386b6d4487600e0800000000000000
+      internalID: -2304021922298035419
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: w1
+      rect:
+        serializedVersion: 2
+        x: 74
+        y: 359
+        width: 249
+        height: 210
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b40ef2b03c3a7aba0800000000000000
+      internalID: -6077709114011557813
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: w2
+      rect:
+        serializedVersion: 2
+        x: 426
+        y: 359
+        width: 252
+        height: 210
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 00ffe13d00028fd60800000000000000
+      internalID: 7924118732272500480
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: d
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 50
+        width: 331
+        height: 215
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f19e8e380afec1a40800000000000000
+      internalID: 5340406730841450783
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 33df294631bb4f9449a75eb86c559574
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Pumpkin_0: -3545189308076068758
+      Pumpkin_1: 4907745874458294902
+      Pumpkin_10: 1830040187526219191
+      Pumpkin_11: -1922761313165979517
+      Pumpkin_13: -4457231827667378459
+      Pumpkin_14: -1681876278535725790
+      Pumpkin_15: -2762191624333622873
+      Pumpkin_16: 3745291820567556702
+      Pumpkin_17: 6164812763336808720
+      Pumpkin_18: -2898099354938837833
+      Pumpkin_19: -3216956096954867765
+      Pumpkin_2: -7487728316265015285
+      Pumpkin_20: 7917173639493392830
+      Pumpkin_21: 7589634979893942344
+      Pumpkin_22: -7114322871238216806
+      Pumpkin_23: 9030862262678814948
+      Pumpkin_24: 5652401010293353303
+      Pumpkin_25: 3927603557531899917
+      Pumpkin_26: 7001467024451536290
+      Pumpkin_27: -2549292487921636542
+      Pumpkin_28: 8469987138063478896
+      Pumpkin_29: -4148540557530480684
+      Pumpkin_3: -25557983830139815
+      Pumpkin_33: -2132205366727402445
+      Pumpkin_34: 1480289080765435526
+      Pumpkin_35: -8631594590854829659
+      Pumpkin_36: 8618087608171887568
+      Pumpkin_37: 8435964393628768708
+      Pumpkin_38: 9000032468923297966
+      Pumpkin_39: 628622737154993570
+      Pumpkin_4: 7185039186225281475
+      Pumpkin_40: -8033124220492593555
+      Pumpkin_41: -3762038957054416909
+      Pumpkin_42: 3447287104171592287
+      Pumpkin_43: -7774086151232829605
+      Pumpkin_44: 7895204998073580737
+      Pumpkin_45: -753350033223775331
+      Pumpkin_46: -5346972120005433976
+      Pumpkin_47: 7277665860564590807
+      Pumpkin_48: -8579681574462460149
+      Pumpkin_49: 8948200999789194312
+      Pumpkin_5: -8333431928182952089
+      Pumpkin_50: 7943150806226816067
+      Pumpkin_51: -1176330542835256278
+      Pumpkin_52: 6326206293392045791
+      Pumpkin_53: 5203149397208649995
+      Pumpkin_54: 2717107491194916306
+      Pumpkin_55: 2849701735443540467
+      Pumpkin_56: 1774370792923280291
+      Pumpkin_57: -1037233229232211527
+      Pumpkin_58: 836464726608635623
+      Pumpkin_59: 2598138419966350142
+      Pumpkin_6: 4094313082981450608
+      Pumpkin_60: -6403551265439003890
+      Pumpkin_61: -7245673220335135479
+      Pumpkin_62: 846195991458308766
+      Pumpkin_64: -2899502548310589748
+      Pumpkin_65: -179452596498611911
+      Pumpkin_66: -7136312878538997457
+      Pumpkin_8: -1697837693439996487
+      Pumpkin_9: -7554402120541167402
+      d: 5340406730841450783
+      s: -5562082883440656936
+      w1: -6077709114011557813
+      w2: 7924118732272500480
+      w3: -2304021922298035419
+      w4: -8898793436815098137
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

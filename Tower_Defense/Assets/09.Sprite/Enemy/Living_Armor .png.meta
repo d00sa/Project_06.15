@@ -1,37 +1,58 @@
 fileFormatVersion: 2
-guid: d3ce642c1d0a433478ed4e2881cd562a
+guid: 2f12ca844fa6b664d8dc0051a93c0259
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 5048392724137304377
-    second: "ChatGPT Image 2026\uB144 7\uC6D4 22\uC77C \uC624\uC804 09_56_10_0"
+      213: 7879378464570386988
+    second: Living_Armor _0
   - first:
-      213: -5514068652678990023
-    second: "ChatGPT Image 2026\uB144 7\uC6D4 22\uC77C \uC624\uC804 09_56_10_1"
+      213: -7258106107977946673
+    second: Living_Armor _1
   - first:
-      213: 5828031880449973150
-    second: "ChatGPT Image 2026\uB144 7\uC6D4 22\uC77C \uC624\uC804 09_56_10_2"
+      213: -5986887445078276541
+    second: Living_Armor _2
   - first:
-      213: 4424850755143719199
-    second: "ChatGPT Image 2026\uB144 7\uC6D4 22\uC77C \uC624\uC804 09_56_10_3"
+      213: -5790242270791958537
+    second: Living_Armor _3
   - first:
-      213: 6926465491500500205
-    second: "ChatGPT Image 2026\uB144 7\uC6D4 22\uC77C \uC624\uC804 09_56_10_4"
+      213: -7636896712713718298
+    second: Living_Armor _4
   - first:
-      213: 3617134747102495411
-    second: "ChatGPT Image 2026\uB144 7\uC6D4 22\uC77C \uC624\uC804 09_56_10_5"
+      213: 5856417367731472401
+    second: Living_Armor _5
   - first:
-      213: 5617062971328553523
-    second: "ChatGPT Image 2026\uB144 7\uC6D4 22\uC77C \uC624\uC804 09_56_10_6"
+      213: -5836751636725658829
+    second: Living_Armor _6
   - first:
-      213: 6226217398538950396
-    second: "ChatGPT Image 2026\uB144 7\uC6D4 22\uC77C \uC624\uC804 09_56_10_7"
+      213: 6850566653177109692
+    second: Living_Armor _7
   - first:
-      213: -8242247508093533133
-    second: "ChatGPT Image 2026\uB144 7\uC6D4 22\uC77C \uC624\uC804 09_56_10_8"
+      213: -7565058683454388156
+    second: Living_Armor _8
   - first:
-      213: 5055426189996974651
-    second: "ChatGPT Image 2026\uB144 7\uC6D4 22\uC77C \uC624\uC804 09_56_10_9"
+      213: -4570046566465366983
+    second: Living_Armor _9
+  - first:
+      213: 1066528700726360983
+    second: Living_Armor _10
+  - first:
+      213: 3597865296867963984
+    second: Living_Armor _11
+  - first:
+      213: -8798347368367262690
+    second: Living_Armor _12
+  - first:
+      213: 6877849501314593093
+    second: Living_Armor _13
+  - first:
+      213: 7868032435888653670
+    second: Living_Armor _14
+  - first:
+      213: -2444777451744167546
+    second: Living_Armor _15
+  - first:
+      213: -8196833405855784729
+    second: Living_Armor _16
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -124,20 +145,7 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 4
-    buildTarget: Android
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: iOS
+    buildTarget: WebGL
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -153,13 +161,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: "ChatGPT Image 2026\uB144 7\uC6D4 22\uC77C \uC624\uC804 09_56_10_0"
+      name: s
       rect:
         serializedVersion: 2
-        x: 251
-        y: 582
-        width: 433
-        height: 400
+        x: 36
+        y: 686
+        width: 336
+        height: 254
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -168,20 +176,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 931eed06f6e7f0640800000000000000
-      internalID: 5048392724137304377
+      spriteID: 7ff7efd255de4afa0800000000000000
+      internalID: -5790242270791958537
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: "ChatGPT Image 2026\uB144 7\uC6D4 22\uC77C \uC624\uC804 09_56_10_2"
+      name: w1
       rect:
         serializedVersion: 2
-        x: 836
-        y: 588
-        width: 433
-        height: 400
+        x: 33
+        y: 306
+        width: 312
+        height: 317
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -190,20 +198,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: e9b5fd5fd1451e050800000000000000
-      internalID: 5828031880449973150
+      spriteID: 33b89c29f41bffea0800000000000000
+      internalID: -5836751636725658829
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: "ChatGPT Image 2026\uB144 7\uC6D4 22\uC77C \uC624\uC804 09_56_10_5"
+      name: w3
       rect:
         serializedVersion: 2
-        x: 275
-        y: 102
-        width: 395
-        height: 387
+        x: 387
+        y: 303
+        width: 312
+        height: 317
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -212,20 +220,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 3b244c953e4a23230800000000000000
-      internalID: 3617134747102495411
+      spriteID: cbc12c0431a121f50800000000000000
+      internalID: 6850566653177109692
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: "ChatGPT Image 2026\uB144 7\uC6D4 22\uC77C \uC624\uC804 09_56_10_8"
+      name: w
       rect:
         serializedVersion: 2
-        x: 837
-        y: 98
-        width: 433
-        height: 400
+        x: 730
+        y: 301
+        width: 296
+        height: 317
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -234,8 +242,30 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 3348c398f87ad9d80800000000000000
-      internalID: -8242247508093533133
+      spriteID: 44887b37533830790800000000000000
+      internalID: -7565058683454388156
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: d
+      rect:
+        serializedVersion: 2
+        x: 50
+        y: 26
+        width: 481
+        height: 169
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 665056650ddd03d60800000000000000
+      internalID: 7868032435888653670
       vertices: []
       indices: 
       edges: []
@@ -244,7 +274,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 265e9b9a7ee1cd345bb83d25de848536
+    spriteID: 4dc90a5ccc1de51479f17f1bc19ffb5e
     internalID: 0
     vertices: []
     indices: 
@@ -254,17 +284,23 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      "ChatGPT Image 2026\uB144 7\uC6D4 22\uC77C \uC624\uC804 09_56_10_0": 5048392724137304377
-      "ChatGPT Image 2026\uB144 7\uC6D4 22\uC77C \uC624\uC804 09_56_10_1": -5514068652678990023
-      "ChatGPT Image 2026\uB144 7\uC6D4 22\uC77C \uC624\uC804 09_56_10_2": 5828031880449973150
-      "ChatGPT Image 2026\uB144 7\uC6D4 22\uC77C \uC624\uC804 09_56_10_3": 4424850755143719199
-      "ChatGPT Image 2026\uB144 7\uC6D4 22\uC77C \uC624\uC804 09_56_10_4": 6926465491500500205
-      "ChatGPT Image 2026\uB144 7\uC6D4 22\uC77C \uC624\uC804 09_56_10_5": 3617134747102495411
-      "ChatGPT Image 2026\uB144 7\uC6D4 22\uC77C \uC624\uC804 09_56_10_6": 5617062971328553523
-      "ChatGPT Image 2026\uB144 7\uC6D4 22\uC77C \uC624\uC804 09_56_10_7": 6226217398538950396
-      "ChatGPT Image 2026\uB144 7\uC6D4 22\uC77C \uC624\uC804 09_56_10_8": -8242247508093533133
-      "ChatGPT Image 2026\uB144 7\uC6D4 22\uC77C \uC624\uC804 09_56_10_9": 5055426189996974651
-      ItemFrame3_0: -904021054
+      Living_Armor _0: 7879378464570386988
+      Living_Armor _1: -7258106107977946673
+      Living_Armor _10: 1066528700726360983
+      Living_Armor _11: 3597865296867963984
+      Living_Armor _12: -8798347368367262690
+      Living_Armor _13: 6877849501314593093
+      Living_Armor _15: -2444777451744167546
+      Living_Armor _16: -8196833405855784729
+      Living_Armor _2: -5986887445078276541
+      Living_Armor _4: -7636896712713718298
+      Living_Armor _5: 5856417367731472401
+      Living_Armor _9: -4570046566465366983
+      d: 7868032435888653670
+      s: -5790242270791958537
+      w: -7565058683454388156
+      w1: -5836751636725658829
+      w3: 6850566653177109692
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

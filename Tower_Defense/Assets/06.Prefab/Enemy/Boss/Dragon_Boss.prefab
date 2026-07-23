@@ -345,7 +345,7 @@ MonoBehaviour:
   _defaultFlipX: 1
   _wayPoints: []
   _hpBar: {fileID: 7580869575054913285}
-  priority: 0
+  priority: 2
   dotEffectObject: {fileID: 1439172478594923275}
 --- !u!114 &8826004180032480047
 MonoBehaviour:

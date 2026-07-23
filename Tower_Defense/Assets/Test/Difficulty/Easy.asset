@@ -18,90 +18,36 @@ MonoBehaviour:
   - Stage: 1
     bossStage: 0
     SpawnDataList:
-    - Prefab: {fileID: 5722822434754417202, guid: c9dda5e1012cd6549926f2f89d16247e, type: 3}
-      Num: 10
+    - Prefab: {fileID: 5722822434754417202, guid: fc4bb28a4df1a6f42b7d6eb2771397d9, type: 3}
+      Num: 15
       SpawnDelay: 1
       Term: 1
       Exp: 15
-      Money: 10
+      Money: 0
   - Stage: 2
     bossStage: 0
     SpawnDataList:
-    - Prefab: {fileID: 5722822434754417202, guid: 4d87f17dd9ef76c4a933899220278382, type: 3}
-      Num: 10
+    - Prefab: {fileID: 5722822434754417202, guid: cc10a9afd37006049a04cdea28fbee1d, type: 3}
+      Num: 15
       SpawnDelay: 1
       Term: 1
       Exp: 15
-      Money: 10
+      Money: 0
   - Stage: 3
     bossStage: 0
     SpawnDataList:
-    - Prefab: {fileID: 5722822434754417202, guid: e0ed00a839383a243b4fb6a77a3f3b3e, type: 3}
-      Num: 10
+    - Prefab: {fileID: 5722822434754417202, guid: 01d64dfff594a6541b1631f49e4f0577, type: 3}
+      Num: 15
       SpawnDelay: 1
       Term: 1
       Exp: 15
-      Money: 10
+      Money: 0
   - Stage: 4
-    bossStage: 0
-    SpawnDataList:
-    - Prefab: {fileID: 5722822434754417202, guid: adee59ce03cdac44aa9aa98bdc7f3c50, type: 3}
-      Num: 10
-      SpawnDelay: 1
-      Term: 1
-      Exp: 15
-      Money: 10
-  - Stage: 5
-    bossStage: 0
-    SpawnDataList:
-    - Prefab: {fileID: 5722822434754417202, guid: cbfe24845816b5947bfa14a4659f3bf8, type: 3}
-      Num: 10
-      SpawnDelay: 1
-      Term: 1
-      Exp: 15
-      Money: 10
-  - Stage: 6
-    bossStage: 0
-    SpawnDataList:
-    - Prefab: {fileID: 5722822434754417202, guid: 8316885a5b6477f41ab054922bb968cc, type: 3}
-      Num: 10
-      SpawnDelay: 1
-      Term: 1
-      Exp: 15
-      Money: 10
-  - Stage: 7
-    bossStage: 0
-    SpawnDataList:
-    - Prefab: {fileID: 5722822434754417202, guid: 671094d17e882614ca7d5af1b7bc31b7, type: 3}
-      Num: 10
-      SpawnDelay: 1
-      Term: 1
-      Exp: 15
-      Money: 10
-  - Stage: 8
-    bossStage: 0
-    SpawnDataList:
-    - Prefab: {fileID: 5722822434754417202, guid: 9b71f3f3099e8204e9f972953ad70600, type: 3}
-      Num: 10
-      SpawnDelay: 1
-      Term: 1
-      Exp: 15
-      Money: 10
-  - Stage: 9
-    bossStage: 0
-    SpawnDataList:
-    - Prefab: {fileID: 5722822434754417202, guid: 1644f8e4176a1ff43ad51fd67348a86a, type: 3}
-      Num: 10
-      SpawnDelay: 1
-      Term: 1
-      Exp: 15
-      Money: 10
-  - Stage: 10
     bossStage: 1
     SpawnDataList:
-    - Prefab: {fileID: 5722822434754417202, guid: d80ab3dc3368c2c45a6289ea312b2296, type: 3}
-      Num: 10
-      SpawnDelay: 1
-      Term: 1
+    - Prefab: {fileID: 5722822434754417202, guid: 9b653d60c05f3c14cbcd8237ec1d9873, type: 3}
+      Num: 1
+      SpawnDelay: 0
+      Term: 0
       Exp: 15
-      Money: 10
+      Money: 0
