@@ -26,6 +26,8 @@ public abstract class SkillBase : MonoBehaviour
 
         // 공격 속도 보너스가 클수록 간격(쿨타임)이 짧아짐
         float speedMultiplier = 1f + Player.Instance.Stat.GetStat(StatType.AttackSpeed);
+        speedMultiplier = Mathf.Max(0.001f, speedMultiplier);
+
         return baseInterval / speedMultiplier;
     }
 

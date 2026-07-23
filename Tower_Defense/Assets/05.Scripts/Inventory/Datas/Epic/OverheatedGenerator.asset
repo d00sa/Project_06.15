@@ -10,16 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d6eec44603fccd34d9017135b7b2ace0, type: 3}
-  m_Name: AmmunitionSupply
+  m_Name: OverheatedGenerator
   m_EditorClassIdentifier: Assembly-CSharp::ItemData
-  ItemType: 0
+  ItemType: 2
   ID: 0
-  ItemName: "\uD0C4\uC57D\uBCF4\uAE09"
-  Icon: {fileID: 5297682244439202747, guid: 656b609284f297842a9c6745f6d8d8c0, type: 3}
-  Description: 
-  Rarity: 1
-  Modifiers:
-  - StatType: 0
-    Value: 1
+  ItemName: "\uACFC\uC5F4\uB41C \uBC1C\uC804\uAE30"
+  Icon: {fileID: 448563759746355636, guid: 82ab1cb98d30d004e987acc05968b932, type: 3}
+  Description: "10\uCD08\uB3D9\uC548 \uACF5\uC18D \uBC84\uD504 \uC774\uD6C4 5\uCD08\uAC04
+    \uD504\uB9AC\uC9D5 \uB429\uB2C8\uB2E4."
+  Rarity: 3
+  Modifiers: []
   LootTable: {fileID: 0}
-  Effect: {fileID: 0}
+  Effect: {fileID: 11400000, guid: bcf6419f3e20076419cfe21461a1d5a2, type: 2}

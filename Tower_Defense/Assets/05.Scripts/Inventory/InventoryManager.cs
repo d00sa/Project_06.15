@@ -78,8 +78,11 @@ public class InventoryManager : MonoBehaviour
                 break;
             //소비템
             case ItemType.Consumable: {
-
-
+                    if (item.Data.Effect != null)
+                    {
+                        item.Data.Effect.Execute();
+                        Remove(item);
+                    }
                 }
                 break;
         }

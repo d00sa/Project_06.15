@@ -10,16 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d6eec44603fccd34d9017135b7b2ace0, type: 3}
-  m_Name: AmmunitionSupply
+  m_Name: Clockwork
   m_EditorClassIdentifier: Assembly-CSharp::ItemData
   ItemType: 0
   ID: 0
-  ItemName: "\uD0C4\uC57D\uBCF4\uAE09"
-  Icon: {fileID: 5297682244439202747, guid: 656b609284f297842a9c6745f6d8d8c0, type: 3}
+  ItemName: "\uD0DC\uC5FD\uC7A5\uCE58"
+  Icon: {fileID: 6413591311797324798, guid: 221ec0cafeb7bf749a88a7470f47d783, type: 3}
   Description: 
-  Rarity: 1
+  Rarity: 2
   Modifiers:
-  - StatType: 0
-    Value: 1
+  - StatType: 1
+    Value: 0.3
   LootTable: {fileID: 0}
   Effect: {fileID: 0}

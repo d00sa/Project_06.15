@@ -28,4 +28,7 @@ public class ItemData : ScriptableObject
 
     [Header("랜덤 뽑기 정보")]
     public LootTable LootTable;
+
+    [Header("소모품 정보")]
+    public ConsumableEffect Effect;
 }

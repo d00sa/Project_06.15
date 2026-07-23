@@ -10,16 +10,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d6eec44603fccd34d9017135b7b2ace0, type: 3}
-  m_Name: AmmunitionSupply
+  m_Name: GoldCogwheel
   m_EditorClassIdentifier: Assembly-CSharp::ItemData
   ItemType: 0
   ID: 0
-  ItemName: "\uD0C4\uC57D\uBCF4\uAE09"
-  Icon: {fileID: 5297682244439202747, guid: 656b609284f297842a9c6745f6d8d8c0, type: 3}
+  ItemName: "\uD669\uAE08 \uD1B1\uB2C8\uBC14\uD034"
+  Icon: {fileID: 3443855190058697531, guid: 82ab1cb98d30d004e987acc05968b932, type: 3}
   Description: 
-  Rarity: 1
+  Rarity: 4
   Modifiers:
-  - StatType: 0
+  - StatType: 1
     Value: 1
+  - StatType: 6
+    Value: 0.25
   LootTable: {fileID: 0}
   Effect: {fileID: 0}

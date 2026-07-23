@@ -59,8 +59,14 @@ public class InventorySlot : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
             string statValue = mod.Value.ToString();
 
             // 퍼센트로 표시할 스탯들 처리
-            if (mod.StatType == StatType.EXPGained || mod.StatType == StatType.CritChance || mod.StatType == StatType.CritDamageMultiplier)
+            if (mod.StatType == StatType.EXPGained ||
+                mod.StatType == StatType.CritChance ||
+                mod.StatType == StatType.CritDamageMultiplier ||
+                mod.StatType == StatType.AttackSpeed ||
+                mod.StatType == StatType.Luck)
+            {
                 statValue = (mod.Value * 100).ToString("F0") + "%";
+            }
 
             sb.Append($"<color={colorHex}>{statName} {sign}{statValue}</color>");
 
@@ -82,6 +88,7 @@ public class InventorySlot : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
             case StatType.EXPGained: return "경험치 획득량";
             case StatType.CritChance: return "치명타 확률";
             case StatType.CritDamageMultiplier: return "치명타 데미지";
+            case StatType.Luck: return "행운";
             default: return type.ToString();
         }
     }
@@ -117,7 +124,7 @@ public class InventorySlot : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
 
     public void OnPointerClick(PointerEventData eventData)
     {
-        if (_item.Type == ItemType.RandomBox)
+        if (_item.Type == ItemType.RandomBox || _item.Type == ItemType.Consumable)
             InventoryManager.Instance.Use(_item);
     }
 

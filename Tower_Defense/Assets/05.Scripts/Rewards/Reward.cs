@@ -61,7 +61,12 @@ public class Reward : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, 
             string colorHex = mod.Value > 0 ? "#55FF55" : "#FF5555";
 
             string statValue = mod.Value.ToString();
-            if (mod.StatType == StatType.EXPGained || mod.StatType == StatType.CritChance || mod.StatType == StatType.CritDamageMultiplier)
+            if (mod.StatType == StatType.EXPGained ||
+                mod.StatType == StatType.CritChance ||
+                mod.StatType == StatType.CritDamageMultiplier ||
+                mod.StatType == StatType.Luck ||
+                mod.StatType == StatType.AttackSpeed
+                )
                 statValue = (mod.Value * 100).ToString("F0") + "%"; // 퍼센트로 표시
 
             sb.AppendLine($"<color={colorHex}>{statName} {sign}{statValue}</color>");
@@ -80,6 +85,7 @@ public class Reward : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, 
             case StatType.EXPGained: return "경험치 획득량";
             case StatType.CritChance: return "치명타 확률";
             case StatType.CritDamageMultiplier: return "치명타 데미지";
+            case StatType.Luck: return "행운";
             default: return type.ToString();
         }
     }
