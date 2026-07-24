@@ -10,16 +10,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d6eec44603fccd34d9017135b7b2ace0, type: 3}
-  m_Name: Pylon
+  m_Name: Uranium Ammo
   m_EditorClassIdentifier: Assembly-CSharp::ItemData
   ItemType: 0
-  ID: 5
-  ItemName: "\uC218\uC815\uD0D1"
-  Icon: {fileID: 4074737518167364187, guid: 656b609284f297842a9c6745f6d8d8c0, type: 3}
+  ID: 0
+  ItemName: "\uC6B0\uB77C\uB284 \uD0C4"
+  Icon: {fileID: -2721602280743993024, guid: a6a2ab36eec46a54a80501e09d0b08c5, type: 3}
   Description: 
-  Rarity: 1
+  Rarity: 4
   Modifiers:
-  - StatType: 5
-    Value: 0.1
+  - StatType: 0
+    Value: 5
+  - StatType: 3
+    Value: -0.5
   LootTable: {fileID: 0}
   Effect: {fileID: 0}

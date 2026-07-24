@@ -10,16 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d6eec44603fccd34d9017135b7b2ace0, type: 3}
-  m_Name: Pylon
+  m_Name: WheelOfFortune
   m_EditorClassIdentifier: Assembly-CSharp::ItemData
-  ItemType: 0
-  ID: 5
-  ItemName: "\uC218\uC815\uD0D1"
-  Icon: {fileID: 4074737518167364187, guid: 656b609284f297842a9c6745f6d8d8c0, type: 3}
-  Description: 
-  Rarity: 1
-  Modifiers:
-  - StatType: 5
-    Value: 0.1
+  ItemType: 2
+  ID: 0
+  ItemName: 
+  Icon: {fileID: -5326703000338352748, guid: 9432be089ecb76c4f91d316b27f260bb, type: 3}
+  Description: "\uD589\uC6B4, \uACBD\uD5D8\uCE58 \uCD94\uAC00 \uD68D\uB4DD\uB7C9\uC744
+    10\uCD08\uAC04 2\uBC30 \uC99D\uAC00 \uC2DC\uD0B5\uB2C8\uB2E4"
+  Rarity: 4
+  Modifiers: []
   LootTable: {fileID: 0}
-  Effect: {fileID: 0}
+  Effect: {fileID: 11400000, guid: 27884eb3ee186724e988c8621f0dd740, type: 2}

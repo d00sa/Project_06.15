@@ -21,19 +21,13 @@ MonoBehaviour:
   Modifiers:
   - StatType: 6
     Value: -0.5
+  - StatType: 5
+    Value: -0.2
   - StatType: 0
-    Value: 2
+    Value: 3
   - StatType: 1
     Value: 0.5
   - StatType: 2
-    Value: 0.5
-  - StatType: 3
-    Value: 0.5
-  - StatType: 3
-    Value: 0.1
-  - StatType: 4
-    Value: 0.1
-  - StatType: 5
-    Value: -0.2
+    Value: 0.7
   LootTable: {fileID: 0}
   Effect: {fileID: 0}

@@ -22,27 +22,26 @@ MonoBehaviour:
   levelStats:
   - damage: 10
     fireRate: 2
-    speed: 20
+    speed: 30
     coolTime: 0
     range: 5
   - damage: 10
     fireRate: 4
-    speed: 20
+    speed: 30
     coolTime: 0
     range: 5
   - damage: 10
     fireRate: 6
-    speed: 20
+    speed: 30
     coolTime: 0
     range: 5
   - damage: 10
     fireRate: 8
-    speed: 20
+    speed: 30
     coolTime: 0
     range: 5
   - damage: 10
     fireRate: 10
-    speed: 20
+    speed: 30
     coolTime: 0
     range: 5
-  damageBonusType: 0

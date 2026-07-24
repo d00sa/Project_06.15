@@ -71,6 +71,8 @@ public class GameManager : MonoBehaviour
     public bool Lose = false;
     public float CurSpeed = 1.0f;
 
+    public bool IsTimeStopped = false;
+
     void Awake()
     {
         if (Instance == null) {
@@ -133,19 +135,25 @@ public class GameManager : MonoBehaviour
                 break;
             case GameState.WaitStage:
             case GameState.StartStage: {
-                    _timeTimer += Time.deltaTime;
 
-                    if (_timeTimer >= 1f) {
-                        CurTime--;
-                        _timeTimer -= 1f;
+                    if (!IsTimeStopped)
+                    {
+                        _timeTimer += Time.deltaTime;
 
-                        if (CurTime <= 0) {
-                            // 시간이 다 되면 다음 상태로 전환
-                            if (Current == GameState.WaitStage)
-                                ChangeState(GameState.StartStage);
+                        if (_timeTimer >= 1f)
+                        {
+                            CurTime--;
+                            _timeTimer -= 1f;
 
-                            else if (Current == GameState.StartStage)
-                                ChangeState(GameState.GameJudge);
+                            if (CurTime <= 0)
+                            {
+                                // 시간이 다 되면 다음 상태로 전환
+                                if (Current == GameState.WaitStage)
+                                    ChangeState(GameState.StartStage);
+
+                                else if (Current == GameState.StartStage)
+                                    ChangeState(GameState.GameJudge);
+                            }
                         }
                     }
                 }

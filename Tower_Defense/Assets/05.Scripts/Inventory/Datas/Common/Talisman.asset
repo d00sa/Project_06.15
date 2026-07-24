@@ -10,16 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d6eec44603fccd34d9017135b7b2ace0, type: 3}
-  m_Name: Pylon
+  m_Name: Talisman
   m_EditorClassIdentifier: Assembly-CSharp::ItemData
   ItemType: 0
-  ID: 5
-  ItemName: "\uC218\uC815\uD0D1"
-  Icon: {fileID: 4074737518167364187, guid: 656b609284f297842a9c6745f6d8d8c0, type: 3}
+  ID: 0
+  ItemName: "\uD0C8\uB9AC\uC2A4\uB9CC"
+  Icon: {fileID: -7963260353470167555, guid: b831a8795a52fad459064a0304b9ba4a, type: 3}
   Description: 
   Rarity: 1
   Modifiers:
-  - StatType: 5
+  - StatType: 6
     Value: 0.1
   LootTable: {fileID: 0}
   Effect: {fileID: 0}

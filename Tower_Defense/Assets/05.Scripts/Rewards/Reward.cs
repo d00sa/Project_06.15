@@ -48,6 +48,17 @@ public class Reward : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, 
 
     private string GenerateStatDescription(ItemData item)
     {
+        bool isLongText = item.ItemType == ItemType.Consumable ||
+                          (item.ItemType == ItemType.Equipment && item.Modifiers != null && item.Modifiers.Count >= 3);
+
+        string sizeOpen = isLongText ? "<size=80%>" : "";
+        string sizeClose = isLongText ? "</size>" : "";
+
+        if (item.ItemType == ItemType.Consumable || item.ItemType == ItemType.RandomBox)
+        {
+            return $"{sizeOpen}{item.Description}{sizeClose}";
+        }
+
         System.Text.StringBuilder sb = new System.Text.StringBuilder();
 
         if (item.Modifiers == null || item.Modifiers.Count == 0)
@@ -72,7 +83,7 @@ public class Reward : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, 
             sb.AppendLine($"<color={colorHex}>{statName} {sign}{statValue}</color>");
         }
 
-        return sb.ToString().TrimEnd();
+        return $"{sizeOpen}{sb.ToString().TrimEnd()}{sizeClose}";
     }
 
     private string GetStatNameKorean(StatType type)

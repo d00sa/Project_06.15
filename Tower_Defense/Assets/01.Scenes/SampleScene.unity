@@ -3647,6 +3647,7 @@ MonoBehaviour:
   Win: 0
   Lose: 0
   CurSpeed: 1
+  IsTimeStopped: 0
 --- !u!4 &270040854
 Transform:
   m_ObjectHideFlags: 0
@@ -5101,6 +5102,7 @@ MonoBehaviour:
   - {fileID: 888657899}
   _globalDropRate: 10
   _chestDropRate: 5
+  _hourglassDropRate: 5
   _DiceDropRate: 10
   _rerollCount: 0
 --- !u!4 &423521819

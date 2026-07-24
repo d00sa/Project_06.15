@@ -90,6 +90,13 @@ public class Enemy : MonoBehaviour, IPoolable
     {
         if (IsDead)
             return;
+
+        if (GameManager.Instance != null && GameManager.Instance.IsTimeStopped)
+        {
+            _machine.ChangeState(StateType.Idle);
+            return;
+        }
+
         // 넉백 처리 로직: 속도에 따라 부드럽게 감속되며 밀려남
         if (_knockbackVelocity.sqrMagnitude > 0.01f)
         {

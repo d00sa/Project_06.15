@@ -13,6 +13,7 @@ public class RewardManager : MonoBehaviour
     [SerializeField] List<Reward> _rewards;
     [SerializeField] private float _globalDropRate = 10f;
     [SerializeField] float _chestDropRate = 5f;
+    [SerializeField] float _hourglassDropRate = 5f;
     [SerializeField] float _DiceDropRate = 10f;
 
     [Header("[리롤 시스템]")]
@@ -67,15 +68,20 @@ public class RewardManager : MonoBehaviour
             return;
         }
 
-        float randomValue = Random.Range(0f, _chestDropRate + _DiceDropRate);
+        float randomValue = Random.Range(0f, _chestDropRate + _DiceDropRate + _hourglassDropRate);
 
         if (randomValue <= _chestDropRate) {
             DropReward(enemy.transform, "Treasure_Chest");
+        }
+        else if (randomValue <= _chestDropRate + _hourglassDropRate)
+        {
+            DropReward(enemy.transform, "Hourglass");
         }
         else if (randomValue <= _chestDropRate + _DiceDropRate)
         {
             DropReward(enemy.transform, "RerollDice");
         }
+
     }
 
     public void SelectItem(ItemData item)

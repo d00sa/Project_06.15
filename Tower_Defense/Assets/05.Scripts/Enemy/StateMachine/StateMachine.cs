@@ -14,6 +14,7 @@ public class StateMachine : MonoBehaviour
     #region private
     Dictionary<StateType, StateBase> _states = new Dictionary<StateType, StateBase>();
     StateBase _curStates;
+    private Animator _animator;
     #endregion
 
     private void Awake()
@@ -23,6 +24,18 @@ public class StateMachine : MonoBehaviour
 
     private void Update()
     {
+        if (GameManager.Instance != null && GameManager.Instance.IsTimeStopped)
+        {
+            if (_animator.speed != 0f)
+                _animator.speed = 0f; // 애니메이션 프레임 정지
+
+            return;
+        }
+        else
+        {
+            if (_animator.speed == 0f)
+                _animator.speed = 1f; // 시간 정지가 풀리면 애니메이션 속도 원상복구
+        }
         ChangeState(_curStates.Update());
     }
 
@@ -43,6 +56,8 @@ public class StateMachine : MonoBehaviour
 
     void Init()
     {
+        _animator = GetComponent<Animator>();
+
         for (StateType state = StateType.Idle; state < StateType.EOF; state++)
             AddState(state);
 
