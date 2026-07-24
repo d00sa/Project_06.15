@@ -36,7 +36,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 1.15}
+  m_AnchoredPosition: {x: 0, y: 1.65}
   m_SizeDelta: {x: 16, y: 3}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &5108039116339438770
@@ -243,7 +243,7 @@ GameObject:
   - component: {fileID: -8222634222657749162}
   - component: {fileID: -5395861223104540064}
   m_Layer: 6
-  m_Name: Skeleton_Giant
+  m_Name: Leaper
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -259,7 +259,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 7429479432718106716}
@@ -315,12 +315,12 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 1
   m_MaskInteraction: 0
-  m_Sprite: {fileID: -7021505876318606439, guid: 32c9cb4205be22a42be258dec0aa000c, type: 3}
+  m_Sprite: {fileID: -5615331165344776544, guid: 9d5f2227f27ffe84aa96ad69f35edfe1, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 2.1, y: 2.06}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -337,15 +337,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 273359e8b5adf5b418c55f44c10acbe3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Enemy
-  hpMax: 100
+  hpMax: 500
   _hp: 0
   speed: 3
   IsDead: 0
-  _isBoss: 0
-  _defaultFlipX: 0
+  _isBoss: 1
+  _defaultFlipX: 1
   _wayPoints: []
   _hpBar: {fileID: 7580869575054913285}
-  priority: 0
+  priority: 2
   dotEffectObject: {fileID: 1439172478594923275}
 --- !u!114 &8826004180032480047
 MonoBehaviour:
@@ -370,7 +370,7 @@ Animator:
   m_GameObject: {fileID: 5722822434754417202}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 22100000, guid: cbe319066b2485745aaa3bc72b09ef66, type: 2}
+  m_Controller: {fileID: 22100000, guid: 01414d031d22cc74bbc96ea0d82d34bb, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -420,13 +420,13 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.8359375, y: 1.5625}
-    newSize: {x: 1, y: 1}
+    oldSize: {x: 2.1, y: 2.06}
+    newSize: {x: 2.1, y: 2.06}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 2, y: 1.8}
+  m_Size: {x: 1.3, y: 2}
   m_EdgeRadius: 0
 --- !u!1 &8629287931528606937
 GameObject:

@@ -1,0 +1,350 @@
+fileFormatVersion: 2
+guid: fc357166072c138449e354cf91cebb0c
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 1780383851907821279
+    second: Demon_Alpha_0
+  - first:
+      213: -5759215217707751754
+    second: Demon_Alpha_1
+  - first:
+      213: 5259546082862524713
+    second: Demon_Alpha_2
+  - first:
+      213: -8973498145957960579
+    second: Demon_Alpha_3
+  - first:
+      213: -3461962849665959653
+    second: Demon_Alpha_4
+  - first:
+      213: 5579726385545529791
+    second: Demon_Alpha_5
+  - first:
+      213: 2538355630226616430
+    second: Demon_Alpha_6
+  - first:
+      213: 39699525142385539
+    second: Demon_Alpha_7
+  - first:
+      213: 2904755543300073472
+    second: Demon_Alpha_8
+  - first:
+      213: 5267252334842497244
+    second: Demon_Alpha_9
+  - first:
+      213: -1340685100799934236
+    second: Demon_Alpha_10
+  - first:
+      213: -9023873546319320246
+    second: Demon_Alpha_11
+  - first:
+      213: 7683650634617621769
+    second: Demon_Alpha_12
+  - first:
+      213: 3707883493057569812
+    second: Demon_Alpha_13
+  - first:
+      213: -7467224857914613815
+    second: Demon_Alpha_14
+  - first:
+      213: 7478733483419498300
+    second: Demon_Alpha_15
+  - first:
+      213: 4289416560721072562
+    second: Demon_Alpha_16
+  - first:
+      213: 4047251898235913525
+    second: Demon_Alpha_17
+  - first:
+      213: 1979126333645626383
+    second: Demon_Alpha_18
+  - first:
+      213: -3637644462992881044
+    second: Demon_Alpha_19
+  - first:
+      213: -3553275094205430423
+    second: Demon_Alpha_20
+  - first:
+      213: 424501910777249271
+    second: Demon_Alpha_21
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: w4
+      rect:
+        serializedVersion: 2
+        x: 1168
+        y: 357
+        width: 317
+        height: 232
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6b6618be5482310b0800000000000000
+      internalID: -5759215217707751754
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: s
+      rect:
+        serializedVersion: 2
+        x: 85
+        y: 684
+        width: 263
+        height: 228
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d74ac89dafab77380800000000000000
+      internalID: -8973498145957960579
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: w1
+      rect:
+        serializedVersion: 2
+        x: 65
+        y: 358
+        width: 332
+        height: 219
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 90d869eda8fc1aa60800000000000000
+      internalID: 7683650634617621769
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: w2
+      rect:
+        serializedVersion: 2
+        x: 436
+        y: 345
+        width: 335
+        height: 199
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4142b38446c057330800000000000000
+      internalID: 3707883493057569812
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: w3
+      rect:
+        serializedVersion: 2
+        x: 802
+        y: 341
+        width: 342
+        height: 206
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9cf58060e861f5890800000000000000
+      internalID: -7467224857914613815
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: d
+      rect:
+        serializedVersion: 2
+        x: 101
+        y: 52
+        width: 396
+        height: 121
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7fd3a5e1d3224e500800000000000000
+      internalID: 424501910777249271
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 95bbb61d4acef854caa92c8667546aff
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Demon_Alpha_0: 1780383851907821279
+      Demon_Alpha_10: -1340685100799934236
+      Demon_Alpha_11: -9023873546319320246
+      Demon_Alpha_15: 7478733483419498300
+      Demon_Alpha_16: 4289416560721072562
+      Demon_Alpha_17: 4047251898235913525
+      Demon_Alpha_18: 1979126333645626383
+      Demon_Alpha_19: -3637644462992881044
+      Demon_Alpha_2: 5259546082862524713
+      Demon_Alpha_20: -3553275094205430423
+      Demon_Alpha_4: -3461962849665959653
+      Demon_Alpha_5: 5579726385545529791
+      Demon_Alpha_6: 2538355630226616430
+      Demon_Alpha_7: 39699525142385539
+      Demon_Alpha_8: 2904755543300073472
+      Demon_Alpha_9: 5267252334842497244
+      d: 424501910777249271
+      s: -8973498145957960579
+      w1: 7683650634617621769
+      w2: 3707883493057569812
+      w3: -7467224857914613815
+      w4: -5759215217707751754
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
