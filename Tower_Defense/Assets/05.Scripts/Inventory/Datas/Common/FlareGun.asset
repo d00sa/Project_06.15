@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: FlareGun
   m_EditorClassIdentifier: Assembly-CSharp::ItemData
   ItemType: 0
-  ID: 0
+  ID: 3
   ItemName: "\uD50C\uB808\uC5B4\uAC74"
   Icon: {fileID: -1582553726783372906, guid: 221ec0cafeb7bf749a88a7470f47d783, type: 3}
   Description: 

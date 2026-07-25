@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: FieldArtillery
   m_EditorClassIdentifier: Assembly-CSharp::ItemData
   ItemType: 0
-  ID: 0
+  ID: 8
   ItemName: "\uC57C\uD3EC"
   Icon: {fileID: -456111640305560167, guid: 221ec0cafeb7bf749a88a7470f47d783, type: 3}
   Description: 

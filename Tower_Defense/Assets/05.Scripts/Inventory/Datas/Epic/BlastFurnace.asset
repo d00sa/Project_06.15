@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: BlastFurnace
   m_EditorClassIdentifier: Assembly-CSharp::ItemData
   ItemType: 0
-  ID: 2
+  ID: 13
   ItemName: "\uC6A9\uAD11\uB85C"
   Icon: {fileID: 8431055983976289097, guid: 656b609284f297842a9c6745f6d8d8c0, type: 3}
   Description: 
@@ -22,3 +22,4 @@ MonoBehaviour:
   - StatType: 5
     Value: 0.3
   LootTable: {fileID: 0}
+  Effect: {fileID: 0}

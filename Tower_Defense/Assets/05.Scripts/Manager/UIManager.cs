@@ -177,7 +177,7 @@ public class UIManager : MonoBehaviour
         Player.Instance.AddExp(0);
     }
     /// <summary> 아이템 정보창 열기 </summary>
-    public void ShowItemInfo(ItemData data, RectTransform slotPos)
+    public void ShowItemInfo(ItemData data, RectTransform slotPos, string description)
     {
         if (_itemInfoPanel.localScale == Vector3.one) 
             return;
@@ -192,8 +192,8 @@ public class UIManager : MonoBehaviour
 
         _icon.sprite = data.Icon;
         _name.text = data.ItemName;
-        _description.text = data.Description;
-        //아마 스텟 설명도 들어갈 듯.
+        _type.text = data.ItemType.ToString();
+        _description.text = description;
     }
     /// <summary> 스킬 정보창 열기 </summary>
     public void ShowSkillInfo(ActiveSkill data, RectTransform slotPos)

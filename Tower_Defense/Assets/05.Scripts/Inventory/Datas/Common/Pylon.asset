@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Pylon
   m_EditorClassIdentifier: Assembly-CSharp::ItemData
   ItemType: 0
-  ID: 5
+  ID: 4
   ItemName: "\uC218\uC815\uD0D1"
   Icon: {fileID: 4074737518167364187, guid: 656b609284f297842a9c6745f6d8d8c0, type: 3}
   Description: 

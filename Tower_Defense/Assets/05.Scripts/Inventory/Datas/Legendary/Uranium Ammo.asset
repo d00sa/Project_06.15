@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Uranium Ammo
   m_EditorClassIdentifier: Assembly-CSharp::ItemData
   ItemType: 0
-  ID: 0
+  ID: 20
   ItemName: "\uC6B0\uB77C\uB284 \uD0C4"
   Icon: {fileID: -2721602280743993024, guid: a6a2ab36eec46a54a80501e09d0b08c5, type: 3}
   Description: 

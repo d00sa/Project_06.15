@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: AutoLoader
   m_EditorClassIdentifier: Assembly-CSharp::ItemData
   ItemType: 0
-  ID: 0
+  ID: 1
   ItemName: "\uC790\uB3D9 \uAE09\uD0C4\uAE30"
   Icon: {fileID: -6619249654943398645, guid: b831a8795a52fad459064a0304b9ba4a, type: 3}
   Description: 

@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: a828eda34a044d1499e16c1633cf6eb6
+guid: 23e20cbfa68effd499c4a58bc55d533d
 TextureImporter:
   internalIDToNameTable:
   - first:
@@ -65,21 +65,6 @@ TextureImporter:
   - first:
       213: 2883100367355995488
     second: Goblin_20
-  - first:
-      213: 1339987815390419552
-    second: Goblin_21
-  - first:
-      213: -6310918314452132059
-    second: Goblin_22
-  - first:
-      213: 1739241052919130783
-    second: Goblin_23
-  - first:
-      213: -8005479226253832512
-    second: Goblin_24
-  - first:
-      213: -5190977205365140737
-    second: Goblin_25
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -126,7 +111,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 128
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -188,35 +173,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: W4
+      name: d
       rect:
         serializedVersion: 2
-        x: 1145
-        y: 373
-        width: 280
-        height: 230
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: ad3fc6b9b277d9e00800000000000000
-      internalID: 1053128917049471962
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: I
-      rect:
-        serializedVersion: 2
-        x: 78
-        y: 691
-        width: 300
-        height: 225
+        x: 294
+        y: 434
+        width: 200
+        height: 133
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -232,13 +195,35 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: W1
+      name: w1
       rect:
         serializedVersion: 2
-        x: 106
-        y: 372
-        width: 280
-        height: 230
+        x: 42
+        y: 250
+        width: 163
+        height: 143
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ccdd0d3821202e6f0800000000000000
+      internalID: -656960317098500660
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: w2
+      rect:
+        serializedVersion: 2
+        x: 222
+        y: 250
+        width: 162
+        height: 143
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -254,13 +239,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: W2
+      name: w3
       rect:
         serializedVersion: 2
-        x: 449
-        y: 372
-        width: 280
-        height: 230
+        x: 395
+        y: 250
+        width: 159
+        height: 142
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -276,13 +261,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: W3
+      name: w4
       rect:
         serializedVersion: 2
-        x: 793
-        y: 371
-        width: 280
-        height: 230
+        x: 567
+        y: 250
+        width: 157
+        height: 143
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -298,13 +283,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ST
+      name: w5
       rect:
         serializedVersion: 2
-        x: 82
-        y: 47
-        width: 310
-        height: 220
+        x: 730
+        y: 250
+        width: 151
+        height: 140
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -313,8 +298,52 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: ff29f051cb1f5f7b0800000000000000
-      internalID: -5190977205365140737
+      spriteID: 4c1f993adb096d660800000000000000
+      internalID: 7410269381052723652
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: w6
+      rect:
+        serializedVersion: 2
+        x: 884
+        y: 249
+        width: 140
+        height: 141
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 69034e2906a926f80800000000000000
+      internalID: -8114753838996246378
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: s
+      rect:
+        serializedVersion: 2
+        x: 54
+        y: 32
+        width: 212
+        height: 134
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0656d004284d20820800000000000000
+      internalID: 2883100367355995488
       vertices: []
       indices: 
       edges: []
@@ -323,7 +352,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: a7665f5c6a353504fbeb76899cb79f1b
+    spriteID: 353c3a96626d79f468f78d50eada9aed
     internalID: 0
     vertices: []
     indices: 
@@ -335,30 +364,25 @@ TextureImporter:
     nameFileIdTable:
       Goblin_0: 8749302817991680212
       Goblin_1: 4475375876111409798
-      Goblin_13: 7410269381052723652
-      Goblin_14: -8114753838996246378
       Goblin_15: 1034063651283405445
       Goblin_16: -9156974997270642521
       Goblin_17: -7686792515550203226
       Goblin_18: -1065477361527426700
       Goblin_19: 4182151675806846688
       Goblin_2: 3386398104049418772
-      Goblin_20: 2883100367355995488
-      Goblin_21: 1339987815390419552
-      Goblin_22: -6310918314452132059
-      Goblin_23: 1739241052919130783
-      Goblin_24: -8005479226253832512
+      Goblin_3: 1053128917049471962
       Goblin_4: -6101537807208611024
       Goblin_6: -5397750920153071603
       Goblin_7: 4284684421114291845
       Goblin_8: -882355604934026266
-      Goblin_9: -656960317098500660
-      I: -5209251823262861144
-      ST: -5190977205365140737
-      W1: -7558616364029136357
-      W2: 5637013169233031891
-      W3: -2433050406715337987
-      W4: 1053128917049471962
+      d: -5209251823262861144
+      s: 2883100367355995488
+      w1: -656960317098500660
+      w2: -7558616364029136357
+      w3: 5637013169233031891
+      w4: -2433050406715337987
+      w5: 7410269381052723652
+      w6: -8114753838996246378
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -1285,6 +1285,7 @@ MonoBehaviour:
   Win: 0
   Lose: 0
   CurSpeed: 1
+  IsTimeStopped: 0
 --- !u!4 &962312756
 Transform:
   m_ObjectHideFlags: 0

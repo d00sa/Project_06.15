@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Clockwork
   m_EditorClassIdentifier: Assembly-CSharp::ItemData
   ItemType: 0
-  ID: 0
+  ID: 7
   ItemName: "\uD0DC\uC5FD\uC7A5\uCE58"
   Icon: {fileID: 6413591311797324798, guid: 221ec0cafeb7bf749a88a7470f47d783, type: 3}
   Description: 

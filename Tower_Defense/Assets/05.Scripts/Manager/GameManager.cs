@@ -70,7 +70,6 @@ public class GameManager : MonoBehaviour
     public bool Win = false;
     public bool Lose = false;
     public float CurSpeed = 1.0f;
-
     public bool IsTimeStopped = false;
 
     void Awake()

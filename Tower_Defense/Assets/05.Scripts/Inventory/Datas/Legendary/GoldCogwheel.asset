@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: GoldCogwheel
   m_EditorClassIdentifier: Assembly-CSharp::ItemData
   ItemType: 0
-  ID: 0
+  ID: 18
   ItemName: "\uD669\uAE08 \uD1B1\uB2C8\uBC14\uD034"
   Icon: {fileID: 3443855190058697531, guid: 82ab1cb98d30d004e987acc05968b932, type: 3}
   Description: 

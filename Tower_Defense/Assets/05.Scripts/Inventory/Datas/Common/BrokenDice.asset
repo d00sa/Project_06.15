@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: BrokenDice
   m_EditorClassIdentifier: Assembly-CSharp::ItemData
   ItemType: 0
-  ID: 0
+  ID: 2
   ItemName: "\uBD80\uC11C\uC9C4 \uC8FC\uC0AC\uC704"
   Icon: {fileID: -6490806236519438614, guid: 221ec0cafeb7bf749a88a7470f47d783, type: 3}
   Description: 

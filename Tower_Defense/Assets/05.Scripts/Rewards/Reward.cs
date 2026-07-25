@@ -111,7 +111,7 @@ public class Reward : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, 
         if (_item is null)
             return;
 
-        UIManager.Instance.ShowItemInfo(_item, _pos);
+        UIManager.Instance.ShowItemInfo(_item, _pos, _description.text);
     }
 
     public void OnPointerExit(PointerEventData eventData)
@@ -141,7 +141,7 @@ public class Reward : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, 
         yield return new WaitForSeconds(0.5f);
 
         if (_item != null)
-            UIManager.Instance.ShowItemInfo(_item, _pos);
+            UIManager.Instance.ShowItemInfo(_item, _pos, _description.text);
     }
 }
 

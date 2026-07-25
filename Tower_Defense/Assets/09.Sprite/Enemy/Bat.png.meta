@@ -95,12 +95,6 @@ TextureImporter:
   - first:
       213: -4818874195688012542
     second: Bat_30
-  - first:
-      213: -2340803120497525164
-    second: Bat_31
-  - first:
-      213: -1221191594444246648
-    second: Bat_32
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -147,7 +141,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 128
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -209,13 +203,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Walk4
+      name: w4
       rect:
         serializedVersion: 2
-        x: 1146
-        y: 410
-        width: 320
-        height: 180
+        x: 762
+        y: 276
+        width: 235
+        height: 110
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -224,20 +218,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: f3abafd8dbd330870800000000000000
-      internalID: 8647823593821616703
+      spriteID: c63e5cbc14aaea900800000000000000
+      internalID: 697682191857345388
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Idle
+      name: d
       rect:
         serializedVersion: 2
-        x: 62
-        y: 735
-        width: 380
-        height: 180
+        x: 76
+        y: 478
+        width: 293
+        height: 118
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -246,20 +240,42 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: f82fdf4f6f6cee0f0800000000000000
-      internalID: -1085711696175172977
+      spriteID: 9672337c46b536580800000000000000
+      internalID: -8835117555573905559
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Walk1
+      name: w1
       rect:
         serializedVersion: 2
-        x: 88
-        y: 414
-        width: 320
-        height: 180
+        x: 43
+        y: 277
+        width: 236
+        height: 121
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 33542279723d65070800000000000000
+      internalID: 8094889547237836083
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: w2
+      rect:
+        serializedVersion: 2
+        x: 282
+        y: 277
+        width: 248
+        height: 111
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -275,13 +291,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Walk2
+      name: w3
       rect:
         serializedVersion: 2
-        x: 451
-        y: 416
-        width: 320
-        height: 180
+        x: 541
+        y: 267
+        width: 203
+        height: 110
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -297,13 +313,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Walk3
+      name: s
       rect:
         serializedVersion: 2
-        x: 790
-        y: 413
-        width: 320
-        height: 180
+        x: 48
+        y: 40
+        width: 241
+        height: 131
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -312,30 +328,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 375edf81e393d60d0800000000000000
-      internalID: -3428020802489031309
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Stunned
-      rect:
-        serializedVersion: 2
-        x: 93
-        y: 48
-        width: 293
-        height: 212
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 45e7e99c6fbc38fd0800000000000000
-      internalID: -2340803120497525164
+      spriteID: cd215534d3566dc00800000000000000
+      internalID: 925038087268274908
       vertices: []
       indices: 
       edges: []
@@ -344,7 +338,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 8bd0906d336b95041b4eca44f3043744
+    spriteID: 3e9a559c71a6efe42a13307ddefb14d5
     internalID: 0
     vertices: []
     indices: 
@@ -354,15 +348,15 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
+      Bat_0: 8647823593821616703
       Bat_1: 5681806813702538305
       Bat_10: -9149983406214727455
       Bat_11: 8822500520823344939
-      Bat_12: 8094889547237836083
+      Bat_15: -3428020802489031309
       Bat_16: 6413210283945640860
       Bat_17: 2325743687340750653
       Bat_18: 3320426517208521458
       Bat_19: -2066187681226091738
-      Bat_2: 697682191857345388
       Bat_20: -98603050684707610
       Bat_21: -4268560216294145197
       Bat_22: -2167074878448691243
@@ -371,22 +365,20 @@ TextureImporter:
       Bat_25: -2449850410729766231
       Bat_26: -7588931421162680773
       Bat_27: 3565646450698540321
-      Bat_28: 925038087268274908
       Bat_29: 8381111290613614903
       Bat_3: 6993031405965254486
       Bat_30: -4818874195688012542
-      Bat_32: -1221191594444246648
-      Bat_4: -8835117555573905559
       Bat_5: -1477298914128971197
+      Bat_6: -1085711696175172977
       Bat_7: -650004520372281371
       Bat_8: 5596611908343470214
       Bat_9: -2103701215377653077
-      Idle: -1085711696175172977
-      Stunned: -2340803120497525164
-      Walk1: 3715899403775863448
-      Walk2: 4419668502950860722
-      Walk3: -3428020802489031309
-      Walk4: 8647823593821616703
+      d: -8835117555573905559
+      s: 925038087268274908
+      w1: 8094889547237836083
+      w2: 3715899403775863448
+      w3: 4419668502950860722
+      w4: 697682191857345388
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: HammerAndAnvil
   m_EditorClassIdentifier: Assembly-CSharp::ItemData
   ItemType: 2
-  ID: 0
+  ID: 9
   ItemName: "\uB9DD\uCE58\uC640 \uBAA8\uB8E8"
   Icon: {fileID: 6210248700256488729, guid: 82ab1cb98d30d004e987acc05968b932, type: 3}
   Description: "Rare \uB4F1\uAE09 \uC774\uD558\uC758 \uC544\uC774\uD15C \uC911 \uAC00\uC7A5

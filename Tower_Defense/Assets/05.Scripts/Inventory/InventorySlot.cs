@@ -13,8 +13,8 @@ public class InventorySlot : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
     private Item _item;
     [Header("[슬롯 설정]")]
     [SerializeField] private RectTransform _pos;
-    [SerializeField] private TMP_Text _name;
-    [SerializeField] private TMP_Text _description;
+    [SerializeField] private TMP_Text _name; //무기 이름
+    [SerializeField] private TMP_Text _description; //무기 설명
     [SerializeField] private Image _image;
     [SerializeField] private Image _backgroundImage;
 
@@ -36,11 +36,12 @@ public class InventorySlot : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
 
         _image.sprite = _item.Icon;
         _name.text = _item.Name;
-        _description.text = GenerateStatDescription(_item.Data);
+        _description.text = _item.Description;
         _image.rectTransform.localScale = Vector3.one;
         _backgroundImage.sprite = UIManager.Instance.GetFrame((int)_item.Rarity);
     }
 
+    /// <summary> ItemInfo Panel에 넘길 Description 생성  </summary>
     private string GenerateStatDescription(ItemData item)
     {
         bool isLongText = item.ItemType == ItemType.Consumable ||
@@ -83,12 +84,13 @@ public class InventorySlot : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
 
             if (i < item.Modifiers.Count - 1)
             {
-                sb.Append(", ");
+                sb.Append('\n');
             }
         }
 
         return $"{sizeOpen}{sb.ToString().TrimEnd()}{sizeClose}";
     }
+
     private string GetStatNameKorean(StatType type)
     {
         switch (type)
@@ -103,12 +105,13 @@ public class InventorySlot : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
             default: return type.ToString();
         }
     }
+
     public void OnPointerEnter(PointerEventData eventData)
     {
         if (_item is null) 
             return;
 
-        UIManager.Instance.ShowItemInfo(_item.Data, _pos);
+        UIManager.Instance.ShowItemInfo(_item.Data, _pos, GenerateStatDescription(_item.Data));
     }
 
     public void OnPointerExit(PointerEventData eventData)
@@ -144,6 +147,6 @@ public class InventorySlot : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
         yield return new WaitForSeconds(0.5f);
 
         if (_item != null)
-            UIManager.Instance.ShowItemInfo(_item.Data, _pos);
+            UIManager.Instance.ShowItemInfo(_item.Data, _pos, GenerateStatDescription(_item.Data));
     }
 }

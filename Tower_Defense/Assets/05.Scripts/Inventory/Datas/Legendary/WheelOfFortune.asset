@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: WheelOfFortune
   m_EditorClassIdentifier: Assembly-CSharp::ItemData
   ItemType: 2
-  ID: 0
+  ID: 21
   ItemName: 
   Icon: {fileID: -5326703000338352748, guid: 9432be089ecb76c4f91d316b27f260bb, type: 3}
   Description: "\uD589\uC6B4, \uACBD\uD5D8\uCE58 \uCD94\uAC00 \uD68D\uB4DD\uB7C9\uC744

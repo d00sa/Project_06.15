@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Talisman
   m_EditorClassIdentifier: Assembly-CSharp::ItemData
   ItemType: 0
-  ID: 0
+  ID: 5
   ItemName: "\uD0C8\uB9AC\uC2A4\uB9CC"
   Icon: {fileID: -7963260353470167555, guid: b831a8795a52fad459064a0304b9ba4a, type: 3}
   Description: 

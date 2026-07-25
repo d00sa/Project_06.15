@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Binocular
   m_EditorClassIdentifier: Assembly-CSharp::ItemData
   ItemType: 0
-  ID: 0
+  ID: 12
   ItemName: "\uC30D\uC548\uACBD"
   Icon: {fileID: -3938306586725337552, guid: b831a8795a52fad459064a0304b9ba4a, type: 3}
   Description: 

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: DangerousVisions
   m_EditorClassIdentifier: Assembly-CSharp::ItemData
   ItemType: 0
-  ID: 0
+  ID: 14
   ItemName: "\uC704\uD5D8\uD55C \uC804\uB9DD"
   Icon: {fileID: -2804901885491191747, guid: 82ab1cb98d30d004e987acc05968b932, type: 3}
   Description: 

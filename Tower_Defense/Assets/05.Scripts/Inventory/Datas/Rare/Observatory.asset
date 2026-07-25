@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Observatory
   m_EditorClassIdentifier: Assembly-CSharp::ItemData
   ItemType: 0
-  ID: 4
+  ID: 10
   ItemName: "\uAD00\uCE21\uC18C"
   Icon: {fileID: -8403690538097467267, guid: 42cd89132b6daaa41aa9ca965cf5fa07, type: 3}
   Description: 
@@ -22,3 +22,4 @@ MonoBehaviour:
   - StatType: 4
     Value: 0.1
   LootTable: {fileID: 0}
+  Effect: {fileID: 0}

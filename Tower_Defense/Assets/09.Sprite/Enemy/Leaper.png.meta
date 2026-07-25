@@ -50,9 +50,6 @@ TextureImporter:
   - first:
       213: -6721781893567588655
     second: Leaper_15
-  - first:
-      213: -8294205480690843438
-    second: Leaper_16
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -161,13 +158,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: s
+      name: w4
       rect:
         serializedVersion: 2
-        x: 40
-        y: 465
-        width: 211
-        height: 159
+        x: 1163
+        y: 329
+        width: 353
+        height: 324
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -176,8 +173,30 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: b0be0041cfc9e7510800000000000000
-      internalID: 1548847928343325451
+      spriteID: eadac9fe0058f0d80800000000000000
+      internalID: -8282254950644535890
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: s
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 695
+        width: 318
+        height: 227
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d24a8bccdbda52ad0800000000000000
+      internalID: -2727582968607890387
       vertices: []
       indices: 
       edges: []
@@ -186,32 +205,10 @@ TextureImporter:
       name: w1
       rect:
         serializedVersion: 2
-        x: 42
-        y: 221
-        width: 223
-        height: 205
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 34f8afba0a1d43930800000000000000
-      internalID: 4122150046961143619
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: w2
-      rect:
-        serializedVersion: 2
-        x: 268
-        y: 219
-        width: 211
-        height: 207
+        x: 39
+        y: 341
+        width: 373
+        height: 326
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -227,13 +224,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: w3
+      name: w2
       rect:
         serializedVersion: 2
-        x: 504
-        y: 220
-        width: 220
-        height: 204
+        x: 419
+        y: 331
+        width: 356
+        height: 332
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -249,13 +246,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: w4
+      name: w3
       rect:
         serializedVersion: 2
-        x: 741
-        y: 219
-        width: 210
-        height: 206
+        x: 789
+        y: 327
+        width: 368
+        height: 329
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -274,10 +271,10 @@ TextureImporter:
       name: d
       rect:
         serializedVersion: 2
-        x: 38
-        y: 21
-        width: 399
-        height: 117
+        x: 48
+        y: 31
+        width: 620
+        height: 174
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -286,8 +283,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 1d650483bfe67b2a0800000000000000
-      internalID: -6721781893567588655
+      spriteID: b3ad1fd361c7025a0800000000000000
+      internalID: -6548097423226316229
       vertices: []
       indices: 
       edges: []
@@ -296,7 +293,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 1d3a870a1145dbb42bf7234e9d963117
+    spriteID: 38a22f00205680348b0f7df30feaef08
     internalID: 0
     vertices: []
     indices: 
@@ -307,22 +304,21 @@ TextureImporter:
       entries: []
     nameFileIdTable:
       Leaper_0: 3758023492563752667
-      Leaper_1: -8282254950644535890
       Leaper_10: 7069663814711543348
       Leaper_11: -1921807786957100310
       Leaper_12: -2657386781401511941
       Leaper_13: 6226972876310411664
-      Leaper_14: -6548097423226316229
-      Leaper_16: -8294205480690843438
-      Leaper_3: -2727582968607890387
+      Leaper_15: -6721781893567588655
+      Leaper_2: 1548847928343325451
       Leaper_4: 5856363751714936726
       Leaper_5: 2389954380143178050
-      d: -6721781893567588655
-      s: 1548847928343325451
-      w1: 4122150046961143619
-      w2: 8385598133645166879
-      w3: -7945648607565775034
-      w4: -5615331165344776544
+      Leaper_6: 4122150046961143619
+      d: -6548097423226316229
+      s: -2727582968607890387
+      w1: 8385598133645166879
+      w2: -7945648607565775034
+      w3: -5615331165344776544
+      w4: -8282254950644535890
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
