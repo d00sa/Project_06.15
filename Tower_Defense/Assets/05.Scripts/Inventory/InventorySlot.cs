@@ -66,8 +66,6 @@ public class InventorySlot : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
             string statName = GetStatNameKorean(mod.StatType);
             string sign = mod.Value > 0 ? "+" : "";
 
-            string colorHex = mod.Value > 0 ? "#55FF55" : "#FF5555";
-
             string statValue = mod.Value.ToString();
 
             // 퍼센트로 표시할 스탯들 처리
@@ -80,7 +78,13 @@ public class InventorySlot : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
                 statValue = (mod.Value * 100).ToString("F0") + "%";
             }
 
-            sb.Append($"<color={colorHex}>{statName} {sign}{statValue}</color>");
+            string lineText = $"{statName} {sign}{statValue}";
+            if (mod.Value < 0)
+            {
+                lineText = $"<color=#FF5555>{lineText}</color>";
+            }
+
+            sb.Append(lineText);
 
             if (i < item.Modifiers.Count - 1)
             {
