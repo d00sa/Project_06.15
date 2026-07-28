@@ -10,7 +10,7 @@ public enum Commands
 
 public enum StateType
 {
-    Idle, Move, Dead, EOF
+    Stunned, Move, Dead, EOF
 }
 public abstract class StateBase : IState
 {

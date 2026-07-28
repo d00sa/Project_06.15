@@ -2,8 +2,8 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 using Random = UnityEngine.Random;
+using Slider = UnityEngine.UI.Slider;
 
 public enum EnemyPriority
 {
@@ -31,8 +31,10 @@ public class Enemy : MonoBehaviour, IPoolable
             _hp = value;
             _hpBar.value = Mathf.Clamp01(_hp / hpMax);
 
-            if (_hp <= 0)
-                OnDespawn();
+            if (_hp <= 0) {
+                transform.position += _deadOffSet;
+                OnDespawn();                
+            }
         }
     }
     public float speed = 3f;
@@ -43,6 +45,7 @@ public class Enemy : MonoBehaviour, IPoolable
     [SerializeField] private bool _defaultFlipX; //기본 스프라이트 좌우반전 설정
     [SerializeField] private List<WayPointLine> _wayPoints; //적 이동 방향
     [SerializeField] private Slider _hpBar;
+    [SerializeField] private Vector3 _deadOffSet; //사망, Stuuned시 오프셋 조정
     public bool IsMovable { get; set; } = true;
 
     #region Private - NoSerialize
@@ -93,7 +96,7 @@ public class Enemy : MonoBehaviour, IPoolable
 
         if (GameManager.Instance != null && GameManager.Instance.IsTimeStopped)
         {
-            _machine.ChangeState(StateType.Idle);
+            _machine.ChangeState(StateType.Stunned);
             return;
         }
 
@@ -115,7 +118,7 @@ public class Enemy : MonoBehaviour, IPoolable
         }
         else
         {
-            _machine.ChangeState(StateType.Idle);
+            _machine.ChangeState(StateType.Stunned);
         }
     }
 

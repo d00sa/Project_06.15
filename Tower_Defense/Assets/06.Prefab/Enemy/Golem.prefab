@@ -345,6 +345,7 @@ MonoBehaviour:
   _defaultFlipX: 0
   _wayPoints: []
   _hpBar: {fileID: 7580869575054913285}
+  _deadOffSet: {x: 0, y: 0, z: 0}
   priority: 0
   dotEffectObject: {fileID: 1439172478594923275}
 --- !u!114 &8826004180032480047
@@ -426,7 +427,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 2.5, y: 3}
+  m_Size: {x: 2, y: 2}
   m_EdgeRadius: 0
 --- !u!1 &8629287931528606937
 GameObject:

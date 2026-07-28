@@ -58,12 +58,12 @@ public class StateMachine : MonoBehaviour
     {
         _animator = GetComponent<Animator>();
 
-        for (StateType state = StateType.Idle; state < StateType.EOF; state++)
+        for (StateType state = StateType.Stunned; state < StateType.EOF; state++)
             AddState(state);
 
         EnemyObj = gameObject.GetComponent<Enemy>();
-        _curStates = _states[StateType.Idle];
-        CurrentType = StateType.Idle;
+        _curStates = _states[StateType.Stunned];
+        CurrentType = StateType.Stunned;
     }
 
     void AddState(StateType stateType)

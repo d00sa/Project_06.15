@@ -259,7 +259,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.55, y: 0.55, z: 0.55}
+  m_LocalScale: {x: 0.90000004, y: 0.90000004, z: 0.90000004}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 7429479432718106716}
@@ -315,12 +315,12 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 1
   m_MaskInteraction: 0
-  m_Sprite: {fileID: -919097235, guid: 708e456ab20bbec4a852edef9a68acb6, type: 3}
+  m_Sprite: {fileID: 4035959289877228764, guid: 3d576372e0833ae4994b8a2edfd0fbef, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 4.84, y: 7.46}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -345,6 +345,7 @@ MonoBehaviour:
   _defaultFlipX: 0
   _wayPoints: []
   _hpBar: {fileID: 7580869575054913285}
+  _deadOffSet: {x: 0, y: 0, z: 0}
   priority: 0
   dotEffectObject: {fileID: 1439172478594923275}
 --- !u!114 &8826004180032480047
@@ -420,8 +421,8 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 3.2, y: 3.9}
-    newSize: {x: 1, y: 1}
+    oldSize: {x: 1.936, y: 2.984}
+    newSize: {x: 4.84, y: 7.46}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0

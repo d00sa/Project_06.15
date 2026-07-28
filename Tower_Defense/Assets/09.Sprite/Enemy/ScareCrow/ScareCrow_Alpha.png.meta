@@ -159,7 +159,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 128
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -247,50 +247,6 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: w4
-      rect:
-        serializedVersion: 2
-        x: 47
-        y: 527
-        width: 320
-        height: 390
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 2e33b2fc865f7bc90800000000000000
-      internalID: -7153979652553624606
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: w2
-      rect:
-        serializedVersion: 2
-        x: 792
-        y: 523
-        width: 320
-        height: 390
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 348e01eb58e883d90800000000000000
-      internalID: -7117782505988495293
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: s
       rect:
         serializedVersion: 2
@@ -330,50 +286,6 @@ TextureImporter:
       bones: []
       spriteID: 8ccbd6d99e6a7d5a0800000000000000
       internalID: -6496540415159845688
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: w
-      rect:
-        serializedVersion: 2
-        x: 429
-        y: 527
-        width: 320
-        height: 390
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c01f70bd1a7650a4db4457509b1cc241
-      internalID: -919097235
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: w3
-      rect:
-        serializedVersion: 2
-        x: 1152
-        y: 527
-        width: 320
-        height: 390
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 22668e8947bd7fe4f8bccff5621a4a41
-      internalID: 530940931
       vertices: []
       indices: 
       edges: []
