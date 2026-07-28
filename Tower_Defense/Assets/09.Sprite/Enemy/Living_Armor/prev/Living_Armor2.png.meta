@@ -1,0 +1,481 @@
+fileFormatVersion: 2
+guid: 63295bd30d7dc34429c35d41e370901a
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 8230972444105301165
+    second: Living_Armor2_0
+  - first:
+      213: -3214339295024535020
+    second: Living_Armor2_1
+  - first:
+      213: 5521426670127134002
+    second: Living_Armor2_2
+  - first:
+      213: 884536357559606500
+    second: Living_Armor2_3
+  - first:
+      213: -3828744071781733805
+    second: Living_Armor2_4
+  - first:
+      213: 3700864140866017850
+    second: Living_Armor2_5
+  - first:
+      213: -5970188154756248018
+    second: Living_Armor2_6
+  - first:
+      213: -6088699641764721845
+    second: Living_Armor2_7
+  - first:
+      213: -5962623255183108307
+    second: Living_Armor2_8
+  - first:
+      213: 7029410433980488597
+    second: Living_Armor2_9
+  - first:
+      213: 6345624570831879752
+    second: Living_Armor2_10
+  - first:
+      213: 642046658379792254
+    second: Living_Armor2_11
+  - first:
+      213: -4715275501581991059
+    second: Living_Armor2_12
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 200
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: iOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Living_Armor2_0
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 1231
+        width: 459
+        height: 489
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dacdcee04d94a3270800000000000000
+      internalID: 8230972444105301165
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Living_Armor2_1
+      rect:
+        serializedVersion: 2
+        x: 526
+        y: 1231
+        width: 450
+        height: 487
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 41aab74017f5463d0800000000000000
+      internalID: -3214339295024535020
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Living_Armor2_2
+      rect:
+        serializedVersion: 2
+        x: 1000
+        y: 1234
+        width: 370
+        height: 482
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 235bb4e7d4c00ac40800000000000000
+      internalID: 5521426670127134002
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Living_Armor2_3
+      rect:
+        serializedVersion: 2
+        x: 1399
+        y: 1232
+        width: 406
+        height: 491
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4ec12477121864c00800000000000000
+      internalID: 884536357559606500
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Living_Armor2_4
+      rect:
+        serializedVersion: 2
+        x: 1855
+        y: 1233
+        width: 479
+        height: 491
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 35a21916d819ddac0800000000000000
+      internalID: -3828744071781733805
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Living_Armor2_5
+      rect:
+        serializedVersion: 2
+        x: 57
+        y: 630
+        width: 493
+        height: 520
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a3adc4ef35c1c5330800000000000000
+      internalID: 3700864140866017850
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Living_Armor2_6
+      rect:
+        serializedVersion: 2
+        x: 668
+        y: 629
+        width: 491
+        height: 521
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e2e42813181a52da0800000000000000
+      internalID: -5970188154756248018
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Living_Armor2_7
+      rect:
+        serializedVersion: 2
+        x: 1182
+        y: 629
+        width: 491
+        height: 521
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b4bc0946fe7908ba0800000000000000
+      internalID: -6088699641764721845
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Living_Armor2_8
+      rect:
+        serializedVersion: 2
+        x: 1776
+        y: 629
+        width: 492
+        height: 521
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d27d351adb1804da0800000000000000
+      internalID: -5962623255183108307
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Living_Armor2_9
+      rect:
+        serializedVersion: 2
+        x: 62
+        y: 43
+        width: 497
+        height: 527
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 59bd4d9db8b7d8160800000000000000
+      internalID: 7029410433980488597
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Living_Armor2_10
+      rect:
+        serializedVersion: 2
+        x: 663
+        y: 53
+        width: 493
+        height: 517
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 84ebc663def201850800000000000000
+      internalID: 6345624570831879752
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Living_Armor2_11
+      rect:
+        serializedVersion: 2
+        x: 1205
+        y: 53
+        width: 495
+        height: 517
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e7f34f9b80209e800800000000000000
+      internalID: 642046658379792254
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Living_Armor2_12
+      rect:
+        serializedVersion: 2
+        x: 1771
+        y: 53
+        width: 505
+        height: 515
+      alignment: 9
+      pivot: {x: 0.512076, y: 0.49013197}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d638a16f9e9ff8eb0800000000000000
+      internalID: -4715275501581991059
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 237257e41914e91408152e09d739281f
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Living_Armor2_0: 8230972444105301165
+      Living_Armor2_1: -3214339295024535020
+      Living_Armor2_10: 6345624570831879752
+      Living_Armor2_11: 642046658379792254
+      Living_Armor2_12: -4715275501581991059
+      Living_Armor2_2: 5521426670127134002
+      Living_Armor2_3: 884536357559606500
+      Living_Armor2_4: -3828744071781733805
+      Living_Armor2_5: 3700864140866017850
+      Living_Armor2_6: -5970188154756248018
+      Living_Armor2_7: -6088699641764721845
+      Living_Armor2_8: -5962623255183108307
+      Living_Armor2_9: 7029410433980488597
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

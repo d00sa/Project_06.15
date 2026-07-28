@@ -1,0 +1,296 @@
+fileFormatVersion: 2
+guid: 29c2c35345802a14b9adfb7b94382614
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 5060398111634863112
+    second: Living_armor2_0
+  - first:
+      213: -6608986120773969242
+    second: Living_armor2_1
+  - first:
+      213: -662323677886265884
+    second: Living_armor2_2
+  - first:
+      213: 4087770159246137146
+    second: Living_armor2_3
+  - first:
+      213: -5156147058304610785
+    second: Living_armor2_4
+  - first:
+      213: -2199027728852827033
+    second: Living_armor2_5
+  - first:
+      213: 3601187943527953480
+    second: Living_armor2_6
+  - first:
+      213: 8386688421759285507
+    second: Living_armor2_7
+  - first:
+      213: -3217798697966033690
+    second: Living_armor2_8
+  - first:
+      213: -3738315650233630451
+    second: Living_armor2_9
+  - first:
+      213: 2516738153274190492
+    second: Living_armor2_10
+  - first:
+      213: 8398151951499150810
+    second: Living_armor2_11
+  - first:
+      213: -1639446680516525303
+    second: Living_armor2_12
+  - first:
+      213: -8854695051539325897
+    second: Living_armor2_13
+  - first:
+      213: 4185327091648118733
+    second: Living_armor2_14
+  - first:
+      213: -5265687142543171620
+    second: Living_armor2_15
+  - first:
+      213: -7400676667376314856
+    second: Living_armor2_16
+  - first:
+      213: -3333357200352702872
+    second: Living_armor2_17
+  - first:
+      213: 4455009967797366357
+    second: Living_armor2_18
+  - first:
+      213: 2164230547683852530
+    second: Living_armor2_19
+  - first:
+      213: -8856163388022158336
+    second: Living_armor2_20
+  - first:
+      213: -4701803667858009215
+    second: Living_armor2_21
+  - first:
+      213: 1893083575037903365
+    second: Living_armor2_22
+  - first:
+      213: 5364363126909054612
+    second: Living_armor2_23
+  - first:
+      213: 5367766560900292508
+    second: Living_armor2_24
+  - first:
+      213: -5948054525910368369
+    second: Living_armor2_25
+  - first:
+      213: -17997092562949873
+    second: Living_armor2_26
+  - first:
+      213: -6987328497303050730
+    second: Living_armor2_27
+  - first:
+      213: 7569239844369560485
+    second: Living_armor2_28
+  - first:
+      213: -1302727839969355894
+    second: Living_armor2_29
+  - first:
+      213: -8251549345820311274
+    second: Living_armor2_30
+  - first:
+      213: -2517522041073044246
+    second: Living_armor2_31
+  - first:
+      213: 5369049804259085452
+    second: Living_armor2_32
+  - first:
+      213: 550282774207179727
+    second: Living_armor2_33
+  - first:
+      213: 1819657082434266551
+    second: Living_armor2_34
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 200
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: iOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Living_armor2_0
+      rect:
+        serializedVersion: 2
+        x: 57
+        y: 1034
+        width: 690
+        height: 444
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 804bd0a75452a3640800000000000000
+      internalID: 5060398111634863112
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Living_armor2_1
+      rect:
+        serializedVersion: 2
+        x: 68
+        y: 20
+        width: 940
+        height: 293
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4da34e09c8d9f574b81d2014b62187d1
+      internalID: -6608986120773969242
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 54aea80bbea446a4bb5b77357ae5579e
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":2400.0,"y":1599.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
+    nameFileIdTable:
+      Living_armor2_0: 5060398111634863112
+      Living_armor2_1: -6608986120773969242
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
