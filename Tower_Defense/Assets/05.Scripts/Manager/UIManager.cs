@@ -186,9 +186,10 @@ public class UIManager : MonoBehaviour
 
         Vector3[] corners = new Vector3[4];
         slotPos.GetWorldCorners(corners);
-        _itemInfoPanel.position = corners[1] +
-                                  Vector3.left * _itemInfoPanel.rect.width / 1.9f +
-                                  Vector3.up * _itemInfoPanel.rect.height / 1.9f;
+
+        Vector3 leftCenter = (corners[0] + corners[1]) * 0.5f;
+        _itemInfoPanel.position = 
+        leftCenter + Vector3.left * (_itemInfoPanel.rect.width * 0.55f);
 
         _icon.sprite = data.Icon;
         _name.text = data.ItemName;
@@ -210,8 +211,8 @@ public class UIManager : MonoBehaviour
 
         _sIcon.sprite = data.data.icon;
         _sName.text = data.data.skillName;
-        _sType.text = data.data.GetType().ToString();
-        _sDescription.text = data.data.description + '\n' + data.level.ToString();
+        _sType.text = data.data.skillType.ToString();
+        _sDescription.text = data.data.description + '\n' + $"Level.{data.level}";
     }
     /// <summary> 보상창 열기 </summary>
     public void ShowRewards()
