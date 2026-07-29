@@ -1,10 +1,46 @@
 fileFormatVersion: 2
-guid: cbd7a66f8983b464fb3c3a94ea1e2a7c
+guid: 786c65741b0077d47b853666fa19e691
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 5760202260919997367
-    second: BackGround_0
+      213: 770567180678714687
+    second: Lose_T_0
+  - first:
+      213: -1818112049318122420
+    second: Lose_T_1
+  - first:
+      213: 2980503101018081699
+    second: Lose_T_2
+  - first:
+      213: -100092473977905154
+    second: Lose_T_3
+  - first:
+      213: -9138879753801655849
+    second: Lose_T_4
+  - first:
+      213: -6047643313297097855
+    second: Lose_T_5
+  - first:
+      213: -1875211464859238482
+    second: Lose_T_6
+  - first:
+      213: -910033393198403818
+    second: Lose_T_7
+  - first:
+      213: 6021993782964129579
+    second: Lose_T_8
+  - first:
+      213: 2111058216581447101
+    second: Lose_T_9
+  - first:
+      213: -1579186065855368641
+    second: Lose_T_10
+  - first:
+      213: -1094834625728808644
+    second: Lose_T_11
+  - first:
+      213: -746622827422970327
+    second: Lose_T_12
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,13 +149,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: BackGround_0
+      name: Lose_Text
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 1024
-        height: 572
+        x: 172
+        y: 237
+        width: 706
+        height: 108
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +164,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 7b3d98cff6950ff40800000000000000
-      internalID: 5760202260919997367
+      spriteID: f35dde7a4ca91ba00800000000000000
+      internalID: 770567180678714687
       vertices: []
       indices: 
       edges: []
@@ -138,7 +174,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: f7ce1528e9d4a9e498ecda721061aeb5
     internalID: 0
     vertices: []
     indices: 
@@ -148,7 +184,19 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      BackGround_0: 5760202260919997367
+      Lose_T_1: -1818112049318122420
+      Lose_T_10: -1579186065855368641
+      Lose_T_11: -1094834625728808644
+      Lose_T_12: -746622827422970327
+      Lose_T_2: 2980503101018081699
+      Lose_T_3: -100092473977905154
+      Lose_T_4: -9138879753801655849
+      Lose_T_5: -6047643313297097855
+      Lose_T_6: -1875211464859238482
+      Lose_T_7: -910033393198403818
+      Lose_T_8: 6021993782964129579
+      Lose_T_9: 2111058216581447101
+      Lose_Text: 770567180678714687
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
