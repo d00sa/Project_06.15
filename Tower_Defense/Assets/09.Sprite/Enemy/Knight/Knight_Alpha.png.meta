@@ -1,85 +1,91 @@
 fileFormatVersion: 2
-guid: 32c9cb4205be22a42be258dec0aa000c
+guid: e5c270cc5997f4045acecbc5a4946796
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 4354231566380549168
-    second: Skeleton_0
+      213: -902522588636750468
+    second: Knight_Alpha_0
   - first:
-      213: 5809030516613042957
-    second: Skeleton_1
+      213: 2767834456503740974
+    second: Knight_Alpha_1
   - first:
-      213: 6682473901004932845
-    second: Skeleton_2
+      213: 782866990801859773
+    second: Knight_Alpha_2
   - first:
-      213: -6895646428441557691
-    second: Skeleton_3
+      213: -5001267070026093173
+    second: Knight_Alpha_3
   - first:
-      213: 8681928648562347177
-    second: Skeleton_4
+      213: -2643985995023226204
+    second: Knight_Alpha_4
   - first:
-      213: -6534455043122499310
-    second: Skeleton_5
+      213: -4925151254636843783
+    second: Knight_Alpha_5
   - first:
-      213: -7021505876318606439
-    second: Skeleton_6
+      213: 331561291625619687
+    second: Knight_Alpha_6
   - first:
-      213: 653362398722190026
-    second: Skeleton_7
+      213: 4680403295465244621
+    second: Knight_Alpha_7
   - first:
-      213: -9021820611684853211
-    second: Skeleton_8
+      213: 1080117236913584177
+    second: Knight_Alpha_8
   - first:
-      213: -1443268486790046223
-    second: Skeleton_9
+      213: -3958992983270464124
+    second: Knight_Alpha_9
   - first:
-      213: -3968840907078709152
-    second: Skeleton_10
+      213: 732927213200432835
+    second: Knight_Alpha_10
   - first:
-      213: -2164511808432914653
-    second: Skeleton_11
+      213: 6864059657183497984
+    second: Knight_Alpha_11
   - first:
-      213: -7000201611338815235
-    second: Skeleton_12
+      213: -8500783143110316157
+    second: Knight_Alpha_12
   - first:
-      213: -4022789504429121826
-    second: Skeleton_13
+      213: 3097780111113937230
+    second: Knight_Alpha_13
   - first:
-      213: 8650110944895953673
-    second: Skeleton_14
+      213: 6090721145112302908
+    second: Knight_Alpha_14
   - first:
-      213: 4520074865302796247
-    second: Skeleton_15
+      213: -3374098379823341599
+    second: Knight_Alpha_15
   - first:
-      213: -1325205120640645288
-    second: Skeleton_16
+      213: -3092251134273920940
+    second: Knight_Alpha_16
   - first:
-      213: 6219686596316222553
-    second: Skeleton_17
+      213: -3962052565005655411
+    second: Knight_Alpha_17
   - first:
-      213: 2058306284268228198
-    second: Skeleton_18
+      213: 8798296839909285487
+    second: Knight_Alpha_18
   - first:
-      213: -6896880325500990939
-    second: Skeleton_19
+      213: -2460358756489332137
+    second: Knight_Alpha_19
   - first:
-      213: 8495289983822508492
-    second: Skeleton_20
+      213: 5527250897139523639
+    second: Knight_Alpha_20
   - first:
-      213: -1155214034691015396
-    second: Skeleton_21
+      213: -3545081456992841561
+    second: Knight_Alpha_21
   - first:
-      213: 380626319886666678
-    second: Skeleton_22
+      213: 1472406788302833965
+    second: Knight_Alpha_22
   - first:
-      213: 8661365367480307861
-    second: Skeleton_23
+      213: -4490823132738614993
+    second: Knight_Alpha_23
   - first:
-      213: 4120830285991997394
-    second: Skeleton_24
+      213: -8337268680144389193
+    second: Knight_Alpha_24
   - first:
-      213: -5758231261664834141
-    second: Skeleton_25
+      213: 5030510295023173403
+    second: Knight_Alpha_25
+  - first:
+      213: -5396973034598861466
+    second: Knight_Alpha_26
+  - first:
+      213: 4317163690615024375
+    second: Knight_Alpha_27
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -126,7 +132,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 128
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -214,57 +220,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: w4
-      rect:
-        serializedVersion: 2
-        x: 1146
-        y: 397
-        width: 250
-        height: 220
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 034c7e73a865d6c30800000000000000
-      internalID: 4354231566380549168
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Skeleton_6
-      rect:
-        serializedVersion: 2
-        x: 101
-        y: 719
-        width: 235
-        height: 200
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 99b26b56b999e8e90800000000000000
-      internalID: -7021505876318606439
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: w1
       rect:
         serializedVersion: 2
-        x: 112
-        y: 395
-        width: 250
-        height: 220
+        x: 27
+        y: 574
+        width: 345
+        height: 340
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -273,8 +235,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 32fb7327afb16f1e0800000000000000
-      internalID: -2164511808432914653
+      spriteID: 7e06d90fc31f99400800000000000000
+      internalID: 331561291625619687
       vertices: []
       indices: 
       edges: []
@@ -283,10 +245,10 @@ TextureImporter:
       name: w2
       rect:
         serializedVersion: 2
-        x: 456
-        y: 394
-        width: 250
-        height: 220
+        x: 408
+        y: 571
+        width: 345
+        height: 340
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -295,20 +257,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: df8680029b94ade90800000000000000
-      internalID: -7000201611338815235
+      spriteID: dc706c7dff124f040800000000000000
+      internalID: 4680403295465244621
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: w3
+      name: s
       rect:
         serializedVersion: 2
-        x: 807
-        y: 395
-        width: 250
-        height: 220
+        x: 95
+        y: 68
+        width: 400
+        height: 330
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -317,30 +279,30 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: ede1556624e2c28c0800000000000000
-      internalID: -4022789504429121826
+      spriteID: f29020877246da1c0800000000000000
+      internalID: -4490823132738614993
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: st
+      name: d
       rect:
         serializedVersion: 2
-        x: 48
-        y: 72
-        width: 380
-        height: 230
+        x: 762
+        y: 103
+        width: 540
+        height: 210
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 96bb81537ca4561468430df2759bc187
-      internalID: 1614214187
+      spriteID: b1f3dc5e576ffc540800000000000000
+      internalID: 5030510295023173403
       vertices: []
       indices: 
       edges: []
@@ -349,7 +311,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: ddb8dc1c06f49d6488d314bd20165d31
+    spriteID: f0162b4d41e16ab43bd17096d13a84c6
     internalID: 0
     vertices: []
     indices: 
@@ -359,33 +321,34 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Skeleton_1: 5809030516613042957
-      Skeleton_10: -3968840907078709152
-      Skeleton_14: 8650110944895953673
-      Skeleton_15: 4520074865302796247
-      Skeleton_16: -1325205120640645288
-      Skeleton_17: 6219686596316222553
-      Skeleton_18: 2058306284268228198
-      Skeleton_19: -6896880325500990939
-      Skeleton_2: 6682473901004932845
-      Skeleton_20: 8495289983822508492
-      Skeleton_21: -1155214034691015396
-      Skeleton_22: 380626319886666678
-      Skeleton_23: 8661365367480307861
-      Skeleton_24: 4120830285991997394
-      Skeleton_25: -5758231261664834141
-      Skeleton_3: -6895646428441557691
-      Skeleton_4: 8681928648562347177
-      Skeleton_5: -6534455043122499310
-      Skeleton_6: -7021505876318606439
-      Skeleton_7: 653362398722190026
-      Skeleton_8: -9021820611684853211
-      Skeleton_9: -1443268486790046223
-      st: 1614214187
-      w1: -2164511808432914653
-      w2: -7000201611338815235
-      w3: -4022789504429121826
-      w4: 4354231566380549168
+      Knight_Alpha_0: -902522588636750468
+      Knight_Alpha_1: 2767834456503740974
+      Knight_Alpha_10: 732927213200432835
+      Knight_Alpha_11: 6864059657183497984
+      Knight_Alpha_12: -8500783143110316157
+      Knight_Alpha_13: 3097780111113937230
+      Knight_Alpha_14: 6090721145112302908
+      Knight_Alpha_15: -3374098379823341599
+      Knight_Alpha_16: -3092251134273920940
+      Knight_Alpha_17: -3962052565005655411
+      Knight_Alpha_18: 8798296839909285487
+      Knight_Alpha_19: -2460358756489332137
+      Knight_Alpha_2: 782866990801859773
+      Knight_Alpha_20: 5527250897139523639
+      Knight_Alpha_21: -3545081456992841561
+      Knight_Alpha_22: 1472406788302833965
+      Knight_Alpha_24: -8337268680144389193
+      Knight_Alpha_26: -5396973034598861466
+      Knight_Alpha_27: 4317163690615024375
+      Knight_Alpha_3: -5001267070026093173
+      Knight_Alpha_4: -2643985995023226204
+      Knight_Alpha_5: -4925151254636843783
+      Knight_Alpha_8: 1080117236913584177
+      Knight_Alpha_9: -3958992983270464124
+      d: 5030510295023173403
+      s: -4490823132738614993
+      w1: 331561291625619687
+      w2: 4680403295465244621
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

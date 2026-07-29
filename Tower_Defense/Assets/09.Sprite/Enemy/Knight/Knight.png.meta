@@ -1,85 +1,22 @@
 fileFormatVersion: 2
-guid: 32c9cb4205be22a42be258dec0aa000c
+guid: ee633b87a29df3049af95d17f1524f62
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 4354231566380549168
-    second: Skeleton_0
+      213: -5711848221618334454
+    second: Knight_0
   - first:
-      213: 5809030516613042957
-    second: Skeleton_1
+      213: -8985680732576350864
+    second: Knight_1
   - first:
-      213: 6682473901004932845
-    second: Skeleton_2
+      213: 7827260208125532704
+    second: Knight_2
   - first:
-      213: -6895646428441557691
-    second: Skeleton_3
+      213: 5457420103614929235
+    second: Knight_3
   - first:
-      213: 8681928648562347177
-    second: Skeleton_4
-  - first:
-      213: -6534455043122499310
-    second: Skeleton_5
-  - first:
-      213: -7021505876318606439
-    second: Skeleton_6
-  - first:
-      213: 653362398722190026
-    second: Skeleton_7
-  - first:
-      213: -9021820611684853211
-    second: Skeleton_8
-  - first:
-      213: -1443268486790046223
-    second: Skeleton_9
-  - first:
-      213: -3968840907078709152
-    second: Skeleton_10
-  - first:
-      213: -2164511808432914653
-    second: Skeleton_11
-  - first:
-      213: -7000201611338815235
-    second: Skeleton_12
-  - first:
-      213: -4022789504429121826
-    second: Skeleton_13
-  - first:
-      213: 8650110944895953673
-    second: Skeleton_14
-  - first:
-      213: 4520074865302796247
-    second: Skeleton_15
-  - first:
-      213: -1325205120640645288
-    second: Skeleton_16
-  - first:
-      213: 6219686596316222553
-    second: Skeleton_17
-  - first:
-      213: 2058306284268228198
-    second: Skeleton_18
-  - first:
-      213: -6896880325500990939
-    second: Skeleton_19
-  - first:
-      213: 8495289983822508492
-    second: Skeleton_20
-  - first:
-      213: -1155214034691015396
-    second: Skeleton_21
-  - first:
-      213: 380626319886666678
-    second: Skeleton_22
-  - first:
-      213: 8661365367480307861
-    second: Skeleton_23
-  - first:
-      213: 4120830285991997394
-    second: Skeleton_24
-  - first:
-      213: -5758231261664834141
-    second: Skeleton_25
+      213: 8480205167599975839
+    second: Knight_4
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -126,7 +63,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 128
+  spritePixelsToUnits: 200
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -172,19 +109,6 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 4
-    buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
     buildTarget: Android
     maxTextureSize: 2048
     resizeAlgorithm: 0
@@ -214,35 +138,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: w4
+      name: Knight_0
       rect:
         serializedVersion: 2
-        x: 1146
-        y: 397
-        width: 250
-        height: 220
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 034c7e73a865d6c30800000000000000
-      internalID: 4354231566380549168
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Skeleton_6
-      rect:
-        serializedVersion: 2
-        x: 101
-        y: 719
-        width: 235
-        height: 200
+        x: 516
+        y: 1437
+        width: 563
+        height: 623
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -251,20 +153,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 99b26b56b999e8e90800000000000000
-      internalID: -7021505876318606439
+      spriteID: a051e7b1e407bb0b0800000000000000
+      internalID: -5711848221618334454
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: w1
+      name: Knight_1
       rect:
         serializedVersion: 2
-        x: 112
-        y: 395
-        width: 250
-        height: 220
+        x: 1485
+        y: 1437
+        width: 563
+        height: 623
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -273,20 +175,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 32fb7327afb16f1e0800000000000000
-      internalID: -2164511808432914653
+      spriteID: 07df6bd5bf27c4380800000000000000
+      internalID: -8985680732576350864
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: w2
+      name: Knight_2
       rect:
         serializedVersion: 2
-        x: 456
-        y: 394
-        width: 250
-        height: 220
+        x: 539
+        y: 22
+        width: 505
+        height: 623
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -295,20 +197,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: df8680029b94ade90800000000000000
-      internalID: -7000201611338815235
+      spriteID: 02a5fdd40b300ac60800000000000000
+      internalID: 7827260208125532704
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: w3
+      name: Knight_3
       rect:
         serializedVersion: 2
-        x: 807
-        y: 395
-        width: 250
-        height: 220
+        x: 15
+        y: 748
+        width: 563
+        height: 623
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -317,30 +219,30 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: ede1556624e2c28c0800000000000000
-      internalID: -4022789504429121826
+      spriteID: 3591b0a6ba6acbb40800000000000000
+      internalID: 5457420103614929235
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: st
+      name: Knight_4
       rect:
         serializedVersion: 2
-        x: 48
-        y: 72
-        width: 380
-        height: 230
+        x: 1017
+        y: 750
+        width: 563
+        height: 623
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 96bb81537ca4561468430df2759bc187
-      internalID: 1614214187
+      spriteID: f9d7a3d7badbfa570800000000000000
+      internalID: 8480205167599975839
       vertices: []
       indices: 
       edges: []
@@ -349,7 +251,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: ddb8dc1c06f49d6488d314bd20165d31
+    spriteID: 7de619d6e119f8d43936ed060207b549
     internalID: 0
     vertices: []
     indices: 
@@ -359,33 +261,11 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Skeleton_1: 5809030516613042957
-      Skeleton_10: -3968840907078709152
-      Skeleton_14: 8650110944895953673
-      Skeleton_15: 4520074865302796247
-      Skeleton_16: -1325205120640645288
-      Skeleton_17: 6219686596316222553
-      Skeleton_18: 2058306284268228198
-      Skeleton_19: -6896880325500990939
-      Skeleton_2: 6682473901004932845
-      Skeleton_20: 8495289983822508492
-      Skeleton_21: -1155214034691015396
-      Skeleton_22: 380626319886666678
-      Skeleton_23: 8661365367480307861
-      Skeleton_24: 4120830285991997394
-      Skeleton_25: -5758231261664834141
-      Skeleton_3: -6895646428441557691
-      Skeleton_4: 8681928648562347177
-      Skeleton_5: -6534455043122499310
-      Skeleton_6: -7021505876318606439
-      Skeleton_7: 653362398722190026
-      Skeleton_8: -9021820611684853211
-      Skeleton_9: -1443268486790046223
-      st: 1614214187
-      w1: -2164511808432914653
-      w2: -7000201611338815235
-      w3: -4022789504429121826
-      w4: 4354231566380549168
+      Knight_0: -5711848221618334454
+      Knight_1: -8985680732576350864
+      Knight_2: 7827260208125532704
+      Knight_3: 5457420103614929235
+      Knight_4: 8480205167599975839
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

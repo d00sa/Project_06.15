@@ -1,91 +1,28 @@
 fileFormatVersion: 2
-guid: e5c270cc5997f4045acecbc5a4946796
+guid: bd29ceaa9e4256a478e92687b1bbb1c4
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -902522588636750468
-    second: Knight_Alpha_0
+      213: -2283981038119606859
+    second: Knight3_0
   - first:
-      213: 2767834456503740974
-    second: Knight_Alpha_1
+      213: 5359030221905150060
+    second: Knight3_1
   - first:
-      213: 782866990801859773
-    second: Knight_Alpha_2
+      213: 2049076990132605834
+    second: Knight3_2
   - first:
-      213: -5001267070026093173
-    second: Knight_Alpha_3
+      213: 8521190420960436983
+    second: Knight3_3
   - first:
-      213: -2643985995023226204
-    second: Knight_Alpha_4
+      213: -9174622078084572377
+    second: Knight3_4
   - first:
-      213: -4925151254636843783
-    second: Knight_Alpha_5
+      213: -7916100958455040495
+    second: Knight3_5
   - first:
-      213: 331561291625619687
-    second: Knight_Alpha_6
-  - first:
-      213: 4680403295465244621
-    second: Knight_Alpha_7
-  - first:
-      213: 1080117236913584177
-    second: Knight_Alpha_8
-  - first:
-      213: -3958992983270464124
-    second: Knight_Alpha_9
-  - first:
-      213: 732927213200432835
-    second: Knight_Alpha_10
-  - first:
-      213: 6864059657183497984
-    second: Knight_Alpha_11
-  - first:
-      213: -8500783143110316157
-    second: Knight_Alpha_12
-  - first:
-      213: 3097780111113937230
-    second: Knight_Alpha_13
-  - first:
-      213: 6090721145112302908
-    second: Knight_Alpha_14
-  - first:
-      213: -3374098379823341599
-    second: Knight_Alpha_15
-  - first:
-      213: -3092251134273920940
-    second: Knight_Alpha_16
-  - first:
-      213: -3962052565005655411
-    second: Knight_Alpha_17
-  - first:
-      213: 8798296839909285487
-    second: Knight_Alpha_18
-  - first:
-      213: -2460358756489332137
-    second: Knight_Alpha_19
-  - first:
-      213: 5527250897139523639
-    second: Knight_Alpha_20
-  - first:
-      213: -3545081456992841561
-    second: Knight_Alpha_21
-  - first:
-      213: 1472406788302833965
-    second: Knight_Alpha_22
-  - first:
-      213: -4490823132738614993
-    second: Knight_Alpha_23
-  - first:
-      213: -8337268680144389193
-    second: Knight_Alpha_24
-  - first:
-      213: 5030510295023173403
-    second: Knight_Alpha_25
-  - first:
-      213: -5396973034598861466
-    second: Knight_Alpha_26
-  - first:
-      213: 4317163690615024375
-    second: Knight_Alpha_27
+      213: -4866052962394332655
+    second: Knight3_6
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -132,7 +69,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 200
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -178,7 +115,20 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 4
-    buildTarget: WebGL
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: iOS
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -194,13 +144,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: w1
+      name: Knight3_0
       rect:
         serializedVersion: 2
-        x: 27
-        y: 574
-        width: 345
-        height: 340
+        x: 57
+        y: 1500
+        width: 505
+        height: 593
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -209,20 +159,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 7e06d90fc31f99400800000000000000
-      internalID: 331561291625619687
+      spriteID: 5b5272dc85bad40e0800000000000000
+      internalID: -2283981038119606859
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: w2
+      name: Knight3_1
       rect:
         serializedVersion: 2
-        x: 408
-        y: 571
-        width: 345
-        height: 340
+        x: 1000
+        y: 1496
+        width: 507
+        height: 625
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -231,20 +181,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: dc706c7dff124f040800000000000000
-      internalID: 4680403295465244621
+      spriteID: c604d3de7991f5a40800000000000000
+      internalID: 5359030221905150060
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: s
+      name: Knight3_4
       rect:
         serializedVersion: 2
-        x: 95
-        y: 68
-        width: 400
-        height: 330
+        x: 1440
+        y: 768
+        width: 512
+        height: 627
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -253,20 +203,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: f29020877246da1c0800000000000000
-      internalID: -4490823132738614993
+      spriteID: 72b105744d13da080800000000000000
+      internalID: -9174622078084572377
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: d
+      name: Knight3_5
       rect:
         serializedVersion: 2
-        x: 762
-        y: 103
-        width: 540
-        height: 210
+        x: 482
+        y: 66
+        width: 518
+        height: 648
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -275,8 +225,30 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: b1f3dc5e576ffc540800000000000000
-      internalID: 5030510295023173403
+      spriteID: 116782d9e1c542290800000000000000
+      internalID: -7916100958455040495
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Knight3_6
+      rect:
+        serializedVersion: 2
+        x: 1449
+        y: 70
+        width: 503
+        height: 644
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 112af36bc9e487cb0800000000000000
+      internalID: -4866052962394332655
       vertices: []
       indices: 
       edges: []
@@ -285,7 +257,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: f0162b4d41e16ab43bd17096d13a84c6
+    spriteID: 0b11ff34b6dc24d4299a2b4a182df84f
     internalID: 0
     vertices: []
     indices: 
@@ -295,34 +267,13 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Knight_Alpha_0: -902522588636750468
-      Knight_Alpha_1: 2767834456503740974
-      Knight_Alpha_10: 732927213200432835
-      Knight_Alpha_11: 6864059657183497984
-      Knight_Alpha_12: -8500783143110316157
-      Knight_Alpha_13: 3097780111113937230
-      Knight_Alpha_14: 6090721145112302908
-      Knight_Alpha_15: -3374098379823341599
-      Knight_Alpha_16: -3092251134273920940
-      Knight_Alpha_17: -3962052565005655411
-      Knight_Alpha_18: 8798296839909285487
-      Knight_Alpha_19: -2460358756489332137
-      Knight_Alpha_2: 782866990801859773
-      Knight_Alpha_20: 5527250897139523639
-      Knight_Alpha_21: -3545081456992841561
-      Knight_Alpha_22: 1472406788302833965
-      Knight_Alpha_24: -8337268680144389193
-      Knight_Alpha_26: -5396973034598861466
-      Knight_Alpha_27: 4317163690615024375
-      Knight_Alpha_3: -5001267070026093173
-      Knight_Alpha_4: -2643985995023226204
-      Knight_Alpha_5: -4925151254636843783
-      Knight_Alpha_8: 1080117236913584177
-      Knight_Alpha_9: -3958992983270464124
-      d: 5030510295023173403
-      s: -4490823132738614993
-      w1: 331561291625619687
-      w2: 4680403295465244621
+      Knight3_0: -2283981038119606859
+      Knight3_1: 5359030221905150060
+      Knight3_2: 2049076990132605834
+      Knight3_3: 8521190420960436983
+      Knight3_4: -9174622078084572377
+      Knight3_5: -7916100958455040495
+      Knight3_6: -4866052962394332655
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
