@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -8,7 +9,9 @@ public class TitleManager : MonoBehaviour
     [SerializeField] GameObject _title;
     [SerializeField] GameObject _difficulty;
     [SerializeField] List<Button> _buttonList;
+    [SerializeField] List<Sprite> _panels; //0: Default, 1:Select
 
+    private int _curIdx = -1;
     private void Awake()
     {
         Instance = this;
@@ -60,8 +63,28 @@ public class TitleManager : MonoBehaviour
         GameManager.Instance.GameQuit();
     }
 
+    public void StartGame()
+    {
+        GameManager.Instance.IsSelectDifficulty = true;
+    }
+
     private void SelectDifficulty(int idx)
     {
+        if (idx < 0) 
+            return;
+
+        if (idx == _curIdx) {
+            _buttonList[idx].GetComponent<Image>().sprite = _panels[0]; //default
+            GameManager.Instance.Data = null;
+            _curIdx = -1;
+            return;
+        }
+
+
+        if (_curIdx >= 0) _buttonList[_curIdx].GetComponent<Image>().sprite = _panels[0]; //이전 거 해제
+
+        _buttonList[idx].GetComponent<Image>().sprite = _panels[1]; //Select
+        _curIdx = idx;
         GameManager.Instance.Data = DifficultyManager.Instance.GetData(idx);
     }
 }

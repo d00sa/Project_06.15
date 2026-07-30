@@ -399,7 +399,7 @@ TextureImporter:
         width: 4
         height: 3
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -408,6 +408,28 @@ TextureImporter:
       bones: []
       spriteID: a13959d26f2302f4b80b3567e6de18f0
       internalID: -9044940087047226622
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skeleton_1
+      rect:
+        serializedVersion: 2
+        x: 524
+        y: 458
+        width: 84
+        height: 78
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e618287b5e1dcd046afa00480d1e45e5
+      internalID: 1807423853
       vertices: []
       indices: 
       edges: []
@@ -428,7 +450,6 @@ TextureImporter:
     nameFileIdTable:
       Cas: 1384384286009699206
       Lose_0: -9044940087047226622
-      Lose_1: -6966489487585567046
       Lose_10: -6831889198439899544
       Lose_12: -1133188421113653181
       Lose_13: -1763325689310806157
@@ -505,6 +526,7 @@ TextureImporter:
       Lose_8: -3781820521133207696
       Lose_9: -1502916416926055354
       Skele: 7868382087123795607
+      Skeleton_1: -6966489487585567046
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

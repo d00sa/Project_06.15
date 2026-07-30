@@ -67,6 +67,7 @@ public class GameManager : MonoBehaviour
     [Header("[게임 설정]")]
     public GameState Current;
     public DifficultyData Data;
+    public bool IsSelectDifficulty = false;
     public bool Win = false;
     public bool Lose = false;
     public float CurSpeed = 1.0f;
@@ -102,7 +103,7 @@ public class GameManager : MonoBehaviour
 
         switch (Current) {
             case GameState.LoadDifficultData: {
-                    if (Data != null)
+                    if (Data != null && IsSelectDifficulty)
                         ChangeState(GameState.StartGame);
                 }
                 break;

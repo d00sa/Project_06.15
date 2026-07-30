@@ -84,6 +84,7 @@ public class SoundManager : MonoBehaviour
     public void PlaySFX(string sfxName)
     {
         if (_audioSourceDic.TryGetValue(sfxName, out AudioSource source)) {
+            source.loop = false;
             source.PlayOneShot(source.clip);
         }
         else
@@ -96,38 +97,26 @@ public class SoundManager : MonoBehaviour
         if (_audioSourceDic.TryGetValue(sfxName, out AudioSource source))
         {
             source.loop = true;
-
-
             if (!source.isPlaying)
-            {
                 source.Play();
-            }
         }
         else
-        {
-            Debug.LogWarning($"재생하려는 루프 SFX가 없습니다: {sfxName}");
-        }
+            Debug.LogWarning($"재생하려는 Loop SFX가 없습니다: {sfxName}");
     }
 
     /// <summary> 특정 사운드 재생 중단 </summary>
     public void StopSound(string soundName)
     {
         if (_audioSourceDic.TryGetValue(soundName, out AudioSource source))
-        {
             source.Stop();
-        }
         else
-        {
             Debug.LogWarning($"중단하려는 사운드가 없습니다: {soundName}");
-        }
     }
 
     /// <summary> 재생 중인 모든 사운드 일괄 중단 </summary>
     public void StopAllSounds()
     {
         foreach (var source in _audioSourceDic.Values)
-        {
             source.Stop();
-        }
     }
 }
