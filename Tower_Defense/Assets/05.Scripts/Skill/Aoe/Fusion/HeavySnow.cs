@@ -39,10 +39,14 @@ public class HeavySnow : MonoBehaviour, ISkillEffect
         StartCoroutine(HeavySnowRoutine());
     }
 
-    public void OnSpawn() { }
+    public void OnSpawn() 
+    {
+        SoundManager.Instance.PlayLoopSFX("HeavySnowSkillSFX");
+    }
 
     public void OnDespawn()
     {
+
         StopAllCoroutines();
     }
 
@@ -63,6 +67,8 @@ public class HeavySnow : MonoBehaviour, ISkillEffect
 
             yield return new WaitForSeconds(dropInterval);
         }
+
+        SoundManager.Instance.StopSound("HeavySnowSkillSFX");
 
         ObjectPool.Instance.ReturnObj(gameObject);
     }

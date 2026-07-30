@@ -17,6 +17,8 @@ public class BouncyBall : Pet
 
     private float finalSpeedStat = 0f;
 
+    
+
     public override void Initialize(SkillLevelStat stat)
     {
         base.Initialize(stat);
@@ -31,6 +33,8 @@ public class BouncyBall : Pet
 
         // 랜덤한 방향으로 튕기기
         moveDirection = new Vector2(Random.Range(-1f, 1f), Random.Range(-1f, 1f)).normalized;
+
+        SoundManager.Instance.PlaySFX("BouncyBallSkillSFX");
     }
 
     private void UpdateScreenBounds()
@@ -89,6 +93,8 @@ public class BouncyBall : Pet
 
             Vector2 normal = ((Vector2)transform.position - (Vector2)enemy.transform.position).normalized;
             moveDirection = Vector2.Reflect(moveDirection, normal).normalized;
+
+            SoundManager.Instance.PlaySFX("BouncyBallSkillSFX");
         }
         // 다른 탱탱볼과 충돌
         else if (collision.TryGetComponent<BouncyBall>(out var otherBall))
@@ -97,6 +103,8 @@ public class BouncyBall : Pet
             if (normal == Vector2.zero) return;
 
             moveDirection = Vector2.Reflect(moveDirection, normal).normalized;
+
+            SoundManager.Instance.PlaySFX("BouncyBallSkillSFX");
         }
     }
 }

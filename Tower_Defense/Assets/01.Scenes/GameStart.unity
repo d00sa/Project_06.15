@@ -14761,6 +14761,8 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: fce3609dd9cd978498fdff0a096ff118, type: 3}
   - type: 2
     clip: {fileID: 8300000, guid: c4b25fc9e682d484b84a5809e6cbce68, type: 3}
+  - type: 2
+    clip: {fileID: 8300000, guid: 3e59c3a8e7aa8eb4aaa265042fe8ee2d, type: 3}
   _mixer: {fileID: 24100000, guid: bd8420716a4b80549ab8db6877b0e34d, type: 2}
 --- !u!4 &1459949403
 Transform:
@@ -37945,6 +37947,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 8427968885779218570, guid: 24ddef4e6ae733648be7a3e464718ccc, type: 3}
+      propertyPath: startingSkills.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8427968885779218570, guid: 24ddef4e6ae733648be7a3e464718ccc, type: 3}
+      propertyPath: 'startingSkills.Array.data[0]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 048920edd3c18c248bd998798e2e8ef2, type: 2}
+    - target: {fileID: 8427968885779218570, guid: 24ddef4e6ae733648be7a3e464718ccc, type: 3}
+      propertyPath: 'startingSkills.Array.data[1]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 40fe5125b7ee973469be63e70e836098, type: 2}
+    - target: {fileID: 8427968885779218570, guid: 24ddef4e6ae733648be7a3e464718ccc, type: 3}
+      propertyPath: 'startingSkills.Array.data[2]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 048920edd3c18c248bd998798e2e8ef2, type: 2}
+    - target: {fileID: 8427968885779218570, guid: 24ddef4e6ae733648be7a3e464718ccc, type: 3}
+      propertyPath: 'startingSkills.Array.data[3]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 3a9e292ec83326d459a7cd89d1b1ae95, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

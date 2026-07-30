@@ -34082,6 +34082,28 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: fce3609dd9cd978498fdff0a096ff118, type: 3}
   - type: 2
     clip: {fileID: 8300000, guid: c4b25fc9e682d484b84a5809e6cbce68, type: 3}
+  - type: 2
+    clip: {fileID: 8300000, guid: 3e59c3a8e7aa8eb4aaa265042fe8ee2d, type: 3}
+  - type: 2
+    clip: {fileID: 8300000, guid: 66f5c603ff9eba049b426494b4fb96f3, type: 3}
+  - type: 2
+    clip: {fileID: 8300000, guid: cdd8a67f6e6cb1946bde357ddcdc4e85, type: 3}
+  - type: 2
+    clip: {fileID: 8300000, guid: bb9d2c2914cb7214099aacf6cf2dde8b, type: 3}
+  - type: 2
+    clip: {fileID: 8300000, guid: 021e23f8c8b11d84ea00b137b36d9da4, type: 3}
+  - type: 2
+    clip: {fileID: 8300000, guid: b2cbb1a153cfab741bbc6ad502ab5665, type: 3}
+  - type: 2
+    clip: {fileID: 8300000, guid: b39ecae82bbcb0d4bb58dc53d00f06c0, type: 3}
+  - type: 2
+    clip: {fileID: 8300000, guid: 6f88d10d0a7662c4fa727a3a3b70438b, type: 3}
+  - type: 2
+    clip: {fileID: 8300000, guid: 2973ea6af4c4f184b90e10cb384a27bd, type: 3}
+  - type: 2
+    clip: {fileID: 8300000, guid: 57c2734088ed0e34f9c9d4a436cefd3a, type: 3}
+  - type: 2
+    clip: {fileID: 8300000, guid: 92d890196ebba044caed27a929b9df9d, type: 3}
   _mixer: {fileID: 24100000, guid: bd8420716a4b80549ab8db6877b0e34d, type: 2}
 --- !u!4 &1273252406
 Transform:

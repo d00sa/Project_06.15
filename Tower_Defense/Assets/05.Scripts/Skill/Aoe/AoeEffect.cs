@@ -25,6 +25,10 @@ public class AoeEffect : MonoBehaviour, ISkillEffect
     [Header("상태 이상 (독/화상)")]
     [SerializeField] protected float lingerDuration = 3f;
 
+    [Header("사운드 관리용 스킬 종류")]
+    [SerializeField] protected bool isSawTrap = false;
+    [SerializeField] protected bool isToxicTrap = false;
+
     public virtual void Initialize(SkillEffectContext ctx)
     {
         myStat = ctx.stat;
@@ -35,7 +39,10 @@ public class AoeEffect : MonoBehaviour, ISkillEffect
             myStat.fireRate
         );
 
-        SoundManager.Instance.PlaySFX("Trap");
+        if (isSawTrap)
+            SoundManager.Instance.PlayLoopSFX("SawSkillSFX");
+        else if (isToxicTrap)
+            SoundManager.Instance.PlayLoopSFX("ToxicSkillSFX");
     }
 
     public virtual void OnSpawn()
@@ -47,7 +54,10 @@ public class AoeEffect : MonoBehaviour, ISkillEffect
         if (animator != null) animator.SetBool("isDead", false);
     }
 
-    public virtual void OnDespawn() { }
+    public virtual void OnDespawn() 
+    {
+
+    }
 
     protected virtual void Update()
     {
@@ -72,6 +82,13 @@ public class AoeEffect : MonoBehaviour, ISkillEffect
 
             enemiesInside.Clear();
             if (animator != null) animator.SetBool("isDead", true);
+
+            // 효과음 중지 
+            if (isSawTrap)
+                SoundManager.Instance.StopSound("SawSkillSFX");
+            else if (isToxicTrap)
+                SoundManager.Instance.StopSound("ToxicSkillSFX");
+
             ObjectPool.Instance.ReturnObj(gameObject, 0.8f);
             return;
         }

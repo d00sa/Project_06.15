@@ -53,8 +53,8 @@ MonoBehaviour:
   isRotating: 0
   rotationSpeed: 90
   lingerDuration: 5
-  instaKillNormalOnly: 0
-  isNukeFusion: 0
+  isSawTrap: 0
+  isToxicTrap: 1
 --- !u!61 &4552249128420313633
 BoxCollider2D:
   m_ObjectHideFlags: 0

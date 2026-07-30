@@ -174,5 +174,5 @@ MonoBehaviour:
   isRotating: 1
   rotationSpeed: 1000
   lingerDuration: 0
-  instaKillNormalOnly: 0
-  isNukeFusion: 0
+  isSawTrap: 1
+  isToxicTrap: 0

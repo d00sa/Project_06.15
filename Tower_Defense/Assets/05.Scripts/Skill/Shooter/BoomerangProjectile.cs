@@ -67,7 +67,7 @@ public class BoomerangProjectile : MonoBehaviour, ISkillEffect
             }
         }
 
-        SoundManager.Instance.PlaySFX("Gun");
+        SoundManager.Instance.PlaySFX("Arrow");
     }
 
     public void OnSpawn() { }

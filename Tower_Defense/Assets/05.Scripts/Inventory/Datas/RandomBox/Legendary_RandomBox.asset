@@ -14,9 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ItemData
   ItemType: 1
   ID: 777777
-  ItemName: Rare_RandomBox
+  ItemName: "\uC804\uC124 \uB79C\uB364\uC0C1\uC790"
   Icon: {fileID: 5270485923306069355, guid: 30a076eb53bc3b64cb1f0bb594fb227f, type: 3}
-  Description: Rare_RandomBox
+  Description: "\uC804\uC124 \uB4F1\uAE09\uC758 \uBB34\uC791\uC704 \uC544\uC774\uD15C\uC774
+    \uB098\uC635\uB2C8\uB2E4."
   Rarity: 4
   Modifiers: []
   LootTable: {fileID: 11400000, guid: 169b0167b6c0020419da7e25c9782061, type: 2}
+  Effect: {fileID: 0}

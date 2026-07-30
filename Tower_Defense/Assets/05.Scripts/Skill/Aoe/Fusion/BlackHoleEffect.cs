@@ -50,7 +50,6 @@ public class BlackHoleEffect : MonoBehaviour, ISkillEffect
         if (myStat.range > 0f) pullRadius = myStat.range;
         if (pullRadius <= 0f) pullRadius = 3f;
 
-        SoundManager.Instance.PlaySFX("Trap");
     }
 
     public void OnSpawn()
@@ -58,6 +57,8 @@ public class BlackHoleEffect : MonoBehaviour, ISkillEffect
         isEnding = false;
         currentDuration = 0f;
         tickTimer = 0f;
+
+        SoundManager.Instance.PlayLoopSFX("BlackHoleSkillSFX");
 
         //if (animator != null)
         //    animator.SetBool("isDead", false);
@@ -81,6 +82,9 @@ public class BlackHoleEffect : MonoBehaviour, ISkillEffect
 
             //if (animator != null)
             //    animator.SetBool("isDead", true);
+
+            // 효과음 중지
+            SoundManager.Instance.StopSound("BlackHoleSkillSFX");
 
             ObjectPool.Instance.ReturnObj(gameObject);
             return;

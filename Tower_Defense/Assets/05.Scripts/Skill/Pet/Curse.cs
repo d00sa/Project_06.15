@@ -46,6 +46,7 @@ public class Curse : Pet
             }
 
             SetVisualActive(true);
+            SoundManager.Instance.PlaySFX("CurseSkillSFX");
 
             currentlyCursedEnemies.Add(targetEnemy);
             targetEnemy.OnCalculateBonusDamage += CalculateCurseDamage;

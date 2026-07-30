@@ -41,6 +41,7 @@ public class InstantAoeEffect : MonoBehaviour, ISkillEffect
     public void OnSpawn()
     {
         if (animator != null) animator.SetBool("isDead", false);
+        SoundManager.Instance.PlaySFX("LightningSkillSFX");
     }
 
     public void OnDespawn() { }

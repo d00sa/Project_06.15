@@ -12,7 +12,7 @@ public class NuclearBomb : AoeEffect
     [Header("핵폭탄 낙하 연출")]
     [SerializeField] private Transform bombVisual;
     [SerializeField] private float dropHeight = 15f;
-    [SerializeField] private float dropDuration = 1f;
+    [SerializeField] private float dropDuration = 2f;
     [SerializeField] private GameObject explosionVisual;
 
     [Tooltip("SimpleFlash 스크립트가 붙어있는 화면 번쩍임용 오브젝트")]
@@ -38,6 +38,7 @@ public class NuclearBomb : AoeEffect
     {
         base.OnSpawn();
         isDropping = false;
+        SoundManager.Instance.PlaySFX("NuclearBombDrop");
     }
 
     protected override void Update()
@@ -97,6 +98,9 @@ public class NuclearBomb : AoeEffect
         SoundManager.Instance.PlaySFX("Explosion");
 
         ExecuteNukeDamage();
+        // 낙하 효과음 종료후, 핵폭탄 효과음 
+        SoundManager.Instance.StopSound("NuclearBombDrop");
+        SoundManager.Instance.PlaySFX("NuclearBombSkillSFX");
         isDropping = false;
     }
 

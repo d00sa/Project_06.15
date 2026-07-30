@@ -56,7 +56,7 @@ public class ReplicatingCell : MonoBehaviour, ISkillEffect
             if (moveDirection == Vector2.zero) moveDirection = Vector2.up;
         }
 
-        SoundManager.Instance.PlaySFX("Gun");
+        SoundManager.Instance.PlaySFX("Arrow");
     }
 
     /// <summary>
@@ -69,6 +69,8 @@ public class ReplicatingCell : MonoBehaviour, ISkillEffect
 
         currentSplitCount = splitGen;
         moveDirection = dir.normalized;
+
+        finalSpeedStat = Player.Instance.Stat.GetStat(StatType.ProjectileSpeed) + myStat.speed;
 
         transform.localScale = parentScale * 0.5f;
         currentDamage = parentDamage * 0.5f;
@@ -135,7 +137,7 @@ public class ReplicatingCell : MonoBehaviour, ISkillEffect
             {
                 SplitCell(enemy);
             }
-
+            SoundManager.Instance.PlaySFX("BouncyBallSkillSFX");
             ObjectPool.Instance.ReturnObj(gameObject);
         }
         else if (collision.TryGetComponent<ReplicatingCell>(out var otherCell))
@@ -149,6 +151,7 @@ public class ReplicatingCell : MonoBehaviour, ISkillEffect
             {
                 transform.position += (Vector3)normal * 0.3f;
             }
+
         }
     }
 

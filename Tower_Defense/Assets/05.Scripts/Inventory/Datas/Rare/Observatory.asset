@@ -16,7 +16,8 @@ MonoBehaviour:
   ID: 10
   ItemName: "\uAD00\uCE21\uC18C"
   Icon: {fileID: -8403690538097467267, guid: 42cd89132b6daaa41aa9ca965cf5fa07, type: 3}
-  Description: 
+  Description: "\uC544\uB9C8 \uC774\uC804\uAE4C\uC9C4 \uCC9C\uCCB4 \uAD00\uCE21\uC6A9\uC774\uC5C8\uC744
+    \uAC81\uB2C8\uB2E4."
   Rarity: 2
   Modifiers:
   - StatType: 4

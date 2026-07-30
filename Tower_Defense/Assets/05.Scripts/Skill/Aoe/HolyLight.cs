@@ -77,7 +77,7 @@ public class HolyLight : AoeEffect
         }
 
         // 사운드 재생
-        SoundManager.Instance.PlaySFX("HolyFlash");
+        SoundManager.Instance.PlaySFX("HolyLightSkillSFX");
 
         ExecuteHolyKill();
 

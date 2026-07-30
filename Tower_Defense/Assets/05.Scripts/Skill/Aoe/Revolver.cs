@@ -78,6 +78,7 @@ public class Revolver : MonoBehaviour, IPersistentSkillEffect
                 }
 
                 // TODO: 조준음 재생
+                SoundManager.Instance.PlaySFX("RevolverSkillCockcingSFX");
                 yield return new WaitForSeconds(aimInterval);
             }
 
@@ -100,6 +101,7 @@ public class Revolver : MonoBehaviour, IPersistentSkillEffect
                 if (target != null && target.gameObject.activeInHierarchy && !target.IsDead)
                 {
                     // TODO 총소리 재생
+                    SoundManager.Instance.PlaySFX("Gun");
                     target.TakeDamage(calculatedFinalDamage, target.transform.position, 0f);
                 }
 

@@ -1,103 +1,61 @@
 fileFormatVersion: 2
-guid: 66939806dde29ad469f4857cec1e9f2c
+guid: e3b3ade80ef3d3349886dcfe09d0e3fc
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -5899927303015767666
-    second: Ghost_0
+      213: 7197737520372539536
+    second: Slime_Alpha_0
   - first:
-      213: 6824852377700625651
-    second: Ghost_1
+      213: 5357778817398653938
+    second: Slime_Alpha_1
   - first:
-      213: -1720829479360743675
-    second: Ghost_2
+      213: -6062873779554071673
+    second: Slime_Alpha_2
   - first:
-      213: 961504700816514905
-    second: Ghost_3
+      213: -7208657473698586002
+    second: Slime_Alpha_3
   - first:
-      213: -5178447075761725730
-    second: Ghost_4
+      213: 7734010903895665821
+    second: Slime_Alpha_4
   - first:
-      213: 8991445823508332458
-    second: Ghost_5
+      213: 3963045605089287216
+    second: Slime_Alpha_5
   - first:
-      213: -923108277791623692
-    second: Ghost_6
+      213: 7478406961305381465
+    second: Slime_Alpha_6
   - first:
-      213: -4121637456501685004
-    second: Ghost_7
+      213: -2025435723643321448
+    second: Slime_Alpha_7
   - first:
-      213: -2205440430153107873
-    second: Ghost_8
+      213: -4773918350217582863
+    second: Slime_Alpha_8
   - first:
-      213: 7434381711262100580
-    second: Ghost_9
+      213: -1176240421200445490
+    second: Slime_Alpha_9
   - first:
-      213: 7387920548191155356
-    second: Ghost_10
+      213: 3005246530885270404
+    second: Slime_Alpha_10
   - first:
-      213: -2117901830842484608
-    second: Ghost_11
+      213: 4324852258180108121
+    second: Slime_Alpha_11
   - first:
-      213: 6983968517362155471
-    second: Ghost_12
+      213: -5289427625425551501
+    second: Slime_Alpha_12
   - first:
-      213: 4728639059745115805
-    second: Ghost_13
+      213: -3308177271917866116
+    second: Slime_Alpha_13
   - first:
-      213: 4119799616218041276
-    second: Ghost_14
+      213: 2228309767915630682
+    second: Slime_Alpha_14
   - first:
-      213: 4957227349962821925
-    second: Ghost_15
+      213: -5266501569868067932
+    second: Slime_Alpha_15
   - first:
-      213: 2149552878619432917
-    second: Ghost_16
+      213: -4464761239643604547
+    second: Slime_Alpha_16
   - first:
-      213: 8129122798560382604
-    second: Ghost_17
-  - first:
-      213: -8084540536872135226
-    second: Ghost_18
-  - first:
-      213: -3508745269591255902
-    second: Ghost_19
-  - first:
-      213: 8674533576252769926
-    second: Ghost_20
-  - first:
-      213: 6647201616227316219
-    second: Ghost_21
-  - first:
-      213: -1217731857473686402
-    second: Ghost_22
-  - first:
-      213: 8345411657915940498
-    second: Ghost_23
-  - first:
-      213: -922975023691023901
-    second: Ghost_24
-  - first:
-      213: 7206886774756811620
-    second: Ghost_25
-  - first:
-      213: -1940987526304162283
-    second: Ghost_26
-  - first:
-      213: -7027651565807450158
-    second: Ghost_27
-  - first:
-      213: -3553394176623366912
-    second: Ghost_28
-  - first:
-      213: 1719047364687244877
-    second: Ghost_29
-  - first:
-      213: -3069803534451160899
-    second: Ghost_30
-  - first:
-      213: 3855805543534653044
-    second: Ghost_31
+      213: -4338801412235250550
+    second: Slime_Alpha_17
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -202,17 +160,43 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: iOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: w4
+      name: w
       rect:
         serializedVersion: 2
-        x: 1137
-        y: 375
-        width: 240
-        height: 220
+        x: 1134
+        y: 394
+        width: 280
+        height: 150
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -221,20 +205,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 95f590e5e63f75d00800000000000000
-      internalID: 961504700816514905
+      spriteID: 2f3c82c9277aa5a40800000000000000
+      internalID: 5357778817398653938
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Idle
+      name: i
       rect:
         serializedVersion: 2
-        x: 85
-        y: 716
-        width: 240
-        height: 220
+        x: 94
+        y: 703
+        width: 280
+        height: 150
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -243,8 +227,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: aaf3267765808cc70800000000000000
-      internalID: 8991445823508332458
+      spriteID: e622bb48834b5fb90800000000000000
+      internalID: -7208657473698586002
       vertices: []
       indices: 
       edges: []
@@ -253,10 +237,10 @@ TextureImporter:
       name: w1
       rect:
         serializedVersion: 2
-        x: 108
-        y: 373
-        width: 230
-        height: 220
+        x: 109
+        y: 395
+        width: 280
+        height: 150
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -265,8 +249,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: fcff1e72d5a0ce060800000000000000
-      internalID: 6983968517362155471
+      spriteID: 95a6a6e4283a8c760800000000000000
+      internalID: 7478406961305381465
       vertices: []
       indices: 
       edges: []
@@ -275,10 +259,10 @@ TextureImporter:
       name: w2
       rect:
         serializedVersion: 2
-        x: 454
-        y: 371
-        width: 230
-        height: 220
+        x: 446
+        y: 395
+        width: 280
+        height: 150
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -287,8 +271,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: d9e0523eb208f9140800000000000000
-      internalID: 4728639059745115805
+      spriteID: 8938ad8c0f434e3e0800000000000000
+      internalID: -2025435723643321448
       vertices: []
       indices: 
       edges: []
@@ -297,10 +281,10 @@ TextureImporter:
       name: w3
       rect:
         serializedVersion: 2
-        x: 796
-        y: 372
-        width: 240
-        height: 220
+        x: 778
+        y: 395
+        width: 280
+        height: 150
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -309,20 +293,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: cbb877e5ce77c2930800000000000000
-      internalID: 4119799616218041276
+      spriteID: 1f6ef84cd82afbdb0800000000000000
+      internalID: -4773918350217582863
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Stun
+      name: s
       rect:
         serializedVersion: 2
-        x: 76
-        y: 67
-        width: 293
-        height: 187
+        x: 94
+        y: 63
+        width: 280
+        height: 171
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -331,8 +315,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 47e6d5186b2928530800000000000000
-      internalID: 3855805543534653044
+      spriteID: a8431c08a1b79c3c0800000000000000
+      internalID: -4338801412235250550
       vertices: []
       indices: 
       edges: []
@@ -341,7 +325,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 9d54cfd082f888340a6180a19c64f74f
+    spriteID: ba0ff3686c67b5949b5afc0f7c5483e4
     internalID: 0
     vertices: []
     indices: 
@@ -351,38 +335,24 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Ghost_0: -5899927303015767666
-      Ghost_1: 6824852377700625651
-      Ghost_10: 7387920548191155356
-      Ghost_11: -2117901830842484608
-      Ghost_15: 4957227349962821925
-      Ghost_16: 2149552878619432917
-      Ghost_17: 8129122798560382604
-      Ghost_18: -8084540536872135226
-      Ghost_19: -3508745269591255902
-      Ghost_2: -1720829479360743675
-      Ghost_20: 8674533576252769926
-      Ghost_21: 6647201616227316219
-      Ghost_22: -1217731857473686402
-      Ghost_23: 8345411657915940498
-      Ghost_24: -922975023691023901
-      Ghost_25: 7206886774756811620
-      Ghost_26: -1940987526304162283
-      Ghost_27: -7027651565807450158
-      Ghost_28: -3553394176623366912
-      Ghost_29: 1719047364687244877
-      Ghost_30: -3069803534451160899
-      Ghost_4: -5178447075761725730
-      Ghost_6: -923108277791623692
-      Ghost_7: -4121637456501685004
-      Ghost_8: -2205440430153107873
-      Ghost_9: 7434381711262100580
-      Idle: 8991445823508332458
-      Stun: 3855805543534653044
-      w1: 6983968517362155471
-      w2: 4728639059745115805
-      w3: 4119799616218041276
-      w4: 961504700816514905
+      Slime_Alpha_0: 7197737520372539536
+      Slime_Alpha_10: 3005246530885270404
+      Slime_Alpha_11: 4324852258180108121
+      Slime_Alpha_12: -5289427625425551501
+      Slime_Alpha_13: -3308177271917866116
+      Slime_Alpha_14: 2228309767915630682
+      Slime_Alpha_15: -5266501569868067932
+      Slime_Alpha_16: -4464761239643604547
+      Slime_Alpha_2: -6062873779554071673
+      Slime_Alpha_4: 7734010903895665821
+      Slime_Alpha_5: 3963045605089287216
+      Slime_Alpha_9: -1176240421200445490
+      i: -7208657473698586002
+      s: -4338801412235250550
+      w: 5357778817398653938
+      w1: 7478406961305381465
+      w2: -2025435723643321448
+      w3: -4773918350217582863
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

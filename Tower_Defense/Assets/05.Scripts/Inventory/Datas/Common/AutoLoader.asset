@@ -14,9 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ItemData
   ItemType: 0
   ID: 1
-  ItemName: "\uC790\uB3D9 \uAE09\uD0C4\uAE30"
+  ItemName: "\uC790\uB3D9 \uC7A5\uC804 \uC7A5\uCE58"
   Icon: {fileID: -6619249654943398645, guid: b831a8795a52fad459064a0304b9ba4a, type: 3}
-  Description: 
+  Description: "\uC7AC\uC7A5\uC804\uC774\uB77C\uB294 \uADC0\uCC2E\uC740 \uB178\uB3D9\uC744
+    \uAE30\uACC4\uC5D0\uAC8C \uD558\uCCAD\uC92C\uC2B5\uB2C8\uB2E4."
   Rarity: 1
   Modifiers:
   - StatType: 1

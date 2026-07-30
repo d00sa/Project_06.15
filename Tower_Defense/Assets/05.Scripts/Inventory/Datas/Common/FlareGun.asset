@@ -16,7 +16,7 @@ MonoBehaviour:
   ID: 3
   ItemName: "\uD50C\uB808\uC5B4\uAC74"
   Icon: {fileID: -1582553726783372906, guid: 221ec0cafeb7bf749a88a7470f47d783, type: 3}
-  Description: 
+  Description: "\uAD6C\uC870 \uC694\uCCAD\uC778\uAC00, \uD3EC\uACA9 \uC694\uCCAD\uC778\uAC00....?"
   Rarity: 1
   Modifiers:
   - StatType: 3

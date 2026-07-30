@@ -45,7 +45,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c86e77f36dcfc834fb2cf788a189d2d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::HeavySnow
-  fogSprite: {fileID: 5608305913457859329}
   slowPercentage: 0.9
   trapCount: 5
   lightningTrapPrefab: {fileID: 3655849318367500703, guid: 31c423c248fb26341818094b4e9d7fdc, type: 3}
@@ -128,10 +127,10 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 20
   m_MaskInteraction: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 0.7484869, g: 0.9011839, b: 0.91194963, a: 0.19607843}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.19607843}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
