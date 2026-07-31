@@ -34,6 +34,8 @@ public class LevelUpUIManager : MonoBehaviour
         levelUpPanel.localScale = Vector3.one;
         _graphic.enabled = true;
 
+        SoundManager.Instance.PlaySFX("LevelUp");
+
         List<SkillData> allSkills = Player.Instance.GetAllSkillData();
 
         // 이미 만렙을 찍은 스킬은 카드 후보에서 제외
@@ -130,6 +132,7 @@ public class LevelUpUIManager : MonoBehaviour
             Player.Instance.LevelUpSkill(selectedData.skillName);
         }
 
+        SoundManager.Instance.PlaySFX("SkillAndItemSelect");
         levelUpPanel.localScale = Vector3.zero;
         Time.timeScale = GameManager.Instance.CurSpeed;
         _graphic.enabled = false;

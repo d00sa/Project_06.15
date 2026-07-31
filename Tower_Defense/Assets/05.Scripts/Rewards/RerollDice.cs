@@ -13,9 +13,14 @@ public class RerollDice : MonoBehaviour, IInteractable
             RewardManager.Instance.AddRerollCount(_addCount);
         }
 
-        // 획득 효과음 재생
+        SoundManager.Instance.PlaySFX("DiceSFX");
 
-        // 플로팅 텍스트 띄우기: 타워 꼭대기에 "리롤 횟수 +1" 표시 이런 느낌?
+        if (Player.Instance != null && DamageTextManager.Instance != null)
+        {
+            Vector2 textPos = Player.Instance.transform.position;
+
+            DamageTextManager.Instance.ShowMessage($"리롤 횟수 +{_addCount}", textPos);
+        }
 
         ObjectPool.Instance.ReturnObj(this.gameObject);
     }

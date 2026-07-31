@@ -15,6 +15,13 @@ public class SoundInfo
     public AudioClip clip;
 }
 
+[Serializable]
+public class SoundCategory
+{
+    public string categoryName;
+    public List<SoundInfo> soundInfos = new List<SoundInfo>();
+}
+
 public class SoundManager : MonoBehaviour
 {
     #region public
@@ -22,7 +29,9 @@ public class SoundManager : MonoBehaviour
     #endregion
 
     #region private
-    [SerializeField] List<SoundInfo> _soundInfos;
+    [Header("사운드 목록 (구역별 관리)")]
+    [SerializeField] List<SoundCategory> _soundCategories = new List<SoundCategory>();
+
     [SerializeField] AudioMixer _mixer;
     private Dictionary<string, AudioSource> _audioSourceDic = new Dictionary<string, AudioSource>();
     #endregion
@@ -41,31 +50,41 @@ public class SoundManager : MonoBehaviour
 
     void Init()
     {
-        for (int i = 0; i < _soundInfos.Count; i++) {
-            GameObject obj = new GameObject(_soundInfos[i].clip.name);
-            obj.transform.SetParent(this.transform);
+        foreach (var category in _soundCategories)
+        {
+            foreach (var info in category.soundInfos)
+            {
+                // 오디오 클립이 비어있으면 에러가 나므로 건너뛰기 방어 코드 추가
+                if (info.clip == null) continue;
 
-            AudioSource source = obj.AddComponent<AudioSource>();
-            source.clip = _soundInfos[i].clip;
+                GameObject obj = new GameObject(info.clip.name);
+                obj.transform.SetParent(this.transform);
 
-            if (_soundInfos[i].type == Sounds.BGM) {
-                source.loop = true;
-                source.playOnAwake = true;
+                AudioSource source = obj.AddComponent<AudioSource>();
+                source.clip = info.clip;
+
+                if (info.type == Sounds.BGM)
+                {
+                    source.loop = true;
+                    source.playOnAwake = true;
+                }
+                else
+                    source.playOnAwake = false;
+
+                var targetGroups = _mixer.FindMatchingGroups(info.type.ToString());
+
+                if (targetGroups.Length > 0)
+                {
+                    source.outputAudioMixerGroup = targetGroups[0];
+                }
+                else
+                {
+                    Debug.LogError($"오디오 믹서에서 '{info.type.ToString()}' 그룹을 찾을 수 없습니다!");
+                }
+
+                if (!_audioSourceDic.ContainsKey(info.clip.name))
+                    _audioSourceDic.Add(info.clip.name, source);
             }
-            else
-                source.playOnAwake = false;
-
-            var targetGroups = _mixer.FindMatchingGroups(_soundInfos[i].type.ToString());
-
-            if (targetGroups.Length > 0) {
-                source.outputAudioMixerGroup = targetGroups[0];
-            }
-            else {
-                Debug.LogError($"오디오 믹서에서 '{_soundInfos[i].type.ToString()}' 그룹을 찾을 수 없습니다!");
-            }
-
-            if (!_audioSourceDic.ContainsKey(_soundInfos[i].clip.name))
-                _audioSourceDic.Add(_soundInfos[i].clip.name, source);
         }
     }
 
@@ -91,12 +110,37 @@ public class SoundManager : MonoBehaviour
             Debug.LogWarning($"재생하려는 SFX가 없습니다: {sfxName}");
     }
 
+    public void PlaySFX(string sfxName, float volume)
+    {
+        if (_audioSourceDic.TryGetValue(sfxName, out AudioSource source))
+        {
+            source.loop = false;
+            source.PlayOneShot(source.clip, volume);
+        }
+        else
+            Debug.LogWarning($"재생하려는 SFX가 없습니다: {sfxName}");
+    }
+
     /// <summary>효과음 루프 재생 </summary>
     public void PlayLoopSFX(string sfxName)
     {
         if (_audioSourceDic.TryGetValue(sfxName, out AudioSource source))
         {
             source.loop = true;
+            if (!source.isPlaying)
+                source.Play();
+        }
+        else
+            Debug.LogWarning($"재생하려는 Loop SFX가 없습니다: {sfxName}");
+    }
+
+    public void PlayLoopSFX(string sfxName, float volume)
+    {
+        if (_audioSourceDic.TryGetValue(sfxName, out AudioSource source))
+        {
+            source.loop = true;
+            source.volume = Mathf.Clamp01(volume);
+
             if (!source.isPlaying)
                 source.Play();
         }

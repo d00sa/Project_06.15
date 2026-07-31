@@ -30,7 +30,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -3.71, y: -10.24, z: 0}
-  m_LocalScale: {x: 0.6, y: 0.6, z: 0.6}
+  m_LocalScale: {x: 0.3, y: 0.3, z: 0.3}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
@@ -111,13 +111,14 @@ MonoBehaviour:
   slowDuration: 0
   stunDuration: 0
   isRandomDirection: 0
-  turnSpeed: 1
+  turnSpeed: 0
   maxLifeTime: 3
   rotationOffset: 0
   searchRadius: 5
   enemyLayer:
     serializedVersion: 2
     m_Bits: 0
+  enableDefaultSFX: 0
 --- !u!58 &5004046614130665679
 CircleCollider2D:
   m_ObjectHideFlags: 0

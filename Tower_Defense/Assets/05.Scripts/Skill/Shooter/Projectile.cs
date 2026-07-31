@@ -39,6 +39,10 @@ public class Projectile : MonoBehaviour, ISkillEffect
     [SerializeField] private float searchRadius = 3f; // 탐색 반경
     [SerializeField] private LayerMask enemyLayer; // 인스펙터에서 Enemy 레이어 선택
 
+    [Header("기본 투사체 SFX 활성화")]
+    [SerializeField] private bool enableDefaultSFX = true;
+
+
     private float currentLifeTime = 0f;
     private float finalSpeedStat = 0f;
 
@@ -67,7 +71,8 @@ public class Projectile : MonoBehaviour, ISkillEffect
             UpdateRotation();
         }
 
-        SoundManager.Instance.PlaySFX("Arrow");
+        if (enableDefaultSFX)
+            SoundManager.Instance.PlaySFX("Arrow");
     }
 
     public void OnSpawn()

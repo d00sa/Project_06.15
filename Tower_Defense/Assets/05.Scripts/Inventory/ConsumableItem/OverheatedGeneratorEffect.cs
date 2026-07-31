@@ -14,7 +14,8 @@ public class OverheatedGeneratorEffect : ConsumableEffect
     {
         if (Player.Instance != null)
         {
-            Player.Instance.StartCoroutine(OverheatRoutine());
+            SoundManager.Instance.PlaySFX("OverheatedGeneratorSFX");
+            Player.Instance.StartCoroutine(OverheatRoutine());            
         }
     }
 

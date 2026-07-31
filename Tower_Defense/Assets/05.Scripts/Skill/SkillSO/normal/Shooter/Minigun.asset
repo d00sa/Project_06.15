@@ -23,26 +23,25 @@ MonoBehaviour:
   - damage: 3
     fireRate: 10
     speed: 30
-    coolTime: 0
+    coolTime: 10
     range: 0
   - damage: 3
-    fireRate: 20
+    fireRate: 10
     speed: 30
-    coolTime: 0
+    coolTime: 10
     range: 0
   - damage: 3
-    fireRate: 30
+    fireRate: 10
     speed: 30
-    coolTime: 0
+    coolTime: 10
     range: 0
   - damage: 3
-    fireRate: 40
+    fireRate: 10
     speed: 30
-    coolTime: 0
+    coolTime: 10
     range: 0
   - damage: 3
-    fireRate: 50
+    fireRate: 10
     speed: 30
-    coolTime: 0
+    coolTime: 10
     range: 0
-  damageBonusType: 0

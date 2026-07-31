@@ -6,6 +6,8 @@ public class DamageText : MonoBehaviour, IPoolable
     private TextMeshPro textMesh; 
     private float timer;
 
+    private Color defaultColor;
+
     [Header("데미지 텍스트 설정")]
     [SerializeField] private float moveSpeed = 2f; // 떠오르는 속도
     [SerializeField] private float lifeTime = 0.8f; // 유지 시간
@@ -13,6 +15,8 @@ public class DamageText : MonoBehaviour, IPoolable
     private void Awake()
     {
         textMesh = GetComponent<TextMeshPro>();
+
+        defaultColor = textMesh.color;
     }
 
     /// <summary>
@@ -22,8 +26,18 @@ public class DamageText : MonoBehaviour, IPoolable
     {
         textMesh.text = damage.ToString("F0"); // 소수점 제거하고 정수로 표시
 
-        // 투명도 100%로 초기화
-        Color color = textMesh.color;
+        Color color = defaultColor;
+        color.a = 1f;
+        textMesh.color = color;
+
+        timer = 0f;
+    }
+
+    public void SetupMessage(string message)
+    {
+        textMesh.text = message;
+
+        Color color = Color.black;
         color.a = 1f;
         textMesh.color = color;
 

@@ -174,8 +174,11 @@ MonoBehaviour:
   slowDuration: 0
   stunDuration: 0
   isRandomDirection: 1
+  turnSpeed: 5
+  maxLifeTime: 3
   rotationOffset: -45
   searchRadius: 3
   enemyLayer:
     serializedVersion: 2
     m_Bits: 64
+  enableDefaultSFX: 0

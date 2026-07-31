@@ -12,6 +12,7 @@ public class WheelOfFortuneEffect : ConsumableEffect
     {
         if (Player.Instance != null)
         {
+            SoundManager.Instance.PlaySFX("WheelOfFortuneSFX");
             Player.Instance.StartCoroutine(DoubleBuffRoutine());
         }
     }

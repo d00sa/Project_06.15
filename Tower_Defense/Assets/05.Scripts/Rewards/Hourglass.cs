@@ -13,18 +13,18 @@ public class Hourglass : MonoBehaviour, IInteractable
         {
             Player.Instance.StartCoroutine(TimeStopRoutine());
         }
-
+        SoundManager.Instance.PlaySFX("HourglassSFXClink");
         ObjectPool.Instance.ReturnObj(this.gameObject);
     }
 
     private IEnumerator TimeStopRoutine()
     {
         GameManager.Instance.IsTimeStopped = true;
-
+        SoundManager.Instance.PlayLoopSFX("HourglassSFXTimeStop");
         yield return new WaitForSeconds(_freezeDuration);
 
         GameManager.Instance.IsTimeStopped = false;
-
+        SoundManager.Instance.StopSound("HourglassSFXTimeStop");
 
     }
 }

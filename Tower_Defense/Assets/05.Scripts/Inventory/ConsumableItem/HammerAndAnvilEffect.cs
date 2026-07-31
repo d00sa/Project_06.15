@@ -39,5 +39,7 @@ public class HammerAndAnvilEffect : ConsumableEffect
 
             Debug.Log($"{targetItem.Name} ({lowestRarity}) -> {newItemData.ItemName} ({nextRarity}) 교체 완료!");
         }
+
+        SoundManager.Instance.PlaySFX("HammerAndAnvilSFX");
     }
 }

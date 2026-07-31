@@ -43,4 +43,21 @@ public class DamageTextManager : MonoBehaviour
         if (textObj.TryGetComponent<DamageText>(out var damageText))
             damageText.Setup(damage);
     }
+
+    /// <summary>
+    /// 아이템 획득, 시스템 메시지 등을 띄울 때 호출
+    /// </summary>
+    public void ShowMessage(string message, Vector2 position)
+    {
+        if (damageTextPrefab == null) return;
+
+        Vector2 spawnPos = new Vector2(position.x, position.y + spawnOffsetY);
+
+        GameObject textObj = ObjectPool.Instance.GetObj(damageTextPrefab.name, spawnPos, null, true);
+
+        if (textObj.TryGetComponent<DamageText>(out var damageText))
+        {
+            damageText.SetupMessage(message);
+        }
+    }
 }

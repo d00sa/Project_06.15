@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -7,6 +8,8 @@ using UnityEngine;
 public class SkillShooter : SkillBase
 {
     private Transform target = null;
+
+    [SerializeField] private float windUpTime = 1.0f;
 
     private void Start()
     {
@@ -23,14 +26,61 @@ public class SkillShooter : SkillBase
         if (skill.data.skillPrefab == null) return;
 
         if (target == null || !target.gameObject.activeInHierarchy || !target.CompareTag("Enemy"))
+        {
+            target = FindClosestEnemy();
+        }
+
+        if (target == null) return;
+
+        if (skill.data.skillName == "Mini Gun")
+        {
+            StartCoroutine(BurstFireRoutine(skill));
+        }
+        else
+        {
+            FireSingleProjectile(skill);
+        }
+    }
+
+    // 미니건 전용 연사 코루틴
+    private IEnumerator BurstFireRoutine(ActiveSkill skill)
+    {
+
+        SoundManager.Instance.PlayLoopSFX("MinigunSkillSFXSpin", 0.3f);
+
+        yield return new WaitForSeconds(windUpTime);
+        //SoundManager.Instance.StopSound("MinigunSkillSFXSpin");
+        SoundManager.Instance.PlayLoopSFX("MinigunSkillSFXShooting", 0.3f);
+
+        float duration = 5f; // 연사 지속 시간, 필요에 따라 조정 가능
+        float fireInterval = skill.CurrentStat.fireRate > 0f ? (1f / skill.CurrentStat.fireRate) : 0.1f;
+        float timer = 0f;
+
+        while (timer < duration)
+        {
+            FireSingleProjectile(skill);
+
+            timer += fireInterval;
+            yield return new WaitForSeconds(fireInterval);
+        }
+
+        // 발사 로직이 끝나면 예열음과 발사음 루프 정지
+
+        SoundManager.Instance.StopSound("MinigunSkillSFXShooting");
+        SoundManager.Instance.StopSound("MinigunSkillSFXSpin");
+        SoundManager.Instance.PlaySFX("MinigunSkillSFXOverheating", 1.5f);
+    }
+
+    // 기존 단발 발사 방식
+    private void FireSingleProjectile(ActiveSkill skill)
+    {
+        if (target == null || !target.gameObject.activeInHierarchy || !target.CompareTag("Enemy"))
             target = FindClosestEnemy();
 
         if (target == null) return;
 
         GameObject obj = ObjectPool.Instance.GetObj(skill.data.skillPrefab.name, transform.position, null, true);
 
-        // 새로운 발사체 종류가 추가되어도 이 매니저는 건드릴 필요 없음.
-        // 프리팹에 ISkillEffect를 구현한 컴포넌트만 붙이면 됨.
         if (obj.TryGetComponent<ISkillEffect>(out var effect))
         {
             effect.Initialize(new SkillEffectContext(skill.CurrentStat, caster: transform, target: target));
