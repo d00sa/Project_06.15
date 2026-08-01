@@ -10,7 +10,7 @@ public enum Commands
 
 public enum StateType
 {
-    Stunned, Move, Dead, EOF
+    Move, Stunned, Dead, EOF
 }
 public abstract class StateBase : IState
 {
@@ -22,7 +22,7 @@ public abstract class StateBase : IState
     {
         _machine = machine;
         _machineType = machinetype;
-        _animator = _machine.GetComponent<Animator>();
+        _animator = _machine.GetComponentInChildren<Animator>();
     }
 
     public abstract bool IsExecuteOK { get; }

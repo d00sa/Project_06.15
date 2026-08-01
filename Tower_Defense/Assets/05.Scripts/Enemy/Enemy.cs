@@ -43,14 +43,14 @@ public class Enemy : MonoBehaviour, IPoolable
     [Header("[Enemy - Default Setting]")]
     [SerializeField] private bool _isBoss; //보스인지?
     [SerializeField] private bool _defaultFlipX; //기본 스프라이트 좌우반전 설정
-    [SerializeField] private List<WayPointLine> _wayPoints; //적 이동 방향
     [SerializeField] private Slider _hpBar;
     [SerializeField] private Vector3 _deadOffSet; //사망, Stuuned시 오프셋 조정
+    [SerializeField] private SpriteRenderer _sprite;
+    [SerializeField] private StateMachine _machine;
     public bool IsMovable { get; set; } = true;
 
     #region Private - NoSerialize
-    private SpriteRenderer _sprite;
-    private StateMachine _machine;
+    private List<WayPointLine> _wayPoints; //적 이동 방향
     private int _currentIdx = 0;
     private int _curLine = 0;
     private int _giveExp;
@@ -85,8 +85,6 @@ public class Enemy : MonoBehaviour, IPoolable
     private void Start()
     {
         _wayPoints = WayPointManager.Instance.wayPoints;
-        _machine = GetComponent<StateMachine>();
-        _sprite = GetComponent<SpriteRenderer>();
     }
 
     private void FixedUpdate()
@@ -153,10 +151,11 @@ public class Enemy : MonoBehaviour, IPoolable
         IsMovable = false;
         OnDead?.Invoke(this);
         Player.Instance.AddExp(_giveExp); // 플레이어에게 경험치 넘겨줌
-        SoundManager.Instance.PlaySFX("Death_Zombie");
 
-        if (_isBoss)
+        if (_isBoss) { 
             Spawner.Instance.IsBoss = false;
+            SoundManager.Instance.PlaySFX($"{gameObject.name}_Death");
+        }
 
         // 죽으면 지속 데미지 끄기
         if (dotCoroutine != null)
@@ -199,6 +198,7 @@ public class Enemy : MonoBehaviour, IPoolable
         IsMovable = true;
         _currentIdx = 0;
         _curLine = 0;
+        _sprite.flipX = _defaultFlipX;
         this.gameObject.tag = "Enemy";
 
         // 풀에서 재사용될 때 이전 상태의 이펙트가 켜진 채로 남아있지 않도록 리셋

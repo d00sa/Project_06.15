@@ -16,38 +16,25 @@ MonoBehaviour:
   UnitCount: 70
   StageDataList:
   - Stage: 1
-    bossStage: 0
-    SpawnDataList:
-    - Prefab: {fileID: 5722822434754417202, guid: fc4bb28a4df1a6f42b7d6eb2771397d9, type: 3}
-      Num: 15
-      SpawnDelay: 1
-      Term: 1
-      Exp: 15
-      Money: 0
-  - Stage: 2
-    bossStage: 0
-    SpawnDataList:
-    - Prefab: {fileID: 5722822434754417202, guid: cc10a9afd37006049a04cdea28fbee1d, type: 3}
-      Num: 15
-      SpawnDelay: 1
-      Term: 1
-      Exp: 15
-      Money: 0
-  - Stage: 3
-    bossStage: 0
-    SpawnDataList:
-    - Prefab: {fileID: 5722822434754417202, guid: 01d64dfff594a6541b1631f49e4f0577, type: 3}
-      Num: 15
-      SpawnDelay: 1
-      Term: 1
-      Exp: 15
-      Money: 0
-  - Stage: 4
     bossStage: 1
     SpawnDataList:
-    - Prefab: {fileID: 5722822434754417202, guid: 9b653d60c05f3c14cbcd8237ec1d9873, type: 3}
+    - Prefab: {fileID: 5722822434754417202, guid: d80ab3dc3368c2c45a6289ea312b2296, type: 3}
       Num: 1
       SpawnDelay: 0
       Term: 0
-      Exp: 15
-      Money: 0
+      Exp: 200
+    - Prefab: {fileID: 5722822434754417202, guid: f1357b8c59e13ac42b3c4ac6ed4229cf, type: 3}
+      Num: 1
+      SpawnDelay: 10
+      Term: 0
+      Exp: 200
+    - Prefab: {fileID: 5722822434754417202, guid: 9b653d60c05f3c14cbcd8237ec1d9873, type: 3}
+      Num: 1
+      SpawnDelay: 20
+      Term: 0
+      Exp: 200
+    - Prefab: {fileID: 5722822434754417202, guid: ed2b9bc177e0ef1439b58a3c31511f1e, type: 3}
+      Num: 1
+      SpawnDelay: 30
+      Term: 0
+      Exp: 200
