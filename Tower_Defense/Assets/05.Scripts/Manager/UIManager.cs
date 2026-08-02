@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using static UnityEngine.InputSystem.LowLevel.InputStateHistory;
 
 public class UIManager : MonoBehaviour
 {
@@ -282,6 +283,16 @@ public class UIManager : MonoBehaviour
         return _frames[idx];
     }
 
+    public void Win()
+    {
+        _stageTime.text = $"Game Clear!!";
+    }
+
+    public void Lose()
+    {
+        _stageTime.text = $"Game Lose...";
+    }
+
     /// <summary> 리롤 횟수 텍스트 변경 </summary>
     private void ChangeRerollText(int count)
     {
@@ -292,4 +303,6 @@ public class UIManager : MonoBehaviour
         else
             _rerollText.text = $"Reroll (<color=#AAAAAA>0</color>)";
     }
+
+    
 }

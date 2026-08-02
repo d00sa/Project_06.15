@@ -19,6 +19,7 @@ public class Spawner : MonoBehaviour
     private List<float> _delayTimersList = new List<float>();  //몬스터 소환 타이머 리스트
     private List<float> _termTimersList = new List<float>();    //몬스터 소환 주기 타이머 리스트   
     public bool IsFinished => (CurrentStage >= CurDifficulty.StageDataList.Count && !IsSummonOk); //모든 스테이지 소환 완료
+    public bool IsFinal => (CurrentStage >= CurDifficulty.StageDataList.Count);
 
     private void Awake()
     {
@@ -33,6 +34,7 @@ public class Spawner : MonoBehaviour
         RegisterPoolElements();
         IsSummonOk = false;
         IsBoss = false;
+        _currentStage = 0;
     }
 
     private void Update()
@@ -80,16 +82,17 @@ public class Spawner : MonoBehaviour
         }
     }
 
-    public void StartSpawn(int stage)
+    private bool StartSpawn(int stage)
     {
         //소환하려는 스테이지가 유효한지 검사 / 이미 소환 중인지 체크.
         if ((stage < 1 || stage > CurDifficulty.StageDataList.Count) || _stageSpawnList.Contains(stage))
-            return;
+            return false;
 
         _stageSpawnList.Add(stage);
         curStageData = CurDifficulty.StageDataList[stage - 1];
 
-        if (curStageData.bossStage) IsBoss = true;
+        if (curStageData.bossStage) 
+            IsBoss = true;
 
         int length = curStageData.SpawnDataList.Count;
 
@@ -100,13 +103,14 @@ public class Spawner : MonoBehaviour
         }
 
         IsSummonOk = true;
+        return true;
     } 
 
-    public void SpawnNext()
+    public bool SpawnNext()
     {
         _currentStage++;
         OnWaveChanged?.Invoke(_currentStage);
-        StartSpawn(_currentStage);
+        return StartSpawn(_currentStage);
     }
 
     /// <summary> 만약 플레이어가 죽었다면 모든 몬스터들은 되돌아가야함 </summary>

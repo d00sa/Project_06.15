@@ -181,19 +181,27 @@ public class GameManager : MonoBehaviour
                 break;
             case GameState.GameJudge:
             {
-                    //마지막 스테이지까지 소환이 다 되었고 적 유닛이 더 이상 존재하지 않는다면
-                    if (Spawner.Instance.IsFinished && EnemyCount <= 0)
+                    if (Spawner.Instance.IsFinished)
                         Win = true;
-                    //스테이지가 끝났는데 보스가 살아있다. -> 사망
                     else if (Spawner.Instance.IsBoss)
                         Lose = true;
             }   
                 break;
             case GameState.WaitStage:
+                if (Spawner.Instance.IsFinal) {
+                    ChangeState(GameState.GameJudge);
+                    return;
+                }
+
                 CurTime = _maxReadyTime;
                 break;
             case GameState.StartStage: {
-                    Spawner.Instance.SpawnNext();
+                    bool flag = Spawner.Instance.SpawnNext();
+                    //소환 실패
+                    if (!flag) {
+                        ChangeState(GameState.GameJudge);
+                        return;
+                    }
 
                     if (Spawner.Instance.IsBoss)
                         CurTime = _maxBossTime;
@@ -202,13 +210,14 @@ public class GameManager : MonoBehaviour
                 }
                 break;
             case GameState.GameClear: {
-                    Time.timeScale = 0f;
                     Instantiate(Resources.Load<GameClearUI>("Canvas - Victory"));
+                    UIManager.Instance.Win();
                 }
                 break;
             case GameState.GameLose: {
-                    Time.timeScale = 0f;
+                    ObjectPool.Instance.AllObjectReturn();
                     Instantiate(Resources.Load<GameLoseUI>("Canvas - Lose"));
+                    UIManager.Instance.Lose();
                 }
                 break;
             case GameState.WaitForUser:

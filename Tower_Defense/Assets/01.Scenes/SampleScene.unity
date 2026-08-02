@@ -3223,7 +3223,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::GameManager
   _maxReadyTime: 3
   _maxStageTime: 30
-  _maxBossTime: 70
+  _maxBossTime: 40
   Current: 0
   Data: {fileID: 11400000, guid: 0f89bafcd33a2bd4dbaf209e87c0bbd0, type: 2}
   IsSelectDifficulty: 0
