@@ -38,12 +38,18 @@ public class ItemSwapUI : MonoBehaviour
             return;
 
         onResultCallback?.Invoke(true, selectedIndex); // 교체 + 인덱스 반환
+
+        SoundManager.Instance.PlaySFX("ButtonClick");
+
         Close();
     }
     /// <summary> 유저가 '포기/버리기' 버튼을 눌렀을 때 </summary>
     public void OnClickCancel()
     {
         onResultCallback?.Invoke(false, -1); // 교체 취소
+
+        SoundManager.Instance.PlaySFX("ButtonClick");
+
         Close();
     }
     public void SelectIndex(int idx)

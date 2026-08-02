@@ -34089,6 +34089,14 @@ MonoBehaviour:
       clip: {fileID: 8300000, guid: df86c39c0c646254cb838dc121b1f94a, type: 3}
     - type: 2
       clip: {fileID: 8300000, guid: 5ab43610683096545bc9b67b51a8fb7c, type: 3}
+    - type: 2
+      clip: {fileID: 8300000, guid: 913a11a2248ed6e46ada32ba4bad6c61, type: 3}
+    - type: 2
+      clip: {fileID: 8300000, guid: cfb8eac3270cbc14c8ca74d8a0d3d195, type: 3}
+    - type: 2
+      clip: {fileID: 8300000, guid: 93d8cf1322191404f8c009c74e44434d, type: 3}
+    - type: 2
+      clip: {fileID: 8300000, guid: 7d786fed55eb69144b51dee73a278892, type: 3}
   - categoryName: Item
     soundInfos:
     - type: 2

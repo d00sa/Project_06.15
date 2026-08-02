@@ -249,6 +249,7 @@ public class UIManager : MonoBehaviour
     public void SetUp()
     {
         SetupManager.Instance.Open();
+        SoundManager.Instance.PlaySFX("ButtonClick");
     }
     /// <summary> 게임 정지 </summary>
     public void Pause()
@@ -261,12 +262,15 @@ public class UIManager : MonoBehaviour
             _pauseButton.sprite = _pauseStart[0];
             Time.timeScale = GameManager.Instance.CurSpeed;
         }
+
+        SoundManager.Instance.PlaySFX("ButtonPause");
     }
     /// <summary> 게임 가속 하는 기능 </summary>
     public void Acceleration()
     {
         float speed = GameManager.Instance.SpeedUp();
         _acceleration.text = $"{speed:F1}x";
+        SoundManager.Instance.PlaySFX("ButtonClick");
     }
 
     /// <summary> 장비 프레임 가져오는 함수 </summary>

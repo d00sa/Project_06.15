@@ -49,22 +49,25 @@ public class TitleManager : MonoBehaviour
             _buttonList[i].onClick.RemoveAllListeners();
             _buttonList[i].onClick.AddListener(() => SelectDifficulty(idx));
         }
-
+        SoundManager.Instance.PlaySFX("ButtonClick");
         GameManager.Instance.ChangeState(GameState.LoadDifficultData);
     }
 
     public void Setup()
     {
+        SoundManager.Instance.PlaySFX("ButtonClick");
         SetupManager.Instance.Open();
     }
 
     public void GameQuit()
     {
+        SoundManager.Instance.PlaySFX("ButtonClick");
         GameManager.Instance.GameQuit();
     }
 
     public void StartGame()
     {
+        SoundManager.Instance.PlaySFX("ButtonClick");
         GameManager.Instance.IsSelectDifficulty = true;
     }
 
@@ -85,6 +88,9 @@ public class TitleManager : MonoBehaviour
 
         _buttonList[idx].GetComponent<Image>().sprite = _panels[1]; //Select
         _curIdx = idx;
+
+        SoundManager.Instance.PlaySFX("ButtonClick");
+
         GameManager.Instance.Data = DifficultyManager.Instance.GetData(idx);
     }
 }
