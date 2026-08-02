@@ -1150,6 +1150,126 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 455908175}
   m_CullTransparentMesh: 1
+--- !u!1 &494850964
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 494850966}
+  - component: {fileID: 494850965}
+  m_Layer: 0
+  m_Name: SoundManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &494850965
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 494850964}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 38ab0ee150f688842af3ac07a3cbd199, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SoundManager
+  _soundCategories:
+  - categoryName: BGM
+    soundInfos:
+    - type: 1
+      clip: {fileID: 8300000, guid: ffe8e6aaffdc26e4283645d250682326, type: 3}
+  - categoryName: Enemy
+    soundInfos:
+    - type: 2
+      clip: {fileID: 8300000, guid: 249abc1f024baf044a355575f72ddd97, type: 3}
+    - type: 2
+      clip: {fileID: 8300000, guid: 002c4da78476fd841a76c61c5633a12e, type: 3}
+    - type: 2
+      clip: {fileID: 8300000, guid: c7ab81395941dd3419223527ebed1f60, type: 3}
+    - type: 2
+      clip: {fileID: 8300000, guid: 795372f9af3b58f498b2d0b79444aa96, type: 3}
+  - categoryName: Interaction
+    soundInfos:
+    - type: 2
+      clip: {fileID: 8300000, guid: df86c39c0c646254cb838dc121b1f94a, type: 3}
+    - type: 2
+      clip: {fileID: 8300000, guid: 5ab43610683096545bc9b67b51a8fb7c, type: 3}
+  - categoryName: Item
+    soundInfos:
+    - type: 2
+      clip: {fileID: 8300000, guid: a0460196c65b2464d92e943eb90d21ca, type: 3}
+    - type: 2
+      clip: {fileID: 8300000, guid: 065f27670806f1c4f8642cbc6964846c, type: 3}
+    - type: 2
+      clip: {fileID: 8300000, guid: 90e646774816b944e83f259505f64929, type: 3}
+    - type: 2
+      clip: {fileID: 8300000, guid: a809d843617545646a5bbe30605d265d, type: 3}
+    - type: 2
+      clip: {fileID: 8300000, guid: d7fdf563e6e10d8408a822bb77b63371, type: 3}
+    - type: 2
+      clip: {fileID: 8300000, guid: d84ac3a931c708a41a208a7af9020cb8, type: 3}
+    - type: 2
+      clip: {fileID: 8300000, guid: ddc9238ffeebd2948ace0a09e28814a8, type: 3}
+  - categoryName: Skill
+    soundInfos:
+    - type: 2
+      clip: {fileID: 8300000, guid: 17b68999ed129ce44b4a0f98d3a6aedc, type: 3}
+    - type: 2
+      clip: {fileID: 8300000, guid: 5efa317e84c6b9846906f72c974a1477, type: 3}
+    - type: 2
+      clip: {fileID: 8300000, guid: 0afad52a2ccaa34499f8a8402cbf63d7, type: 3}
+    - type: 2
+      clip: {fileID: 8300000, guid: fce3609dd9cd978498fdff0a096ff118, type: 3}
+    - type: 2
+      clip: {fileID: 8300000, guid: 3e59c3a8e7aa8eb4aaa265042fe8ee2d, type: 3}
+    - type: 2
+      clip: {fileID: 8300000, guid: 66f5c603ff9eba049b426494b4fb96f3, type: 3}
+    - type: 2
+      clip: {fileID: 8300000, guid: cdd8a67f6e6cb1946bde357ddcdc4e85, type: 3}
+    - type: 2
+      clip: {fileID: 8300000, guid: bb9d2c2914cb7214099aacf6cf2dde8b, type: 3}
+    - type: 2
+      clip: {fileID: 8300000, guid: 021e23f8c8b11d84ea00b137b36d9da4, type: 3}
+    - type: 2
+      clip: {fileID: 8300000, guid: b2cbb1a153cfab741bbc6ad502ab5665, type: 3}
+    - type: 2
+      clip: {fileID: 8300000, guid: b39ecae82bbcb0d4bb58dc53d00f06c0, type: 3}
+    - type: 2
+      clip: {fileID: 8300000, guid: 6f88d10d0a7662c4fa727a3a3b70438b, type: 3}
+    - type: 2
+      clip: {fileID: 8300000, guid: 2973ea6af4c4f184b90e10cb384a27bd, type: 3}
+    - type: 2
+      clip: {fileID: 8300000, guid: 57c2734088ed0e34f9c9d4a436cefd3a, type: 3}
+    - type: 2
+      clip: {fileID: 8300000, guid: 92d890196ebba044caed27a929b9df9d, type: 3}
+    - type: 2
+      clip: {fileID: 8300000, guid: d19cdc301da2a9549a3985d8c58bdfaf, type: 3}
+    - type: 2
+      clip: {fileID: 8300000, guid: 783151f7c92411040a23943876e104c1, type: 3}
+    - type: 2
+      clip: {fileID: 8300000, guid: bd29632639b140a41a05c2655e0155b0, type: 3}
+  _mixer: {fileID: 24100000, guid: bd8420716a4b80549ab8db6877b0e34d, type: 2}
+--- !u!4 &494850966
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 494850964}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 323.31403, y: 317.79797, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &553274640
 GameObject:
   m_ObjectHideFlags: 0
@@ -4241,88 +4361,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1655916915}
   m_CullTransparentMesh: 1
---- !u!1 &1746544742
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1746544744}
-  - component: {fileID: 1746544743}
-  m_Layer: 0
-  m_Name: SoundManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1746544743
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1746544742}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 38ab0ee150f688842af3ac07a3cbd199, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::SoundManager
-  _soundInfos:
-  - type: 1
-    clip: {fileID: 8300000, guid: ffe8e6aaffdc26e4283645d250682326, type: 3}
-  - type: 2
-    clip: {fileID: 8300000, guid: c64eca0561f82ad44be1f1e22ca8b222, type: 3}
-  - type: 2
-    clip: {fileID: 8300000, guid: 17b68999ed129ce44b4a0f98d3a6aedc, type: 3}
-  - type: 2
-    clip: {fileID: 8300000, guid: 5efa317e84c6b9846906f72c974a1477, type: 3}
-  - type: 2
-    clip: {fileID: 8300000, guid: 0afad52a2ccaa34499f8a8402cbf63d7, type: 3}
-  - type: 2
-    clip: {fileID: 8300000, guid: fce3609dd9cd978498fdff0a096ff118, type: 3}
-  - type: 2
-    clip: {fileID: 8300000, guid: c4b25fc9e682d484b84a5809e6cbce68, type: 3}
-  - type: 2
-    clip: {fileID: 8300000, guid: 3e59c3a8e7aa8eb4aaa265042fe8ee2d, type: 3}
-  - type: 2
-    clip: {fileID: 8300000, guid: 66f5c603ff9eba049b426494b4fb96f3, type: 3}
-  - type: 2
-    clip: {fileID: 8300000, guid: cdd8a67f6e6cb1946bde357ddcdc4e85, type: 3}
-  - type: 2
-    clip: {fileID: 8300000, guid: bb9d2c2914cb7214099aacf6cf2dde8b, type: 3}
-  - type: 2
-    clip: {fileID: 8300000, guid: 021e23f8c8b11d84ea00b137b36d9da4, type: 3}
-  - type: 2
-    clip: {fileID: 8300000, guid: b2cbb1a153cfab741bbc6ad502ab5665, type: 3}
-  - type: 2
-    clip: {fileID: 8300000, guid: b39ecae82bbcb0d4bb58dc53d00f06c0, type: 3}
-  - type: 2
-    clip: {fileID: 8300000, guid: 6f88d10d0a7662c4fa727a3a3b70438b, type: 3}
-  - type: 2
-    clip: {fileID: 8300000, guid: 2973ea6af4c4f184b90e10cb384a27bd, type: 3}
-  - type: 2
-    clip: {fileID: 8300000, guid: 57c2734088ed0e34f9c9d4a436cefd3a, type: 3}
-  - type: 2
-    clip: {fileID: 8300000, guid: 92d890196ebba044caed27a929b9df9d, type: 3}
-  _mixer: {fileID: 24100000, guid: bd8420716a4b80549ab8db6877b0e34d, type: 2}
---- !u!4 &1746544744
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1746544742}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 323.31403, y: 317.79797, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1811629326
 GameObject:
   m_ObjectHideFlags: 0
@@ -5429,4 +5467,4 @@ SceneRoots:
   - {fileID: 1898136710}
   - {fileID: 1811629330}
   - {fileID: 1241496394}
-  - {fileID: 1746544744}
+  - {fileID: 494850966}

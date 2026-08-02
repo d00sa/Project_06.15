@@ -46,51 +46,48 @@ public class Reward : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, 
         _description.text = item.Description;
     }
 
-    //private string GenerateStatDescription(ItemData item)
-    //{
-    //    bool isLongText = item.ItemType == ItemType.Consumable ||
-    //                      (item.ItemType == ItemType.Equipment && item.Modifiers != null && item.Modifiers.Count >= 3);
+    private string GenerateStatDescription(ItemData item)
+    {
+        bool isLongText = item.ItemType == ItemType.Consumable ||
+                          (item.ItemType == ItemType.Equipment && item.Modifiers != null && item.Modifiers.Count >= 3);
 
-    //    string sizeOpen = isLongText ? "<size=80%>" : "";
-    //    string sizeClose = isLongText ? "</size>" : "";
+        string sizeOpen = isLongText ? "<size=80%>" : "";
+        string sizeClose = isLongText ? "</size>" : "";
 
-    //    if (item.ItemType == ItemType.Consumable || item.ItemType == ItemType.RandomBox)
-    //    {
-    //        return $"{sizeOpen}{item.Description}{sizeClose}";
-    //    }
+        if (item.ItemType == ItemType.Consumable || item.ItemType == ItemType.RandomBox) {
+            return $"{sizeOpen}{item.Description}{sizeClose}";
+        }
 
-    //    System.Text.StringBuilder sb = new System.Text.StringBuilder();
+        System.Text.StringBuilder sb = new System.Text.StringBuilder();
 
-    //    if (item.Modifiers == null || item.Modifiers.Count == 0)
-    //        return sb.ToString();
+        if (item.Modifiers == null || item.Modifiers.Count == 0)
+            return sb.ToString();
 
-    //    foreach (var mod in item.Modifiers)
-    //    {
-    //        string statName = GetStatNameKorean(mod.StatType);
-    //        string sign = mod.Value > 0 ? "+" : "";
+        foreach (var mod in item.Modifiers) {
+            string statName = GetStatNameKorean(mod.StatType);
+            string sign = mod.Value > 0 ? "+" : "";
 
-    //        string colorHex = mod.Value > 0 ? "#55FF55" : "#FF5555";
+            string colorHex = mod.Value > 0 ? "#55FF55" : "#FF5555";
 
-    //        string statValue = mod.Value.ToString();
-    //        if (mod.StatType == StatType.EXPGained ||
-    //            mod.StatType == StatType.CritChance ||
-    //            mod.StatType == StatType.CritDamageMultiplier ||
-    //            mod.StatType == StatType.Luck ||
-    //            mod.StatType == StatType.AttackSpeed
-    //            )
-    //            statValue = (mod.Value * 100).ToString("F0") + "%"; // 퍼센트로 표시
+            string statValue = mod.Value.ToString();
+            if (mod.StatType == StatType.EXPGained ||
+                mod.StatType == StatType.CritChance ||
+                mod.StatType == StatType.CritDamageMultiplier ||
+                mod.StatType == StatType.Luck ||
+                mod.StatType == StatType.AttackSpeed
+                )
+                statValue = (mod.Value * 100).ToString("F0") + "%"; // 퍼센트로 표시
 
-    //        string lineText = $"{statName} {sign}{statValue}";
-    //        if (mod.Value < 0)
-    //        {
-    //            lineText = $"<color=#FF5555>{lineText}</color>";
-    //        }
+            string lineText = $"{statName} {sign}{statValue}";
+            if (mod.Value < 0) {
+                lineText = $"<color=#FF5555>{lineText}</color>";
+            }
 
-    //        sb.AppendLine(lineText);
-    //    }
+            sb.AppendLine(lineText);
+        }
 
-    //    return $"{sizeOpen}{sb.ToString().TrimEnd()}{sizeClose}";
-    //}
+        return $"{sizeOpen}{sb.ToString().TrimEnd()}{sizeClose}";
+    }
 
     private string GetStatNameKorean(StatType type)
     {
@@ -117,7 +114,7 @@ public class Reward : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, 
         if (_item is null)
             return;
 
-        UIManager.Instance.ShowItemInfo(_item, _pos, _description.text);
+        UIManager.Instance.ShowItemInfo(_item, _pos, GenerateStatDescription(_item));
     }
 
     public void OnPointerExit(PointerEventData eventData)
@@ -147,7 +144,7 @@ public class Reward : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, 
         yield return new WaitForSeconds(0.5f);
 
         if (_item != null)
-            UIManager.Instance.ShowItemInfo(_item, _pos, _description.text);
+            UIManager.Instance.ShowItemInfo(_item, _pos, GenerateStatDescription(_item));
     }
 }
 

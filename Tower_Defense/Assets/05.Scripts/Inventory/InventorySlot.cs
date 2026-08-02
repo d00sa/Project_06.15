@@ -142,6 +142,9 @@ public class InventorySlot : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
 
     public void OnPointerClick(PointerEventData eventData)
     {
+        if (_item is null) 
+            return;
+
         if (_item.Type == ItemType.RandomBox || _item.Type == ItemType.Consumable)
             InventoryManager.Instance.Use(_item);
     }
