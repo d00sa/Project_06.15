@@ -14,7 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SkillData
   skillName: Knife
   skillType: 1
-  description: 
+  description: "360\xB0 \uC804\uBC94\uC704\uC5D0 \uBB34\uC791\uC704 \uBC29\uD5A5\uC73C\uB85C
+    \uB2E8\uAC80\uC744 \uB09C\uC0AC\uD569\uB2C8\uB2E4."
   icon: {fileID: -1288399690235895842, guid: 711c6a696039f9945bfc7b4841da1593, type: 3}
   skillPrefab: {fileID: 6273032296655303267, guid: b2b0551d197ce134784ecd69beec1f78, type: 3}
   maxLevel: 5
@@ -44,4 +45,3 @@ MonoBehaviour:
     speed: 20
     coolTime: 0
     range: 0
-  damageBonusType: 0

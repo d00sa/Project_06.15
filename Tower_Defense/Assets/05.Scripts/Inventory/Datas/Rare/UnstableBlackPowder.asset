@@ -16,8 +16,7 @@ MonoBehaviour:
   ID: 11
   ItemName: "\uBD88\uC548\uC815\uD55C \uD751\uC0C9\uD654\uC57D"
   Icon: {fileID: -8533197709653161721, guid: 42cd89132b6daaa41aa9ca965cf5fa07, type: 3}
-  Description: "\uB204\uAD70\uAC00 \uAD00\uB9AC\uB97C \uB611\uBC14\uB85C \uC548\uD588\uB098
-    \uBD05\uB2C8\uB2E4."
+  Description: "\uAD00\uB9AC\uAC00 \uBBF8\uD761\uD588\uB358 \uD654\uC57D\uC785\uB2C8\uB2E4."
   Rarity: 2
   Modifiers:
   - StatType: 0

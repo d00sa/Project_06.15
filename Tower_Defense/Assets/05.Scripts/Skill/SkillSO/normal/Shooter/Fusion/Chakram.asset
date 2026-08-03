@@ -14,7 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SkillData
   skillName: Chakram
   skillType: 1
-  description: 
+  description: "360\xB0 \uC804\uBC94\uC704\uC5D0 \uBB34\uC791\uC704 \uBC29\uD5A5\uC73C\uB85C
+    \uCC28\uD06C\uB78C\uC744 \uB09C\uC0AC\uD569\uB2C8\uB2E4."
   icon: {fileID: 3752513558811816232, guid: 9a20ef0c588b9a84bbab66a06d5feb3f, type: 3}
   skillPrefab: {fileID: 1343178135998350853, guid: 85ece7df0041f3247811775c6c58bc8c, type: 3}
   maxLevel: 5
@@ -44,4 +45,3 @@ MonoBehaviour:
     speed: 20
     coolTime: 0
     range: 15
-  damageBonusType: 0

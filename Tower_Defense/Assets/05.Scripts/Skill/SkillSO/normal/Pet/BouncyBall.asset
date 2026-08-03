@@ -14,7 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SkillData
   skillName: BouncyBall
   skillType: 3
-  description: Bouncing Ball!
+  description: "\uB9F5 \uC804\uCCB4\uB97C \uC790\uC720\uB86D\uAC8C \uB3CC\uC544\uB2E4\uB2C8\uBA70
+    \uC801\uC5D0\uAC8C \uB370\uBBF8\uC9C0\uB97C \uC8FC\uB294 \uBC14\uC6B4\uC2A4\uBCFC\uC744
+    \uC18C\uD658\uD569\uB2C8\uB2E4."
   icon: {fileID: -8054514882241036619, guid: c138acecadeebfd4eacef3c005b4caaf, type: 3}
   skillPrefab: {fileID: 6489666389487729107, guid: 73441d1e52f0b7847aab42340e451c07, type: 3}
   maxLevel: 5
@@ -44,4 +46,3 @@ MonoBehaviour:
     speed: 20
     coolTime: 0
     range: 0
-  damageBonusType: 0

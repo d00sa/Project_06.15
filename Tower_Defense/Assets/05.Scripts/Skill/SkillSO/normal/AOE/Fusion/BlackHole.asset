@@ -14,7 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SkillData
   skillName: BlackHole
   skillType: 2
-  description: 
+  description: "\uC801\uC744 \uBE14\uB799\uD640 \uC911\uC2EC\uC73C\uB85C \uB04C\uC5B4\uB2F9\uAE30\uBA70
+    \uB370\uBBF8\uC9C0\uB97C \uC90D\uB2C8\uB2E4."
   icon: {fileID: -9071933644031530351, guid: 66fde3b4a65e0ef4ca7c2cf30648c10e, type: 3}
   skillPrefab: {fileID: 976605177427196170, guid: d9ad549dd7dfc9b439986bdc08973d82, type: 3}
   maxLevel: 5

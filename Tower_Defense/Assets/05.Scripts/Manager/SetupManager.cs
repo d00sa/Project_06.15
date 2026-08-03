@@ -108,6 +108,7 @@ public class SetupManager : MonoBehaviour
 
     public void GameQuit()
     {
+        SoundManager.Instance.PlaySFX("ButtonClick");
         GameManager.Instance.GameQuit();
     }
 
@@ -115,13 +116,14 @@ public class SetupManager : MonoBehaviour
     {
         if (GameManager.Instance != null)
             GameManager.Instance.GoToDifficultySelect();
-
+        SoundManager.Instance.PlaySFX("ButtonClick");
         gameObject.SetActive(false);
     }
 
     public void Closed()
     {
         Time.timeScale = GameManager.Instance.CurSpeed;
+        SoundManager.Instance.PlaySFX("ButtonClick");
         transform.localScale = Vector3.zero;
     }
 }

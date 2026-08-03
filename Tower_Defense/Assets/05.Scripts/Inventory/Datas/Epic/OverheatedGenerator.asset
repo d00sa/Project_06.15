@@ -16,8 +16,8 @@ MonoBehaviour:
   ID: 16
   ItemName: "\uACFC\uC5F4\uB41C \uBC1C\uC804\uAE30"
   Icon: {fileID: 448563759746355636, guid: 82ab1cb98d30d004e987acc05968b932, type: 3}
-  Description: "10\uCD08\uB3D9\uC548 \uACF5\uC18D \uBC84\uD504 \uC774\uD6C4 5\uCD08\uAC04
-    \uD504\uB9AC\uC9D5 \uB429\uB2C8\uB2E4."
+  Description: "10\uCD08 \uACF5\uC18D \uBC84\uD504 \uC774\uD6C4 \uD504\uB9AC\uC9D5
+    \uB429\uB2C8\uB2E4."
   Rarity: 3
   Modifiers: []
   LootTable: {fileID: 0}

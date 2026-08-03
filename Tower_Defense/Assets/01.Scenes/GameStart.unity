@@ -2367,7 +2367,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2668886839610696292, guid: 24ddef4e6ae733648be7a3e464718ccc, type: 3}
       propertyPath: statEntriesView.Array.size
-      value: 6
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 2668886839610696292, guid: 24ddef4e6ae733648be7a3e464718ccc, type: 3}
       propertyPath: statEntriesView.Array.data[1].type
@@ -2388,6 +2388,10 @@ PrefabInstance:
     - target: {fileID: 2668886839610696292, guid: 24ddef4e6ae733648be7a3e464718ccc, type: 3}
       propertyPath: statEntriesView.Array.data[5].type
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2668886839610696292, guid: 24ddef4e6ae733648be7a3e464718ccc, type: 3}
+      propertyPath: statEntriesView.Array.data[6].type
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 2668886839610696292, guid: 24ddef4e6ae733648be7a3e464718ccc, type: 3}
       propertyPath: statEntriesView.Array.data[3].value
@@ -34339,7 +34343,7 @@ MonoBehaviour:
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
-  m_TextWrappingMode: 0
+  m_TextWrappingMode: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
   m_linkedTextComponent: {fileID: 0}

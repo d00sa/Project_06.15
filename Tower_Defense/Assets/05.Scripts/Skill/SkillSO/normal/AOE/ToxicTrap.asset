@@ -14,7 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SkillData
   skillName: ToxicTrap
   skillType: 2
-  description: "\uB3C5 \uC7A5\uD310 \uC2A4\uD0AC AOE\uC5D0 \uC801\uC6A9"
+  description: "\uB3C5\uC744 \uBC1F\uC740 \uC801\uB4E4\uC5D0\uAC8C \uC9C0\uC18D \uB370\uBBF8\uC9C0\uB97C
+    \uC90D\uB2C8\uB2E4."
   icon: {fileID: 1566359928, guid: 501a648013d79fd4cb6a217e0a3e9528, type: 3}
   skillPrefab: {fileID: 7911863364059629638, guid: 0e48e44dca8ee3845ad394273faeafc3, type: 3}
   maxLevel: 5

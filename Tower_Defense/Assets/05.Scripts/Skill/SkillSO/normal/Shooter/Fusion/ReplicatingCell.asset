@@ -14,7 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SkillData
   skillName: ReplicatingCell
   skillType: 1
-  description: 
+  description: "\uB9F5\uC744 \uC790\uC720\uB86D\uAC8C \uB3CC\uC544\uB2E4\uB2C8\uBA70
+    \uC801\uACFC \uBD80\uB52A\uCE58\uBA74 2\uAC1C\uB85C \uBD84\uC5F4\uB418\uB294
+    \uC138\uD3EC\uB97C \uBC1C\uC0AC\uD569\uB2C8\uB2E4."
   icon: {fileID: -2437828431676441964, guid: 9a20ef0c588b9a84bbab66a06d5feb3f, type: 3}
   skillPrefab: {fileID: 2363354929599991526, guid: f2c36698ad7c69b4aaba7ad3509c382c, type: 3}
   maxLevel: 5
@@ -44,4 +46,3 @@ MonoBehaviour:
     speed: 20
     coolTime: 0
     range: 0
-  damageBonusType: 0

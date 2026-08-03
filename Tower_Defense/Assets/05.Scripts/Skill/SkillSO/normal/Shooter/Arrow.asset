@@ -14,8 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SkillData
   skillName: Arrow
   skillType: 1
-  description: "\uD654\uC0B4 \uD22C\uC0AC\uCCB4\uB97C \uD1B5\uD55C  \uACF5\uACA9
-    SkillShooter\uC5D0 \uC801\uC6A9 "
+  description: "\uD654\uC0B4 \uD22C\uC0AC\uCCB4\uB97C \uBC1C\uC0AC\uD569\uB2C8\uB2E4."
   icon: {fileID: -6330735992783472292, guid: 4798f6169300ae342bbd21eac0cf3503, type: 3}
   skillPrefab: {fileID: 1302253720925673201, guid: bcb5a1e5dbb3fc845ba9ca3178cb0a90, type: 3}
   maxLevel: 5

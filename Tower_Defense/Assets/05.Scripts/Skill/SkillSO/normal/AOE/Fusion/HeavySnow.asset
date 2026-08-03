@@ -14,7 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SkillData
   skillName: HeavySnow
   skillType: 2
-  description: 
+  description: "\uC804\uCCB4 \uC801\uC744 \uAC10\uC18D \uC2DC\uD0A4\uACE0 \uBC88\uAC1C
+    \uD2B8\uB7A9\uC744 \uB09C\uC0AC\uD569\uB2C8\uB2E4."
   icon: {fileID: 105929982, guid: 501a648013d79fd4cb6a217e0a3e9528, type: 3}
   skillPrefab: {fileID: 270401880592756938, guid: 8fcfa9d0524102945b0aa2a193d4e224, type: 3}
   maxLevel: 5

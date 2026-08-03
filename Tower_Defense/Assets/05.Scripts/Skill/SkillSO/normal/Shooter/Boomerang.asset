@@ -14,7 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SkillData
   skillName: Boomerang
   skillType: 1
-  description: "\uBD80\uBA54\uB791"
+  description: "\uD2B9\uC815 \uAC70\uB9AC \uB9CC\uD07C \uC774\uB3D9 \uD6C4 \uB2E4\uC2DC
+    \uB3CC\uC544\uC624\uB294 \uBD80\uBA54\uB791 \uD22C\uC0AC\uCCB4\uB97C \uBC1C\uC0AC\uD569\uB2C8\uB2E4."
   icon: {fileID: 4847369764756557779, guid: 9a20ef0c588b9a84bbab66a06d5feb3f, type: 3}
   skillPrefab: {fileID: 7752684502632871730, guid: 1fb898e05c6b39742ab21c553ad24c3b, type: 3}
   maxLevel: 5
