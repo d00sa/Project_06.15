@@ -20,6 +20,7 @@ public class Item
     public ItemData Data { get; }
     public string Name => Data.ItemName;
     public string Description => Data.Description;
+    public string Joke => Data.Joke;
     public ItemType Type => Data.ItemType;
     public Sprite Icon => Data.Icon;
     public ItemRarity Rarity => Data.Rarity;

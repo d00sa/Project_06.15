@@ -21,6 +21,7 @@ public class ItemData : ScriptableObject
     public string ItemName;
     public Sprite Icon;
     public string Description;
+    public string Joke;
 
     [Header("장비 정보")]
     public ItemRarity Rarity; //희귀도

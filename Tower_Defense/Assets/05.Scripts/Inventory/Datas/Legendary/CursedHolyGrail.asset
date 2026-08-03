@@ -16,8 +16,8 @@ MonoBehaviour:
   ID: 17
   ItemName: "\uC800\uC8FC\uBC1B\uC740 \uC131\uBC30"
   Icon: {fileID: -3244991369752503054, guid: 42cd89132b6daaa41aa9ca965cf5fa07, type: 3}
-  Description: "\uB204\uAD70\uAC00 \uBA38\uADF8\uCEF5 \uB300\uC2E0 \uC0AC\uC6A9\uD55C
-    \uB4EF \uD569\uB2C8\uB2E4."
+  Description: "\uBA38\uADF8\uCEF5 \uB300\uC2E0 \uC0AC\uC6A9\uD55C \uB4EF \uD569\uB2C8\uB2E4."
+  Joke: 
   Rarity: 4
   Modifiers:
   - StatType: 0

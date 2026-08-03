@@ -37,7 +37,7 @@ public class ItemDataBase : MonoBehaviour
     public void Test2()
     {
         if (Application.isPlaying) {
-            for (int i = 0; i < 6; i++) {
+            for (int i = debugId; i < debugId + 6; i++) {
                 Item success = InventoryManager.Instance.Add(Find(i));
 
                 if (success is not null)

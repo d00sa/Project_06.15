@@ -39,6 +39,7 @@ public class UIManager : MonoBehaviour
     [Header("[SkillPanels]")]
     [SerializeField] private RectTransform _skillInfoPanel;
     [SerializeField] private Image _sIcon;
+    [SerializeField] private TMP_Text _sLevel;
     [SerializeField] private TMP_Text _sName;
     [SerializeField] private TMP_Text _sType;
     [SerializeField] private TMP_Text _sDescription;
@@ -213,7 +214,8 @@ public class UIManager : MonoBehaviour
         _sIcon.sprite = data.data.icon;
         _sName.text = data.data.skillName;
         _sType.text = data.data.skillType.ToString();
-        _sDescription.text = data.data.description + '\n' + $"Level.{data.level}";
+        _sLevel.text = $"Level {data.level.ToString()}";
+        _sDescription.text = data.data.description;
     }
     /// <summary> 보상창 열기 </summary>
     public void ShowRewards()

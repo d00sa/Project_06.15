@@ -399,7 +399,7 @@ MonoBehaviour:
   _isBoss: 0
   _defaultFlipX: 0
   _hpBar: {fileID: 7580869575054913285}
-  _deadOffSet: {x: 0, y: 0, z: 0}
+  _deadOffSet: {x: 0, y: -0.35, z: 0}
   _sprite: {fileID: 3472964225924514648}
   _machine: {fileID: 8826004180032480047}
   priority: 0

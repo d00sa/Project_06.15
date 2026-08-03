@@ -36,7 +36,7 @@ public class InventorySlot : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
 
         _image.sprite = _item.Icon;
         _name.text = _item.Name;
-        _description.text = _item.Description;
+        _description.text = _item.Type == ItemType.Equipment ? _item.Description : _item.Joke;
         _image.rectTransform.localScale = Vector3.one;
         _backgroundImage.sprite = UIManager.Instance.GetFrame((int)_item.Rarity);
     }
@@ -44,18 +44,14 @@ public class InventorySlot : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
     /// <summary> ItemInfo Panel에 넘길 Description 생성  </summary>
     private string GenerateStatDescription(ItemData item)
     {
-        bool isLongText = item.ItemType == ItemType.Consumable ||
-                                  (item.ItemType == ItemType.Equipment && item.Modifiers != null && item.Modifiers.Count >= 3);
+        bool isLongText = item.ItemType == ItemType.Consumable || (item.ItemType == ItemType.Equipment && item.Modifiers != null && item.Modifiers.Count >= 3);
 
         string sizeOpen = isLongText ? "<size=80%>" : "";
         string sizeClose = isLongText ? "</size>" : "";
 
-        if (item.ItemType == ItemType.Consumable || item.ItemType == ItemType.RandomBox)
-        {
-            return $"{sizeOpen}{item.Description}{sizeClose}";
-        }
+        if (item.ItemType == ItemType.Consumable || item.ItemType == ItemType.RandomBox) return $"{sizeOpen}{item.Description}{sizeClose}";
 
-        System.Text.StringBuilder sb = new System.Text.StringBuilder();
+        StringBuilder sb = new StringBuilder();
 
         if (item.Modifiers == null || item.Modifiers.Count == 0)
             return sb.ToString();
