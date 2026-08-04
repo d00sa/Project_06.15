@@ -14,9 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SkillData
   skillName: NuclearBomb
   skillType: 2
-  description: "\uC2E0\uC131\uD5CC \uD575\uC73C\uB85C \uC77C\uC815 \uC2DC\uAC04\uB9C8\uB2E4
-    \uC77C\uBC18 \uC801 \uC804\uCCB4\uB97C \uC18C\uBA78\uC2DC\uD0A4\uACE0 \uBCF4\uC2A4
-    \uBAB9\uC5D0\uAC8C \uC9C0\uC18D \uB370\uBBF8\uC9C0\uB97C \uC90D\uB2C8\uB2E4."
+  description: "\uC77C\uBC18 \uC801 \uC804\uCCB4\uB97C \uC18C\uBA78\uC2DC\uD0A4\uACE0
+    \uBCF4\uC2A4 \uBAB9\uC5D0\uAC8C \uC9C0\uC18D \uB370\uBBF8\uC9C0\uB97C \uC90D\uB2C8\uB2E4."
   icon: {fileID: 5849307244010171002, guid: 501a648013d79fd4cb6a217e0a3e9528, type: 3}
   skillPrefab: {fileID: 2648037592479618916, guid: 2d3cf0e5834cce84e8c501ee4b6e4b08, type: 3}
   maxLevel: 5

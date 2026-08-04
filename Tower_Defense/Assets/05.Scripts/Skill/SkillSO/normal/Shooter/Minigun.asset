@@ -15,8 +15,7 @@ MonoBehaviour:
   skillName: Mini Gun
   skillType: 1
   description: "\uB9E4\uC6B0 \uBE60\uB978 \uC18D\uB3C4\uB85C \uCD1D\uC54C \uD22C\uC0AC\uCCB4\uB97C
-    \uBC1C\uC0AC\uD569\uB2C8\uB2E4. \uBC1C\uC0AC \uB300\uAE30\uC2DC\uAC04\uACFC \uCD1D\uC5F4\uC744
-    \uC2DD\uD788\uB294 \uC2DC\uAC04\uC774 \uD544\uC694\uD569\uB2C8\uB2E4."
+    \uBC1C\uC0AC\uD569\uB2C8\uB2E4."
   icon: {fileID: 1977481618993036143, guid: 700d9f39651cd6b418f2f39f10e56497, type: 3}
   skillPrefab: {fileID: 7894290291646296383, guid: 4f853902d297cfe49acec1b882a75e51, type: 3}
   maxLevel: 5

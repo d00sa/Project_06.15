@@ -20,6 +20,9 @@ public class BoomerangProjectile : MonoBehaviour, ISkillEffect
     public bool isRandomDirection = false;
     [SerializeField]  private float actualRange = 20f;
 
+    [Header("기본 투사체 SFX 활성화")]
+    [SerializeField] private bool enableDefaultSFX = true;
+
     private Vector2 targetPoint;
     private bool isReturning = false;
 
@@ -67,7 +70,8 @@ public class BoomerangProjectile : MonoBehaviour, ISkillEffect
             }
         }
 
-        SoundManager.Instance.PlaySFX("Arrow");
+        if (enableDefaultSFX)
+            SoundManager.Instance.PlaySFX("Arrow", 0.2f);
     }
 
     public void OnSpawn() { }

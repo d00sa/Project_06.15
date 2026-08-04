@@ -46,11 +46,11 @@ public class SkillShooter : SkillBase
     private IEnumerator BurstFireRoutine(ActiveSkill skill)
     {
 
-        SoundManager.Instance.PlayLoopSFX("MinigunSkillSFXSpin", 0.3f);
+        SoundManager.Instance.PlayLoopSFX("MinigunSkillSFXSpin", 0.15f);
 
         yield return new WaitForSeconds(windUpTime);
         //SoundManager.Instance.StopSound("MinigunSkillSFXSpin");
-        SoundManager.Instance.PlayLoopSFX("MinigunSkillSFXShooting", 0.3f);
+        SoundManager.Instance.PlayLoopSFX("MinigunSkillSFXShooting", 0.15f);
 
         float duration = 5f; // 연사 지속 시간, 필요에 따라 조정 가능
         float fireInterval = skill.CurrentStat.fireRate > 0f ? (1f / skill.CurrentStat.fireRate) : 0.1f;

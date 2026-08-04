@@ -4,6 +4,7 @@ public class GameClearUI : MonoBehaviour
 {
     private void Start()
     {
+        SoundManager.Instance.StopAllSounds();
         SoundManager.Instance.PlaySFX("GameVictory");
     }
     public void ReStart()

@@ -172,3 +172,4 @@ MonoBehaviour:
   spinSpeed: 2000
   isRandomDirection: 1
   actualRange: 20
+  enableDefaultSFX: 0

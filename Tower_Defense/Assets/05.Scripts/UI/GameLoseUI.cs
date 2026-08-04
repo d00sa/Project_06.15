@@ -4,6 +4,7 @@ public class GameLoseUI : MonoBehaviour
 {
     public void Start()
     {
+        SoundManager.Instance.StopAllSounds();
         SoundManager.Instance.PlaySFX("GameLose");
     }
     public void ReStart()

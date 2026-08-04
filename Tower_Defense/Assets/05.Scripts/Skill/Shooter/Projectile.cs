@@ -72,7 +72,7 @@ public class Projectile : MonoBehaviour, ISkillEffect
         }
 
         if (enableDefaultSFX)
-            SoundManager.Instance.PlaySFX("Arrow");
+            SoundManager.Instance.PlaySFX("Arrow", 0.2f);
     }
 
     public void OnSpawn()

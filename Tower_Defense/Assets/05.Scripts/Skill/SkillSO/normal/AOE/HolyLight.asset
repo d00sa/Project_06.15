@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SkillData
   skillName: HolyLight
   skillType: 2
-  description: "\uC2E0\uC131\uD5CC \uBE5B\uC73C\uB85C \uC77C\uC815 \uC2DC\uAC04\uB9C8\uB2E4
-    \uC77C\uBC18 \uC801 \uC804\uCCB4\uB97C \uC18C\uBA78\uC2DC\uD0B5\uB2C8\uB2E4. "
+  description: "\uC2E0\uC131\uD55C \uBE5B\uC73C\uB85C \uC77C\uC815 \uC2DC\uAC04\uB9C8\uB2E4
+    \uBAA8\uB4E0 \uC77C\uBC18\uC801\uC744 \uC18C\uBA78\uC2DC\uD0B5\uB2C8\uB2E4. "
   icon: {fileID: 1639970756, guid: 501a648013d79fd4cb6a217e0a3e9528, type: 3}
   skillPrefab: {fileID: 1213255530224665756, guid: a23b01c23e118ae4bace7692a6424b72, type: 3}
   maxLevel: 5
