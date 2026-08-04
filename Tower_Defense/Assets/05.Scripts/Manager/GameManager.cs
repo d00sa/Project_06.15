@@ -177,7 +177,7 @@ public class GameManager : MonoBehaviour
                 SoundManager.Instance.PlayBGM("BGM");
                 break;
             case GameState.LoadDifficultData:
-                    Data = null;
+                    Data = null;    
                 break;
             case GameState.GameJudge:
             {
@@ -241,6 +241,7 @@ public class GameManager : MonoBehaviour
     public void GoToDifficultySelect()
     {
         ChangeState(GameState.LoadDifficultData);
+        Resetting();
 
         if (SceneManager.GetActiveScene().name == "GameStart")
             LoadSceneManager.Instance.LoadScene("Enter");
@@ -253,6 +254,16 @@ public class GameManager : MonoBehaviour
         Time.timeScale = CurSpeed;
 
         return CurSpeed;
+    }
+
+    private void Resetting()
+    {
+        IsSelectDifficulty = false;
+        Win = false;
+        Lose = false;
+        _speedIndex = 0;
+        CurSpeed = _speedTable[0];
+        IsTimeStopped = false;
     }
 
     [Button("Sample Scene Game Start")]
