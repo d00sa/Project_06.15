@@ -23,13 +23,3 @@ MonoBehaviour:
       SpawnDelay: 0
       Term: 1
       Exp: 0
-    - Prefab: {fileID: 5722822434754417202, guid: 01d64dfff594a6541b1631f49e4f0577, type: 3}
-      Num: 5
-      SpawnDelay: 5
-      Term: 1
-      Exp: 0
-    - Prefab: {fileID: 5722822434754417202, guid: fc4bb28a4df1a6f42b7d6eb2771397d9, type: 3}
-      Num: 5
-      SpawnDelay: 10
-      Term: 1
-      Exp: 0

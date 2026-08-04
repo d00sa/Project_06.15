@@ -1,0 +1,342 @@
+fileFormatVersion: 2
+guid: 7df43a1b90e808d41a03748ce92bf02d
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -7358972339327205601
+    second: Skeleton_Giant_0
+  - first:
+      213: 7031374258342928802
+    second: Skeleton_Giant_1
+  - first:
+      213: -2904492594397411609
+    second: Skeleton_Giant_2
+  - first:
+      213: 3408452097321488715
+    second: Skeleton_Giant_3
+  - first:
+      213: -1324870996911422984
+    second: Skeleton_Giant_4
+  - first:
+      213: 5534615204200164462
+    second: Skeleton_Giant_5
+  - first:
+      213: -1833856553211317022
+    second: Skeleton_Giant_6
+  - first:
+      213: -5074483852445425958
+    second: Skeleton_Giant_7
+  - first:
+      213: 2093374991134726392
+    second: Skeleton_Giant_8
+  - first:
+      213: 6548275433395668109
+    second: Skeleton_Giant_9
+  - first:
+      213: -4017639205137774045
+    second: Skeleton_Giant_10
+  - first:
+      213: -1666170457019139258
+    second: Skeleton_Giant_11
+  - first:
+      213: -7099519066366104157
+    second: Skeleton_Giant_12
+  - first:
+      213: 6182204933987736829
+    second: Skeleton_Giant_13
+  - first:
+      213: 5791114636191486608
+    second: Skeleton_Giant_14
+  - first:
+      213: 6031042330083167081
+    second: Skeleton_Giant_15
+  - first:
+      213: 6233029247593281665
+    second: Skeleton_Giant_16
+  - first:
+      213: 1727473387772095100
+    second: Skeleton_Giant_17
+  - first:
+      213: -6878312317183590858
+    second: Skeleton_Giant_18
+  - first:
+      213: 8188458125972935867
+    second: Skeleton_Giant_19
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: w4
+      rect:
+        serializedVersion: 2
+        x: 1119
+        y: 565
+        width: 365
+        height: 380
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2a12b5752a5749160800000000000000
+      internalID: 7031374258342928802
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: w1
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 567
+        width: 360
+        height: 377
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b4158ceaf114d4f20800000000000000
+      internalID: 3408452097321488715
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: w2
+      rect:
+        serializedVersion: 2
+        x: 394
+        y: 568
+        width: 346
+        height: 377
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8f180e709dc1d9de0800000000000000
+      internalID: -1324870996911422984
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: w3
+      rect:
+        serializedVersion: 2
+        x: 748
+        y: 567
+        width: 361
+        height: 379
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2e431d85e25dc86e0800000000000000
+      internalID: -1833856553211317022
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: s
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 79
+        width: 350
+        height: 362
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 188fa61a31b208650800000000000000
+      internalID: 6233029247593281665
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: d
+      rect:
+        serializedVersion: 2
+        x: 410
+        y: 67
+        width: 560
+        height: 210
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c7aa815c4e739f710800000000000000
+      internalID: 1727473387772095100
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: c026d4ed57927c04f9153251f1dc49d6
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Skeleton_Giant_0: -7358972339327205601
+      Skeleton_Giant_10: -4017639205137774045
+      Skeleton_Giant_11: -1666170457019139258
+      Skeleton_Giant_12: -7099519066366104157
+      Skeleton_Giant_13: 6182204933987736829
+      Skeleton_Giant_14: 5791114636191486608
+      Skeleton_Giant_15: 6031042330083167081
+      Skeleton_Giant_18: -6878312317183590858
+      Skeleton_Giant_19: 8188458125972935867
+      Skeleton_Giant_2: -2904492594397411609
+      Skeleton_Giant_5: 5534615204200164462
+      Skeleton_Giant_7: -5074483852445425958
+      Skeleton_Giant_8: 2093374991134726392
+      Skeleton_Giant_9: 6548275433395668109
+      d: 1727473387772095100
+      s: 6233029247593281665
+      w1: 3408452097321488715
+      w2: -1324870996911422984
+      w3: -1833856553211317022
+      w4: 7031374258342928802
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
