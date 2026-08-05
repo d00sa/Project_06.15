@@ -19,8 +19,10 @@ public class TitleManager : MonoBehaviour
 
     private void Start()
     {
-        if (GameManager.Instance != null && GameManager.Instance.Current != GameState.Idle)
+        if (GameManager.Instance != null && GameManager.Instance.Current != GameState.Idle) {
             EnterToGame();
+            SoundManager.Instance.PlayBGM("BGM");
+        }
         else
             FirstEnterToGame();
     }
@@ -49,7 +51,7 @@ public class TitleManager : MonoBehaviour
             _buttonList[i].onClick.RemoveAllListeners();
             _buttonList[i].onClick.AddListener(() => SelectDifficulty(idx));
         }
-        SoundManager.Instance.PlaySFX("ButtonClick");
+
         GameManager.Instance.ChangeState(GameState.LoadDifficultData);
     }
 

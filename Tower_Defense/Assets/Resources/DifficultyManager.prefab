@@ -26,7 +26,7 @@ Transform:
   m_GameObject: {fileID: 2023866186504841480}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 349.69937, y: 219.88135, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -45,6 +45,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DifficultyManager
   _dataList:
-  - {fileID: 11400000, guid: 0f89bafcd33a2bd4dbaf209e87c0bbd0, type: 2}
+  - {fileID: 11400000, guid: 0317eb0fe136b1547b614cd5ded29ff3, type: 2}
   - {fileID: 11400000, guid: d988fd1f6752c604e8a1fb369c63fd06, type: 2}
-  - {fileID: 11400000, guid: c84f36628dad1b946ba52ca2987ad41f, type: 2}
+  - {fileID: 11400000, guid: d24494504c2cf004e8b3e3e86551b487, type: 2}

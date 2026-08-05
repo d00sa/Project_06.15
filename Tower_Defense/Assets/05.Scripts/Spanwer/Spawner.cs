@@ -31,7 +31,6 @@ public class Spawner : MonoBehaviour
 
     private void Start()
     {
-        RegisterPoolElements();
         IsSummonOk = false;
         IsBoss = false;
         _currentStage = 0;
@@ -54,10 +53,14 @@ public class Spawner : MonoBehaviour
                         //소환
                         GameObject obj = ObjectPool.Instance.GetObj(
                             id: curStageData.SpawnDataList[i].Prefab.name,
-                            spawn: _spawnPoint.position
+                            spawn: _spawnPoint.position,
+                            parent: null,
+                            enable: false
                         );
 
-                        obj.GetComponent<Enemy>().Setting(curStageData.SpawnDataList[i].Exp);
+                        obj.GetComponent<Enemy>().Setting(curStageData.SpawnDataList[i].Exp, curStageData.SpawnDataList[i].Hp);
+                        obj.SetActive(true);
+
                         GameManager.Instance.EnemyCount++;
 
                         _termTimersList[i] = curStageData.SpawnDataList[i].Term;
@@ -156,12 +159,10 @@ public class Spawner : MonoBehaviour
                         monsterPrefab,
                         CurDifficulty.StageDataList[i].SpawnDataList[j].Num
                     );
-                    // 💡 CCTV 1: 정상적으로 등록된 몬스터 이름 출력
                     Debug.Log($"➔ [풀 등록 완료] {i + 1}스테이지 몬스터 : {monsterPrefab.name}");
                 }
                 else
                 {
-                    // 💡 CCTV 2: 프리팹이 비어있어서 등록을 못한 경우 경고창 띄우기
                     Debug.LogWarning($"🚨 [Spawner] {i + 1}스테이지 데이터에 몬스터 프리팹이 빠져있습니다 (None 상태)!");
                 }
             }

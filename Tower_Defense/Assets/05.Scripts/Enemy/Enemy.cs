@@ -23,7 +23,8 @@ public class Enemy : MonoBehaviour, IPoolable
         get => _hp;
         set
         {
-            if (IsDead) return;
+            if (IsDead) 
+                return;
 
             if (value < 0)
                 value = 0;
@@ -33,6 +34,7 @@ public class Enemy : MonoBehaviour, IPoolable
 
             if (_hp <= 0) {
                 transform.position += _deadOffSet;
+                IsDead = true;
                 OnDespawn();                
             }
         }
@@ -147,10 +149,11 @@ public class Enemy : MonoBehaviour, IPoolable
     {
         _machine.ChangeState(StateType.Dead);
         this.gameObject.tag = "Untagged";
-        IsDead = true;
         IsMovable = false;
         OnDead?.Invoke(this);
-        Player.Instance.AddExp(_giveExp); // 플레이어에게 경험치 넘겨줌
+
+        if (IsDead)
+            Player.Instance.AddExp(_giveExp); // 플레이어에게 경험치 넘겨줌
 
         if (_isBoss) { 
             Spawner.Instance.IsBoss = false;
@@ -197,7 +200,7 @@ public class Enemy : MonoBehaviour, IPoolable
         IsDead = false;
         IsMovable = true;
         _currentIdx = 0;
-        _curLine = 0;
+        _curLine = Random.Range(0, 3);
         _sprite.flipX = _defaultFlipX;
         this.gameObject.tag = "Enemy";
 
@@ -205,9 +208,10 @@ public class Enemy : MonoBehaviour, IPoolable
         if (dotEffectObject != null) dotEffectObject.SetActive(false);
     }
 
-    public void Setting(int exp)
+    public void Setting(int exp, float hp)
     {
         _giveExp = exp;
+        hpMax = hp;
     }
 
     /// <summary> 데미지 주고 피격 방향 반대로 살짝 밈 </summary>

@@ -72,7 +72,7 @@ public class StateMachine : MonoBehaviour
             return;
 
         string typename = $"State{Convert.ToString(stateType)}";
-        Debug.Log($"Adding... {typename}");
+        //Debug.Log($"Adding... {typename}");
         Type type = Type.GetType(typename);
 
         if (type != null) {
@@ -89,7 +89,7 @@ public class StateMachine : MonoBehaviour
             }) as StateBase;
 
             _states.Add(stateType, state);
-            Debug.Log($"Complete...{typename}");
+            //Debug.Log($"Complete...{typename}");
         }
     }
 }

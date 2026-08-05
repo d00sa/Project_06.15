@@ -30,6 +30,9 @@ public class LevelUpUIManager : MonoBehaviour
     [ContextMenu("테스트: 레벨업 창 띄우기")]
     public void ShowLevelUpUI()
     {
+        //게임 패배시 레벨 업 창 안뜨도록 설정.
+        if (GameManager.Instance.Lose) return;
+
         Time.timeScale = 0f; // 게임 일시 정지
         levelUpPanel.localScale = Vector3.one;
         _graphic.enabled = true;
@@ -92,6 +95,12 @@ public class LevelUpUIManager : MonoBehaviour
             else
                 skillCards[i].gameObject.SetActive(false);
         }
+    }
+
+    public void Close()
+    {
+        _graphic.enabled = false;
+        levelUpPanel.localScale = Vector3.zero;
     }
 
     private void OnCardSelected(SkillData selectedData)

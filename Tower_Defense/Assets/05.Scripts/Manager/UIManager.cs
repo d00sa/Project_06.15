@@ -292,6 +292,7 @@ public class UIManager : MonoBehaviour
 
     public void Lose()
     {
+        Time.timeScale = 0f;
         _stageTime.text = $"Game Lose...";
     }
 

@@ -42,9 +42,7 @@ public class GameManager : MonoBehaviour
                 }
             }
         }
-    }
-
-    private int _money;
+    }    
 
     public event Action<int,int> OnTimeChanged;
     [Header("[시간 설정 (초 단위)]")]
@@ -215,9 +213,9 @@ public class GameManager : MonoBehaviour
                 }
                 break;
             case GameState.GameLose: {
+                    UIManager.Instance.Lose();
                     ObjectPool.Instance.AllObjectReturn();
                     Instantiate(Resources.Load<GameLoseUI>("Canvas - Lose"));
-                    UIManager.Instance.Lose();
                 }
                 break;
             case GameState.WaitForUser:
@@ -258,10 +256,13 @@ public class GameManager : MonoBehaviour
 
     private void Resetting()
     {
+        SoundManager.Instance.StopAllSounds();
         IsSelectDifficulty = false;
         Win = false;
-        Lose = false;
+        Lose = false;        
+        _enemyCount = 0;
         _speedIndex = 0;
+        Time.timeScale = 1f;
         CurSpeed = _speedTable[0];
         IsTimeStopped = false;
     }

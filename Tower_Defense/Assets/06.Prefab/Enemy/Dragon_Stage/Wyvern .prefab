@@ -186,7 +186,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0.3714286, y: 2.0714285}
+  m_AnchoredPosition: {x: 0.21428569, y: 2.5714285}
   m_SizeDelta: {x: 16, y: 3}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &7007881003754229019
@@ -369,7 +369,7 @@ Transform:
   m_GameObject: {fileID: 4036961546259806026}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.85, z: 0}
+  m_LocalPosition: {x: 0, y: 1.1357143, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -485,8 +485,8 @@ Transform:
   m_GameObject: {fileID: 6956133082202555552}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.152034, y: -5.91836, z: 0}
-  m_LocalScale: {x: 0.7, y: 0.7, z: 0.7}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 8652980993075843559}
@@ -513,7 +513,7 @@ MonoBehaviour:
   _isBoss: 0
   _defaultFlipX: 0
   _hpBar: {fileID: 6260385275320619362}
-  _deadOffSet: {x: 0, y: -0.35, z: 0}
+  _deadOffSet: {x: 0, y: -0.5, z: 0}
   _sprite: {fileID: 3290013085242297312}
   _machine: {fileID: 458015724899144005}
   priority: 0
@@ -575,7 +575,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 2.5, y: 2}
+  m_Size: {x: 2.5, y: 2.5}
   m_EdgeRadius: 0
 --- !u!50 &7608039151685839106
 Rigidbody2D:
