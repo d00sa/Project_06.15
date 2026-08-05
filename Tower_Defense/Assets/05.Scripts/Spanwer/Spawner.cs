@@ -129,20 +129,44 @@ public class Spawner : MonoBehaviour
     public void SetDifficulty(DifficultyData data)
     {
         CurDifficulty = data;
+        RegisterPoolElements();
     }
 
     /// <summary> 스테이지에 있는 몬스터들 풀 등록 </summary>
     private void RegisterPoolElements()
     {
-        for (int i = 0; i < CurDifficulty.StageDataList.Count; i++) {
+        if (CurDifficulty == null)
+        {
+            Debug.LogError("🚨 [Spawner] 난이도(CurDifficulty) 데이터가 비어있습니다! 인스펙터 연결을 확인하세요.");
+            return;
+        }
 
-            for (int j = 0; j < CurDifficulty.StageDataList[i].SpawnDataList.Count; j++) {
+        Debug.Log($"✅ [Spawner] 총 {CurDifficulty.StageDataList.Count}개의 스테이지 풀 등록을 시작합니다...");
 
-                ObjectPool.Instance.RegisterPoolElement(
-                    CurDifficulty.StageDataList[i].SpawnDataList[j].Prefab,
-                    CurDifficulty.StageDataList[i].SpawnDataList[j].Num
-                );
+        for (int i = 0; i < CurDifficulty.StageDataList.Count; i++)
+        {
+            for (int j = 0; j < CurDifficulty.StageDataList[i].SpawnDataList.Count; j++)
+            {
+
+                GameObject monsterPrefab = CurDifficulty.StageDataList[i].SpawnDataList[j].Prefab;
+
+                if (monsterPrefab != null)
+                {
+                    ObjectPool.Instance.RegisterPoolElement(
+                        monsterPrefab,
+                        CurDifficulty.StageDataList[i].SpawnDataList[j].Num
+                    );
+                    // 💡 CCTV 1: 정상적으로 등록된 몬스터 이름 출력
+                    Debug.Log($"➔ [풀 등록 완료] {i + 1}스테이지 몬스터 : {monsterPrefab.name}");
+                }
+                else
+                {
+                    // 💡 CCTV 2: 프리팹이 비어있어서 등록을 못한 경우 경고창 띄우기
+                    Debug.LogWarning($"🚨 [Spawner] {i + 1}스테이지 데이터에 몬스터 프리팹이 빠져있습니다 (None 상태)!");
+                }
             }
         }
+
+        Debug.Log("✅ [Spawner] 모든 몬스터 풀 등록 작업이 끝났습니다!");
     }
 }

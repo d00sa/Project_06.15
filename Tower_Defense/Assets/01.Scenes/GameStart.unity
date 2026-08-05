@@ -539,7 +539,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 909019502}
         m_TargetAssemblyTypeName: RewardManager, Assembly-CSharp
         m_MethodName: OnClickRerollButton
         m_Mode: 1
@@ -4447,7 +4447,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8427968885779218570, guid: 24ddef4e6ae733648be7a3e464718ccc, type: 3}
       propertyPath: startingSkills.Array.size
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8427968885779218570, guid: 24ddef4e6ae733648be7a3e464718ccc, type: 3}
       propertyPath: 'startingSkills.Array.data[0]'
@@ -28434,9 +28434,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::RewardManager
   _rewards:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 944405781}
+  - {fileID: 351340513}
+  - {fileID: 88955062}
   _globalDropRate: 10
   _chestDropRate: 5
   _hourglassDropRate: 5

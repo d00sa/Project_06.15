@@ -1,0 +1,433 @@
+fileFormatVersion: 2
+guid: edfb619ef81bd994091a4d3499e156df
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 6769161949333604898
+    second: Wyvern_0
+  - first:
+      213: 4238993812915594131
+    second: Wyvern_1
+  - first:
+      213: 3535422995495282894
+    second: Wyvern_2
+  - first:
+      213: 1816483480376002714
+    second: Wyvern_3
+  - first:
+      213: 4550425339330286299
+    second: Wyvern_4
+  - first:
+      213: 4868689959082546630
+    second: Wyvern_5
+  - first:
+      213: -5818906419266874372
+    second: Wyvern_6
+  - first:
+      213: -65219789302005280
+    second: Wyvern_7
+  - first:
+      213: -6651149914318664509
+    second: Wyvern_8
+  - first:
+      213: 4698384088289201871
+    second: Wyvern_9
+  - first:
+      213: -5045517793680310793
+    second: Wyvern_10
+  - first:
+      213: 5073700294106671884
+    second: Wyvern_11
+  - first:
+      213: 330864043664827396
+    second: Wyvern_12
+  - first:
+      213: 6121417413284916150
+    second: Wyvern_13
+  - first:
+      213: 6042722942321922586
+    second: Wyvern_14
+  - first:
+      213: -8014447417363338987
+    second: Wyvern_15
+  - first:
+      213: -2952189853845816330
+    second: Wyvern_16
+  - first:
+      213: 9016698249868880478
+    second: Wyvern_17
+  - first:
+      213: -48586981769938932
+    second: Wyvern_18
+  - first:
+      213: 442666832869616112
+    second: Wyvern_19
+  - first:
+      213: -7707769153139445054
+    second: Wyvern_20
+  - first:
+      213: -519305528949423494
+    second: Wyvern_21
+  - first:
+      213: -1295577864979928096
+    second: Wyvern_22
+  - first:
+      213: -4526002130180214890
+    second: Wyvern_23
+  - first:
+      213: -3880627697019614365
+    second: Wyvern_24
+  - first:
+      213: 5398951561996350399
+    second: Wyvern_25
+  - first:
+      213: 8675464810662474911
+    second: Wyvern_26
+  - first:
+      213: 6163970674817839888
+    second: Wyvern_27
+  - first:
+      213: -658611892323323018
+    second: Wyvern_28
+  - first:
+      213: 6690998153884423021
+    second: Wyvern_29
+  - first:
+      213: 2392520677059992822
+    second: Wyvern_30
+  - first:
+      213: 7772346764253753698
+    second: Wyvern_31
+  - first:
+      213: 3606983816121506306
+    second: Wyvern_32
+  - first:
+      213: 7491896321859215702
+    second: Wyvern_33
+  - first:
+      213: 5224661822090408259
+    second: Wyvern_34
+  - first:
+      213: -69878350813451749
+    second: Wyvern_35
+  - first:
+      213: 1479571523170129061
+    second: Wyvern_36
+  - first:
+      213: -1221280398366372366
+    second: Wyvern_37
+  - first:
+      213: -4346983217648465192
+    second: Wyvern_38
+  - first:
+      213: -2247572182234944404
+    second: Wyvern_39
+  - first:
+      213: 5579627708752013199
+    second: Wyvern_40
+  - first:
+      213: -4034709750348633713
+    second: Wyvern_41
+  - first:
+      213: 5618633919354364617
+    second: Wyvern_42
+  - first:
+      213: 1266840515850605869
+    second: Wyvern_43
+  - first:
+      213: -9021661763976130442
+    second: Wyvern_44
+  - first:
+      213: 7787418536109962000
+    second: Wyvern_45
+  - first:
+      213: 1847636850246015580
+    second: Wyvern_46
+  - first:
+      213: -7270214466512486519
+    second: Wyvern_47
+  - first:
+      213: 8897018512013079913
+    second: Wyvern_48
+  - first:
+      213: 771391408813221816
+    second: Wyvern_49
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 125
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: iOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Wyvern_0
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 1088
+        width: 570
+        height: 378
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 22ace19ade4e0fd50800000000000000
+      internalID: 6769161949333604898
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wyvern_1
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 465
+        width: 579
+        height: 497
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: af14e1d38f4a20345b86b095f8033f8a
+      internalID: 4238993812915594131
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wyvern_2
+      rect:
+        serializedVersion: 2
+        x: 644
+        y: 462
+        width: 579
+        height: 497
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4ce127e1dd794a047a5f7992c2f9c961
+      internalID: 3535422995495282894
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wyvern_3
+      rect:
+        serializedVersion: 2
+        x: 1228
+        y: 461
+        width: 579
+        height: 497
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 76b6ae17aaf2e8d43add2ec78e93a396
+      internalID: 1816483480376002714
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wyvern_4
+      rect:
+        serializedVersion: 2
+        x: 1793
+        y: 466
+        width: 579
+        height: 497
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0257aa6e7796f2440a801656d57d03f1
+      internalID: 4550425339330286299
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wyvern_5
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 42
+        width: 819
+        height: 272
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: db4ea5f534d3537468e213bf72c72421
+      internalID: 1200291875
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: eb4ad96147ce1064a80156f628469003
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":2400.0,"y":1599.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
+    nameFileIdTable:
+      Wyvern_0: 6769161949333604898
+      Wyvern_1: 4238993812915594131
+      Wyvern_2: 3535422995495282894
+      Wyvern_3: 1816483480376002714
+      Wyvern_4: 4550425339330286299
+      Wyvern_5: 1200291875
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

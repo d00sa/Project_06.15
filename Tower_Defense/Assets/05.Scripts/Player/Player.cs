@@ -26,16 +26,13 @@ public class Player : MonoBehaviour
 
     [Header("경험치 및 레벨")]
     [SerializeField] private int currentExp = 0;
+    [Tooltip("모든 레벨 구간에서 공통으로 적용되는 레벨업 요구 경험치량")]
     [SerializeField] private int maxExp = 100;
     [SerializeField] private int playerLevel = 1;
     public event Action<int, int> OnExpChanged;
 
     [Header("[보물상자 체크]")]
     [SerializeField] private LayerMask _chestLayer;
-
-    [Header("경험치 요구량 커브 (계단식)")]
-    [Tooltip("X축: 플레이어 레벨, Y축: 해당 레벨업에 필요한 경험치 총량")]
-    [SerializeField] private AnimationCurve expCurve;
 
     [Header("에디터 테스트 ")]
     [Tooltip("테스트하고 싶은 스킬 이름을 적고 ⋮ 아이콘 클릭 -> 테스트: 이 스킬 레벨업 시키기")]
@@ -59,8 +56,6 @@ public class Player : MonoBehaviour
 
     private void Start()
     {
-        UpdateMaxExp();
-
         foreach (var skill in startingSkills)
         {
             if (skill != null)
@@ -72,7 +67,8 @@ public class Player : MonoBehaviour
 
     private void Update()
     {
-        if (Pointer.current.press.wasPressedThisFrame) {
+        if (Pointer.current.press.wasPressedThisFrame)
+        {
             //스크린 좌표 가져오기 (ex: 980, 500)
             Vector2 screenPos = Pointer.current.position.ReadValue();
             //월드 좌표로 변환. (980, 500 -> 5,4)
@@ -101,24 +97,12 @@ public class Player : MonoBehaviour
 
             //레벨 업 사운드 재생
             SoundManager.Instance.PlaySFX("LevelUp");
-            // 렙업 후 다음 레벨의 경험치 최대치 갱신
-            UpdateMaxExp();
+
             // 레벨업 창 띄우기
             LevelUpUIManager.Instance.ShowLevelUpUI();
         }
 
         OnExpChanged?.Invoke(currentExp, maxExp);
-    }
-
-    /// <summary>
-    /// AnimationCurve를 바탕으로 현재 레벨에 맞는 최대 경험치를 계산
-    /// </summary>
-    private void UpdateMaxExp()
-    {
-        if (expCurve != null && expCurve.keys.Length > 0)
-        {
-            maxExp = Mathf.Max(1, Mathf.RoundToInt(expCurve.Evaluate(playerLevel)));
-        }
     }
 
     /// <summary>
