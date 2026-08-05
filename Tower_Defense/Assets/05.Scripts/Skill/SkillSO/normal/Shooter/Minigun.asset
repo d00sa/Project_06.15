@@ -20,27 +20,27 @@ MonoBehaviour:
   skillPrefab: {fileID: 7894290291646296383, guid: 4f853902d297cfe49acec1b882a75e51, type: 3}
   maxLevel: 5
   levelStats:
-  - damage: 3
+  - damage: 2
     fireRate: 10
     speed: 30
-    coolTime: 10
+    coolTime: 15
     range: 0
   - damage: 3
     fireRate: 10
     speed: 30
-    coolTime: 10
+    coolTime: 15
     range: 0
-  - damage: 3
+  - damage: 4
     fireRate: 10
     speed: 30
-    coolTime: 10
+    coolTime: 15
     range: 0
-  - damage: 3
+  - damage: 5
     fireRate: 10
     speed: 30
-    coolTime: 10
+    coolTime: 15
     range: 0
-  - damage: 3
+  - damage: 5
     fireRate: 10
     speed: 30
     coolTime: 10

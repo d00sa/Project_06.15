@@ -21,27 +21,27 @@ MonoBehaviour:
   maxLevel: 5
   levelStats:
   - damage: 20
+    fireRate: 5
+    speed: 20
+    coolTime: 0
+    range: 0
+  - damage: 20
+    fireRate: 7
+    speed: 20
+    coolTime: 0
+    range: 0
+  - damage: 20
     fireRate: 10
     speed: 20
     coolTime: 0
     range: 0
   - damage: 20
+    fireRate: 12
+    speed: 20
+    coolTime: 0
+    range: 0
+  - damage: 20
     fireRate: 15
-    speed: 20
-    coolTime: 0
-    range: 0
-  - damage: 20
-    fireRate: 20
-    speed: 20
-    coolTime: 0
-    range: 0
-  - damage: 20
-    fireRate: 25
-    speed: 20
-    coolTime: 0
-    range: 0
-  - damage: 20
-    fireRate: 30
     speed: 20
     coolTime: 0
     range: 0

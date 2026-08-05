@@ -98,7 +98,7 @@ public class HolyLight : AoeEffect
         }
 
         isCasting = false;
-
+        SoundManager.Instance.StopSound("HolyLightSkillSFX");
         ObjectPool.Instance.ReturnObj(gameObject);
     }
 

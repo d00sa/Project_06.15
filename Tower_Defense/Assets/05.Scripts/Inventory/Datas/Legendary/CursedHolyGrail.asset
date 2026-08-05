@@ -23,7 +23,7 @@ MonoBehaviour:
   - StatType: 0
     Value: 2
   - StatType: 1
-    Value: 2
+    Value: 1
   - StatType: 3
     Value: -0.3
   LootTable: {fileID: 0}

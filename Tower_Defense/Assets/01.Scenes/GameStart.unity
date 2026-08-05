@@ -27700,7 +27700,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::InventoryManager
   _maxCount: 6
-  swapUI: {fileID: 0}
+  swapUI: {fileID: 1571475370}
 --- !u!4 &860111602
 Transform:
   m_ObjectHideFlags: 0
@@ -28437,10 +28437,10 @@ MonoBehaviour:
   - {fileID: 944405781}
   - {fileID: 351340513}
   - {fileID: 88955062}
-  _globalDropRate: 10
-  _chestDropRate: 5
-  _hourglassDropRate: 5
-  _DiceDropRate: 10
+  _globalDropRate: 5
+  _chestDropRate: 1
+  _hourglassDropRate: 1
+  _DiceDropRate: 2
   _rerollCount: 0
 --- !u!4 &909019503
 Transform:

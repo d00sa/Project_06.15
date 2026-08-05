@@ -24,6 +24,7 @@ public class Hourglass : MonoBehaviour, IInteractable
         yield return new WaitForSeconds(_freezeDuration);
 
         GameManager.Instance.IsTimeStopped = false;
+        SoundManager.Instance.StopSound("HourglassSFXClink");
         SoundManager.Instance.StopSound("HourglassSFXTimeStop");
 
     }

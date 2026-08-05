@@ -23,25 +23,25 @@ MonoBehaviour:
   - damage: 200
     fireRate: 0
     speed: 5
-    coolTime: 10
+    coolTime: 35
     range: 0
   - damage: 200
     fireRate: 0
     speed: 5
-    coolTime: 10
+    coolTime: 30
     range: 0
   - damage: 200
     fireRate: 0
     speed: 5
-    coolTime: 10
+    coolTime: 25
     range: 0
   - damage: 200
     fireRate: 0
     speed: 5
-    coolTime: 10
+    coolTime: 20
     range: 0
   - damage: 200
     fireRate: 0
     speed: 5
-    coolTime: 10
+    coolTime: 15
     range: 0
