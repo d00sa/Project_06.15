@@ -41,6 +41,7 @@ public class LoadSceneManager : MonoBehaviour
 
     public void LoadScene(string sceneName)
     {
+        Time.timeScale = 0f;
         gameObject.SetActive(true);
         _loadSceneName = sceneName;
         SceneManager.sceneLoaded += OnSceneLoaded;
@@ -48,14 +49,9 @@ public class LoadSceneManager : MonoBehaviour
         StartCoroutine(LoadProcess());
     }
 
-    public void Test()
-    {
-        gameObject.SetActive(true);
-        StartCoroutine(Fade(true));
-    }
-
     private IEnumerator LoadProcess()
-    {       
+    {   
+        // 1. Fade On
         yield return StartCoroutine(Fade(true));
 
         // 2. 로딩 UI 표시
@@ -92,6 +88,7 @@ public class LoadSceneManager : MonoBehaviour
     {
         if (arg0.name == _loadSceneName) {
             StartCoroutine(Fade(false));
+            Time.timeScale = 1f;
             SceneManager.sceneLoaded -= OnSceneLoaded;
         }
     }

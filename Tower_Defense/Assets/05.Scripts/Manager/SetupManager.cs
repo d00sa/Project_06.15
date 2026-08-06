@@ -1,4 +1,6 @@
-﻿using System;
+﻿using NUnit.Framework;
+using System;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Audio;
 using UnityEngine.UI;
@@ -22,6 +24,7 @@ public class SetupManager : MonoBehaviour
     [SerializeField] Slider _bgmVolumeSetup;
     [SerializeField] Slider _sfxVolumeSetup;
     [SerializeField] AudioMixer _mixer;
+    [SerializeField] Button _levelButton;
 
     private void Awake()
     {
@@ -99,7 +102,16 @@ public class SetupManager : MonoBehaviour
     public bool Open()
     {
         //이미 켜져있다면
-        if (transform.localScale == Vector3.one) return false;
+        if (transform.localScale == Vector3.one) 
+            return false;
+
+        GameObject title = GameObject.FindWithTag("Title");
+        GameObject difficulty = GameObject.FindWithTag("Difficulty");
+        //찾을 수 없다면
+        if (title == null && difficulty == null)
+            _levelButton.gameObject.SetActive(true);
+        else
+            _levelButton.gameObject.SetActive(false);
 
         Time.timeScale = 0f;
         transform.localScale = Vector3.one;
@@ -116,8 +128,9 @@ public class SetupManager : MonoBehaviour
     {
         if (GameManager.Instance != null)
             GameManager.Instance.GoToDifficultySelect();
+
         SoundManager.Instance.PlaySFX("ButtonClick");
-        gameObject.SetActive(false);
+        Closed();
     }
 
     public void Closed()

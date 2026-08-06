@@ -241,8 +241,10 @@ public class GameManager : MonoBehaviour
         ChangeState(GameState.LoadDifficultData);
         Resetting();
 
-        if (SceneManager.GetActiveScene().name == "GameStart")
-            LoadSceneManager.Instance.LoadScene("Enter");
+        if (SceneManager.GetActiveScene().name == "GameStart") {
+            SoundManager.Instance.StopAllSounds();
+            LoadSceneManager.Instance.LoadScene("Enter");          
+        }
     }
 
     public float SpeedUp()
@@ -256,15 +258,13 @@ public class GameManager : MonoBehaviour
 
     private void Resetting()
     {
-        SoundManager.Instance.StopAllSounds();
-        IsSelectDifficulty = false;
         Win = false;
-        Lose = false;        
+        Lose = false;
         _enemyCount = 0;
         _speedIndex = 0;
-        Time.timeScale = 1f;
         CurSpeed = _speedTable[0];
         IsTimeStopped = false;
+        IsSelectDifficulty = false;
     }
 
     [Button("Sample Scene Game Start")]
