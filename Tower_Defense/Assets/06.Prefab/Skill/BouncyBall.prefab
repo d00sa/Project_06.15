@@ -174,5 +174,4 @@ MonoBehaviour:
   skillShooter: {fileID: 0}
   skillAOE: {fileID: 0}
   startingSkills: []
-  knockbackPower: 0.5
-  damageBonusType: 0
+  knockbackPower: 0.1

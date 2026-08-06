@@ -249,7 +249,8 @@ public class Enemy : MonoBehaviour, IPoolable
         Vector3 pushDir = (transform.position - targetWaypoint.position).normalized;
 
         //밀기
-        _knockbackVelocity += pushDir * knockbackPower * 20f;
+        float speedRatio = (originalSpeed > 0) ? (speed / originalSpeed) : 1f;
+        _knockbackVelocity += pushDir * (knockbackPower * speedRatio) * 20f;
     }
 
     /// <summary> 지속 데미지(화상, 독)를 부여 </summary>

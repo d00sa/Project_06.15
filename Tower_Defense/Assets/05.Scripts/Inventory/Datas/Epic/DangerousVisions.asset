@@ -27,6 +27,6 @@ MonoBehaviour:
   - StatType: 0
     Value: 3
   - StatType: 1
-    Value: 0.5
+    Value: 0.3
   LootTable: {fileID: 0}
   Effect: {fileID: 0}

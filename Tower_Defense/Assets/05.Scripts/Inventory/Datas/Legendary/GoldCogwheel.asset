@@ -18,10 +18,11 @@ MonoBehaviour:
   Icon: {fileID: 3443855190058697531, guid: 82ab1cb98d30d004e987acc05968b932, type: 3}
   Description: "\uD654\uB824\uD558\uC9C0\uB9CC \uD1B1\uB2C8\uBC14\uD034\uB85C\uC36C
     \uBCC4\uB86D\uB2C8\uB2E4."
+  Joke: 
   Rarity: 4
   Modifiers:
   - StatType: 1
-    Value: 1
+    Value: 0.3
   - StatType: 6
     Value: 0.25
   LootTable: {fileID: 0}

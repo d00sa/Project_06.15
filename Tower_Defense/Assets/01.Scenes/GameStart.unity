@@ -28437,7 +28437,7 @@ MonoBehaviour:
   - {fileID: 944405781}
   - {fileID: 351340513}
   - {fileID: 88955062}
-  _globalDropRate: 5
+  _globalDropRate: 2.5
   _chestDropRate: 1
   _hourglassDropRate: 1
   _DiceDropRate: 2

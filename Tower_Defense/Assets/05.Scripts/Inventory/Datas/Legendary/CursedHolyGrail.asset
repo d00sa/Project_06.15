@@ -21,10 +21,12 @@ MonoBehaviour:
   Rarity: 4
   Modifiers:
   - StatType: 0
-    Value: 2
+    Value: 3
   - StatType: 1
-    Value: 1
-  - StatType: 3
-    Value: -0.3
+    Value: 0.5
+  - StatType: 5
+    Value: -0.5
+  - StatType: 6
+    Value: -0.5
   LootTable: {fileID: 0}
   Effect: {fileID: 0}

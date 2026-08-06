@@ -21,6 +21,6 @@ MonoBehaviour:
   Rarity: 2
   Modifiers:
   - StatType: 0
-    Value: 1
+    Value: 2
   LootTable: {fileID: 0}
   Effect: {fileID: 0}

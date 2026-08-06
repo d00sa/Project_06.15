@@ -17,9 +17,10 @@ MonoBehaviour:
   ItemName: "\uD0DC\uC5FD\uC7A5\uCE58"
   Icon: {fileID: 6413591311797324798, guid: 221ec0cafeb7bf749a88a7470f47d783, type: 3}
   Description: "\uC57D\uC18D\uC2DC\uAC04\uC744 \uC798 \uC9C0\uD0B5\uC2DC\uB2E4."
+  Joke: 
   Rarity: 2
   Modifiers:
   - StatType: 1
-    Value: 0.3
+    Value: 0.2
   LootTable: {fileID: 0}
   Effect: {fileID: 0}

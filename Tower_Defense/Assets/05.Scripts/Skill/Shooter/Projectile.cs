@@ -12,7 +12,7 @@ public class Projectile : MonoBehaviour, ISkillEffect
 
     [Header("기본 설정")]
     [Tooltip("피격 시 적이 밀려나는 힘")]
-    [SerializeField] private float knockbackPower = 0.1f;
+    [SerializeField] private float knockbackPower = 0.025f;
 
     [Header("상태 이상 옵션 (0이면 발동 안함)")]
     [Tooltip("느려지는 비율 (예: 0.9 = 90% 슬로우)")]

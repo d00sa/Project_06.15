@@ -170,7 +170,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AoeEffect
   animator: {fileID: 0}
-  knockbackPower: 0.2
+  knockbackPower: 0.05
   isRotating: 1
   rotationSpeed: 1000
   lingerDuration: 0
