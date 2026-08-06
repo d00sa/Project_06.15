@@ -41,7 +41,6 @@ public class LoadSceneManager : MonoBehaviour
 
     public void LoadScene(string sceneName)
     {
-        Time.timeScale = 0f;
         gameObject.SetActive(true);
         _loadSceneName = sceneName;
         SceneManager.sceneLoaded += OnSceneLoaded;
@@ -88,7 +87,10 @@ public class LoadSceneManager : MonoBehaviour
     {
         if (arg0.name == _loadSceneName) {
             StartCoroutine(Fade(false));
+
             Time.timeScale = 1f;
+            GameManager.Instance.IsResetting = false;
+
             SceneManager.sceneLoaded -= OnSceneLoaded;
         }
     }

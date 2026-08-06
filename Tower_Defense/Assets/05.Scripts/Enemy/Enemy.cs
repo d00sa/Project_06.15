@@ -152,8 +152,8 @@ public class Enemy : MonoBehaviour, IPoolable
         IsMovable = false;
         OnDead?.Invoke(this);
 
-        if (IsDead)
-            Player.Instance.AddExp(_giveExp); // 플레이어에게 경험치 넘겨줌
+        if (IsDead || !(GameManager.Instance.Win || GameManager.Instance.Lose || GameManager.Instance.IsResetting))
+            Player.Instance.AddExp(_giveExp);
 
         if (_isBoss) { 
             Spawner.Instance.IsBoss = false;

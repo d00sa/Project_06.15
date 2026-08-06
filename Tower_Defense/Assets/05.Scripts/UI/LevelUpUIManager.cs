@@ -30,8 +30,9 @@ public class LevelUpUIManager : MonoBehaviour
     [ContextMenu("테스트: 레벨업 창 띄우기")]
     public void ShowLevelUpUI()
     {
-        //게임 패배시 레벨 업 창 안뜨도록 설정.
-        if (GameManager.Instance.Lose) return;
+        //세 가지 경우에 대해서는 레벨업 창 X
+        if (GameManager.Instance.Lose || GameManager.Instance.Win || GameManager.Instance.IsResetting)  
+            return;
 
         Time.timeScale = 0f; // 게임 일시 정지
         levelUpPanel.localScale = Vector3.one;

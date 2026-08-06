@@ -865,7 +865,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 401729576072697682}
         m_TargetAssemblyTypeName: GameLoseUI, Assembly-CSharp
-        m_MethodName: ReStart
+        m_MethodName: GameQuit
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

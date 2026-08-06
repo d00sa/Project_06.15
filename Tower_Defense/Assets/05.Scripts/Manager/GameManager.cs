@@ -68,6 +68,7 @@ public class GameManager : MonoBehaviour
     public bool IsSelectDifficulty = false;
     public bool Win = false;
     public bool Lose = false;
+    public bool IsResetting = false;
     public float CurSpeed = 1.0f;
     public bool IsTimeStopped = false;
 
@@ -238,11 +239,12 @@ public class GameManager : MonoBehaviour
 
     public void GoToDifficultySelect()
     {
-        ChangeState(GameState.LoadDifficultData);
         Resetting();
 
         if (SceneManager.GetActiveScene().name == "GameStart") {
             SoundManager.Instance.StopAllSounds();
+            ChangeState(GameState.LoadDifficultData);
+
             LoadSceneManager.Instance.LoadScene("Enter");          
         }
     }
@@ -258,6 +260,14 @@ public class GameManager : MonoBehaviour
 
     private void Resetting()
     {
+        //Game Pause
+        Time.timeScale = 0f;
+        IsResetting = true;
+        Spawner.Instance.IsSummonOk = false;
+        LevelUpUIManager.Instance.Close();
+        ObjectPool.Instance.AllObjectReturn();
+
+        //GameSetting Reset
         Win = false;
         Lose = false;
         _enemyCount = 0;

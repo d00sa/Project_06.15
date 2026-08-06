@@ -7,6 +7,7 @@ public class GameClearUI : MonoBehaviour
     {
         SoundManager.Instance.StopAllSounds();
 
+        LevelUpUIManager.Instance.Close();
         _panels.localScale = Vector3.one;
         SoundManager.Instance.PlaySFX("GameVictory");
     }
