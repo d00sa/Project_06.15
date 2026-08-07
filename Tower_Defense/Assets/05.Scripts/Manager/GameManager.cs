@@ -52,6 +52,8 @@ public class GameManager : MonoBehaviour
 
     private int _curTime;
     private float _timeTimer;
+
+    //private bool isTesting = false;
     public int CurTime
     {
         get => _curTime;
@@ -99,6 +101,10 @@ public class GameManager : MonoBehaviour
             if (!SetupManager.Instance.Open())
                 SetupManager.Instance.Closed();
         }
+
+        //if (Keyboard.current.xKey.wasPressedThisFrame && !isTesting) {
+        //    Testing();
+        //}
 
         switch (Current) {
             case GameState.LoadDifficultData: {
@@ -280,7 +286,9 @@ public class GameManager : MonoBehaviour
     [Button("Sample Scene Game Start")]
     private void Testing()
     {
+        Spawner.Instance.SetDifficulty(Data);
         ChangeState(GameState.GameJudge);
+        //isTesting = true;
     }
 
     [Button("Sample Scene Test")]

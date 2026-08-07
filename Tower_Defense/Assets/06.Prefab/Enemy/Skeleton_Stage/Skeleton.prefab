@@ -319,7 +319,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.12332, y: -5.43, z: 0}
-  m_LocalScale: {x: 0.7, y: 0.7, z: 0.7}
+  m_LocalScale: {x: 0.9, y: 0.9, z: 0.9}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 5938565705585980347}
@@ -346,9 +346,11 @@ MonoBehaviour:
   _isBoss: 0
   _defaultFlipX: 0
   _hpBar: {fileID: 1256824324522730458}
-  _deadOffSet: {x: 0, y: -0.5, z: 0}
   _sprite: {fileID: 7598457591828533100}
   _machine: {fileID: 720869449047671945}
+  _deadOffSet: {x: 0, y: -0.55, z: 0}
+  _deadSize: {x: 1, y: 1, z: 1}
+  _stunnedSize: {x: 1, y: 1, z: 1}
   priority: 0
   dotEffectObject: {fileID: 6948101766422034432}
 --- !u!114 &720869449047671945

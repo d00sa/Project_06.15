@@ -2060,7 +2060,7 @@ Transform:
   m_GameObject: {fileID: 142254777}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.5, y: 5, z: 0}
+  m_LocalPosition: {x: -7.5, y: 5.3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3223,13 +3223,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GameManager
   _maxReadyTime: 3
-  _maxStageTime: 30
-  _maxBossTime: 40
+  _maxStageTime: 99
+  _maxBossTime: 99
   Current: 0
-  Data: {fileID: 11400000, guid: 0f89bafcd33a2bd4dbaf209e87c0bbd0, type: 2}
+  Data: {fileID: 11400000, guid: aa5c036f5fb6c1a46bb3b55a5d75b863, type: 2}
   IsSelectDifficulty: 0
   Win: 0
   Lose: 0
+  IsResetting: 0
   CurSpeed: 1
   IsTimeStopped: 0
 --- !u!4 &270040854
@@ -3565,7 +3566,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Spawner
   IsSummonOk: 0
-  CurDifficulty: {fileID: 11400000, guid: 0f89bafcd33a2bd4dbaf209e87c0bbd0, type: 2}
+  CurDifficulty: {fileID: 0}
   IsBoss: 0
   _spawnPoint: {fileID: 142254778}
   _currentStage: 0
@@ -41046,16 +41047,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8427968885779218570, guid: 24ddef4e6ae733648be7a3e464718ccc, type: 3}
       propertyPath: startingSkills.Array.size
-      value: 15
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8427968885779218570, guid: 24ddef4e6ae733648be7a3e464718ccc, type: 3}
       propertyPath: 'startingSkills.Array.data[0]'
       value: 
-      objectReference: {fileID: 11400000, guid: 695628fea9a60b14180310d6bc79e42c, type: 2}
+      objectReference: {fileID: 11400000, guid: 52c1ba9dd5861bf48a3ef6b386bcca9e, type: 2}
     - target: {fileID: 8427968885779218570, guid: 24ddef4e6ae733648be7a3e464718ccc, type: 3}
       propertyPath: 'startingSkills.Array.data[1]'
       value: 
-      objectReference: {fileID: 11400000, guid: a87f96db392ba1e44b7b16fad1d36eda, type: 2}
+      objectReference: {fileID: 11400000, guid: c77baab45161b5a4b8982ae884497394, type: 2}
     - target: {fileID: 8427968885779218570, guid: 24ddef4e6ae733648be7a3e464718ccc, type: 3}
       propertyPath: 'startingSkills.Array.data[2]'
       value: 

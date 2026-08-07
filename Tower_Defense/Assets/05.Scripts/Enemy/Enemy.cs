@@ -46,9 +46,11 @@ public class Enemy : MonoBehaviour, IPoolable
     [SerializeField] private bool _isBoss; //보스인지?
     [SerializeField] private bool _defaultFlipX; //기본 스프라이트 좌우반전 설정
     [SerializeField] private Slider _hpBar;
-    [SerializeField] private Vector3 _deadOffSet; //사망, Stuuned시 오프셋 조정
     [SerializeField] private SpriteRenderer _sprite;
     [SerializeField] private StateMachine _machine;
+    [SerializeField] private Vector3 _deadOffSet; //사망 시 오프셋 조정
+    [SerializeField] private Vector3 _deadSize; //사망 시 사이즈 조정
+    [SerializeField] private Vector3 _stunnedSize; //Stuuned 시 사이즈 조정
     public bool IsMovable { get; set; } = true;
 
     #region Private - NoSerialize
@@ -56,6 +58,7 @@ public class Enemy : MonoBehaviour, IPoolable
     private int _currentIdx = 0;
     private int _curLine = 0;
     private int _giveExp;
+    private Vector3 _originSize;
     private Coroutine dotCoroutine;
     private Coroutine stunCoroutine;
     private Coroutine slowCoroutine;
@@ -79,6 +82,17 @@ public class Enemy : MonoBehaviour, IPoolable
              "ApplyDotDamage를 호출하는 모든 스킬에 적용")]
     [SerializeField] private GameObject dotEffectObject;
 
+    private void Awake()
+    {
+        _originSize = transform.localScale;
+
+        if (_deadSize == Vector3.zero)
+            _deadSize = _originSize;
+
+        if (_stunnedSize == Vector3.zero)
+            _stunnedSize = _originSize;
+    }
+
     private void OnEnable()
     {
         OnSpawn();
@@ -96,6 +110,7 @@ public class Enemy : MonoBehaviour, IPoolable
 
         if (GameManager.Instance != null && GameManager.Instance.IsTimeStopped)
         {
+            transform.localScale = _stunnedSize;
             _machine.ChangeState(StateType.Stunned);
             return;
         }
@@ -114,16 +129,18 @@ public class Enemy : MonoBehaviour, IPoolable
         if (IsMovable)
         {
             _machine.ChangeState(StateType.Move);
-            Move(); // 기존 이동 로직 그대로 유지
+            Move();
         }
         else
         {
+            transform.localScale = _stunnedSize;
             _machine.ChangeState(StateType.Stunned);
         }
     }
 
     private void Move()
     {
+        transform.localScale = _originSize;
         Transform target = _wayPoints[_curLine].Points[_currentIdx];
 
         transform.position = Vector3.MoveTowards(
@@ -150,6 +167,7 @@ public class Enemy : MonoBehaviour, IPoolable
         _machine.ChangeState(StateType.Dead);
         this.gameObject.tag = "Untagged";
         IsMovable = false;
+        transform.localScale = _deadSize;
         OnDead?.Invoke(this);
 
         if (IsDead || !(GameManager.Instance.Win || GameManager.Instance.Lose || GameManager.Instance.IsResetting))
@@ -201,11 +219,13 @@ public class Enemy : MonoBehaviour, IPoolable
         IsMovable = true;
         _currentIdx = 0;
         _curLine = Random.Range(0, 3);
+        transform.localScale = _originSize;
         _sprite.flipX = _defaultFlipX;
         this.gameObject.tag = "Enemy";
 
         // 풀에서 재사용될 때 이전 상태의 이펙트가 켜진 채로 남아있지 않도록 리셋
-        if (dotEffectObject != null) dotEffectObject.SetActive(false);
+        if (dotEffectObject != null) 
+            dotEffectObject.SetActive(false);
     }
 
     public void Setting(int exp, float hp)

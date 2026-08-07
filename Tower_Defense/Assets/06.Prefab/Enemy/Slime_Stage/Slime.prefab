@@ -285,9 +285,11 @@ MonoBehaviour:
   _isBoss: 0
   _defaultFlipX: 0
   _hpBar: {fileID: 7580869575054913285}
-  _deadOffSet: {x: 0, y: -0.3, z: 0}
   _sprite: {fileID: 673110748285700735}
   _machine: {fileID: 8826004180032480047}
+  _deadOffSet: {x: 0, y: -0.25, z: 0}
+  _deadSize: {x: 0, y: 0, z: 0}
+  _stunnedSize: {x: 0, y: 0, z: 0}
   priority: 0
   dotEffectObject: {fileID: 1439172478594923275}
 --- !u!114 &8826004180032480047
