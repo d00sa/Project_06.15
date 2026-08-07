@@ -23,7 +23,7 @@ MonoBehaviour:
       SpawnDelay: 0.5
       Term: 1
       Exp: 8
-      Hp: 100
+      Hp: 70
   - Stage: 2
     bossStage: 0
     SpawnDataList:
@@ -32,7 +32,7 @@ MonoBehaviour:
       SpawnDelay: 0.5
       Term: 1
       Exp: 8
-      Hp: 150
+      Hp: 120
   - Stage: 3
     bossStage: 0
     SpawnDataList:
@@ -41,7 +41,7 @@ MonoBehaviour:
       SpawnDelay: 0.5
       Term: 1
       Exp: 8
-      Hp: 200
+      Hp: 170
   - Stage: 4
     bossStage: 0
     SpawnDataList:
@@ -50,7 +50,7 @@ MonoBehaviour:
       SpawnDelay: 0.5
       Term: 1
       Exp: 8
-      Hp: 250
+      Hp: 220
   - Stage: 5
     bossStage: 1
     SpawnDataList:
@@ -59,7 +59,7 @@ MonoBehaviour:
       SpawnDelay: 0
       Term: 1
       Exp: 160
-      Hp: 1250
+      Hp: 1000
   - Stage: 6
     bossStage: 0
     SpawnDataList:

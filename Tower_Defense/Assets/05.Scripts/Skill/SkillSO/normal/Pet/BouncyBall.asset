@@ -22,26 +22,26 @@ MonoBehaviour:
   levelStats:
   - damage: 50
     fireRate: 0
-    speed: 20
+    speed: 30
     coolTime: 0
     range: 0
   - damage: 50
     fireRate: 0
-    speed: 20
+    speed: 30
     coolTime: 0
     range: 0
   - damage: 50
     fireRate: 0
-    speed: 20
+    speed: 30
     coolTime: 0
     range: 0
   - damage: 50
     fireRate: 0
-    speed: 20
+    speed: 30
     coolTime: 0
     range: 0
   - damage: 50
     fireRate: 0
-    speed: 20
+    speed: 30
     coolTime: 0
     range: 0

@@ -174,4 +174,8 @@ MonoBehaviour:
   skillShooter: {fileID: 0}
   skillAOE: {fileID: 0}
   startingSkills: []
-  knockbackPower: 0.1
+  knockbackPower: 0.05
+  wallLayer:
+    serializedVersion: 2
+    m_Bits: 128
+  spawnOffset: 6
