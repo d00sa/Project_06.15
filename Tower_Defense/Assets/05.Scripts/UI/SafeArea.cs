@@ -10,7 +10,6 @@ public class SafeArea : MonoBehaviour
         ApplySafeArea();
     }
 
-    #if UNITY_EDITOR
     private void Update()
     {
         if (_lastSafeArea != Screen.safeArea ||
@@ -19,7 +18,6 @@ public class SafeArea : MonoBehaviour
             ApplySafeArea();
         }
     }
-    #endif
 
     private void ApplySafeArea()
     {
@@ -36,6 +34,5 @@ public class SafeArea : MonoBehaviour
             Screen.safeArea.xMax / Screen.width,
             Screen.safeArea.yMax / Screen.height);
 
-        Debug.Log("SafeArea Apply");
     }
 }

@@ -139,12 +139,7 @@ public class Spawner : MonoBehaviour
     private void RegisterPoolElements()
     {
         if (CurDifficulty == null)
-        {
-            Debug.LogError("🚨 [Spawner] 난이도(CurDifficulty) 데이터가 비어있습니다! 인스펙터 연결을 확인하세요.");
             return;
-        }
-
-        Debug.Log($"✅ [Spawner] 총 {CurDifficulty.StageDataList.Count}개의 스테이지 풀 등록을 시작합니다...");
 
         for (int i = 0; i < CurDifficulty.StageDataList.Count; i++)
         {
@@ -159,15 +154,8 @@ public class Spawner : MonoBehaviour
                         monsterPrefab,
                         CurDifficulty.StageDataList[i].SpawnDataList[j].Num
                     );
-                    Debug.Log($"➔ [풀 등록 완료] {i + 1}스테이지 몬스터 : {monsterPrefab.name}");
-                }
-                else
-                {
-                    Debug.LogWarning($"🚨 [Spawner] {i + 1}스테이지 데이터에 몬스터 프리팹이 빠져있습니다 (None 상태)!");
                 }
             }
         }
-
-        Debug.Log("✅ [Spawner] 모든 몬스터 풀 등록 작업이 끝났습니다!");
     }
 }
